@@ -1,1 +1,2 @@
 C:\Users\én\Source\Repos\Happy-Little-Platformer\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache
+C:\Users\én\Source\okj\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache
