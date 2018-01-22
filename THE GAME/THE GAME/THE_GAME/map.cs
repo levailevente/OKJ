@@ -92,6 +92,16 @@ namespace THE_GAME
                     if (isDiagonalMove)
                     {
                         int stepsLeft = breaks - (i - 1);
+
+                        Vector2 horizontalM = oneStep.X * Vector2.UnitX * stepsLeft;
+                        Vector2 horizonPosition = furthestLocation + horizontalM;
+                        furthestLocation = CollisionV2(furthestLocation, horizonPosition, hitbox);
+
+                        Vector2 VerticalM = oneStep.Y * Vector2.UnitY * stepsLeft;
+                        Vector2 verticalPosition = furthestLocation + VerticalM;
+                        furthestLocation = CollisionV2(furthestLocation, verticalPosition, hitbox);
+
+
                     }
                     break;
                 }
