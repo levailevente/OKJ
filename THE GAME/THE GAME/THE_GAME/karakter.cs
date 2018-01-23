@@ -15,13 +15,22 @@ namespace THE_GAME
         Rectangle rectanglei= new Rectangle(100, 100, 77, 146);
         Rectangle rectanglew = new Rectangle(100, 100, 121, 153);
         Rectangle hitbox = new Rectangle(100, 100, 75, 140);
+        public Rectangle Hitbox
+        {
+            get
+            {
+                return hitbox;
+            }
+        }
         double elapsed=0;
         int idleI = 0;
         int walkI = 0;
         public enum direction { left,right,forward,back};
         public direction facing=direction.right;
         Vector2 mvmnt,prevPosition,position;
-        
+
+      
+
         public karakter()
         {
             

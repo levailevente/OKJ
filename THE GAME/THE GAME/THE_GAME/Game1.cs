@@ -19,6 +19,7 @@ namespace THE_GAME
         public static  ContentManager contentMgr;
         public static karakter karakter;
         public static Sprite   hatter;
+        public camera kamera;
         public static  int swidth, sheight;
         public static KeyboardState newkey = Keyboard.GetState();
         public static KeyboardState prevkey = newkey;
@@ -41,7 +42,7 @@ namespace THE_GAME
 
             contentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            kamera = new camera(graphics.GraphicsDevice.Viewport);
             karakter = new karakter();
             hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
@@ -79,11 +80,11 @@ namespace THE_GAME
 
 
 
-
+            
 
 
             karakter.update();
-
+            kamera.Update(karakter);
 
 
 
@@ -96,7 +97,7 @@ namespace THE_GAME
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.transform);
 
             hatter.draw(spriteBatch);
             karakter.Draw(spriteBatch);
