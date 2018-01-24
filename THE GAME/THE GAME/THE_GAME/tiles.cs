@@ -8,27 +8,22 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-   public class tiles
+   public class Tiles
     {
-        protected Texture2D texture;
-        public bool blocked;
-        private Rectangle rectangle;
-        public Rectangle Rectangle
-        {
-            get { return rectangle; }
-            protected set { rectangle = value; }
-        }
+        private readonly Texture2D texture;
+        public readonly bool Blocked;
+        public Rectangle Rectangle { get; }
 
 
-        public tiles(int i, Rectangle r, bool b)
+        public Tiles(int i, Rectangle r, bool b)
         {
-            texture = Game1.contentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
+            texture = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
             Rectangle = r;
-            blocked = b;
+            Blocked = b;
         }
-        public void draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch)
         {
-            if (blocked) spritebatch.Draw(texture, rectangle, Color.White);
+            if (Blocked) spritebatch.Draw(texture, Rectangle, Color.White);
         }
 
       

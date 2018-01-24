@@ -14,25 +14,27 @@ namespace THE_GAME
     
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
+        readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public static  ContentManager contentMgr;
-        public static karakter karakter;
-        public static Sprite   hatter;
-        public camera kamera;
-        public static  int swidth, sheight;
-        public static KeyboardState newkey = Keyboard.GetState();
-        public static KeyboardState prevkey = newkey;
+        public static  ContentManager ContentMgr;
+        static karakter karakter;
+        static Sprite   hatter;
+        Camera kamera;
+        public static  int Swidth, Sheight;
+        public static KeyboardState Newkey = Keyboard.GetState();
+        static KeyboardState prevkey = Newkey;
 
  
-       public static map map;
+       public static map Map;
 
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);
+            graphics = new GraphicsDeviceManager(this)
+            {
+                PreferredBackBufferWidth = 1280,
+                PreferredBackBufferHeight = 720
+            };
 
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight =  720;
 
             Content.RootDirectory = "Content";
         }
@@ -40,16 +42,16 @@ namespace THE_GAME
         protected override void Initialize()
         {
 
-            contentMgr = Content;
+            ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            kamera = new camera(graphics.GraphicsDevice.Viewport);
+            kamera = new Camera(graphics.GraphicsDevice.Viewport);
             karakter = new karakter();
             hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
-            swidth = GraphicsDevice.Viewport.Width;
-            sheight = GraphicsDevice.Viewport.Height;
+            Swidth = GraphicsDevice.Viewport.Width;
+            Sheight = GraphicsDevice.Viewport.Height;
 
-           map = new map();
+           Map = new map();
 
             base.Initialize();
         }
@@ -58,10 +60,10 @@ namespace THE_GAME
         protected override void LoadContent()
         {
 
-            map.Generate(mapok.palya, 64);
+            Map.Generate(Mapok.Palya, 64);
           
 
-            karakter.loadKarakter();
+            karakter.LoadKarakter();
            
         }
 
@@ -74,8 +76,8 @@ namespace THE_GAME
         
         protected override void Update(GameTime gameTime)
         {
-            newkey=Keyboard.GetState();
-            if (newkey.IsKeyDown(Keys.Escape))
+            Newkey=Keyboard.GetState();
+            if (Newkey.IsKeyDown(Keys.Escape))
                 Exit();
 
 
@@ -83,12 +85,12 @@ namespace THE_GAME
             
 
 
-            karakter.update();
+            karakter.Update();
             kamera.Update(karakter);
 
 
 
-            prevkey = newkey;
+            prevkey = Newkey;
             base.Update(gameTime);
         }
 
@@ -97,11 +99,11 @@ namespace THE_GAME
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.transform);
+            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
 
-            hatter.draw(spriteBatch);
+            hatter.Draw(spriteBatch);
             karakter.Draw(spriteBatch);
-            map.draw(spriteBatch);
+            Map.Draw(spriteBatch);
 
             spriteBatch.End();
 

@@ -7,13 +7,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace THE_GAME
 {
-   public class camera
+   public class Camera
     {
-        public Matrix transform;
+        public Matrix Transform;
         Viewport view;
-        public Vector2 centre;
+        private Vector2 centre;
 
-        public camera(Viewport newview)
+        public Camera(Viewport newview)
         {
             view = newview;
         }
@@ -21,12 +21,12 @@ namespace THE_GAME
         public void Update(karakter player)
         {
             if(player.Hitbox.X>600)
-            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.swidth / 2;
+            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2;
 
             if (player.Hitbox.Y > 150)
-                centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.sheight / 2 - 100;
+                centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 - 100;
 
-            transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
+            Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
         }
     }
 }

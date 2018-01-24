@@ -5,23 +5,15 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-// ReSharper disable All
+
 
 namespace THE_GAME
 {
     public  class map
     {
-        private List<tiles> tiles = new List<tiles>();
-        public List<tiles> Tiles
-        {
-            get { return tiles; }
-        }
+        private List<Tiles> Tiles { get; } = new List<Tiles>();
 
         private int width, height;
-
-        public int Width { get { return width; }  }
-
-        public int Height { get { return height; } }
 
         public map()
         {
@@ -37,7 +29,7 @@ namespace THE_GAME
                     int n = map[j, i];
 
                     if (n > 0 )
-                        tiles.Add(new tiles(n, new Rectangle(i * size, j * size, size, size),true));
+                        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size),true));
 
                       width = (i + 1) * size;
                     height = (j + 1) * size;
@@ -47,20 +39,20 @@ namespace THE_GAME
             }
         }
 
-        public void draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch)
         {
-            foreach (tiles tile in tiles)
+            foreach (Tiles tile in Tiles)
             {
-                tile.draw(spritebatch);
+                tile.Draw(spritebatch);
             }
         }
 
 
         public bool Collision (Rectangle movingRectangle)
         {
-            foreach (var tile in Tiles)
+            foreach (Tiles tile in Tiles)
             {
-                if (tile.blocked&&tile.Rectangle.Intersects(movingRectangle))
+                if (tile.Blocked&&tile.Rectangle.Intersects(movingRectangle))
                 {
                     return true;
                 }
@@ -97,8 +89,8 @@ namespace THE_GAME
                         Vector2 horizonPosition = furthestLocation + horizontalM;
                         furthestLocation = CollisionV2(furthestLocation, horizonPosition, hitbox);
 
-                        Vector2 VerticalM = oneStep.Y * Vector2.UnitY * stepsLeft;
-                        Vector2 verticalPosition = furthestLocation + VerticalM;
+                        Vector2 verticalM = oneStep.Y * Vector2.UnitY * stepsLeft;
+                        Vector2 verticalPosition = furthestLocation + verticalM;
                         furthestLocation = CollisionV2(furthestLocation, verticalPosition, hitbox);
 
 

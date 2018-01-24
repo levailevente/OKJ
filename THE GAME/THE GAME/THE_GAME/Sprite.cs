@@ -10,8 +10,8 @@ namespace THE_GAME
 {
     public class Sprite
     {
-       public  Texture2D texture;
-        public Rectangle rectangle;
+        private readonly Texture2D texture;
+        private readonly Rectangle rectangle;
 
         public Sprite(Texture2D t, Rectangle r)
         {
@@ -19,12 +19,12 @@ namespace THE_GAME
             rectangle = r;
         }
 
-        public virtual void update()
+        public virtual void Update()
         {
 
         }
 
-        public void draw(SpriteBatch sbatch )
+        public void Draw(SpriteBatch sbatch )
         {
             sbatch.Draw(texture, rectangle, Color.White);
         }
