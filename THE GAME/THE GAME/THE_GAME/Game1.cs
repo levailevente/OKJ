@@ -85,7 +85,7 @@ namespace THE_GAME
             
 
 
-            karakter.Update();
+            karakter.Update(gameTime);
             kamera.Update(karakter);
 
 

@@ -46,14 +46,14 @@ namespace THE_GAME
 
         }
         
-        public void Update()
+        public void Update(GameTime gameTime)
         {
         
             elapsed += 1;
 
-           
 
-            prevPosition = new Vector2(hitbox.X, hitbox.Y);
+
+            prevPosition = position;
 
         
             
@@ -128,11 +128,12 @@ namespace THE_GAME
                     if (OnGround()) mvmnt -= mvmnt * Vector2.One * 0.1f;
                     else mvmnt -= mvmnt * Vector2.One * .05f;
 
-                    hitbox.X += (int) mvmnt.X;
-                    hitbox.Y += (int) mvmnt.Y;
+                    position += mvmnt * (float) gameTime.ElapsedGameTime.TotalMilliseconds / 15;
+
+                    hitbox.X += (int)position.X;
+                    hitbox.Y += (int) position.Y;
 
 
-                    position = new Vector2(hitbox.X, hitbox.Y);
                     position = Game1.Map.CollisionV2(prevPosition, position, hitbox);
 
                     hitbox.X = (int) position.X;
