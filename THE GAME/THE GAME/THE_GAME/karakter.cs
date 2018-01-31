@@ -12,9 +12,9 @@ namespace THE_GAME
     {
         readonly Texture2D[] idle= new Texture2D[9];
         readonly Texture2D[] walk=new Texture2D[9];
-        Rectangle rectanglei= new Rectangle(100, 100, 77, 146);
-        Rectangle rectanglew = new Rectangle(100, 100, 121, 153);
-        Rectangle hitbox = new Rectangle(100, 100, 75, 140);
+        Rectangle rectanglei= new Rectangle(0, 0, 62, 117);
+        Rectangle rectanglew = new Rectangle(0, 0, 97, 122);
+        Rectangle hitbox = new Rectangle(0, 0, 60, 115);
         public Rectangle Hitbox => hitbox;
         double elapsed=0;
         int idleI = 0;
@@ -55,28 +55,31 @@ namespace THE_GAME
 
             prevPosition = position;
 
-        
+
             
+            
+
+
                 if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
                 {
 
                     mvmnt += new Vector2(1, 0);
-                    if (elapsed > 3)
+                    if ( elapsed > 3)
                     {
                         elapsed = 0;
                         walkI++;
                         if (walkI > 8) walkI = 0;
-                }
-                    
+                    }
+
                     facing = Direction.Right;
                 }
 
-                if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && rectanglei.X >= 0)
+                if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right))
                 {
 
 
                     mvmnt += new Vector2(-1, 0);
-                    if (elapsed > 3)
+                    if (  elapsed > 3)
                     {
                         elapsed = 0;
                         walkI++;
@@ -85,22 +88,34 @@ namespace THE_GAME
                     facing = Direction.Left;
                 }
 
-                if (Game1.Newkey.IsKeyDown(Keys.Up) && OnGround() && rectanglei.Y >= 0)
+                if (Game1.Newkey.IsKeyDown(Keys.Up) && OnGround())
                 {
                     mvmnt = -Vector2.UnitY * 50;
 
                     facing = Direction.Forward;
                 }
-                if (Game1.Newkey.IsKeyDown(Keys.Down) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
-                {
+            if (Game1.Newkey.IsKeyDown(Keys.Down) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
+            {
 
-                    facing = Direction.Back;
+                facing = Direction.Back;
+            }
+
+
+
+            else
+            {
+
+                if (elapsed > 6)
+                {
+                    elapsed = 0;
+                    idleI++;
+                    if (idleI > 8) idleI = 0;
+
                 }
 
 
-                else
+                if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyDown(Keys.Up) || Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyDown(Keys.Right))
                 {
-
                     if (elapsed > 6)
                     {
                         elapsed = 0;
@@ -108,48 +123,40 @@ namespace THE_GAME
                         if (idleI > 8) idleI = 0;
 
                     }
+                }
 
-
-                    if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyDown(Keys.Up) || Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyDown(Keys.Right))
-                    {
-                        if (elapsed > 6)
-                        {
-                            elapsed = 0;
-                            idleI++;
-                            if (idleI > 8) idleI = 0;
-
-                        }
-                    }
-
-
+            }
 
                 if (!Game1.Map.Collision(hitbox)) mvmnt += Vector2.UnitY * 1.5f;
 
-                    if (OnGround()) mvmnt -= mvmnt * Vector2.One * 0.1f;
-                    else mvmnt -= mvmnt * Vector2.One * .05f;
+                if (OnGround()) mvmnt -= mvmnt * Vector2.One * 0.1f;
+                else mvmnt -= mvmnt * Vector2.One * .05f;
 
-                    position += mvmnt * (float) gameTime.ElapsedGameTime.TotalMilliseconds / 15;
+                position += mvmnt * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 15;
 
-                    hitbox.X += (int)position.X;
-                    hitbox.Y += (int) position.Y;
-
-
-                    position = Game1.Map.CollisionV2(prevPosition, position, hitbox);
-
-                    hitbox.X = (int) position.X;
-                    hitbox.Y = (int) position.Y;
-                    rectanglei.X = (int) position.X;
-                    rectanglei.Y = (int) position.Y;
-                    rectanglew.X = (int) position.X;
-                    rectanglew.Y = (int) position.Y;
+                hitbox.X += (int)position.X;
+                hitbox.Y += (int)position.Y;
 
 
-                    Vector2 lastMovement = position - prevPosition;
-                    if (lastMovement.X==0) mvmnt*=Vector2.UnitY;
-                    if (lastMovement.Y==0) mvmnt*=Vector2.UnitX;
-                    
+                position = Game1.Map.CollisionV2(prevPosition, position, hitbox);
+            if (position.X < 0) position.X = 0;
 
-                }
+                hitbox.X = (int)position.X;
+                hitbox.Y = (int)position.Y;
+                rectanglei.X = (int)position.X;
+                rectanglei.Y = (int)position.Y;
+                rectanglew.X = (int)position.X;
+                rectanglew.Y = (int)position.Y;
+
+
+
+
+                Vector2 lastMovement = position - prevPosition;
+                if (lastMovement.X == 0) mvmnt *= Vector2.UnitY;
+                if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
+
+
+            
 
 
         }
@@ -157,13 +164,13 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch sbatch)
         {
-            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
+            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround())
             {
                 
                 sbatch.Draw(walk[walkI], rectanglew, Color.White);
             }
 
-            else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) )
+            else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() )
             {
                 
                 sbatch.Draw(walk[walkI],rectanglew,null,Color.White,0,new Vector2(0,0),SpriteEffects.FlipHorizontally,0);
@@ -172,7 +179,7 @@ namespace THE_GAME
 
             else if (Game1.Newkey.IsKeyDown(Keys.Up) && rectanglei.Y >= 0)
             {
-
+                sbatch.Draw(idle[0], rectanglei, Color.White);
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down))
