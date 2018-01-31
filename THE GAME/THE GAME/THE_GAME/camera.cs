@@ -23,7 +23,7 @@ namespace THE_GAME
             if(player.Hitbox.X>600)
             centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2;
 
-            if (player.Hitbox.Y > 150)
+            if (player.Hitbox.Y > 700 || player.Hitbox.Y>200)
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 - 100;
 
             Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
