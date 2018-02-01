@@ -52,12 +52,8 @@ namespace THE_GAME
             elapsed += 1;
 
 
-
             prevPosition = position;
 
-
-            
-            
 
 
                 if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
@@ -90,8 +86,13 @@ namespace THE_GAME
 
                 if (Game1.Newkey.IsKeyDown(Keys.Up) && OnGround())
                 {
-                    mvmnt = -Vector2.UnitY * 50;
-
+                if (elapsed>0)
+                {
+                    elapsed = 0;
+                    mvmnt.Y -= 35;
+                }
+                
+                    
                     facing = Direction.Forward;
                 }
             if (Game1.Newkey.IsKeyDown(Keys.Down) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
@@ -130,7 +131,7 @@ namespace THE_GAME
                 if (!Game1.Map.Collision(hitbox)) mvmnt += Vector2.UnitY * 1.5f;
 
                 if (OnGround()) mvmnt -= mvmnt * Vector2.One * 0.1f;
-                else mvmnt -= mvmnt * Vector2.One * .05f;
+                else mvmnt -= mvmnt * Vector2.One * .03f;
 
                 position += mvmnt * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 15;
 
