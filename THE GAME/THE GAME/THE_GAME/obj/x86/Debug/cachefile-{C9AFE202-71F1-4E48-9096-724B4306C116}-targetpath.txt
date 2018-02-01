@@ -64,3 +64,13 @@ Content\bob\walk\Run__006.xnb
 Content\bob\walk\Run__007.xnb
 Content\bob\walk\Run__008.xnb
 Content\bob\walk\Run__009.xnb
+Content\bob\jump\Jump__000.xnb
+Content\bob\jump\Jump__001.xnb
+Content\bob\jump\Jump__002.xnb
+Content\bob\jump\Jump__003.xnb
+Content\bob\jump\Jump__004.xnb
+Content\bob\jump\Jump__005.xnb
+Content\bob\jump\Jump__006.xnb
+Content\bob\jump\Jump__007.xnb
+Content\bob\jump\Jump__008.xnb
+Content\bob\jump\Jump__009.xnb

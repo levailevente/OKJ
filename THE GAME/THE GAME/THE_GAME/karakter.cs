@@ -44,6 +44,11 @@ namespace THE_GAME
                 walk[i] = Game1.ContentMgr.Load<Texture2D>("bob/walk/Run__00" + i);
             }
 
+            for (int i = 0; i < 9; i++)
+            {
+                walk[i] = Game1.ContentMgr.Load<Texture2D>("bob/walk/Run__00" + i);
+            }
+
         }
         
         public void Update(GameTime gameTime)
@@ -128,10 +133,11 @@ namespace THE_GAME
 
             }
 
-                if (!Game1.Map.Collision(hitbox)) mvmnt += Vector2.UnitY * 1.5f;
+            
+                  mvmnt += Vector2.UnitY * 1.5f;
 
-                if (OnGround()) mvmnt -= mvmnt * Vector2.One * 0.1f;
-                else mvmnt -= mvmnt * Vector2.One * .03f;
+                 mvmnt -= mvmnt * Vector2.One * 0.08f;
+               
 
                 position += mvmnt * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 15;
 

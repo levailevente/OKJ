@@ -47,7 +47,7 @@ namespace THE_GAME
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
             karakter = new karakter();
             hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
-
+           
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
@@ -80,9 +80,12 @@ namespace THE_GAME
             if (Newkey.IsKeyDown(Keys.Escape))
                 Exit();
 
+           // if (hatter.rectangle.X + hatter.texture.Width < kamera)
+          //      hatter.rectangle.X = hatter.rectangle.X + hatter.texture.Width;
 
 
-            
+
+
 
 
             karakter.Update(gameTime);

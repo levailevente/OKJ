@@ -10,8 +10,8 @@ namespace THE_GAME
 {
     public class Sprite
     {
-        private readonly Texture2D texture;
-        private readonly Rectangle rectangle;
+       public  Texture2D texture;
+       public   Rectangle rectangle;
 
         public Sprite(Texture2D t, Rectangle r)
         {

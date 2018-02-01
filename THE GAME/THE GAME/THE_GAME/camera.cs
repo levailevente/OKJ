@@ -13,6 +13,19 @@ namespace THE_GAME
         Viewport view;
         private Vector2 centre;
 
+        public Viewport View
+        {
+            get
+            {
+                return view;
+            }
+
+            set
+            {
+                view = value;
+            }
+        }
+
         public Camera(Viewport newview)
         {
             view = newview;
