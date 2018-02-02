@@ -23,8 +23,8 @@ namespace THE_GAME
         private enum Direction { Left,Right,Forward,Back};
 
         private Direction facing=Direction.Right;
-        Vector2 mvmnt,prevPosition,position;
-
+        Vector2 mvmnt,prevPosition,position,velocity;
+        bool hasjumped = true;
       
 
         public karakter()
@@ -58,7 +58,7 @@ namespace THE_GAME
 
 
             prevPosition = position;
-
+            position += velocity;
 
 
                 if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
@@ -89,17 +89,34 @@ namespace THE_GAME
                     facing = Direction.Left;
                 }
 
-                if (Game1.Newkey.IsKeyDown(Keys.Up) && OnGround())
+                if (Game1.Newkey.IsKeyDown(Keys.Up) && hasjumped==false)
                 {
-                if (elapsed>0)
-                {
-                    elapsed = 0;
-                    mvmnt.Y -= 35;
-                }
+
                 
-                    
-                    facing = Direction.Forward;
+                position.Y -= 10f;
+                mvmnt.Y -= 5f;
+                hasjumped = true;
+                facing = Direction.Forward;
                 }
+
+            if (hasjumped == true)
+            {
+                float i = 1;
+                velocity.Y += 0.15f * i;
+            }
+
+            if (position.Y+rectanglei.Height>=250)
+            {
+                hasjumped = false;
+            }
+
+            if (hasjumped==false)
+            {
+                velocity.Y = 0f;
+            }
+
+            
+
             if (Game1.Newkey.IsKeyDown(Keys.Down) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
             {
 
@@ -134,9 +151,9 @@ namespace THE_GAME
             }
 
             
-                  mvmnt += Vector2.UnitY * 1.5f;
+                  mvmnt += Vector2.UnitY*1.5f;
 
-                 mvmnt -= mvmnt * Vector2.One * 0.08f;
+                 mvmnt -=mvmnt*Vector2.One* 0.15f;
                
 
                 position += mvmnt * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 15;
