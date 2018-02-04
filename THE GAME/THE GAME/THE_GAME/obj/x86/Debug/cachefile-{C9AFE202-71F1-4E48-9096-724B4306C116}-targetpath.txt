@@ -24,10 +24,6 @@ Content\enemy\walk\Walk (6).xnb
 Content\enemy\walk\Walk (7).xnb
 Content\enemy\walk\Walk (8).xnb
 Content\enemy\walk\Walk (9).xnb
-Content\tiles\Bone (1).xnb
-Content\tiles\Bone (2).xnb
-Content\tiles\Bone (3).xnb
-Content\tiles\Bone (4).xnb
 Content\tiles\Tile (1).xnb
 Content\tiles\Tile (10).xnb
 Content\tiles\Tile (11).xnb
@@ -74,3 +70,17 @@ Content\bob\jump\Jump__006.xnb
 Content\bob\jump\Jump__007.xnb
 Content\bob\jump\Jump__008.xnb
 Content\bob\jump\Jump__009.xnb
+Content\objects\Bone (1).xnb
+Content\objects\Bone (2).xnb
+Content\objects\Bone (3).xnb
+Content\objects\Bone (4).xnb
+Content\objects\ArrowSign.xnb
+Content\objects\Bush (1).xnb
+Content\objects\Bush (2).xnb
+Content\objects\Crate.xnb
+Content\objects\DeadBush.xnb
+Content\objects\Sign.xnb
+Content\objects\Skeleton.xnb
+Content\objects\TombStone (1).xnb
+Content\objects\TombStone (2).xnb
+Content\objects\Tree.xnb

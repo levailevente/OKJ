@@ -11,16 +11,11 @@ namespace THE_GAME
 {
     public  class map
     {
-        private List<Tiles> Tiles { get; } = new List<Tiles>();
+        List<Tiles> Tiles { get; } = new List<Tiles>();
+        List<Tiles> Objects { get; } = new List<Tiles>();
+        int width, height;
 
-        private int width, height;
-
-        public map()
-        {
-
-        }
-
-        public void Generate(int[,]map,int size)
+        public map(int[,] map, int[,] objects,int size)
         {
             for (int i = 0; i < map.GetLength(1); i++)
             {
@@ -28,16 +23,17 @@ namespace THE_GAME
                 {
                     int n = map[j, i];
 
-                    if (n > 0 )
+                    if (n > 0)
                         Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size),true));
 
-                      width = (i + 1) * size;
+                    width = (i + 1) * size;
                     height = (j + 1) * size;
                 }
 
-                
+
             }
         }
+
 
         public void Draw(SpriteBatch spritebatch)
         {
@@ -52,7 +48,7 @@ namespace THE_GAME
         {
             foreach (Tiles tile in Tiles)
             {
-                if (tile.Blocked&&tile.Rectangle.Intersects(movingRectangle))
+                if (tile.Rectangle.Intersects(movingRectangle))
                 {
                     return true;
                 }

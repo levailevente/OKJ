@@ -60,7 +60,7 @@ namespace THE_GAME
         protected override void LoadContent()
         {
 
-            Map.Generate(Mapok.Palya, 64);
+          
           
 
             karakter.LoadKarakter();

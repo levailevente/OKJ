@@ -236,42 +236,6 @@
       <Time>2018-01-24T20:49:38.3309301+01:00</Time>
     </Item>
     <Item>
-      <Source>tiles\Bone (1).png</Source>
-      <Name>tiles\Bone (1)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Bone (1).xnb</Output>
-      <Time>2018-01-24T20:49:38.4154861+01:00</Time>
-    </Item>
-    <Item>
-      <Source>tiles\Bone (2).png</Source>
-      <Name>tiles\Bone (2)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Bone (2).xnb</Output>
-      <Time>2018-01-24T20:49:38.4169875+01:00</Time>
-    </Item>
-    <Item>
-      <Source>tiles\Bone (3).png</Source>
-      <Name>tiles\Bone (3)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Bone (3).xnb</Output>
-      <Time>2018-01-24T20:49:38.4184886+01:00</Time>
-    </Item>
-    <Item>
-      <Source>tiles\Bone (4).png</Source>
-      <Name>tiles\Bone (4)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Bone (4).xnb</Output>
-      <Time>2018-01-24T20:49:38.419989+01:00</Time>
-    </Item>
-    <Item>
       <Source>tiles\Tile (1).png</Source>
       <Name>tiles\Tile (1)</Name>
       <Importer>TextureImporter</Importer>
@@ -684,6 +648,132 @@
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__009.xnb</Output>
       <Time>2018-02-01T19:28:46.0025959+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bone (1).png</Source>
+      <Name>objects\Bone (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bone (1).xnb</Output>
+      <Time>2018-01-24T20:49:38.4154861+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bone (2).png</Source>
+      <Name>objects\Bone (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bone (2).xnb</Output>
+      <Time>2018-01-24T20:49:38.4169875+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bone (3).png</Source>
+      <Name>objects\Bone (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bone (3).xnb</Output>
+      <Time>2018-01-24T20:49:38.4184886+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bone (4).png</Source>
+      <Name>objects\Bone (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bone (4).xnb</Output>
+      <Time>2018-01-24T20:49:38.419989+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\ArrowSign.png</Source>
+      <Name>objects\ArrowSign</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\ArrowSign.xnb</Output>
+      <Time>2018-02-04T23:50:32.0961054+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bush (1).png</Source>
+      <Name>objects\Bush (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bush (1).xnb</Output>
+      <Time>2018-02-04T23:50:32.1021091+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Bush (2).png</Source>
+      <Name>objects\Bush (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Bush (2).xnb</Output>
+      <Time>2018-02-04T23:50:32.1071136+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Crate.png</Source>
+      <Name>objects\Crate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Crate.xnb</Output>
+      <Time>2018-02-04T23:50:32.115118+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\DeadBush.png</Source>
+      <Name>objects\DeadBush</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\DeadBush.xnb</Output>
+      <Time>2018-02-04T23:50:32.1201215+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Sign.png</Source>
+      <Name>objects\Sign</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Sign.xnb</Output>
+      <Time>2018-02-04T23:50:32.1251251+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Skeleton.png</Source>
+      <Name>objects\Skeleton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Skeleton.xnb</Output>
+      <Time>2018-02-04T23:50:32.129628+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\TombStone (1).png</Source>
+      <Name>objects\TombStone (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\TombStone (1).xnb</Output>
+      <Time>2018-02-04T23:50:32.1341306+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\TombStone (2).png</Source>
+      <Name>objects\TombStone (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\TombStone (2).xnb</Output>
+      <Time>2018-02-04T23:50:32.1386339+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Tree.png</Source>
+      <Name>objects\Tree</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Tree.xnb</Output>
+      <Time>2018-02-04T23:50:32.1436371+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

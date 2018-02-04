@@ -168,22 +168,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tiles\Bone %281%29.png">
+    <Compile Include="objects\Bone %281%29.png">
       <Name>Bone %281%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="tiles\Bone %282%29.png">
+    <Compile Include="objects\Bone %282%29.png">
       <Name>Bone %282%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="tiles\Bone %283%29.png">
+    <Compile Include="objects\Bone %283%29.png">
       <Name>Bone %283%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="tiles\Bone %284%29.png">
+    <Compile Include="objects\Bone %284%29.png">
       <Name>Bone %284%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -421,6 +421,58 @@
     </Compile>
     <Compile Include="bob\jump\Jump__009.png">
       <Name>Jump__009</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="objects\ArrowSign.png">
+      <Name>ArrowSign</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Bush %281%29.png">
+      <Name>Bush %281%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Bush %282%29.png">
+      <Name>Bush %282%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Crate.png">
+      <Name>Crate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\DeadBush.png">
+      <Name>DeadBush</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Sign.png">
+      <Name>Sign</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Skeleton.png">
+      <Name>Skeleton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\TombStone %281%29.png">
+      <Name>TombStone %281%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\TombStone %282%29.png">
+      <Name>TombStone %282%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Tree.png">
+      <Name>Tree</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

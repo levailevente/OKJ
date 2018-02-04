@@ -11,19 +11,19 @@ namespace THE_GAME
    public class Tiles
     {
         private readonly Texture2D texture;
-        public readonly bool Blocked;
         public Rectangle Rectangle { get; }
+        
 
-
-        public Tiles(int i, Rectangle r, bool b)
+        public Tiles(int i, Rectangle r,bool Blocked)
         {
-            texture = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
-            Rectangle = r;
-            Blocked = b;
+           
+                texture = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
+                Rectangle = r;
+      
         }
         public void Draw(SpriteBatch spritebatch)
         {
-            if (Blocked) spritebatch.Draw(texture, Rectangle, Color.White);
+            spritebatch.Draw(texture, Rectangle, Color.White);
         }
 
       
