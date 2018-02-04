@@ -12,6 +12,7 @@ namespace THE_GAME
     {
         readonly Texture2D[] idle= new Texture2D[9];
         readonly Texture2D[] walk=new Texture2D[9];
+        readonly Texture2D[] jump = new Texture2D[9];
         Rectangle rectanglei= new Rectangle(0, 0, 62, 117);
         Rectangle rectanglew = new Rectangle(0, 0, 97, 122);
         Rectangle hitbox = new Rectangle(0, 0, 60, 115);
@@ -19,12 +20,11 @@ namespace THE_GAME
         double elapsed=0;
         int idleI = 0;
         int walkI = 0;
-
+        int jumpint = 0;
         private enum Direction { Left,Right,Forward,Back};
 
         private Direction facing=Direction.Right;
         Vector2 mvmnt,prevPosition,position,velocity;
-        bool hasjumped = true;
       
 
         public karakter()
@@ -46,7 +46,7 @@ namespace THE_GAME
 
             for (int i = 0; i < 9; i++)
             {
-                walk[i] = Game1.ContentMgr.Load<Texture2D>("bob/walk/Run__00" + i);
+                jump[i] = Game1.ContentMgr.Load<Texture2D>("bob/jump/jump__00" + i);
             }
 
         }
@@ -58,8 +58,8 @@ namespace THE_GAME
 
 
             prevPosition = position;
-            position += velocity;
 
+            
 
                 if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
                 {
@@ -89,31 +89,22 @@ namespace THE_GAME
                     facing = Direction.Left;
                 }
 
-                if (Game1.Newkey.IsKeyDown(Keys.Up) && hasjumped==false)
-                {
-
+            
+            if (Game1.Newkey.IsKeyDown(Keys.Up) && OnGround())
+            {
+                jumpint = 0;
+      
+                    velocity.Y = -5;
                 
-                position.Y -= 10f;
-                mvmnt.Y -= 5f;
-                hasjumped = true;
+
                 facing = Direction.Forward;
                 }
 
-            if (hasjumped == true)
-            {
-                float i = 1;
-                velocity.Y += 0.15f * i;
-            }
-
-            if (position.Y+rectanglei.Height>=250)
-            {
-                hasjumped = false;
-            }
-
-            if (hasjumped==false)
-            {
-                velocity.Y = 0f;
-            }
+            
+            jumpint += 1;
+            if (jumpint>10)
+                velocity.Y = 0;
+          
 
             
 
@@ -150,16 +141,20 @@ namespace THE_GAME
 
             }
 
+
+            if (!OnGround()) mvmnt += Vector2.UnitY * 2.5f;
+
+
+            mvmnt *= 0.9f;
+
+           
+            mvmnt += velocity;
+           
+            position += mvmnt;
             
-                  mvmnt += Vector2.UnitY*1.5f;
 
-                 mvmnt -=mvmnt*Vector2.One* 0.15f;
-               
-
-                position += mvmnt * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 15;
-
-                hitbox.X += (int)position.X;
-                hitbox.Y += (int)position.Y;
+            hitbox.X += (int) position.X;
+            hitbox.Y += (int) position.Y;
 
 
                 position = Game1.Map.CollisionV2(prevPosition, position, hitbox);

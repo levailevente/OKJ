@@ -10,21 +10,9 @@ namespace THE_GAME
    public class Camera
     {
         public Matrix Transform;
-        Viewport view;
         private Vector2 centre;
 
-        public Viewport View
-        {
-            get
-            {
-                return view;
-            }
-
-            set
-            {
-                view = value;
-            }
-        }
+        Viewport view;
 
         public Camera(Viewport newview)
         {
@@ -34,7 +22,7 @@ namespace THE_GAME
         public void Update(karakter player)
         {
             if(player.Hitbox.X>640)
-            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2-30;
+            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2-32;
 
             if (player.Hitbox.Y > 600 )
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 - 100;
