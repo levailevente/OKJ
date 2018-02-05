@@ -22,9 +22,16 @@ namespace THE_GAME
                 for (int j = 0; j < map.GetLength(0); j++)
                 {
                     int n = map[j, i];
+                    int m = objects[j, i];
 
                     if (n > 0)
-                        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size),true));
+                        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size), true));
+                    else if (n<0)Tiles.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size), false));
+
+                    if (m > 0)
+                        Objects.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size), true));
+                    else if (m<0) Objects.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size), false));
+
 
                     width = (i + 1) * size;
                     height = (j + 1) * size;
@@ -48,7 +55,7 @@ namespace THE_GAME
         {
             foreach (Tiles tile in Tiles)
             {
-                if (tile.Rectangle.Intersects(movingRectangle))
+                if (tile.Blocked && tile.Rectangle.Intersects(movingRectangle))
                 {
                     return true;
                 }

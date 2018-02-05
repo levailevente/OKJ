@@ -10,20 +10,22 @@ namespace THE_GAME
 {
    public class Tiles
     {
-        private readonly Texture2D texture;
-        public Rectangle Rectangle { get; }
-        
+        readonly Texture2D tiles;
+        readonly Texture2D objects;
+        public Rectangle Rectangle;
+        public readonly bool Blocked;
 
-        public Tiles(int i, Rectangle r,bool Blocked)
+        public Tiles(int i, Rectangle r,bool blocked)
         {
            
-                texture = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
-                Rectangle = r;
-      
+            tiles = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
+            objects= Game1.ContentMgr.Load<Texture2D>("object/Object (" + i + ")");
+            Rectangle = r;
+            Blocked = blocked;
         }
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(texture, Rectangle, Color.White);
+            spritebatch.Draw(tiles, Rectangle, Color.White);
         }
 
       

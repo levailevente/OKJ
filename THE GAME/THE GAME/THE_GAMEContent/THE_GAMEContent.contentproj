@@ -168,26 +168,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="objects\Bone %281%29.png">
-      <Name>Bone %281%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="objects\Bone %282%29.png">
-      <Name>Bone %282%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="objects\Bone %283%29.png">
-      <Name>Bone %283%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="objects\Bone %284%29.png">
-      <Name>Bone %284%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="tiles\Tile %281%29.png">
       <Name>Tile %281%29</Name>
       <Importer>TextureImporter</Importer>
@@ -426,53 +406,73 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="objects\ArrowSign.png">
-      <Name>ArrowSign</Name>
+    <Compile Include="objects\Object %280%29.png">
+      <Name>Object %280%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Bush %281%29.png">
-      <Name>Bush %281%29</Name>
+    <Compile Include="objects\Object %281%29.png">
+      <Name>Object %281%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Bush %282%29.png">
-      <Name>Bush %282%29</Name>
+    <Compile Include="objects\Object %2810%29.png">
+      <Name>Object %2810%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Crate.png">
-      <Name>Crate</Name>
+    <Compile Include="objects\Object %2811%29.png">
+      <Name>Object %2811%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\DeadBush.png">
-      <Name>DeadBush</Name>
+    <Compile Include="objects\Object %2813%29.png">
+      <Name>Object %2813%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Sign.png">
-      <Name>Sign</Name>
+    <Compile Include="objects\Object %2814%29.png">
+      <Name>Object %2814%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Skeleton.png">
-      <Name>Skeleton</Name>
+    <Compile Include="objects\Object %283%29.png">
+      <Name>Object %283%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\TombStone %281%29.png">
-      <Name>TombStone %281%29</Name>
+    <Compile Include="objects\Object %282%29.png">
+      <Name>Object %282%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\TombStone %282%29.png">
-      <Name>TombStone %282%29</Name>
+    <Compile Include="objects\Object %284%29.png">
+      <Name>Object %284%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="objects\Tree.png">
-      <Name>Tree</Name>
+    <Compile Include="objects\Object %285%29.png">
+      <Name>Object %285%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Object %286%29.png">
+      <Name>Object %286%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Object %287%29.png">
+      <Name>Object %287%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Object %288%29.png">
+      <Name>Object %288%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="objects\Object %289%29.png">
+      <Name>Object %289%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
