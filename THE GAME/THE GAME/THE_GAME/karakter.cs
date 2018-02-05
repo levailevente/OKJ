@@ -16,10 +16,12 @@ namespace THE_GAME
         Rectangle rectanglei= new Rectangle(0, 0, 62, 117);
         Rectangle rectanglew = new Rectangle(0, 0, 97, 122);
         Rectangle hitbox = new Rectangle(0, 0, 60, 115);
+        Rectangle rectanglejump = new Rectangle(0, 0, 62, 117);
         public Rectangle Hitbox => hitbox;
         double elapsed=0;
         int idleI = 0;
         int walkI = 0;
+        int jumpI = 0;
         int jumpint = 0;
         private enum Direction { Left,Right,Forward,Back};
 
@@ -95,8 +97,13 @@ namespace THE_GAME
                 jumpint = 0;
       
                     velocity.Y = -5;
-                
 
+                if (elapsed > 3)
+                {
+                    elapsed = 0;
+                    jumpI++;
+                    if (jumpI > 8) jumpI = 0;
+                }
                 facing = Direction.Forward;
                 }
 
@@ -106,7 +113,6 @@ namespace THE_GAME
                 velocity.Y = 0;
           
 
-            
 
             if (Game1.Newkey.IsKeyDown(Keys.Down) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
             {
@@ -198,7 +204,7 @@ namespace THE_GAME
 
             else if (Game1.Newkey.IsKeyDown(Keys.Up) && rectanglei.Y >= 0)
             {
-                sbatch.Draw(idle[0], rectanglei, Color.White);
+                sbatch.Draw(jump[jumpI], rectanglei, Color.White);
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down))

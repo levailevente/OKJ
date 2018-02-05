@@ -51,7 +51,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           Map = new map();
+           Map = new map(Mapok.Palya,Mapok.objects,64);
 
             base.Initialize();
         }

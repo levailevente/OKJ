@@ -24,5 +24,8 @@ namespace THE_GAME
              
 
             };
+
+        public static int[,] objects;
+
     }
 }
