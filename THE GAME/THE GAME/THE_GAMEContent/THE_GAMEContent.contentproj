@@ -406,8 +406,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="objects\Object %280%29.png">
-      <Name>Object %280%29</Name>
+    <Compile Include="objects\Object %2812%29.png">
+      <Name>Object %2812%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

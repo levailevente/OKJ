@@ -641,15 +641,6 @@
       <Time>2018-02-01T19:28:46.0025959+01:00</Time>
     </Item>
     <Item>
-      <Source>objects\Object (0).png</Source>
-      <Name>objects\Object (0)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (0).xnb</Output>
-      <Time>2018-02-04T23:50:32.1251251+01:00</Time>
-    </Item>
-    <Item>
       <Source>objects\Object (1).png</Source>
       <Name>objects\Object (1)</Name>
       <Importer>TextureImporter</Importer>
@@ -774,6 +765,15 @@
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (16).xnb</Output>
       <Time>2018-01-24T20:49:38.4324976+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\Object (12).png</Source>
+      <Name>objects\Object (12)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (12).xnb</Output>
+      <Time>2018-02-04T23:50:32.1251251+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

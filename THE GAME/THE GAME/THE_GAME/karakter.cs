@@ -13,10 +13,10 @@ namespace THE_GAME
         readonly Texture2D[] idle= new Texture2D[9];
         readonly Texture2D[] walk=new Texture2D[9];
         readonly Texture2D[] jump = new Texture2D[9];
-        Rectangle rectanglei= new Rectangle(0, 0, 62, 117);
-        Rectangle rectanglew = new Rectangle(0, 0, 97, 122);
-        Rectangle hitbox = new Rectangle(0, 0, 60, 115);
-        Rectangle rectanglejump = new Rectangle(0, 0, 62, 117);
+        Rectangle rectanglei= new Rectangle(0, 0, 58, 110);
+        Rectangle rectanglew = new Rectangle(0, 0, 91, 115);
+        Rectangle hitbox = new Rectangle(0, 0, 60, 105);
+        Rectangle rectanglejump = new Rectangle(0, 0, 91, 121);
         public Rectangle Hitbox => hitbox;
         double elapsed=0;
         int idleI = 0;
@@ -66,7 +66,7 @@ namespace THE_GAME
                 if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
                 {
 
-                    mvmnt += new Vector2(1, 0);
+                    mvmnt += new Vector2(2, 0);
                     if ( elapsed > 3)
                     {
                         elapsed = 0;
@@ -81,7 +81,7 @@ namespace THE_GAME
                 {
 
 
-                    mvmnt += new Vector2(-1, 0);
+                    mvmnt += new Vector2(-2, 0);
                     if (  elapsed > 3)
                     {
                         elapsed = 0;
@@ -98,7 +98,7 @@ namespace THE_GAME
       
                     velocity.Y = -5;
 
-                if (elapsed > 3)
+                if (elapsed > 0)
                 {
                     elapsed = 0;
                     jumpI++;
@@ -151,7 +151,8 @@ namespace THE_GAME
             if (!OnGround()) mvmnt += Vector2.UnitY * 2.5f;
 
 
-            mvmnt *= 0.9f;
+            mvmnt.X *= 0.8f;
+            mvmnt.Y *= 0.9f;
 
            
             mvmnt += velocity;
@@ -166,17 +167,19 @@ namespace THE_GAME
                 position = Game1.Map.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
 
-                hitbox.X = (int)position.X;
-                hitbox.Y = (int)position.Y;
-                rectanglei.X = (int)position.X;
-                rectanglei.Y = (int)position.Y;
-                rectanglew.X = (int)position.X;
-                rectanglew.Y = (int)position.Y;
+            hitbox.X = (int) position.X;
+            hitbox.Y = (int) position.Y;
+            rectanglei.X = (int) position.X;
+            rectanglei.Y = (int) position.Y;
+            rectanglew.X = (int) position.X;
+            rectanglew.Y = (int) position.Y;
+            rectanglejump.X = (int) position.X;
+            rectanglejump.Y = (int) position.Y;
 
 
 
 
-                Vector2 lastMovement = position - prevPosition;
+            Vector2 lastMovement = position - prevPosition;
                 if (lastMovement.X == 0) mvmnt *= Vector2.UnitY;
                 if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
 
@@ -204,7 +207,9 @@ namespace THE_GAME
 
             else if (Game1.Newkey.IsKeyDown(Keys.Up) && rectanglei.Y >= 0)
             {
-                sbatch.Draw(jump[jumpI], rectanglei, Color.White);
+                    if (facing == Direction.Left)
+                        sbatch.Draw(jump[jumpI], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                else sbatch.Draw(jump[jumpI], rectanglejump, Color.White);
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down))
