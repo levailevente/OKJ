@@ -25,12 +25,12 @@ namespace THE_GAME
                     int m = objects[j, i];
 
                     if (n > 0)
-                        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size), true));
-                    else if (n<0)Tiles.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size), false));
+                        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size),true, false));
+                    else if (n<0)Tiles.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size),false, false));
 
                     if (m > 0)
-                        Objects.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size), true));
-                    else if (m<0) Objects.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size), false));
+                        Objects.Add(new Tiles(m, new Rectangle(i * size, j * size, size, size),true, true));
+                    else if (m<0) Objects.Add(new Tiles(m * -1, new Rectangle(i * size, j * size, size, size),false, true));
 
 
                     width = (i + 1) * size;
@@ -47,7 +47,14 @@ namespace THE_GAME
             foreach (Tiles tile in Tiles)
             {
                 tile.Draw(spritebatch);
+
             }
+            foreach (Tiles tile in Objects)
+            {
+                tile.Draw(spritebatch);
+
+            }
+
         }
 
 
@@ -61,6 +68,7 @@ namespace THE_GAME
                 }
             }
             return false;
+
         }
 
         public Vector2 CollisionV2 (Vector2 ogPosition, Vector2 destination, Rectangle hitbox)

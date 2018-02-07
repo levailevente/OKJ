@@ -22,7 +22,7 @@ namespace THE_GAME
         Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey = Keyboard.GetState();
-        static KeyboardState prevkey = Newkey;
+        public static KeyboardState prevkey;
 
  
        public static map Map;
