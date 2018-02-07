@@ -27,11 +27,20 @@ namespace THE_GAME
 
         private Direction facing=Direction.Right;
         Vector2 mvmnt,prevPosition,position,velocity;
-      
+        
+       
+
+
 
         public karakter()
         {
-            
+            idle = new Texture2D[9];
+            walk = new Texture2D[9];
+            jump = new Texture2D[9];
+            rectanglei = new Rectangle(0, 0, 58, 110);
+            rectanglew = new Rectangle(0, 0, 91, 115);
+            hitbox = new Rectangle(0, 0, 60, 105);
+            rectanglejump = new Rectangle(0, 0, 91, 121);
         }
         
         public void LoadKarakter()
