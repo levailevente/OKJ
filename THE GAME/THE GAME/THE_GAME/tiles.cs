@@ -14,7 +14,7 @@ namespace THE_GAME
         public Rectangle Rectangle;
         public readonly bool Blocked;
 
-        public Tiles(int i, Rectangle r,bool blocked,bool isObject)
+        public  Tiles(int i, Rectangle r,bool blocked,bool isObject)
         {
            
           if (!isObject)  tiles = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
@@ -23,9 +23,9 @@ namespace THE_GAME
             Blocked = blocked;
             
         }
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch sbatch)
         {
-            spritebatch.Draw(tiles, Rectangle, Color.White);         
+            sbatch.Draw(tiles, Rectangle, Color.White);         
         }
 
       

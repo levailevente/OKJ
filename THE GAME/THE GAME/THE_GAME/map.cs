@@ -67,6 +67,15 @@ namespace THE_GAME
                     return true;
                 }
             }
+
+            foreach (Tiles objects in Objects)
+            {
+                if (objects.Blocked && objects.Rectangle.Intersects(movingRectangle))
+                {
+                    return true;
+                }
+            }
+
             return false;
 
         }
