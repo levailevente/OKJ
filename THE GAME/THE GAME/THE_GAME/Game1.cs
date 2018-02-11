@@ -17,7 +17,7 @@ namespace THE_GAME
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
-        static karakter karakter;
+        static Karakter karakter;
         static Sprite   hatter;
         Camera kamera;
         public static  int Swidth, Sheight;
@@ -25,7 +25,7 @@ namespace THE_GAME
         public static KeyboardState prevkey;
 
  
-       public static map Map;
+       public static Map Map;
 
         public Game1()
         {
@@ -45,13 +45,13 @@ namespace THE_GAME
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
-            karakter = new karakter();
+            karakter = new Karakter();
             hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
            
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           Map = new map(Mapok.Palya,Mapok.Objects,64);
+           Map = new Map(Mapok.Palya,Mapok.Objects,72);
 
             base.Initialize();
         }

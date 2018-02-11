@@ -9,13 +9,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-    public  class map
+    public  class Map
     {
         List<Tiles> Tiles { get; } = new List<Tiles>();
         List<Tiles> Objects { get; } = new List<Tiles>();
         int width, height;
 
-        public map(int[,] map, int[,] objects,int size)
+        public Map(int[,] map, int[,] objects,int size)
         {
             for (int i = 0; i < map.GetLength(1); i++)
             {
@@ -29,8 +29,8 @@ namespace THE_GAME
                     else if (n<0)Tiles.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size),false, false));
 
                     if (m > 0)
-                        Objects.Add(new Tiles(m, new Rectangle(i * size, j * size, size, size),true, true));
-                    else if (m<0) Objects.Add(new Tiles(m * -1, new Rectangle(i * size, j * size, size, size),false, true));
+                        Objects.Add(new Tiles(m, new Rectangle(i * size, j * size, size, size),false, true));
+                    else if (m<0) Objects.Add(new Tiles(m * -1, new Rectangle(i * size, j * size, size, size),true, true));
 
 
                     width = (i + 1) * size;
