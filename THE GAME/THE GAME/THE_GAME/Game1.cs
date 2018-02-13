@@ -17,13 +17,15 @@ namespace THE_GAME
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
-        static Karakter karakter;
+        public static Karakter karakter;
         static Sprite   hatter;
         Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey = Keyboard.GetState();
-        public static KeyboardState prevkey;
+        public static KeyboardState Prevkey;
+        Background bg;
 
+        Texture2D szin;
  
        public static Map Map;
 
@@ -46,13 +48,15 @@ namespace THE_GAME
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
             karakter = new Karakter();
-            hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
+          //  hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
            
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
            Map = new Map(Mapok.Palya,Mapok.Objects,72);
 
+
+            szin = Content.Load<Texture2D>("grey");
             base.Initialize();
         }
 
@@ -61,7 +65,7 @@ namespace THE_GAME
         {
 
           
-          
+         bg=new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720)); 
 
             karakter.LoadKarakter();
            
@@ -80,11 +84,6 @@ namespace THE_GAME
             if (Newkey.IsKeyDown(Keys.Escape))
                 Exit();
 
-           // if (hatter.rectangle.X + hatter.texture.Width < kamera)
-          //      hatter.rectangle.X = hatter.rectangle.X + hatter.texture.Width;
-
-
-
 
 
 
@@ -93,7 +92,7 @@ namespace THE_GAME
 
 
 
-            prevkey = Newkey;
+            Prevkey = Newkey;
             base.Update(gameTime);
         }
 
@@ -104,7 +103,9 @@ namespace THE_GAME
 
             spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
 
-            hatter.Draw(spriteBatch);
+           
+            bg.Draw(spriteBatch);
+            spriteBatch.Draw(szin,karakter.Hitbox,Color.White);
             karakter.Draw(spriteBatch);
             Map.Draw(spriteBatch);
 

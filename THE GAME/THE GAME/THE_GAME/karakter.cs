@@ -26,7 +26,7 @@ namespace THE_GAME
         private enum Direction { Left,Right,Forward,Back};
 
         private Direction facing=Direction.Right;
-        Vector2 mvmnt,prevPosition,position,velocity;
+        Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
 
         bool isJumping;
 
@@ -42,6 +42,7 @@ namespace THE_GAME
             rectanglei = new Rectangle(0, 0, 58, 110);
             rectanglew = new Rectangle(0, 0, 91, 115);
             hitbox = new Rectangle(0, 0, 50, 105);
+            
             rectanglejump = new Rectangle(0, 0, 91, 121);
             position=new Vector2(0,300);
 
@@ -51,7 +52,8 @@ namespace THE_GAME
              jumpI = 0;
              jumpint = 0;
 
-           
+            isJumping = false;
+
         }
         
         public void LoadKarakter()
@@ -85,7 +87,7 @@ namespace THE_GAME
 
             UpdatePosition();
 
-
+            lastMovement = position - prevPosition;
             StopMoving();
 
 
@@ -95,7 +97,7 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch sbatch)
         {
-            isJumping = true;
+            
             if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround())
             {
                 
@@ -109,29 +111,38 @@ namespace THE_GAME
 
             }
 
-            else if (isJumping || Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.prevkey.IsKeyUp((Keys.Up)))
+            else if (isJumping || Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && !OnGround() )
             {
+
 
                isJumping = true;
 
+                
+                
+                    if (facing == Direction.Left)
+                        sbatch.Draw(jump[6], rectanglejump, null, Color.White, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+                    else sbatch.Draw(jump[6], rectanglejump, Color.White);
 
-
-                if (facing == Direction.Left) sbatch.Draw(jump[jumpI], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
-                else sbatch.Draw(jump[jumpI], rectanglejump, Color.White);
-
-                if (elapsed > 2)
-                {
-                    elapsed = 0;
-                    jumpI++;
-                    if (jumpI > 8) jumpI = 0;
-                }
-
-
+                
+        
+                if (lastMovement.Y>0) isJumping = false;
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up))
             {
                 
+            }
+
+            else if (lastMovement.Y < 0)
+            {
+                if (facing == Direction.Left) { sbatch.Draw(jump[8], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0); }
+
+                else
+                {
+                    sbatch.Draw(jump[8], rectanglejump, Color.White);
+                }
+
             }
 
             else 
@@ -180,7 +191,7 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.prevkey.IsKeyUp((Keys.Up)))
+            if (Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.Prevkey.IsKeyUp((Keys.Up)))
             {
                 
                 jumpint = 0;
@@ -264,7 +275,7 @@ namespace THE_GAME
 
         void StopMoving()
         {
-            Vector2 lastMovement = position - prevPosition;
+           // Vector2 lastMovement = position - prevPosition;
             if (lastMovement.X == 0) mvmnt *= Vector2.UnitY;
             if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
         }

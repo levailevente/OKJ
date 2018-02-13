@@ -24,7 +24,7 @@ namespace THE_GAME
 
         }
 
-        public void Draw(SpriteBatch sbatch )
+        public virtual void Draw(SpriteBatch sbatch )
         {
             sbatch.Draw(texture, rectangle, Color.White);
         }

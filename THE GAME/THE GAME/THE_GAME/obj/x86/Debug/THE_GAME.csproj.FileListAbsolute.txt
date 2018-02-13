@@ -428,3 +428,4 @@ C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\o
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (9).xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (16).xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (12).xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\grey.xnb

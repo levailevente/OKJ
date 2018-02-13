@@ -21,8 +21,8 @@ namespace THE_GAME
 
         public void Update(Karakter player)
         {
-            if(player.Hitbox.X>614)
-            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2;
+            if(player.Hitbox.X>600)
+            centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2+10;
 
             if (player.Hitbox.Y > 600 )
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 - 100;
