@@ -27,7 +27,7 @@ namespace THE_GAME
 
         Texture2D szin;
  
-       public static Map Map;
+       public static Map GenerateMap;
 
         public Game1()
         {
@@ -53,7 +53,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           Map = new Map(Mapok.Palya,Mapok.Objects,72);
+           GenerateMap = new Map(Mapok.Palya,Mapok.Objects,72);
 
 
             szin = Content.Load<Texture2D>("grey");
@@ -107,7 +107,7 @@ namespace THE_GAME
             bg.Draw(spriteBatch);
             spriteBatch.Draw(szin,karakter.Hitbox,Color.White);
             karakter.Draw(spriteBatch);
-            Map.Draw(spriteBatch);
+            GenerateMap.Draw(spriteBatch);
 
             spriteBatch.End();
 

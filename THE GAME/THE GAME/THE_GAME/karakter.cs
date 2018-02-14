@@ -240,7 +240,7 @@ namespace THE_GAME
             hitbox.X += (int)position.X;
             hitbox.Y += (int)position.Y;
 
-            position = Game1.Map.CollisionV2(prevPosition, position, hitbox);
+            position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
 
             hitbox.X = (int)position.X;
@@ -258,7 +258,7 @@ namespace THE_GAME
         {
             Rectangle ground = hitbox;
             ground.Offset(0,1);
-            return Game1.Map.Collision(ground);
+            return Game1.GenerateMap.Collision(ground);
 
         }
 
