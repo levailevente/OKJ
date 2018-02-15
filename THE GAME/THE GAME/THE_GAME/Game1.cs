@@ -18,7 +18,6 @@ namespace THE_GAME
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter karakter;
-        static Sprite   hatter;
         Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey = Keyboard.GetState();
@@ -27,7 +26,7 @@ namespace THE_GAME
 
         Texture2D szin;
  
-       public static Map GenerateMap;
+       public static GenerateMap GenerateMap;
 
         public Game1()
         {
@@ -53,7 +52,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           GenerateMap = new Map(Mapok.Palya,Mapok.Objects,72);
+           GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,72);
 
 
             szin = Content.Load<Texture2D>("grey");
@@ -99,7 +98,7 @@ namespace THE_GAME
        
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(new Color(13,21,22));
 
             spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
 

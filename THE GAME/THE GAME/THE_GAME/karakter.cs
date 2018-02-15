@@ -21,7 +21,6 @@ namespace THE_GAME
         double elapsed;
         int idleI;
         int walkI;
-        int jumpI;
         int jumpint;
         private enum Direction { Left,Right,Forward,Back};
 
@@ -39,9 +38,10 @@ namespace THE_GAME
             idle = new Texture2D[9];
             walk = new Texture2D[9];
             jump = new Texture2D[9];
+           
             rectanglei = new Rectangle(0, 0, 58, 110);
             rectanglew = new Rectangle(0, 0, 91, 115);
-            hitbox = new Rectangle(0, 0, 50, 105);
+            hitbox = new Rectangle(0, 0, 60, 105);
             
             rectanglejump = new Rectangle(0, 0, 91, 121);
             position=new Vector2(0,300);
@@ -49,7 +49,6 @@ namespace THE_GAME
              elapsed = 0;
              idleI = 0;
              walkI = 0;
-             jumpI = 0;
              jumpint = 0;
 
             isJumping = false;
@@ -106,6 +105,7 @@ namespace THE_GAME
 
             else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() )
             {
+                rectanglew.X -= 35;
                 
                 sbatch.Draw(walk[walkI],rectanglew,null,Color.White,0,new Vector2(0,0),SpriteEffects.FlipHorizontally,0);
 
@@ -120,8 +120,11 @@ namespace THE_GAME
                 
                 
                     if (facing == Direction.Left)
-                        sbatch.Draw(jump[6], rectanglejump, null, Color.White, 0, new Vector2(0, 0),
-                            SpriteEffects.FlipHorizontally, 0);
+                    {
+                        rectanglejump.X -= 35;
+                         sbatch.Draw(jump[6], rectanglejump, null, Color.White, 0, new Vector2(0, 0),SpriteEffects.FlipHorizontally, 0);
+
+                    }
                     else sbatch.Draw(jump[6], rectanglejump, Color.White);
 
                 
@@ -136,7 +139,11 @@ namespace THE_GAME
 
             else if (lastMovement.Y < 0)
             {
-                if (facing == Direction.Left) { sbatch.Draw(jump[8], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0); }
+                if (facing == Direction.Left)
+                {
+                    rectanglejump.X -= 30;
+                    sbatch.Draw(jump[8], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                }
 
                 else
                 {
@@ -147,7 +154,11 @@ namespace THE_GAME
 
             else 
             {
-               if (facing==Direction.Left ) { sbatch.Draw(idle[idleI], rectanglei, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0); }
+                if (facing == Direction.Left)
+                {
+                    rectanglei.X -= 0;
+                    sbatch.Draw(idle[idleI], rectanglei, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                }
 
                else
                {
@@ -163,7 +174,7 @@ namespace THE_GAME
         {
             if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
             {
-
+                
                 mvmnt += new Vector2(2, 0);
                 if (elapsed > 3)
                 {
@@ -179,7 +190,7 @@ namespace THE_GAME
             if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right))
             {
 
-
+                
                 mvmnt += new Vector2(-2, 0);
                 if (elapsed > 3)
                 {
@@ -236,13 +247,14 @@ namespace THE_GAME
         {
             position += mvmnt;
 
-
+            
             hitbox.X += (int)position.X;
             hitbox.Y += (int)position.Y;
+            
 
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
-
+           
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
             rectanglei.X = (int)position.X;
@@ -274,8 +286,7 @@ namespace THE_GAME
         }
 
         void StopMoving()
-        {
-           // Vector2 lastMovement = position - prevPosition;
+        {          
             if (lastMovement.X == 0) mvmnt *= Vector2.UnitY;
             if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
         }

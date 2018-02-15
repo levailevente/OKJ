@@ -437,3 +437,4 @@ C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.pdb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache

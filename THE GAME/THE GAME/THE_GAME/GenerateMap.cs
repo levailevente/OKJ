@@ -9,13 +9,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-    public  class Map
+    public  class GenerateMap
     {
         List<Tiles> Tiles { get; } = new List<Tiles>();
         List<Tiles> Objects { get; } = new List<Tiles>();
         int width, height;
 
-        public Map(int[,] map, int[,] objects,int size)
+        public GenerateMap(int[,] map, int[,] objects,int size)
         {
             for (int i = 0; i < map.GetLength(1); i++)
             {
