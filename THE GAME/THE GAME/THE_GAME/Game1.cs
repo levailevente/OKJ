@@ -18,7 +18,7 @@ namespace THE_GAME
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter karakter;
-        Camera kamera;
+         Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey = Keyboard.GetState();
         public static KeyboardState Prevkey;
@@ -47,7 +47,7 @@ namespace THE_GAME
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
             karakter = new Karakter();
-          //  hatter = new Sprite(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
+      
            
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
@@ -105,8 +105,9 @@ namespace THE_GAME
            
             bg.Draw(spriteBatch);
             spriteBatch.Draw(szin,karakter.Hitbox,Color.White);
-            karakter.Draw(spriteBatch);
+           
             GenerateMap.Draw(spriteBatch);
+            karakter.Draw(spriteBatch);
 
             spriteBatch.End();
 

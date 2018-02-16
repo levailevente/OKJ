@@ -28,6 +28,7 @@ namespace THE_GAME
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
 
         bool isJumping;
+         public bool   isDead;
 
 
 
@@ -41,7 +42,7 @@ namespace THE_GAME
            
             rectanglei = new Rectangle(0, 0, 58, 110);
             rectanglew = new Rectangle(0, 0, 91, 115);
-            hitbox = new Rectangle(0, 0, 60, 105);
+            hitbox = new Rectangle(0, 0, 60, 110);
             
             rectanglejump = new Rectangle(0, 0, 91, 121);
             position=new Vector2(0,300);
@@ -52,6 +53,7 @@ namespace THE_GAME
              jumpint = 0;
 
             isJumping = false;
+            
 
         }
         
@@ -76,7 +78,7 @@ namespace THE_GAME
         
         public void Update(GameTime gameTime)
         {
-        
+            isDead = false;
             elapsed += 1;
             prevPosition = position;
 
@@ -247,14 +249,18 @@ namespace THE_GAME
         {
             position += mvmnt;
 
-            
+
             hitbox.X += (int)position.X;
             hitbox.Y += (int)position.Y;
-            
+
 
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
-           
+            if (position.Y > 1500)
+            {
+                isDead = true;
+                position = new Vector2(0, 300);
+            }    
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
             rectanglei.X = (int)position.X;
