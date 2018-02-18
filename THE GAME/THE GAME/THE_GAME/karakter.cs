@@ -18,9 +18,8 @@ namespace THE_GAME
         Rectangle hitbox ;
         Rectangle rectanglejump;
         public Rectangle Hitbox => hitbox;
-        double elapsed;
-        int idleI;
-        int walkI;
+        double elapsed,elapsed2;
+        int idleI, walkI, jumpI;
         int jumpint;
         private enum Direction { Left,Right,Forward,Back};
 
@@ -38,7 +37,7 @@ namespace THE_GAME
         {
             idle = new Texture2D[9];
             walk = new Texture2D[9];
-            jump = new Texture2D[9];
+            jump = new Texture2D[6];
            
             rectanglei = new Rectangle(0, 0, 58, 110);
             rectanglew = new Rectangle(0, 0, 91, 115);
@@ -48,8 +47,10 @@ namespace THE_GAME
             position=new Vector2(0,300);
 
              elapsed = 0;
+             elapsed2 = 0;
              idleI = 0;
              walkI = 0;
+             jumpI = 0;
              jumpint = 0;
 
             isJumping = false;
@@ -69,7 +70,7 @@ namespace THE_GAME
                 walk[i] = Game1.ContentMgr.Load<Texture2D>("bob/walk/Run__00" + i);
             }
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 6; i++)
             {
                 jump[i] = Game1.ContentMgr.Load<Texture2D>("bob/jump/jump__00" + i);
             }
@@ -98,8 +99,36 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch sbatch)
         {
-            
-            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox)!="right")
+             if (isJumping)
+             {
+                 
+                if ( jumpI < 5) jumpI++;
+
+
+                if (facing == Direction.Left)
+                {
+                    rectanglejump.X -= 15;
+                    sbatch.Draw(jump[jumpI], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+
+                }
+                else
+                {
+                    rectanglejump.X -= 15;
+                    sbatch.Draw(jump[jumpI], rectanglejump, Color.White);
+                }
+
+                if (lastMovement.Y == 0)
+                {
+                    velocity.Y = 0;
+                    jumpI = 0;
+                    isJumping = false;
+                }
+
+                 jumpint += 1;
+                 if (jumpint > 10)
+                     velocity.Y = 0;
+            }
+           else if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox)!="right")
             {
                 
                 sbatch.Draw(walk[walkI], rectanglew, Color.White);
@@ -113,21 +142,7 @@ namespace THE_GAME
 
             }
 
-            else if (isJumping)
-            {
-
-
-                    if (facing == Direction.Left)
-                    {
-                        rectanglejump.X -= 35;
-                         sbatch.Draw(jump[3], rectanglejump, null, Color.White, 0, new Vector2(0, 0),SpriteEffects.FlipHorizontally, 0);
-
-                    }
-                    else sbatch.Draw(jump[3], rectanglejump, Color.White);
-
-                if (lastMovement.Y > 0) isJumping = false;
-
-            }
+           
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up))
             {
@@ -139,12 +154,12 @@ namespace THE_GAME
                 if (facing == Direction.Left)
                 {
                     rectanglejump.X -= 30;
-                    sbatch.Draw(jump[7], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                    sbatch.Draw(jump[5], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
                 }
 
                 else
                 {
-                    sbatch.Draw(jump[7], rectanglejump, Color.White);
+                    sbatch.Draw(jump[5], rectanglejump, Color.White);
                 }
 
             }
@@ -153,7 +168,7 @@ namespace THE_GAME
             {
                 if (facing == Direction.Left)
                 {
-                    rectanglei.X -= 0;
+                    
                     sbatch.Draw(idle[idleI], rectanglei, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
                 }
 
@@ -211,9 +226,7 @@ namespace THE_GAME
             }
 
 
-            jumpint += 1;
-            if (jumpint > 10)
-                velocity.Y = 0;
+          
 
 
 
@@ -301,6 +314,8 @@ namespace THE_GAME
         {          
             if (lastMovement.X == 0) mvmnt *= Vector2.UnitY;
             if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
+
+            
         }
     }
 }

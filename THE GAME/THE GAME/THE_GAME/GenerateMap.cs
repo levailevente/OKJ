@@ -60,12 +60,18 @@ namespace THE_GAME
 
         public bool Collision (Rectangle movingRectangle)
         {
-            foreach (Tiles tile in Tiles)
+
+
+          
+           
+            for (int i = 0; i < Tiles.Count; i++)
             {
-                if (tile.Blocked && tile.Rectangle.Intersects(movingRectangle))
+               // if (i == 14 || i == 15 || i == 16) movingRectangle.Height -= 50;
+                if (Tiles[i].Blocked && Tiles[i].Rectangle.Intersects(movingRectangle))
                 {
                     return true;
                 }
+
             }
 
             foreach (Tiles objects in Objects)

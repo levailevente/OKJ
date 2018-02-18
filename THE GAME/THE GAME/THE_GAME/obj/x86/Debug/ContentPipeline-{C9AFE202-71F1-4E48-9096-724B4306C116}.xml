@@ -287,7 +287,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (14).xnb</Output>
-      <Time>2018-02-09T18:17:19.3990714+01:00</Time>
+      <Time>2018-02-09T18:17:17.8729313+01:00</Time>
     </Item>
     <Item>
       <Source>tiles\Tile (15).png</Source>
@@ -566,7 +566,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__000.xnb</Output>
-      <Time>2018-02-09T18:17:19.2295534+01:00</Time>
+      <Time>2018-02-09T18:17:18.1006014+01:00</Time>
     </Item>
     <Item>
       <Source>bob\jump\Jump__001.png</Source>
@@ -575,7 +575,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__001.xnb</Output>
-      <Time>2018-02-09T18:17:19.2315538+01:00</Time>
+      <Time>2018-02-09T18:17:18.1026027+01:00</Time>
     </Item>
     <Item>
       <Source>bob\jump\Jump__002.png</Source>
@@ -584,7 +584,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__002.xnb</Output>
-      <Time>2018-02-09T18:17:19.2335551+01:00</Time>
+      <Time>2018-02-09T18:17:18.1076062+01:00</Time>
     </Item>
     <Item>
       <Source>bob\jump\Jump__003.png</Source>
@@ -593,7 +593,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__003.xnb</Output>
-      <Time>2018-02-09T18:17:19.2355578+01:00</Time>
+      <Time>2018-02-09T18:17:18.1126073+01:00</Time>
     </Item>
     <Item>
       <Source>bob\jump\Jump__004.png</Source>
@@ -602,7 +602,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__004.xnb</Output>
-      <Time>2018-02-09T18:17:19.2375591+01:00</Time>
+      <Time>2018-02-09T18:17:18.1146103+01:00</Time>
     </Item>
     <Item>
       <Source>bob\jump\Jump__005.png</Source>
@@ -611,43 +611,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__005.xnb</Output>
-      <Time>2018-02-09T18:17:19.2395604+01:00</Time>
-    </Item>
-    <Item>
-      <Source>bob\jump\Jump__006.png</Source>
-      <Name>bob\jump\Jump__006</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__006.xnb</Output>
-      <Time>2018-02-09T18:17:19.2415617+01:00</Time>
-    </Item>
-    <Item>
-      <Source>bob\jump\Jump__007.png</Source>
-      <Name>bob\jump\Jump__007</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__007.xnb</Output>
-      <Time>2018-02-09T18:17:19.2435627+01:00</Time>
-    </Item>
-    <Item>
-      <Source>bob\jump\Jump__008.png</Source>
-      <Name>bob\jump\Jump__008</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__008.xnb</Output>
-      <Time>2018-02-09T18:17:19.2455641+01:00</Time>
-    </Item>
-    <Item>
-      <Source>bob\jump\Jump__009.png</Source>
-      <Name>bob\jump\Jump__009</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__009.xnb</Output>
-      <Time>2018-02-09T18:17:19.2485642+01:00</Time>
+      <Time>2018-02-09T18:17:18.116612+01:00</Time>
     </Item>
     <Item>
       <Source>objects\Object (12).png</Source>
