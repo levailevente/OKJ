@@ -22,7 +22,7 @@ namespace THE_GAME
         public override void Draw(SpriteBatch sbatch)
         {
             base.Draw(sbatch);
-            sbatch.Draw(texture,rectangle2,Color.White);
+            sbatch.Draw(Texture,rectangle2,Color.White);
 
             UpdatePositions();
            
@@ -31,11 +31,11 @@ namespace THE_GAME
 
         void UpdatePositions()
         {
-            if (Game1.karakter.Hitbox.X - rectangle.X> 1880) rectangle.X += 1280 * 2;
+            if (Game1.karakter.Hitbox.X - Rectangle.X> 1880) Rectangle.X += 1280 * 2;
 
             if (Game1.karakter.Hitbox.X - rectangle2.X >1880) rectangle2.X += 1280 * 2;
 
-            if ( rectangle.X- Game1.karakter.Hitbox.X  > 690) rectangle.X -= 1280 * 2;
+            if ( Rectangle.X- Game1.karakter.Hitbox.X  > 690) Rectangle.X -= 1280 * 2;
 
             if (rectangle2.X- Game1.karakter.Hitbox.X  > 690) rectangle2.X -= 1280 * 2;
 

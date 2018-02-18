@@ -10,13 +10,13 @@ namespace THE_GAME
 {
     public class Sprite
     {
-       public  Texture2D texture;
-       public   Rectangle rectangle;
+        protected readonly Texture2D Texture;
+        protected Rectangle Rectangle;
 
-        public Sprite(Texture2D t, Rectangle r)
+        protected Sprite(Texture2D t, Rectangle r)
         {
-            texture = t;
-            rectangle = r;
+            Texture = t;
+            Rectangle = r;
         }
 
         public virtual void Update()
@@ -26,7 +26,7 @@ namespace THE_GAME
 
         public virtual void Draw(SpriteBatch sbatch )
         {
-            sbatch.Draw(texture, rectangle, Color.White);
+            sbatch.Draw(Texture, Rectangle, Color.White);
         }
     }
 

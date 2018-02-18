@@ -99,13 +99,13 @@ namespace THE_GAME
         public void Draw(SpriteBatch sbatch)
         {
             
-            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround())
+            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox)!="right")
             {
                 
                 sbatch.Draw(walk[walkI], rectanglew, Color.White);
             }
 
-            else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() )
+            else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() && NextToWall(Hitbox)!="left")
             {
                 rectanglew.X -= 35;
                 
@@ -113,25 +113,20 @@ namespace THE_GAME
 
             }
 
-            else if (isJumping || Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && !OnGround() )
+            else if (isJumping)
             {
 
 
-               isJumping = true;
-
-                
-                
                     if (facing == Direction.Left)
                     {
                         rectanglejump.X -= 35;
-                         sbatch.Draw(jump[6], rectanglejump, null, Color.White, 0, new Vector2(0, 0),SpriteEffects.FlipHorizontally, 0);
+                         sbatch.Draw(jump[3], rectanglejump, null, Color.White, 0, new Vector2(0, 0),SpriteEffects.FlipHorizontally, 0);
 
                     }
-                    else sbatch.Draw(jump[6], rectanglejump, Color.White);
+                    else sbatch.Draw(jump[3], rectanglejump, Color.White);
 
-                
-        
-                if (lastMovement.Y>0) isJumping = false;
+                if (lastMovement.Y > 0) isJumping = false;
+
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up))
@@ -139,17 +134,17 @@ namespace THE_GAME
                 
             }
 
-            else if (lastMovement.Y < 0)
+            else if (lastMovement.Y > 0)
             {
                 if (facing == Direction.Left)
                 {
                     rectanglejump.X -= 30;
-                    sbatch.Draw(jump[8], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                    sbatch.Draw(jump[7], rectanglejump, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
                 }
 
                 else
                 {
-                    sbatch.Draw(jump[8], rectanglejump, Color.White);
+                    sbatch.Draw(jump[7], rectanglejump, Color.White);
                 }
 
             }
@@ -174,7 +169,8 @@ namespace THE_GAME
 
         void UpdateMovement()
         {
-            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left))
+           
+            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && NextToWall(Hitbox)!="right")
             {
                 
                 mvmnt += new Vector2(2, 0);
@@ -189,7 +185,7 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right))
+            if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && NextToWall(Hitbox)!="left")
             {
 
                 
@@ -204,15 +200,14 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.Prevkey.IsKeyUp((Keys.Up)))
+            if ( Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.Prevkey.IsKeyUp((Keys.Up)))
             {
-                
+
+                isJumping = true;
                 jumpint = 0;
 
                 velocity.Y = -5;
 
-
-                //facing = Direction.Forward;
             }
 
 
@@ -278,6 +273,17 @@ namespace THE_GAME
             ground.Offset(0,1);
             return Game1.GenerateMap.Collision(ground);
 
+        }
+
+        string NextToWall(Rectangle movingRectangle)
+        {
+            Rectangle wall = movingRectangle;
+            Rectangle wallLeft = movingRectangle;
+            wall.Offset(1,0);
+            wallLeft.Offset(-1,0);
+            if (Game1.GenerateMap.Collision(wall)) return "right";
+            if (Game1.GenerateMap.Collision(wallLeft)) return "left";
+            else return "no";
         }
 
         void Gravity()

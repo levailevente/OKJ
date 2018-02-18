@@ -30,6 +30,7 @@ namespace THE_GAME
             if (player.isDead)
             {
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 +5;
+                centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2 + 608;
             }
             Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
         }
