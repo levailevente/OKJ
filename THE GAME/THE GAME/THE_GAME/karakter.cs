@@ -25,11 +25,12 @@ namespace THE_GAME
 
         private Direction facing=Direction.Right;
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
-
+        public Vector2 Position => position;
         bool isJumping;
-         public bool   isDead;
+        public bool   isDead;
 
-
+        int matrixPosX;
+        int matrixPosY;
 
 
 
@@ -54,6 +55,7 @@ namespace THE_GAME
              jumpint = 0;
 
             isJumping = false;
+
             
 
         }
