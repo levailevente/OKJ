@@ -11,55 +11,47 @@ namespace THE_GAME
 {
     public  class GenerateMap
     {
-        int n = Mapok.Palya.GetLength(0);
-        int m = Mapok.Palya.GetLength(1);
+
         List<Tiles> Tiles { get; } = new List<Tiles>();
         List<Tiles> Objects { get; } = new List<Tiles>();
         Tiles[,] Tiles2 { get; }
         Tiles[,] Objects2 { get; }
         int width, height;
-
+        int x, y;
         public GenerateMap(int[,] map, int[,] objects,int size)
         {
-            //for (int i = 0; i < map.GetLength(1); i++)
-            // {
-
-            //for (int j = 0; j < map.GetLength(0); j++)
-            //{
-            //    int n = map[j, i];
-            //    int m = objects[j, i];
-
-            //    if (n > 0)
-            //        Tiles.Add(new Tiles(n, new Rectangle(i * size, j * size, size, size),true, false));
-            //    else if (n<0)Tiles.Add(new Tiles(n * -1, new Rectangle(i * size, j * size, size, size),false, false));
-
-            //    if (m > 0)
-            //        Objects.Add(new Tiles(m, new Rectangle(i * size, j * size, size, size),false, true));
-            //    else if (m<0) Objects.Add(new Tiles(m * -1, new Rectangle(i * size, j * size, size, size),true, true));
-
-            //    width = (i + 1) * size;
-            //    height = (j + 1) * size;
-            //}
-
-
-            // }
-
-            n = map.GetLength(1);
-            m = map.GetLength(0);
-            Tiles2 = new Tiles[n, m];
-            Objects2 = new Tiles[n, m];
-
-            for (int i = 0; i < m; i++)
+            x = map.GetLength(0);
+            y = map.GetLength(1);
+            Tiles2 = new Tiles[x, y];
+            Objects2 = new Tiles[x, y];
+            for (int i = 0; i < map.GetLength(0); i++)
             {
-                for (int j = 0; i < n; j++)
+
+                for (int j = 0; j < map.GetLength(1); j++)
                 {
-                    int t = map[j,i];
-                    int o = objects[i, j];
-                    if (t>0)
-                        Tiles2[i,j]=new Tiles(t, new Rectangle(i * size, j * size, size, size), true, false);
-                    else if (t<0) Tiles2[i, j] = new Tiles(t*-1, new Rectangle(i * size, j * size, size, size), false, false);
+                    int n = map[i, j];
+                    int m = objects[i, j];
+
+                 
+
+                   
+
+                    if (n > 0)
+                        Tiles2[i,j]=new Tiles(n, new Rectangle(i * size, j * size, size, size), true, false);
+                    else if (n < 0) Tiles2[i, j] = new Tiles(n*-1, new Rectangle(i * size, j * size, size, size), false, false);
+                    else if (n==0) Tiles2[i, j] = new Tiles(1,new Rectangle(0,0,0,0),false,false);
+
+                    if (m > 0)
+                        Objects2[i, j] = new Tiles(m, new Rectangle(i * size, j * size, size, size), false, true);
+                    else if (m < 0) Objects2[i, j] = new Tiles(m * -1, new Rectangle(i * size, j * size, size, size), true, true);
+
+                    width = (i + 1) * size;
+                    height = (j + 1) * size;
                 }
+
+
             }
+
         }
 
 
@@ -76,10 +68,11 @@ namespace THE_GAME
 
             //}
 
-            for (int i = (int)(Game1.karakter.Position.X/64)-2; i < (int)(Game1.karakter.Position.X / 64) + 2; i++)
+            for (int i = 0; i <x; i++)
             {
-                for (int j = (int)(Game1.karakter.Position.Y / 64) - 2; j < (int)(Game1.karakter.Position.Y / 64) + 2; j++)
+                for (int j = 0; j < y; j++)
                 {
+                    if(Tiles2[i,j]!=null )
                     Tiles2[i, j].Draw(spritebatch);
                 }
             }
