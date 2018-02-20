@@ -26,10 +26,23 @@ namespace THE_GAME
         private Direction facing=Direction.Right;
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
         public Vector2 Position => position;
+
+        public int MatrixPosY
+        {
+            get
+            {
+
+
+                return matrixPosY;
+            }
+            set { matrixPosY = value; }
+        }
+
         bool isJumping;
         public bool   isDead;
 
-
+        int matrixPosX;
+        int matrixPosY;
         public Karakter()
         {
             idle = new Texture2D[9];
@@ -50,6 +63,9 @@ namespace THE_GAME
              jumpint = 0;
 
             isJumping = false;
+
+            matrixPosX = Game1.Swidth / Game1.TileSize;
+            matrixPosY = Game1.Sheight / 72;
 
         }
         

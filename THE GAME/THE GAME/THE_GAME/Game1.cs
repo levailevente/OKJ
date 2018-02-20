@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -23,13 +24,16 @@ namespace THE_GAME
         public static KeyboardState Newkey = Keyboard.GetState();
         public static KeyboardState Prevkey;
         Background bg;
-
+        static int tileSize;
+        
         Texture2D szin;
  
        public static GenerateMap GenerateMap;
 
         public Game1()
         {
+            
+
             graphics = new GraphicsDeviceManager(this)
             {
                 PreferredBackBufferWidth = 1280,
@@ -40,9 +44,13 @@ namespace THE_GAME
             Content.RootDirectory = "Content";
         }
 
+        public static int TileSize => tileSize;
+
+
         protected override void Initialize()
         {
-
+            tileSize = 72;
+            
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
@@ -52,7 +60,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,72);
+           GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,tileSize);
 
 
             szin = Content.Load<Texture2D>("grey");

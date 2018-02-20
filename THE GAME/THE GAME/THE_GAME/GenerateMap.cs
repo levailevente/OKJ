@@ -73,23 +73,20 @@ namespace THE_GAME
 
           
            
-            for (int i = 0; i < Tiles.Count; i++)
+            for (int i =0; i < x; i++)
             {
                // if (i == 14 || i == 15 || i == 16) movingRectangle.Height -= 50;
-                if (Tiles[i].Blocked && Tiles[i].Rectangle.Intersects(movingRectangle))
+                for (int j = 0; j <y ; j++)
                 {
-                    return true;
-                }
+                    if (Tiles2[i, j] != null&&Tiles2[i,j].Blocked && Tiles2[i,j].Rectangle.Intersects(movingRectangle))
+                    {
+                        return true;
+                    }
 
-            }
 
-            foreach (Tiles objects in Objects)
-            {
-                if (objects.Blocked && objects.Rectangle.Intersects(movingRectangle))
-                {
-                    return true;
                 }
             }
+   
 
             return false;
 
