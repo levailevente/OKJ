@@ -32,14 +32,10 @@ namespace THE_GAME
                     int n = map[i, j];
                     int m = objects[i, j];
 
-                 
-
-                   
-
                     if (n > 0)
-                        Tiles2[i,j]=new Tiles(n, new Rectangle(i * size, j * size, size, size), true, false);
-                    else if (n < 0) Tiles2[i, j] = new Tiles(n*-1, new Rectangle(i * size, j * size, size, size), false, false);
-                    else if (n==0) Tiles2[i, j] = new Tiles(1,new Rectangle(0,0,0,0),false,false);
+                        Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), true, false);
+                    else if (n < 0) Tiles2[i, j] = new Tiles(n*-1, new Rectangle(j * size, i * size, size, size), false, false);
+                   
 
                     if (m > 0)
                         Objects2[i, j] = new Tiles(m, new Rectangle(i * size, j * size, size, size), false, true);
@@ -57,22 +53,13 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch spritebatch)
         {
-            //foreach (Tiles tile in Tiles)
-            //{
-            //    tile.Draw(spritebatch);
 
-            //}
-            //foreach (Tiles tile in Objects)
-            //{
-            //    tile.Draw(spritebatch);
-
-            //}
 
             for (int i = 0; i <x; i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    if(Tiles2[i,j]!=null )
+                  if (Tiles2[i,j]!=null)
                     Tiles2[i, j].Draw(spritebatch);
                 }
             }

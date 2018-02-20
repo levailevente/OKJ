@@ -18,7 +18,7 @@ namespace THE_GAME
         Rectangle hitbox ;
         Rectangle rectanglejump;
         public Rectangle Hitbox => hitbox;
-        double elapsed,elapsed2;
+        double elapsed;
         int idleI, walkI, jumpI;
         int jumpint;
         private enum Direction { Left,Right,Forward,Back};
@@ -28,10 +28,6 @@ namespace THE_GAME
         public Vector2 Position => position;
         bool isJumping;
         public bool   isDead;
-
-        int matrixPosX;
-        int matrixPosY;
-
 
 
         public Karakter()
@@ -48,15 +44,12 @@ namespace THE_GAME
             position=new Vector2(0,300);
 
              elapsed = 0;
-             elapsed2 = 0;
              idleI = 0;
              walkI = 0;
              jumpI = 0;
              jumpint = 0;
 
             isJumping = false;
-
-            
 
         }
         
@@ -93,8 +86,6 @@ namespace THE_GAME
 
             lastMovement = position - prevPosition;
             StopMoving();
-
-
 
         }
 
@@ -144,8 +135,6 @@ namespace THE_GAME
 
             }
 
-           
-
             else if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up))
             {
                 
@@ -180,7 +169,6 @@ namespace THE_GAME
                }
                 
             }
-
 
         }
 
@@ -228,10 +216,6 @@ namespace THE_GAME
             }
 
 
-          
-
-
-
             if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
             {
 
@@ -251,8 +235,6 @@ namespace THE_GAME
                 }
       
             }
-
-
         }
 
         void UpdatePosition()

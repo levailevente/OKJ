@@ -434,3 +434,111 @@ C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.pdb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.pdb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (1).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\BG.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (10).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (11).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (12).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (13).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (14).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (15).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (2).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (3).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (4).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (5).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (6).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (7).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (8).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (9).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (1).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (10).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (2).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (3).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (4).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (5).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (6).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (7).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (8).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (9).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (1).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (10).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (11).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (12).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (13).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (14).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (15).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (16).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (2).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (3).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (4).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (5).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (6).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (7).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (8).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (9).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__000.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__001.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__002.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__003.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__004.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__005.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__006.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__007.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__008.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\idle\Idle__009.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__000.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__001.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__002.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__003.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__004.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__005.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__006.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__007.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__008.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\walk\Run__009.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (12).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (1).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (10).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (11).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (13).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (14).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (3).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (2).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (4).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (5).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (6).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (7).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (8).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\objects\Object (9).xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\grey.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__000.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__001.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__002.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__003.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__004.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\jump\Jump__005.xnb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\THE_GAME.exe.config
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\THE_GAME.exe
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\THE_GAME.pdb
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.Data.SQLite.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.Data.SQLite.xml
+C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml

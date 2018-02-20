@@ -60,12 +60,6 @@ Content\bob\walk\Run__006.xnb
 Content\bob\walk\Run__007.xnb
 Content\bob\walk\Run__008.xnb
 Content\bob\walk\Run__009.xnb
-Content\bob\jump\Jump__000.xnb
-Content\bob\jump\Jump__001.xnb
-Content\bob\jump\Jump__002.xnb
-Content\bob\jump\Jump__003.xnb
-Content\bob\jump\Jump__004.xnb
-Content\bob\jump\Jump__005.xnb
 Content\objects\Object (12).xnb
 Content\objects\Object (1).xnb
 Content\objects\Object (10).xnb
@@ -81,3 +75,9 @@ Content\objects\Object (7).xnb
 Content\objects\Object (8).xnb
 Content\objects\Object (9).xnb
 Content\grey.xnb
+Content\bob\jump\Jump__000.xnb
+Content\bob\jump\Jump__001.xnb
+Content\bob\jump\Jump__002.xnb
+Content\bob\jump\Jump__003.xnb
+Content\bob\jump\Jump__004.xnb
+Content\bob\jump\Jump__005.xnb
