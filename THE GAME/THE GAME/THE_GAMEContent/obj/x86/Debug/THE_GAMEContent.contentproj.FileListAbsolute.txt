@@ -4,3 +4,4 @@ D:\levai\killmegame\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAME
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache
+C:\Users\Suli\Source\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Debug\THE_GAMEContent.contentprojResolveAssemblyReference.cache

@@ -18,6 +18,7 @@ namespace THE_GAME
         Tiles[,] Objects2 { get; }
         int width, height;
         int x, y;
+        
         public GenerateMap(int[,] map, int[,] objects,int size)
         {
             x = map.GetLength(0);
@@ -38,8 +39,8 @@ namespace THE_GAME
                    
 
                     if (m > 0)
-                        Objects2[i, j] = new Tiles(m, new Rectangle(i * size, j * size, size, size), false, true);
-                    else if (m < 0) Objects2[i, j] = new Tiles(m * -1, new Rectangle(i * size, j * size, size, size), true, true);
+                        Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), false, true);
+                    else if (m < 0) Objects2[i, j] = new Tiles(m * -1, new Rectangle(j * size, i * size, size, size), true, true);
 
                     width = (i + 1) * size;
                     height = (j + 1) * size;
@@ -51,16 +52,26 @@ namespace THE_GAME
         }
 
 
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch, Karakter karakter)
         {
+            int ystart = (karakter.Hitbox.X-Game1.Swidth)/Game1.TileSize;
+            if (ystart < 0) ystart = 0;
+            int yend = (karakter.Hitbox.X + Game1.Swidth ) / Game1.TileSize;
+            if (yend > y) yend = y;
 
-
-            for (int i = 0; i <x; i++)
+            int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
+            if (xstart < 0) xstart = 0;
+            int xend = (karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize;
+            if (xend > x) xend = x;
+            for (int i = xstart; i <xend; i++)
             {
-                for (int j = 0; j < y; j++)
+                for (int j = ystart; j < yend; j++)
                 {
                   if (Tiles2[i,j]!=null)
                     Tiles2[i, j].Draw(spritebatch);
+
+                    if (Objects2[i, j] != null)
+                        Objects2[i, j].Draw(spritebatch);
                 }
             }
 
@@ -69,21 +80,30 @@ namespace THE_GAME
 
         public bool Collision (Rectangle movingRectangle)
         {
+            int xstart = movingRectangle.Y  / Game1.TileSize-2;
+            if (xstart < 0) xstart = 0;
+            int xend = movingRectangle.Y  / Game1.TileSize+4;
+            if (xend > x) xend = x;
 
+            int ystart = movingRectangle.X  / Game1.TileSize-2;
+            if (ystart < 0) ystart = 0;
+            int yend = movingRectangle.X  / Game1.TileSize+4;
+            if (yend > y) yend = y;
 
-          
-           
-            for (int i =0; i < x; i++)
+            for (int i =xstart; i < xend; i++)
             {
                // if (i == 14 || i == 15 || i == 16) movingRectangle.Height -= 50;
-                for (int j = 0; j <y ; j++)
+                for (int j = ystart; j <yend ; j++)
                 {
                     if (Tiles2[i, j] != null&&Tiles2[i,j].Blocked && Tiles2[i,j].Rectangle.Intersects(movingRectangle))
                     {
                         return true;
                     }
 
-
+                    if (Objects2[i, j] != null && Objects2[i, j].Blocked && Objects2[i, j].Rectangle.Intersects(movingRectangle))
+                    {
+                        return true;
+                    }
                 }
             }
    

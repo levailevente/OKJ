@@ -27,22 +27,9 @@ namespace THE_GAME
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
         public Vector2 Position => position;
 
-        public int MatrixPosY
-        {
-            get
-            {
-
-
-                return matrixPosY;
-            }
-            set { matrixPosY = value; }
-        }
-
         bool isJumping;
         public bool   isDead;
 
-        int matrixPosX;
-        int matrixPosY;
         public Karakter()
         {
             idle = new Texture2D[9];
@@ -63,9 +50,6 @@ namespace THE_GAME
              jumpint = 0;
 
             isJumping = false;
-
-            matrixPosX = Game1.Swidth / Game1.TileSize;
-            matrixPosY = Game1.Sheight / 72;
 
         }
         
@@ -316,6 +300,24 @@ namespace THE_GAME
             if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
 
             
+        }
+
+        public int getMatrixPosX(int i, int length)
+        {
+            int position = Game1.Swidth / Game1.TileSize + i;
+            if (position < 0) return 0;
+            if (position > length) return length;
+            else return position;
+
+        }
+
+        public int getMatrixPosY(int i, int length)
+        {
+            int position = Game1.Sheight / Game1.TileSize + i;
+            if (position < 0) return 0;
+            if (position > length) return length;
+            else return position;
+
         }
     }
 }

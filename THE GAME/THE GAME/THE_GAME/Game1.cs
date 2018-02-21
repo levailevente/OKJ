@@ -114,7 +114,7 @@ namespace THE_GAME
             bg.Draw(spriteBatch);
             spriteBatch.Draw(szin,karakter.Hitbox,Color.White);
            
-            GenerateMap.Draw(spriteBatch);
+            GenerateMap.Draw(spriteBatch,karakter);
             karakter.Draw(spriteBatch);
 
             spriteBatch.End();
