@@ -12,8 +12,6 @@ namespace THE_GAME
     public  class GenerateMap
     {
 
-        List<Tiles> Tiles { get; } = new List<Tiles>();
-        List<Tiles> Objects { get; } = new List<Tiles>();
         Tiles[,] Tiles2 { get; }
         Tiles[,] Objects2 { get; }
         int width, height;
@@ -50,7 +48,6 @@ namespace THE_GAME
             }
 
         }
-
 
         public void Draw(SpriteBatch spritebatch, Karakter karakter)
         {
@@ -90,12 +87,24 @@ namespace THE_GAME
             int yend = movingRectangle.X  / Game1.TileSize+4;
             if (yend > y) yend = y;
 
+
             for (int i =xstart; i < xend; i++)
             {
-               // if (i == 14 || i == 15 || i == 16) movingRectangle.Height -= 50;
+                
                 for (int j = ystart; j <yend ; j++)
                 {
-                    if (Tiles2[i, j] != null&&Tiles2[i,j].Blocked && Tiles2[i,j].Rectangle.Intersects(movingRectangle))
+                  
+                    if (Tiles2[i, j] != null && (Tiles2[i, j].tile == 14 || Tiles2[i, j].tile == 15 || Tiles2[i, j].tile == 16))
+                    {
+                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+40, 72,72);
+                       
+                        if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(hitbox))
+                        {
+                            return true;
+                        }
+                       
+                    }
+                   else if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(movingRectangle))
                     {
                         return true;
                     }
@@ -107,7 +116,6 @@ namespace THE_GAME
                 }
             }
    
-
             return false;
 
         }

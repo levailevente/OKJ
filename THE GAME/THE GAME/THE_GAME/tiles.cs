@@ -13,10 +13,10 @@ namespace THE_GAME
         readonly Texture2D tiles;
         public Rectangle Rectangle;
         public readonly bool Blocked;
-
+        public readonly int tile;
         public  Tiles(int i, Rectangle r,bool blocked,bool isObject)
         {
-           
+            tile = i;
           if (!isObject)  tiles = Game1.ContentMgr.Load<Texture2D>("tiles/Tile (" + i + ")");
             else tiles= Game1.ContentMgr.Load<Texture2D>("objects/Object (" + i + ")");
             Rectangle = r;
