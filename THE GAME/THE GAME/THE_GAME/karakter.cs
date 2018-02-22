@@ -21,6 +21,7 @@ namespace THE_GAME
         double elapsed;
         int idleI, walkI, jumpI;
         int jumpint;
+        int o;
         private enum Direction { Left,Right,Forward,Back};
 
         private Direction facing=Direction.Right;
@@ -35,12 +36,12 @@ namespace THE_GAME
             idle = new Texture2D[9];
             walk = new Texture2D[9];
             jump = new Texture2D[6];
-           
-            rectanglei = new Rectangle(0, 0, 58, 110);
-            rectanglew = new Rectangle(0, 0, 91, 115);
-            hitbox = new Rectangle(0, 0, 60, 110);
-            
-            rectanglejump = new Rectangle(0, 0, 91, 121);
+
+            o = 4;
+            rectanglei = new Rectangle(0, 0, 232/o, 439/o);
+            rectanglew = new Rectangle(0, 0,363/o , 458/o);
+            hitbox = new Rectangle(0, 0, 60, 108);            
+            rectanglejump = new Rectangle(0, 0, 362/o, 483/o);
             position=new Vector2(0,300);
 
              elapsed = 0;
@@ -82,7 +83,7 @@ namespace THE_GAME
 
             Gravity();
 
-            UpdatePosition();
+            UpdatePosition(gameTime);
 
             lastMovement = position - prevPosition;
             StopMoving();
@@ -237,9 +238,9 @@ namespace THE_GAME
             }
         }
 
-        void UpdatePosition()
+        void UpdatePosition(GameTime gametime)
         {
-            position += mvmnt;
+            position += mvmnt*(float)gametime.ElapsedGameTime.TotalMilliseconds/15;
 
 
             hitbox.X += (int)position.X;

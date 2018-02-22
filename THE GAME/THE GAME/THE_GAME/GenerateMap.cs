@@ -34,11 +34,19 @@ namespace THE_GAME
                     if (n > 0)
                         Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), true, false);
                     else if (n < 0) Tiles2[i, j] = new Tiles(n*-1, new Rectangle(j * size, i * size, size, size), false, false);
-                   
 
+                    bool blocked = m < 0;
+                    if (blocked) m *= -1;
                     if (m > 0)
-                        Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), false, true);
-                    else if (m < 0) Objects2[i, j] = new Tiles(m * -1, new Rectangle(j * size, i * size, size, size), true, true);
+
+                        switch (m)
+                        {
+
+                            
+                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blocked, true);
+                                break;
+                        }
+
 
                     width = (i + 1) * size;
                     height = (j + 1) * size;
@@ -96,7 +104,7 @@ namespace THE_GAME
                   
                     if (Tiles2[i, j] != null && (Tiles2[i, j].tile == 14 || Tiles2[i, j].tile == 15 || Tiles2[i, j].tile == 16))
                     {
-                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+40, 72,72);
+                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+30, 72,78);
                        
                         if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(hitbox))
                         {
