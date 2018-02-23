@@ -41,10 +41,30 @@ namespace THE_GAME
 
                         switch (m)
                         {
+                            case 6:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size-20, i * size+15, (int)(182/1.5), (int)(90/1.5)), blocked,
+                                    true); break;
+                            case 7:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 32, (int)(100 / 1.5), (int)(64 / 1.5)), blocked,
+                                    true); break;
+                            case 9:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size+20, (int)(132 /1.4), (int)(74 / 1.4)), blocked,
+                                    true); break;
+                            case 10:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 100, i * size - 97, (int)(286/1.4 ), (int)(239 / 1.4)), blocked,
+                                    true); break;
+                            case 11:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blocked,
+                                    true); break;
+                            case 13:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)), blocked,
+                                    true); break;
+                            case 14:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 45, i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blocked,
+                                    true); break;
 
-                            
-                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blocked, true);
-                                break;
+
+                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blocked, true);  break;
                         }
 
 
@@ -68,6 +88,7 @@ namespace THE_GAME
             if (xstart < 0) xstart = 0;
             int xend = (karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize;
             if (xend > x) xend = x;
+
             for (int i = xstart; i <xend; i++)
             {
                 for (int j = ystart; j < yend; j++)
