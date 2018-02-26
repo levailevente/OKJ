@@ -29,8 +29,12 @@ namespace THE_GAME
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
         public Vector2 Position => position;
 
+        public bool IsCrouching => isCrouching;
+
+        public bool IsDead => isDead;
+
         bool isJumping, isCrouching;
-        public bool   isDead;
+        bool   isDead;
 
         public Karakter()
         {
@@ -88,8 +92,6 @@ namespace THE_GAME
 
             UpdatePosition(gameTime);
 
-            hitbox.Height = 108;
-
             lastMovement = position - prevPosition;
             StopMoving();
 
@@ -142,7 +144,7 @@ namespace THE_GAME
 
             }
 
-            else if (isCrouching)
+            else if (IsCrouching)
             {
                 if (facing == Direction.Left)
                 {
@@ -155,7 +157,6 @@ namespace THE_GAME
                     sbatch.Draw(crouch, rectanglei, Color.White);
                 }
 
-                if (Game1.Prevkey.IsKeyUp(Keys.Down)) isCrouching = false;
             }
 
             else if (lastMovement.Y > 0)
@@ -238,10 +239,15 @@ namespace THE_GAME
             {
                 isCrouching = true;
                 hitbox.Height -= 30;
-                hitbox.X -= 30;
 
             }
 
+            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down))
+            {
+                hitbox.Height += 30;
+                
+              isCrouching = false;
+            }
 
             else
             {
@@ -260,8 +266,7 @@ namespace THE_GAME
 
             hitbox.X += (int)position.X;
             hitbox.Y += (int)position.Y;
-           
-
+   
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
             if (position.Y > 1500)
@@ -295,14 +300,12 @@ namespace THE_GAME
             wall.Offset(1,0);
             wallLeft.Offset(-1,0);
             if (Game1.GenerateMap.Collision(wall)) return "right";
-            if (Game1.GenerateMap.Collision(wallLeft)) return "left";
-            else return "no";
+            return Game1.GenerateMap.Collision(wallLeft) ? "left" : "no";
         }
 
         void Gravity()
         {
             if (!OnGround()) mvmnt += Vector2.UnitY * 2.5f;
-
 
             mvmnt.X *= 0.8f;
             mvmnt.Y *= 0.9f;

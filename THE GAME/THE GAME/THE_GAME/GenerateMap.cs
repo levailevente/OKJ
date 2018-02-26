@@ -116,13 +116,13 @@ namespace THE_GAME
             int yend = movingRectangle.X  / Game1.TileSize+6;
             if (yend > y) yend = y;
 
-
+            if (Game1.Karakter.IsCrouching) movingRectangle.Offset(0,30);
             for (int i =xstart; i < xend; i++)
             {
                 
                 for (int j = ystart; j <yend ; j++)
                 {
-                  
+                   
                     if (Tiles2[i, j] != null && (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
                     {
                         Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+30, movingRectangle.Width,movingRectangle.Height-30);

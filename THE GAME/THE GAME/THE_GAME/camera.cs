@@ -27,7 +27,7 @@ namespace THE_GAME
             if (player.Hitbox.Y > 600)
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 - 100;
 
-            if (player.isDead)
+            if (player.IsDead)
             {
                 centre.Y = player.Hitbox.Y + (player.Hitbox.Height / 2) - Game1.Sheight / 2 +5;
                 centre.X = player.Hitbox.X + (player.Hitbox.Width / 2) - Game1.Swidth / 2 + 610;
