@@ -106,14 +106,14 @@ namespace THE_GAME
 
         public bool Collision (Rectangle movingRectangle)
         {
-            int xstart = movingRectangle.Y  / Game1.TileSize-2;
+            int xstart = movingRectangle.Y  / Game1.TileSize-3;
             if (xstart < 0) xstart = 0;
-            int xend = movingRectangle.Y  / Game1.TileSize+4;
+            int xend = movingRectangle.Y  / Game1.TileSize+6;
             if (xend > x) xend = x;
 
-            int ystart = movingRectangle.X  / Game1.TileSize-2;
+            int ystart = movingRectangle.X  / Game1.TileSize-3;
             if (ystart < 0) ystart = 0;
-            int yend = movingRectangle.X  / Game1.TileSize+4;
+            int yend = movingRectangle.X  / Game1.TileSize+6;
             if (yend > y) yend = y;
 
 
@@ -123,9 +123,9 @@ namespace THE_GAME
                 for (int j = ystart; j <yend ; j++)
                 {
                   
-                    if (Tiles2[i, j] != null && (Tiles2[i, j].tile == 14 || Tiles2[i, j].tile == 15 || Tiles2[i, j].tile == 16))
+                    if (Tiles2[i, j] != null && (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
                     {
-                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+30, 72,78);
+                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+30, movingRectangle.Width,movingRectangle.Height-30);
                        
                         if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(hitbox))
                         {

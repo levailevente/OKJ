@@ -676,3 +676,4 @@ C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.D
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.xml
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\EntityFramework.SqlServer.xml
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\System.Data.SQLite.xml
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\crouch.xnb

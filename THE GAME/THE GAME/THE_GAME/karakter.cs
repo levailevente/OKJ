@@ -13,6 +13,7 @@ namespace THE_GAME
         readonly Texture2D[] idle;
         readonly Texture2D[] walk;
         readonly Texture2D[] jump;
+        readonly Texture2D crouch;
         Rectangle rectanglei;
         Rectangle rectanglew;
         Rectangle hitbox ;
@@ -28,7 +29,7 @@ namespace THE_GAME
         Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
         public Vector2 Position => position;
 
-        bool isJumping;
+        bool isJumping, isCrouching;
         public bool   isDead;
 
         public Karakter()
@@ -36,6 +37,7 @@ namespace THE_GAME
             idle = new Texture2D[9];
             walk = new Texture2D[9];
             jump = new Texture2D[6];
+           
 
             o = 4;
             rectanglei = new Rectangle(0, 0, 232/o, 439/o);
@@ -51,17 +53,15 @@ namespace THE_GAME
              jumpint = 0;
 
             isJumping = false;
+            isCrouching = false;
 
-        }
-        
-        public void LoadKarakter()
-        {
-            for (int i = 0; i <9; i++)
+
+            for (int i = 0; i < 9; i++)
             {
-                idle[i] = Game1.ContentMgr.Load<Texture2D> ( "bob/idle/Idle__00" + i );
+                idle[i] = Game1.ContentMgr.Load<Texture2D>("bob/idle/Idle__00" + i);
             }
 
-            for (int i = 0; i <9; i++)
+            for (int i = 0; i < 9; i++)
             {
                 walk[i] = Game1.ContentMgr.Load<Texture2D>("bob/walk/Run__00" + i);
             }
@@ -71,7 +71,10 @@ namespace THE_GAME
                 jump[i] = Game1.ContentMgr.Load<Texture2D>("bob/jump/jump__00" + i);
             }
 
+            crouch = Game1.ContentMgr.Load<Texture2D>("bob/crouch");
+
         }
+        
         
         public void Update(GameTime gameTime)
         {
@@ -85,9 +88,12 @@ namespace THE_GAME
 
             UpdatePosition(gameTime);
 
+            hitbox.Height = 108;
+
             lastMovement = position - prevPosition;
             StopMoving();
 
+            
         }
 
 
@@ -136,9 +142,20 @@ namespace THE_GAME
 
             }
 
-            else if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up))
+            else if (isCrouching)
             {
+                if (facing == Direction.Left)
+                {
                 
+                    sbatch.Draw(crouch, rectanglei, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                }
+
+                else
+                {
+                    sbatch.Draw(crouch, rectanglei, Color.White);
+                }
+
+                if (Game1.Prevkey.IsKeyUp(Keys.Down)) isCrouching = false;
             }
 
             else if (lastMovement.Y > 0)
@@ -217,24 +234,22 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && rectanglei.Y + rectanglei.Height <= Game1.Sheight)
+            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&Game1.Prevkey.IsKeyUp(Keys.Down))
             {
+                isCrouching = true;
+                hitbox.Height -= 30;
+                hitbox.X -= 30;
 
-                facing = Direction.Back;
             }
 
 
             else
             {
+                if (!(elapsed > 6)) return;
+                elapsed = 0;
+                idleI++;
+                if (idleI > 8) idleI = 0;
 
-                if (elapsed > 6)
-                {
-                    elapsed = 0;
-                    idleI++;
-                    if (idleI > 8) idleI = 0;
-
-                }
-      
             }
         }
 
@@ -245,7 +260,7 @@ namespace THE_GAME
 
             hitbox.X += (int)position.X;
             hitbox.Y += (int)position.Y;
-
+           
 
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
@@ -301,24 +316,6 @@ namespace THE_GAME
             if (lastMovement.Y == 0) mvmnt *= Vector2.UnitX;
 
             
-        }
-
-        public int getMatrixPosX(int i, int length)
-        {
-            int position = Game1.Swidth / Game1.TileSize + i;
-            if (position < 0) return 0;
-            if (position > length) return length;
-            else return position;
-
-        }
-
-        public int getMatrixPosY(int i, int length)
-        {
-            int position = Game1.Sheight / Game1.TileSize + i;
-            if (position < 0) return 0;
-            if (position > length) return length;
-            else return position;
-
         }
     }
 }

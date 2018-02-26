@@ -81,3 +81,4 @@ Content\bob\jump\Jump__002.xnb
 Content\bob\jump\Jump__003.xnb
 Content\bob\jump\Jump__004.xnb
 Content\bob\jump\Jump__005.xnb
+Content\bob\crouch.xnb

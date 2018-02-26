@@ -18,14 +18,14 @@ namespace THE_GAME
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
-        public static Karakter karakter;
+        public static Karakter Karakter;
          Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey = Keyboard.GetState();
         public static KeyboardState Prevkey;
         Background bg;
         static int tileSize;
-        
+        public static int TileSize => tileSize;
         Texture2D szin;
  
        public static GenerateMap GenerateMap;
@@ -44,8 +44,6 @@ namespace THE_GAME
             Content.RootDirectory = "Content";
         }
 
-        public static int TileSize => tileSize;
-
 
         protected override void Initialize()
         {
@@ -54,7 +52,7 @@ namespace THE_GAME
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
-            karakter = new Karakter();
+            Karakter = new Karakter();
       
            
             Swidth = GraphicsDevice.Viewport.Width;
@@ -63,7 +61,7 @@ namespace THE_GAME
            GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,tileSize);
 
 
-            szin = Content.Load<Texture2D>("grey");
+            
             base.Initialize();
         }
 
@@ -72,10 +70,11 @@ namespace THE_GAME
         {
 
           
-         bg=new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720)); 
+         bg=new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
-            karakter.LoadKarakter();
-           
+         szin = Content.Load<Texture2D>("grey");
+
+
         }
 
        
@@ -94,8 +93,8 @@ namespace THE_GAME
 
 
 
-            karakter.Update(gameTime);
-            kamera.Update(karakter);
+            Karakter.Update(gameTime);
+            kamera.Update(Karakter);
 
 
 
@@ -112,10 +111,10 @@ namespace THE_GAME
 
            
             bg.Draw(spriteBatch);
-            spriteBatch.Draw(szin,karakter.Hitbox,Color.White);
+            spriteBatch.Draw(szin,Karakter.Hitbox,Color.White);
            
-            GenerateMap.Draw(spriteBatch,karakter);
-            karakter.Draw(spriteBatch);
+            GenerateMap.Draw(spriteBatch,Karakter);
+            Karakter.Draw(spriteBatch);
 
             spriteBatch.End();
 
