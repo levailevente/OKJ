@@ -132,15 +132,17 @@ namespace THE_GAME
             }
            else if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox)!="right")
             {
-                
-                sbatch.Draw(walk[walkI], rectanglew, Color.White);
+                if (isCrouching) sbatch.Draw(crouch, rectanglei, Color.White);
+                else  sbatch.Draw(walk[walkI], rectanglew, Color.White);
+
             }
 
             else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() && NextToWall(Hitbox)!="left")
             {
                 rectanglew.X -= 35;
                 
-                sbatch.Draw(walk[walkI],rectanglew,null,Color.White,0,new Vector2(0,0),SpriteEffects.FlipHorizontally,0);
+               if (!isCrouching) sbatch.Draw(walk[walkI],rectanglew,null,Color.White,0,new Vector2(0,0),SpriteEffects.FlipHorizontally,0);
+               else sbatch.Draw(crouch,rectanglei, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
 
             }
 
@@ -196,57 +198,63 @@ namespace THE_GAME
            
             if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && NextToWall(Hitbox)!="right")
             {
-                
-                mvmnt += new Vector2(2, 0);
-                if (elapsed > 3)
-                {
-                    elapsed = 0;
-                    walkI++;
-                    if (walkI > 8) walkI = 0;
+                if (!isCrouching) {
+                    mvmnt += new Vector2(2, 0);
+                    if (elapsed > 3)
+                    {
+                        elapsed = 0;
+                        walkI++;
+                        if (walkI > 8) walkI = 0;
+                    }
                 }
 
+                else mvmnt += new Vector2(1, 0);
+
                 facing = Direction.Right;
+                 
+
             }
 
 
             if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && NextToWall(Hitbox)!="left")
             {
 
-                
-                mvmnt += new Vector2(-2, 0);
-                if (elapsed > 3)
+                if (!isCrouching)
                 {
-                    elapsed = 0;
-                    walkI++;
-                    if (walkI > 8) walkI = 0;
+                    mvmnt += new Vector2(-2, 0);
+                    if (elapsed > 3)
+                    {
+                        elapsed = 0;
+                        walkI++;
+                        if (walkI > 8) walkI = 0;
+                    }
                 }
+
+                else mvmnt += new Vector2(-1, 0);
                 facing = Direction.Left;
             }
 
 
             if ( Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && Game1.Prevkey.IsKeyUp((Keys.Up)))
             {
-
                 isJumping = true;
                 jumpint = 0;
-
                 velocity.Y = -5;
 
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&Game1.Prevkey.IsKeyUp(Keys.Down))
+            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&Game1.Prevkey.IsKeyUp(Keys.Down) && OnGround())
             {
                 isCrouching = true;
                 hitbox.Height -= 30;
 
             }
 
-            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down))
+            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && OnGround())
             {
                 hitbox.Height += 30;
-                
-              isCrouching = false;
+                isCrouching = false;
             }
 
             else
