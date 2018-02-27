@@ -244,14 +244,14 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&Game1.Prevkey.IsKeyUp(Keys.Down) && OnGround())
+            if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&Game1.Prevkey.IsKeyUp(Keys.Down) && OnGround() && !isCrouching)
             {
                 isCrouching = true;
                 hitbox.Height -= 30;
 
             }
 
-            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && OnGround())
+            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && OnGround() && isCrouching)
             {
                 hitbox.Height += 30;
                 isCrouching = false;
