@@ -27,13 +27,20 @@ namespace THE_GAME
         static int tileSize;
         public static int TileSize => tileSize;
         Texture2D szin;
- 
-       public static GenerateMap GenerateMap;
+        public enum Gamestates
+        {
+            Mainmenu,
+            Playing,
+            Options
+        };
+
+       
+        public static GenerateMap GenerateMap;
 
         public Game1()
         {
-            
 
+            
             graphics = new GraphicsDeviceManager(this)
             {
                 PreferredBackBufferWidth = 1280,
@@ -60,8 +67,8 @@ namespace THE_GAME
 
            GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,tileSize);
 
+            Gamestates currentGameState = Gamestates.Mainmenu;
 
-            
             base.Initialize();
         }
 
@@ -117,8 +124,6 @@ namespace THE_GAME
             Karakter.Draw(spriteBatch);
 
             spriteBatch.End();
-
-           
 
            
         }

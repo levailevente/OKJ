@@ -81,8 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Background.cs" />
+    <Compile Include="Button.cs" />
     <Compile Include="camera.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="menu\MainMenu.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="karakter.cs" />
     <Compile Include="GenerateMap.cs" />
@@ -91,7 +93,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Save.cs" />
-    <Compile Include="ScreenMgr.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="tiles.cs" />
   </ItemGroup>
@@ -111,6 +112,10 @@
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="menu\mainmenu\" />
+    <Folder Include="menu\options\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
