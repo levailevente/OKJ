@@ -482,8 +482,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="graveyard-dark.jpg">
-      <Name>graveyard-dark</Name>
+    <Compile Include="menubg.jpg">
+      <Name>menubg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

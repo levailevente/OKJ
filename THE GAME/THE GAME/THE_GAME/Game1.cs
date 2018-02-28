@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using THE_GAME.menu;
 
 namespace THE_GAME
 {
@@ -26,6 +27,9 @@ namespace THE_GAME
         Background bg;
         static int tileSize;
         public static int TileSize => tileSize;
+
+        public static Gamestates CurrentGameState { get; set; }
+
         Texture2D szin;
         public enum Gamestates
         {
@@ -34,19 +38,19 @@ namespace THE_GAME
             Options
         };
 
-       
         public static GenerateMap GenerateMap;
+
+        MouseState mouse;
 
         public Game1()
         {
-
+            IsMouseVisible = true;
             
             graphics = new GraphicsDeviceManager(this)
             {
                 PreferredBackBufferWidth = 1280,
                 PreferredBackBufferHeight = 720
             };
-
 
             Content.RootDirectory = "Content";
         }
@@ -67,7 +71,7 @@ namespace THE_GAME
 
            GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,tileSize);
 
-            Gamestates currentGameState = Gamestates.Mainmenu;
+            CurrentGameState = Gamestates.Mainmenu;
 
             base.Initialize();
         }
@@ -97,8 +101,8 @@ namespace THE_GAME
             if (Newkey.IsKeyDown(Keys.Escape))
                 Exit();
 
-
-
+            mouse = Mouse.GetState();
+            MainMenu.Update(mouse);
 
             Karakter.Update(gameTime);
             kamera.Update(Karakter);
@@ -115,13 +119,24 @@ namespace THE_GAME
             GraphicsDevice.Clear(new Color(13,21,22));
 
             spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
+            switch (CurrentGameState)
+            {
+                case Gamestates.Mainmenu:
+                    MainMenu.Draw(spriteBatch);
+                    break;
+                case Gamestates.Playing:
+                    bg.Draw(spriteBatch);
+                    spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
 
+                    GenerateMap.Draw(spriteBatch, Karakter);
+                    Karakter.Draw(spriteBatch);
+                    break;
+                case Gamestates.Options:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
            
-            bg.Draw(spriteBatch);
-            spriteBatch.Draw(szin,Karakter.Hitbox,Color.White);
-           
-            GenerateMap.Draw(spriteBatch,Karakter);
-            Karakter.Draw(spriteBatch);
 
             spriteBatch.End();
 

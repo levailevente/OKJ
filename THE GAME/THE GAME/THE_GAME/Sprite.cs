@@ -13,7 +13,7 @@ namespace THE_GAME
         protected readonly Texture2D Texture;
         protected Rectangle Rectangle;
 
-        protected Sprite(Texture2D t, Rectangle r)
+        public Sprite(Texture2D t, Rectangle r)
         {
             Texture = t;
             Rectangle = r;
