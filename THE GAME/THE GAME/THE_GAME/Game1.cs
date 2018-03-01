@@ -27,7 +27,7 @@ namespace THE_GAME
         Background bg;
         static int tileSize;
         public static int TileSize => tileSize;
-
+        public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
 
         Texture2D szin;
@@ -100,7 +100,7 @@ namespace THE_GAME
             Newkey=Keyboard.GetState();
             if (Newkey.IsKeyDown(Keys.Escape))
                 Exit();
-
+            if (exit) Exit();
             mouse = Mouse.GetState();
             MainMenu.Update(mouse);
 
