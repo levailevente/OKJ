@@ -85,3 +85,5 @@ Content\bob\crouch.xnb
 Content\gomb.xnb
 Content\menubg.xnb
 Content\font.xnb
+Content\logo.xnb
+Content\bob\slide\Slide__000.xnb

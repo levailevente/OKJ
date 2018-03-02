@@ -35,7 +35,8 @@ namespace THE_GAME
         {
             Mainmenu,
             Playing,
-            Options
+            Options,
+            Pause
         };
 
         public static GenerateMap GenerateMap;
@@ -63,13 +64,12 @@ namespace THE_GAME
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             kamera = new Camera(graphics.GraphicsDevice.Viewport);
+
             Karakter = new Karakter();
-      
-           
+
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-           GenerateMap = new GenerateMap(Mapok.Palya,Mapok.Objects,tileSize);
 
             CurrentGameState = Gamestates.Mainmenu;
 
@@ -79,12 +79,11 @@ namespace THE_GAME
       
         protected override void LoadContent()
         {
-
-          
-         bg=new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
-
-         szin = Content.Load<Texture2D>("grey");
-
+               szin = Content.Load<Texture2D>("grey");
+         
+                GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, tileSize);
+                
+                bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
         }
 
@@ -97,16 +96,30 @@ namespace THE_GAME
         
         protected override void Update(GameTime gameTime)
         {
+             if (exit) Exit();
             Newkey=Keyboard.GetState();
-            if (Newkey.IsKeyDown(Keys.Escape))
-                Exit();
-            if (exit) Exit();
             mouse = Mouse.GetState();
-            MainMenu.Update(mouse);
 
-            Karakter.Update(gameTime);
+            switch (CurrentGameState)
+            {
+                case Gamestates.Mainmenu:
+                    MainMenu.Update(mouse);
+                    break;
+                case Gamestates.Playing:
+                    LoadContent();
+                    if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
+                    Karakter.Update(gameTime);
+                    break;
+                case Gamestates.Options:
+                    break;
+                case Gamestates.Pause:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+          
+        
             kamera.Update(Karakter);
-
 
 
             Prevkey = Newkey;
@@ -132,6 +145,8 @@ namespace THE_GAME
                     Karakter.Draw(spriteBatch);
                     break;
                 case Gamestates.Options:
+                    break;
+                case Gamestates.Pause: Pause.Draw(spriteBatch);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -8,22 +8,21 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-    class Button:Sprite
+    internal class Button:Sprite
     {
-       
-         public  bool isClicked;
-            string text;
+        public bool IsClicked;
+        readonly string text;
         Rectangle mouseRectangle;
-        SpriteFont font;
-       public  Vector2 position;
+        readonly SpriteFont font;
+        public Vector2 Position;
         
         Color hover;
             public Button(Texture2D t, Rectangle r, string text) : base(t, r)
             {
-                isClicked = false;
+                IsClicked = false;
                 this.text = text;
              font = Game1.ContentMgr.Load<SpriteFont>("font");
-            position = new Vector2(Rectangle.X+40, Rectangle.Y+20);
+            Position = new Vector2(Rectangle.X+40, Rectangle.Y+20);
             hover = Color.White;
         }
 
@@ -38,7 +37,7 @@ namespace THE_GAME
             }
            else {
                 hover = Color.Gold;
-                if (mouse.LeftButton == ButtonState.Pressed) isClicked = true;
+                if (mouse.LeftButton == ButtonState.Pressed) IsClicked = true;
             }
                
 
@@ -47,7 +46,7 @@ namespace THE_GAME
         public override void Draw(SpriteBatch sbatch)
         {
             sbatch.Draw(Texture, Rectangle, hover);
-            sbatch.DrawString(font, text, position, Color.GhostWhite);
+            sbatch.DrawString(font, text, Position, Color.GhostWhite);
         }
     }
     

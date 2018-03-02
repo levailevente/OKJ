@@ -28,6 +28,11 @@ namespace THE_GAME
         {
             sbatch.Draw(Texture, Rectangle, Color.White);
         }
+
+        public virtual void DrawC(SpriteBatch sbatch,Color color)
+        {
+            sbatch.Draw(Texture, Rectangle, color);
+        }
     }
 
 

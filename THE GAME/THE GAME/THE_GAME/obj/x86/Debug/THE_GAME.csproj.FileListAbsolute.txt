@@ -683,3 +683,6 @@ C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Cont
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\gomb.xnb
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\menubg.xnb
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\font.xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\font.xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\logo.xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\slide\Slide__000.xnb

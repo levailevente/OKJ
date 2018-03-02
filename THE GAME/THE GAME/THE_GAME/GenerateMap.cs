@@ -15,8 +15,9 @@ namespace THE_GAME
         Tiles[,] Tiles2 { get; }
         Tiles[,] Objects2 { get; }
         int width, height;
-        int x, y;
-        
+        readonly int x;
+        readonly int y;
+
         public GenerateMap(int[,] map, int[,] objects,int size)
         {
             x = map.GetLength(0);
