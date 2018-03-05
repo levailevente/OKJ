@@ -105,14 +105,13 @@ namespace THE_GAME
                 case Gamestates.Mainmenu:
                     MainMenu.Update(mouse);
                     break;
-                case Gamestates.Playing:
-                    LoadContent();
+                case Gamestates.Playing:                    
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
                     Karakter.Update(gameTime);
                     break;
                 case Gamestates.Options:
                     break;
-                case Gamestates.Pause:
+                case Gamestates.Pause: Pause.Update(mouse);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

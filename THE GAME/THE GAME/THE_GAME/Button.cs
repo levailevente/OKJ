@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
@@ -28,18 +24,19 @@ namespace THE_GAME
 
             public void Update(MouseState mouse)
             {
+               IsClicked = false;
                mouseRectangle=new Rectangle(mouse.X,mouse.Y,1,1);
              
                 if (!mouseRectangle.Intersects(Rectangle))
             {
                 hover = Color.White;
-                return;
+
             }
-           else {
-                hover = Color.Gold;
-                if (mouse.LeftButton == ButtonState.Pressed) IsClicked = true;
-            }
-               
+           else
+                {
+                    hover = Color.Gold;
+                    if (mouse.LeftButton == ButtonState.Pressed) IsClicked = true;
+                }
 
             }
 

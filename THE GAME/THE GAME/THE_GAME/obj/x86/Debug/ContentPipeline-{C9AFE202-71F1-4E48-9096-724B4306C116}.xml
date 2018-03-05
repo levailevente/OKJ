@@ -802,6 +802,96 @@
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\slide\Slide__000.xnb</Output>
       <Time>2018-03-02T00:18:01.3497056+01:00</Time>
     </Item>
+    <Item>
+      <Source>bob\climb\Climb_000.png</Source>
+      <Name>bob\climb\Climb_000</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_000.xnb</Output>
+      <Time>2018-03-05T22:07:03.419373+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_001.png</Source>
+      <Name>bob\climb\Climb_001</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_001.xnb</Output>
+      <Time>2018-03-05T22:07:03.4263772+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_002.png</Source>
+      <Name>bob\climb\Climb_002</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_002.xnb</Output>
+      <Time>2018-03-05T22:07:03.4323812+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_003.png</Source>
+      <Name>bob\climb\Climb_003</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_003.xnb</Output>
+      <Time>2018-03-05T22:07:03.4373847+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_004.png</Source>
+      <Name>bob\climb\Climb_004</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_004.xnb</Output>
+      <Time>2018-03-05T22:07:03.4423875+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_005.png</Source>
+      <Name>bob\climb\Climb_005</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_005.xnb</Output>
+      <Time>2018-03-05T22:07:03.4463901+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_006.png</Source>
+      <Name>bob\climb\Climb_006</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_006.xnb</Output>
+      <Time>2018-03-05T22:07:03.4513953+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_007.png</Source>
+      <Name>bob\climb\Climb_007</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_007.xnb</Output>
+      <Time>2018-03-05T22:07:03.4563964+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_008.png</Source>
+      <Name>bob\climb\Climb_008</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_008.xnb</Output>
+      <Time>2018-03-05T22:07:03.4603994+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bob\climb\Climb_009.png</Source>
+      <Name>bob\climb\Climb_009</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_009.xnb</Output>
+      <Time>2018-03-05T22:07:03.4654032+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C9AFE202-71F1-4E48-9096-724B4306C116}</ContentProjectGUID>
