@@ -84,7 +84,6 @@ Content\bob\jump\Jump__005.xnb
 Content\bob\crouch.xnb
 Content\gomb.xnb
 Content\menubg.xnb
-Content\font.xnb
 Content\logo.xnb
 Content\bob\slide\Slide__000.xnb
 Content\bob\climb\Climb_000.xnb
@@ -97,3 +96,4 @@ Content\bob\climb\Climb_006.xnb
 Content\bob\climb\Climb_007.xnb
 Content\bob\climb\Climb_008.xnb
 Content\bob\climb\Climb_009.xnb
+Content\font.xnb

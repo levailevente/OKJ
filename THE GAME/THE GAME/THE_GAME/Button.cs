@@ -9,8 +9,8 @@ namespace THE_GAME
         public bool IsClicked;
         readonly string text;
         Rectangle mouseRectangle;
-        readonly SpriteFont font;
-        public Vector2 Position;
+       protected readonly SpriteFont font;
+        public  Vector2 Position;
         
         Color hover;
             public Button(Texture2D t, Rectangle r, string text) : base(t, r)

@@ -22,7 +22,7 @@ namespace THE_GAME
         public static Karakter Karakter;
          Camera kamera;
         public static  int Swidth, Sheight;
-        public static KeyboardState Newkey = Keyboard.GetState();
+        public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
         Background bg;
         static int tileSize;
@@ -41,7 +41,7 @@ namespace THE_GAME
 
         public static GenerateMap GenerateMap;
 
-        MouseState mouse;
+        MouseState newmouse, oldmouse;
 
         public Game1()
         {
@@ -98,12 +98,12 @@ namespace THE_GAME
         {
              if (exit) Exit();
             Newkey=Keyboard.GetState();
-            mouse = Mouse.GetState();
+            newmouse = Mouse.GetState();
 
             switch (CurrentGameState)
             {
                 case Gamestates.Mainmenu:
-                    MainMenu.Update(mouse);
+                    MainMenu.Update(newmouse);
                     break;
                 case Gamestates.Playing:                    
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
@@ -111,7 +111,7 @@ namespace THE_GAME
                     break;
                 case Gamestates.Options:
                     break;
-                case Gamestates.Pause: Pause.Update(mouse);
+                case Gamestates.Pause: Pause.Update(newmouse);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -122,6 +122,7 @@ namespace THE_GAME
 
 
             Prevkey = Newkey;
+            oldmouse = newmouse;
             base.Update(gameTime);
         }
 

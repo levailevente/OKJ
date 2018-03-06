@@ -90,6 +90,8 @@
     <Compile Include="GenerateMap.cs" />
     <Compile Include="mapok.cs" />
     <Compile Include="menu\Pause.cs" />
+    <Compile Include="menu\Save.cs" />
+    <Compile Include="menu\SaveSlot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

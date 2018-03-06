@@ -31,7 +31,7 @@ namespace THE_GAME.menu
             Hatter.Draw(sbatch);
             Newgame.Draw(sbatch);
             LoadGame.Draw(sbatch);
-            Karakter.DrawC(sbatch,Color.DarkCyan);
+            Karakter.DrawC(sbatch,Color.DarkCyan * 0.5f);
             Options.Draw(sbatch);
             Exit.Draw(sbatch);
             Logo.DrawC(sbatch,Color.Beige);
@@ -45,10 +45,12 @@ namespace THE_GAME.menu
             Options.Update(mouse);
             if (Newgame.IsClicked)
             {
+                Game1.GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, Game1.TileSize);
+                Game1.Karakter = new Karakter();
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
 
-            if (Exit.IsClicked)
+            if (Exit.IsClicked && !Pause.ExitM.IsClicked)
             {
                 Game1.exit = true;
             }

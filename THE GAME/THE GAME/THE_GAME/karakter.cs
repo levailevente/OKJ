@@ -251,7 +251,7 @@ namespace THE_GAME
 
             }
 
-            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) && OnGround() && isCrouching)
+            if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && isCrouching)
             {
                 hitbox.Height += 30;
                 isCrouching = false;
