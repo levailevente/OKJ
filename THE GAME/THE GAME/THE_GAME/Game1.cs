@@ -16,7 +16,7 @@ namespace THE_GAME
     
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        readonly GraphicsDeviceManager graphics;
+        public readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter Karakter;
@@ -36,7 +36,8 @@ namespace THE_GAME
             Mainmenu,
             Playing,
             Options,
-            Pause
+            Pause,
+            Save
         };
 
         public static GenerateMap GenerateMap;
@@ -113,6 +114,8 @@ namespace THE_GAME
                     break;
                 case Gamestates.Pause: Pause.Update(newmouse);
                     break;
+                case Gamestates.Save: menu.Save.Update(newmouse);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -147,6 +150,8 @@ namespace THE_GAME
                 case Gamestates.Options:
                     break;
                 case Gamestates.Pause: Pause.Draw(spriteBatch);
+                    break;
+                case Gamestates.Save: menu.Save.Draw(spriteBatch);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

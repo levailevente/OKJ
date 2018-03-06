@@ -22,7 +22,7 @@ namespace THE_GAME.menu
         {
             MainMenu.Hatter.Draw(sbatch);
             MainMenu.Logo.DrawC(sbatch,Color.Beige);
-            MainMenu.Karakter.DrawC(sbatch, Color.DarkCyan * 0.5f);
+            MainMenu.Karakter.DrawC(sbatch, Color.DarkCyan * 0.8f);
             MainMenu.Options.Draw(sbatch);
             ExitM.Draw(sbatch);
             Resume.Draw(sbatch);
@@ -43,6 +43,10 @@ namespace THE_GAME.menu
             if (ExitM.IsClicked )
             {
                 Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
+            }
+            if (Save.IsClicked)
+            {
+                Game1.CurrentGameState = Game1.Gamestates.Save;
             }
         }
     }

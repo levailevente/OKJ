@@ -712,3 +712,4 @@ C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_008.xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\bob\climb\Climb_009.xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\font.xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\button.xnb

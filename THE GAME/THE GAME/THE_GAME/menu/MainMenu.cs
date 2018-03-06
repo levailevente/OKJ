@@ -6,7 +6,10 @@ namespace THE_GAME.menu
 {
     internal static class MainMenu
    {
-       public static readonly Button Newgame, LoadGame, Options, Exit;
+       static readonly Button Newgame;
+       static readonly Button LoadGame;
+       public static readonly Button Options;
+       static readonly Button Exit;
        public static readonly Sprite Hatter, Logo, Karakter;
        public static readonly Texture2D Gomb;
         static MainMenu()
@@ -31,7 +34,7 @@ namespace THE_GAME.menu
             Hatter.Draw(sbatch);
             Newgame.Draw(sbatch);
             LoadGame.Draw(sbatch);
-            Karakter.DrawC(sbatch,Color.DarkCyan * 0.5f);
+            Karakter.DrawC(sbatch,Color.DarkCyan * 0.8f);
             Options.Draw(sbatch);
             Exit.Draw(sbatch);
             Logo.DrawC(sbatch,Color.Beige);

@@ -7,43 +7,49 @@ namespace THE_GAME
     internal class Button:Sprite
     {
         public bool IsClicked;
-        readonly string text;
+        protected  string Text;
         Rectangle mouseRectangle;
-       protected readonly SpriteFont font;
+       protected readonly SpriteFont Font;
         public  Vector2 Position;
-        
-        Color hover;
+       static int elapsed;
+        protected Color Hover;
             public Button(Texture2D t, Rectangle r, string text) : base(t, r)
             {
+                elapsed = 0;
                 IsClicked = false;
-                this.text = text;
-             font = Game1.ContentMgr.Load<SpriteFont>("font");
+                Text = text;
+             Font = Game1.ContentMgr.Load<SpriteFont>("font");
             Position = new Vector2(Rectangle.X+40, Rectangle.Y+20);
-            hover = Color.White;
+            Hover = Color.White;
         }
 
-            public void Update(MouseState mouse)
+            public virtual void Update(MouseState mouse)
             {
+                elapsed++;
                IsClicked = false;
                mouseRectangle=new Rectangle(mouse.X,mouse.Y,1,1);
              
                 if (!mouseRectangle.Intersects(Rectangle))
-            {
-                hover = Color.White;
+                {
+                    Hover = Color.White;
 
-            }
+                }
            else
                 {
-                    hover = Color.Gold;
-                    if (mouse.LeftButton == ButtonState.Pressed) IsClicked = true;
+                    Hover = Color.Gold;
+                    if (mouse.LeftButton == ButtonState.Pressed && elapsed>60)
+                    {
+                        IsClicked = true;
+                        elapsed = 0;
+                    }
                 }
 
             }
 
         public override void Draw(SpriteBatch sbatch)
         {
-            sbatch.Draw(Texture, Rectangle, hover);
-            sbatch.DrawString(font, text, Position, Color.GhostWhite);
+            sbatch.Draw(Texture, Rectangle, Hover);
+            sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
         }
     }
     

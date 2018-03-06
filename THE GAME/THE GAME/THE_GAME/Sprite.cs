@@ -19,10 +19,7 @@ namespace THE_GAME
             Rectangle = r;
         }
 
-        public virtual void Update()
-        {
-
-        }
+   
 
         public virtual void Draw(SpriteBatch sbatch )
         {
