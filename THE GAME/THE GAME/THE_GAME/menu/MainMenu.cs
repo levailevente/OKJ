@@ -64,7 +64,7 @@ namespace THE_GAME.menu
             }
             if (LoadGame.IsClicked)
             {
-               Game1.CurrentGameState = Game1.Gamestates.Save;
+               Game1.CurrentGameState = Game1.Gamestates.Load;
             }
            
         }

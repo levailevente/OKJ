@@ -4,15 +4,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME.menu
 {
-    internal static class Save
+    static class Save
     {
-         static readonly SaveSlot[] Saves;
-       static Texture2D gomb;
+        static readonly SaveSlot[] Saves;
         static readonly Button Back;
 
         static Save()
         {
-            gomb = Game1.ContentMgr.Load<Texture2D>("button");
+            Texture2D gomb = Game1.ContentMgr.Load<Texture2D>("button");
             Saves = new SaveSlot[4];
 
             Saves[0] = new SaveSlot(gomb, new Rectangle(400, 50, 500, 100), "Empty slot");
@@ -44,14 +43,11 @@ namespace THE_GAME.menu
             {
                 s.Update(mouse);
             }
-
+ 
             Back.Update(mouse);
 
-            if (Back.IsClicked)
-            {
-                if (Game1.prevGameState == Game1.Gamestates.Pause) Game1.CurrentGameState = Game1.Gamestates.Pause;
-                else Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
-            }
+            if (!Back.IsClicked) return;
+            Game1.CurrentGameState = Game1.CurrentGameState==Game1.Gamestates.Load ? Game1.Gamestates.Mainmenu : Game1.Gamestates.Pause;
         }
     }
 }

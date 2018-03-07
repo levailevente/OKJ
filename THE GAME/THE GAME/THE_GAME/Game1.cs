@@ -16,7 +16,7 @@ namespace THE_GAME
     
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        public readonly GraphicsDeviceManager graphics;
+        readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter Karakter;
@@ -24,7 +24,7 @@ namespace THE_GAME
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
-        public static Gamestates prevGameState;
+        public static Gamestates PrevGameState;
         Background bg;
         static int tileSize;
         public static int TileSize => tileSize;
@@ -38,12 +38,13 @@ namespace THE_GAME
             Playing,
             Options,
             Pause,
-            Save
+            Save,
+            Load
         };
 
         public static GenerateMap GenerateMap;
 
-        MouseState newmouse, oldmouse;
+        public static  MouseState newmouse, prevmouse;
 
         public Game1()
         {
@@ -107,26 +108,31 @@ namespace THE_GAME
                 case Gamestates.Mainmenu:
                     MainMenu.Update(newmouse);
                     break;
-                case Gamestates.Playing:                    
+                case Gamestates.Playing:
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
                     Karakter.Update(gameTime);
                     break;
                 case Gamestates.Options:
                     break;
-                case Gamestates.Pause: Pause.Update(newmouse);
+                case Gamestates.Pause:
+                    Pause.Update(newmouse);
                     break;
-                case Gamestates.Save: menu.Save.Update(newmouse);
+                case Gamestates.Save:
+                    menu.Save.Update(newmouse);
+                    break;
+                case Gamestates.Load:
+                    menu.Save.Update(newmouse);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-          
-        
+
+
             kamera.Update(Karakter);
 
           
             Prevkey = Newkey;
-            oldmouse = newmouse;
+            prevmouse = newmouse;
             base.Update(gameTime);
         }
 
@@ -150,14 +156,19 @@ namespace THE_GAME
                     break;
                 case Gamestates.Options:
                     break;
-                case Gamestates.Pause: Pause.Draw(spriteBatch);
+                case Gamestates.Pause:
+                    Pause.Draw(spriteBatch);
                     break;
-                case Gamestates.Save: menu.Save.Draw(spriteBatch);
+                case Gamestates.Save:
+                    menu.Save.Draw(spriteBatch);
+                    break;
+                case Gamestates.Load:
+                    menu.Save.Draw(spriteBatch);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-           
+
 
             spriteBatch.End();
 

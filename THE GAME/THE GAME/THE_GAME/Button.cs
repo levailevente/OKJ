@@ -18,7 +18,7 @@ namespace THE_GAME
                 elapsed = 0;
                 IsClicked = false;
                 Text = text;
-             Font = Game1.ContentMgr.Load<SpriteFont>("font");
+                Font = Game1.ContentMgr.Load<SpriteFont>("font");
             Position = new Vector2(Rectangle.X+40, Rectangle.Y+20);
             Hover = Color.White;
         }
@@ -37,14 +37,10 @@ namespace THE_GAME
             else
             {
                 Hover = Color.Gold;
-                if (mouse.LeftButton == ButtonState.Pressed && elapsed > 60)
-                {
-                    if (mouse.LeftButton == ButtonState.Released)
-                    {
-                        IsClicked = true;
-                        elapsed = 0;
-                    }
-                }
+                if (mouse.LeftButton != ButtonState.Pressed || Game1.prevmouse.LeftButton != ButtonState.Released ||
+                    elapsed <= 60) return;
+                IsClicked = true;
+                elapsed = 0;
             }
 
         }

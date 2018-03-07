@@ -6,7 +6,7 @@ namespace THE_GAME.menu
 {
      static class Pause
      {
-       public static readonly Button Resume, Save, ExitM;
+        static readonly Button Resume, Save, ExitM;
       static  Pause()
         {
             Resume = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 70), "Resume");
