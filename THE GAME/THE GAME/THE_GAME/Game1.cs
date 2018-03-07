@@ -24,6 +24,7 @@ namespace THE_GAME
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
+        public static Gamestates prevGameState;
         Background bg;
         static int tileSize;
         public static int TileSize => tileSize;
@@ -123,7 +124,7 @@ namespace THE_GAME
         
             kamera.Update(Karakter);
 
-
+          
             Prevkey = Newkey;
             oldmouse = newmouse;
             base.Update(gameTime);

@@ -53,7 +53,7 @@ namespace THE_GAME.menu
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
 
-            if (Exit.IsClicked && !Pause.ExitM.IsClicked)
+            if (Exit.IsClicked)
             {
                 Game1.exit = true;
             }
@@ -62,7 +62,10 @@ namespace THE_GAME.menu
             {
                 Game1.exit = true;
             }
-
+            if (LoadGame.IsClicked)
+            {
+               Game1.CurrentGameState = Game1.Gamestates.Save;
+            }
            
         }
     }

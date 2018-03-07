@@ -23,28 +23,31 @@ namespace THE_GAME
             Hover = Color.White;
         }
 
-            public virtual void Update(MouseState mouse)
-            {
-                elapsed++;
-               IsClicked = false;
-               mouseRectangle=new Rectangle(mouse.X,mouse.Y,1,1);
-             
-                if (!mouseRectangle.Intersects(Rectangle))
-                {
-                    Hover = Color.White;
+        public virtual void Update(MouseState mouse)
+        {
+            elapsed++;
+            IsClicked = false;
+            mouseRectangle = new Rectangle(mouse.X, mouse.Y, 1, 1);
 
-                }
-           else
+            if (!mouseRectangle.Intersects(Rectangle))
+            {
+                Hover = Color.White;
+
+            }
+            else
+            {
+                Hover = Color.Gold;
+                if (mouse.LeftButton == ButtonState.Pressed && elapsed > 60)
                 {
-                    Hover = Color.Gold;
-                    if (mouse.LeftButton == ButtonState.Pressed && elapsed>60)
+                    if (mouse.LeftButton == ButtonState.Released)
                     {
                         IsClicked = true;
                         elapsed = 0;
                     }
                 }
-
             }
+
+        }
 
         public override void Draw(SpriteBatch sbatch)
         {

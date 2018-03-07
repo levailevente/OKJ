@@ -49,7 +49,8 @@ namespace THE_GAME.menu
 
             if (Back.IsClicked)
             {
-                Game1.CurrentGameState = Game1.Gamestates.Pause;
+                if (Game1.prevGameState == Game1.Gamestates.Pause) Game1.CurrentGameState = Game1.Gamestates.Pause;
+                else Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
             }
         }
     }
