@@ -13,9 +13,9 @@ namespace THE_GAME.menu
             Save = new Button(MainMenu.Gomb, new Rectangle(560, 350, 170, 70), "Save");
             ExitM = new Button(MainMenu.Gomb, new Rectangle(560, 550, 170, 70), "Exit to menu");
 
-            Resume.Position.X += 10;
+            Resume.Position.X += 8;
             Save.Position.X += 20;
-            ExitM.Position.X -=10;
+            ExitM.Position.X -=15;
         }
 
         public static void Draw(SpriteBatch sbatch)

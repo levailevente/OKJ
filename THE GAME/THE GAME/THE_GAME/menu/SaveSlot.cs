@@ -28,7 +28,6 @@ namespace THE_GAME.menu
                 isUsed = true;
                 date = DateTime.Now;
                 Text = "Adott szint";
-
             }
 
         }
@@ -45,11 +44,8 @@ namespace THE_GAME.menu
                 sbatch.DrawString(Font, date.ToString(), datePosition, Color.GhostWhite);
                 sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
             }
-            
-
-           
+                      
         }
-
         
     }
 }

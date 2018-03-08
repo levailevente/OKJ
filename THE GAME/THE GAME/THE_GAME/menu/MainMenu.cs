@@ -25,7 +25,9 @@ namespace THE_GAME.menu
             Karakter = new Sprite(Game1.ContentMgr.Load<Texture2D>("bob/slide/Slide__000"), new Rectangle(430, 110, 130, 120));
 
             Exit.Position.X += 25;
-            Options.Position.X += 10;
+            Options.Position.X += 5;
+            Newgame.Position.X -= 5;
+            LoadGame.Position.X -= 7;
         }
 
 

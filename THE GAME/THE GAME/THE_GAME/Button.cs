@@ -4,22 +4,22 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-    internal class Button:Sprite
+    internal class Button : Sprite
     {
         public bool IsClicked;
-        protected  string Text;
+        protected string Text;
         Rectangle mouseRectangle;
-       protected readonly SpriteFont Font;
-        public  Vector2 Position;
-       static int elapsed;
+        protected readonly SpriteFont Font;
+        public Vector2 Position;
+        static int elapsed;
         protected Color Hover;
-            public Button(Texture2D t, Rectangle r, string text) : base(t, r)
-            {
-                elapsed = 0;
-                IsClicked = false;
-                Text = text;
-                Font = Game1.ContentMgr.Load<SpriteFont>("font");
-            Position = new Vector2(Rectangle.X+40, Rectangle.Y+20);
+        public Button(Texture2D t, Rectangle r, string text) : base(t, r)
+        {
+            elapsed = 0;
+            IsClicked = false;
+            Text = text;
+            Font = Game1.ContentMgr.Load<SpriteFont>("font");
+            Position = new Vector2(Rectangle.X + 40, Rectangle.Y + 20);
             Hover = Color.White;
         }
 
