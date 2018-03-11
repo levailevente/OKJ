@@ -8,7 +8,7 @@ namespace THE_GAME.menu
     {
         static readonly SaveSlot[] Saves;
         static readonly Button Back;
-
+        
         static Save()
         {
             Texture2D gomb = Game1.ContentMgr.Load<Texture2D>("button");
@@ -22,31 +22,44 @@ namespace THE_GAME.menu
             Back=new Button(MainMenu.Gomb,new Rectangle(575,625,150,60),"Back" );
             Back.Position.Y -= 4;
             Back.Position.X += 13;
-
         }
 
         public static void Draw(SpriteBatch sbatch)
         {
             MainMenu.Hatter.Draw(sbatch);
 
-            foreach (SaveSlot s in Saves )
+            foreach (SaveSlot t in Saves)
             {
-                s.Draw(sbatch);
+                t.Draw(sbatch);
             }
+
+
 
             Back.Draw(sbatch);
         }
 
         public static void Update(MouseState mouse)
         {
-            foreach (SaveSlot s in Saves)
-            {
-                s.Update(mouse);
-            }
- 
-            Back.Update(mouse);
 
-            if (!Back.IsClicked) return;
+            if (Game1.CurrentGameState == Game1.Gamestates.Textbox)
+            {
+                for (int i = 0; i < Saves.Length; i++)
+                {
+                    if (Saves[i].nameInput) Saves[i].Update(mouse);
+                }
+
+               
+            }
+
+            else
+            {
+                foreach (SaveSlot s in Saves)
+                {
+                      s.Update(mouse);
+                }
+            }
+
+        if (!Back.IsClicked) return;
             Game1.CurrentGameState = Game1.CurrentGameState==Game1.Gamestates.Load ? Game1.Gamestates.Mainmenu : Game1.Gamestates.Pause;
         }
     }

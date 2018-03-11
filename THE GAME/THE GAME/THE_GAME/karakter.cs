@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -10,31 +6,31 @@ namespace THE_GAME
 {
   public  class Karakter
     {
-        readonly Texture2D[] idle;
-        readonly Texture2D[] walk;
-        readonly Texture2D[] jump;
-        readonly Texture2D[] attack;
-        readonly Texture2D[] jumpA;
-        readonly Texture2D crouch;
-        Rectangle rectanglei, rectanglew, hitbox, rectanglejump, rectangleA, rectanglejumpA;
+        protected  Texture2D[] idle;
+        protected  Texture2D[] walk;
+         protected  Texture2D[] jump;
+        protected  Texture2D[] attack;
+        protected  Texture2D[] jumpA;
+        protected  Texture2D crouch;
+        protected Rectangle rectanglei, rectanglew, hitbox, rectanglejump, rectangleA, rectanglejumpA;
 
         public Rectangle Hitbox => hitbox;
-        double elapsed;
-        int idleI, walkI, jumpI, attackI;
-        int jumpint;
-        int o;
+        protected double elapsed;
+        protected int idleI, walkI, jumpI, attackI;
+        protected int jumpint;
+
         private enum Direction { Left,Right,Forward,Back};
 
         private Direction facing=Direction.Right;
-        Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
+        protected Vector2 mvmnt,prevPosition,position,velocity,lastMovement;
         public Vector2 Position => position;
 
         public bool IsCrouching => isCrouching;
 
         public bool IsDead => isDead;
 
-        bool isJumping, isCrouching, isAttack;
-        bool   isDead;
+        protected  bool isJumping, isCrouching, isAttack;
+        protected  bool   isDead;
 
         public Karakter()
         {
@@ -44,7 +40,7 @@ namespace THE_GAME
             attack = new Texture2D[10];
             jumpA=new Texture2D[10];
 
-            o = 4;
+            const int o = 4;
             rectanglei = new Rectangle(0, 0, 232/o, 439/o);
             rectanglew = new Rectangle(0, 0,363/o , 458/o);
             hitbox = new Rectangle(0, 0, 60, 108);            
@@ -95,7 +91,7 @@ namespace THE_GAME
         }
         
         
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             isDead = false;
             elapsed += 1;
@@ -113,7 +109,7 @@ namespace THE_GAME
         }
 
 
-        public void Draw(SpriteBatch sbatch)
+        public virtual void Draw(SpriteBatch sbatch)
         {
 
             if (isJumping)
@@ -126,7 +122,7 @@ namespace THE_GAME
                 }
 
                 jumpint++;
-                if (jumpint > 10)
+                if (jumpint > 11)
                     velocity.Y = 0;
             }
 
@@ -175,8 +171,6 @@ namespace THE_GAME
                
             }
             
-
-
 
             else if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox) != "right")
             {

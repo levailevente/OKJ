@@ -107,7 +107,6 @@ Content\bob\attack\Attack__006.xnb
 Content\bob\attack\Attack__007.xnb
 Content\bob\attack\Attack__008.xnb
 Content\bob\attack\Attack__009.xnb
-Content\font.xnb
 Content\bob\jumpAttack\Jump_Attack__000.xnb
 Content\bob\jumpAttack\Jump_Attack__001.xnb
 Content\bob\jumpAttack\Jump_Attack__002.xnb
@@ -118,3 +117,6 @@ Content\bob\jumpAttack\Jump_Attack__006.xnb
 Content\bob\jumpAttack\Jump_Attack__007.xnb
 Content\bob\jumpAttack\Jump_Attack__008.xnb
 Content\bob\jumpAttack\Jump_Attack__009.xnb
+Content\font.xnb
+Content\textbox.xnb
+Content\box.xnb

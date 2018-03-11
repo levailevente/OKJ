@@ -39,7 +39,8 @@ namespace THE_GAME
             Options,
             Pause,
             Save,
-            Load
+            Load,
+            Textbox
         };
 
         public static GenerateMap GenerateMap;
@@ -123,6 +124,9 @@ namespace THE_GAME
                 case Gamestates.Load:
                     menu.Save.Update(newmouse);
                     break;
+                case Gamestates.Textbox:
+                    menu.Save.Update(newmouse);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -163,6 +167,9 @@ namespace THE_GAME
                     menu.Save.Draw(spriteBatch);
                     break;
                 case Gamestates.Load:
+                    menu.Save.Draw(spriteBatch);
+                    break;
+                case Gamestates.Textbox:
                     menu.Save.Draw(spriteBatch);
                     break;
                 default:
