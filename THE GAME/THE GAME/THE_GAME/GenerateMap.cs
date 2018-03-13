@@ -69,6 +69,7 @@ namespace THE_GAME
                         }
 
 
+                    if (i == 8 && j == 6) Game1.Enemies.Add(new Zombie(new Vector2(i*size, j*size)));
                     width = (i + 1) * size;
                     height = (j + 1) * size;
                 }

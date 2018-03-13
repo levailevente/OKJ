@@ -119,13 +119,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enemy\walk\Walk %281%29.png">
-      <Name>Walk %281%29</Name>
+    <Compile Include="enemy\walk\Walk %280%29.png">
+      <Name>Walk %280%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="enemy\walk\Walk %2810%29.png">
-      <Name>Walk %2810%29</Name>
+    <Compile Include="enemy\walk\Walk %289%29.png">
+      <Name>Walk %289%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="enemy\walk\Walk %281%29.png">
+      <Name>Walk %281%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -161,11 +166,6 @@
     </Compile>
     <Compile Include="enemy\walk\Walk %288%29.png">
       <Name>Walk %288%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\walk\Walk %289%29.png">
-      <Name>Walk %289%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

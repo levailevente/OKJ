@@ -30,6 +30,7 @@ namespace THE_GAME
         public static int TileSize => tileSize;
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
+        public static List<Karakter> Enemies=new List<Karakter>();
 
         Texture2D szin;
         public enum Gamestates
@@ -112,6 +113,10 @@ namespace THE_GAME
                 case Gamestates.Playing:
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
                     Karakter.Update(gameTime);
+                    foreach (Karakter k in Enemies)
+                    {
+                        k.Update(gameTime);
+                    }
                     break;
                 case Gamestates.Options:
                     break;
@@ -157,6 +162,10 @@ namespace THE_GAME
 
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
+                    foreach (Karakter k in Enemies)
+                    {
+                        k.Draw(spriteBatch);
+                    }
                     break;
                 case Gamestates.Options:
                     break;

@@ -91,7 +91,7 @@ namespace THE_GAME
         }
         
         
-        public virtual void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
             isDead = false;
             elapsed += 1;
@@ -175,7 +175,7 @@ namespace THE_GAME
             else if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox) != "right")
             {
                 if (isCrouching) sbatch.Draw(crouch, rectanglei, Color.White);
-                else sbatch.Draw(walk[walkI], rectanglew, Color.White);
+                else sbatch.Draw(walk[walkI],rectanglew, Color.White);
 
             }
 
@@ -234,7 +234,7 @@ namespace THE_GAME
             }
         }
 
-        void UpdateMovement()
+        protected virtual void UpdateMovement()
         {
            
             if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && NextToWall(Hitbox)!="right" && !isAttack)
@@ -351,7 +351,7 @@ namespace THE_GAME
 
         }
 
-        string NextToWall(Rectangle movingRectangle)
+        protected string NextToWall(Rectangle movingRectangle)
         {
             Rectangle wall = movingRectangle;
             Rectangle wallLeft = movingRectangle;

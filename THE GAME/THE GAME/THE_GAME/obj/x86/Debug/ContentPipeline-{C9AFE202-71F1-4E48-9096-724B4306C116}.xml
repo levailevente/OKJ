@@ -152,16 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (1).xnb</Output>
-      <Time>2018-03-08T21:54:48.1122469+01:00</Time>
-    </Item>
-    <Item>
-      <Source>enemy\walk\Walk (10).png</Source>
-      <Name>enemy\walk\Walk (10)</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (10).xnb</Output>
-      <Time>2018-03-08T21:54:48.1142482+01:00</Time>
+      <Time>2018-03-08T21:54:48.1162492+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (2).png</Source>
@@ -170,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (2).xnb</Output>
-      <Time>2018-03-08T21:54:48.1162492+01:00</Time>
+      <Time>2018-03-08T21:54:48.1192517+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (3).png</Source>
@@ -179,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (3).xnb</Output>
-      <Time>2018-03-08T21:54:48.1192517+01:00</Time>
+      <Time>2018-03-08T21:54:48.1212527+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (4).png</Source>
@@ -188,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (4).xnb</Output>
-      <Time>2018-03-08T21:54:48.1212527+01:00</Time>
+      <Time>2018-03-08T21:54:48.1242558+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (5).png</Source>
@@ -197,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (5).xnb</Output>
-      <Time>2018-03-08T21:54:48.1242558+01:00</Time>
+      <Time>2018-03-08T21:54:48.1267617+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (6).png</Source>
@@ -206,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (6).xnb</Output>
-      <Time>2018-03-08T21:54:48.1267617+01:00</Time>
+      <Time>2018-03-08T21:54:48.1292633+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (7).png</Source>
@@ -215,7 +206,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (7).xnb</Output>
-      <Time>2018-03-08T21:54:48.1292633+01:00</Time>
+      <Time>2018-03-08T21:54:48.1317645+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (8).png</Source>
@@ -224,7 +215,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (8).xnb</Output>
-      <Time>2018-03-08T21:54:48.1317645+01:00</Time>
+      <Time>2018-03-08T21:54:48.1342661+01:00</Time>
     </Item>
     <Item>
       <Source>enemy\walk\Walk (9).png</Source>
@@ -233,7 +224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (9).xnb</Output>
-      <Time>2018-03-08T21:54:48.1342661+01:00</Time>
+      <Time>2018-03-08T21:54:48.1142482+01:00</Time>
     </Item>
     <Item>
       <Source>tiles\Tile (1).png</Source>
@@ -1098,6 +1089,15 @@
       <Options>None</Options>
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\box.xnb</Output>
       <Time>2018-03-10T14:39:58.5558713+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\walk\Walk (0).png</Source>
+      <Name>enemy\walk\Walk (0)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (0).xnb</Output>
+      <Time>2018-03-08T21:54:48.1122469+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
