@@ -261,7 +261,6 @@ C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (8).xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\idle\Idle (9).xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (1).xnb
-C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (10).xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (2).xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (3).xnb
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (4).xnb
@@ -756,3 +755,6 @@ C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\b
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\textbox.xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\box.xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (0).xnb
+C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\walk\Walk (0).xnb
+C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\textbox.xnb
+C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\box.xnb

@@ -17,7 +17,7 @@ namespace THE_GAME.menu
         readonly Button save, back, textbox;
         readonly Sprite box;
         string name;
-         Keys[] letter;
+        Keys[] letter;
         Vector2 namePos;
         Regex r= new Regex("^[a-zA-Z0-9]*$");
 
@@ -41,6 +41,7 @@ namespace THE_GAME.menu
             name = "";
             namePos = new Vector2(textbox.Position.X, textbox.Position.Y);
             namePos.X += 80;
+
         }
 
         public override void Update(MouseState mouse)
@@ -86,19 +87,10 @@ namespace THE_GAME.menu
         public override void Draw(SpriteBatch sbatch)
         {
 
-            if (!isUsed)
-            {
-
                 sbatch.Draw(Texture, Rectangle, Hover * 0.5f);
-                sbatch.DrawString(Font, "Empty Slot", Position, Color.GhostWhite);
-
-            }
-            else
-            {
-                sbatch.Draw(Texture, Rectangle, Hover * 0.5f);
-                sbatch.DrawString(Font, date.ToString(CultureInfo.CurrentCulture), datePosition, Color.GhostWhite);
+     if (isUsed)sbatch.DrawString(Font, date.ToString(CultureInfo.CurrentCulture), datePosition, Color.GhostWhite);
                 sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
-            }
+            
 
             if (Game1.CurrentGameState == Game1.Gamestates.Textbox)
             {

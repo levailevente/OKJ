@@ -14,6 +14,8 @@ Content\enemy\idle\Idle (6).xnb
 Content\enemy\idle\Idle (7).xnb
 Content\enemy\idle\Idle (8).xnb
 Content\enemy\idle\Idle (9).xnb
+Content\enemy\walk\Walk (0).xnb
+Content\enemy\walk\Walk (9).xnb
 Content\enemy\walk\Walk (1).xnb
 Content\enemy\walk\Walk (2).xnb
 Content\enemy\walk\Walk (3).xnb
@@ -22,7 +24,6 @@ Content\enemy\walk\Walk (5).xnb
 Content\enemy\walk\Walk (6).xnb
 Content\enemy\walk\Walk (7).xnb
 Content\enemy\walk\Walk (8).xnb
-Content\enemy\walk\Walk (9).xnb
 Content\tiles\Tile (1).xnb
 Content\tiles\Tile (10).xnb
 Content\tiles\Tile (11).xnb
@@ -116,7 +117,6 @@ Content\bob\jumpAttack\Jump_Attack__006.xnb
 Content\bob\jumpAttack\Jump_Attack__007.xnb
 Content\bob\jumpAttack\Jump_Attack__008.xnb
 Content\bob\jumpAttack\Jump_Attack__009.xnb
-Content\font.xnb
 Content\textbox.xnb
 Content\box.xnb
-Content\enemy\walk\Walk (0).xnb
+Content\font.xnb
