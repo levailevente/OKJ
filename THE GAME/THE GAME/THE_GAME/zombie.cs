@@ -13,12 +13,12 @@ namespace THE_GAME
 
             walk = new Texture2D[10];
             death=new Texture2D[12];
-
-             const int o = 5;
+            attack = new Texture2D[8];
+            const int o = 5;
 
             Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
             hitbox = new Rectangle(0, 0, 50, 100);
-            rectangleA = new Rectangle(0, 100, 536 / o, 495 / o);
+            rectangleA = new Rectangle(0, 100, 430 / o, 519 / o);
             RectangleD=new Rectangle(0, 0, 629 / o, 526 / o);
 
             this.StartPos=position = startPos;
@@ -45,13 +45,48 @@ namespace THE_GAME
             {
                 death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/death/Dead (" + (i) + ")");
             }
+
+            for (int i = 0; i < 8; i++)
+            {
+                attack[i] = Game1.ContentMgr.Load<Texture2D>("enemy/attack/Attack (" + (i+1) + ")");
+            }
         }
 
         protected override void UpdateMovement()
         {
             if (!IsDead)
             {
-                if (Right)
+                 if (hitbox.X ==Game1.Karakter.Hitbox.X && Game1.Karakter.RectangleW.Y - hitbox.Y < 72 &&
+                         Game1.Karakter.RectangleW.Y - hitbox.Y > -72)
+                 {
+                      
+                 }
+               else if (Game1.Karakter.RectangleW.X - hitbox.X   >= 0 &&  Game1.Karakter.RectangleW.X- hitbox.X < 150 && Game1.Karakter.RectangleW.Y-hitbox.Y<72 && Game1.Karakter.RectangleW.Y - hitbox.Y > -72)
+                 {
+                     Right = true;
+                    mvmnt += new Vector2(0.5f, 0);
+                    if (elapsed > 4)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+                }
+
+                else if (hitbox.X-Game1.Karakter.RectangleW.X  < 150 && hitbox.X - Game1.Karakter.RectangleW.X >=0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 72 && Game1.Karakter.RectangleW.Y - hitbox.Y > -72)
+                 {
+                     Right = false;
+                    mvmnt += new Vector2(-0.5f, 0);
+                    if (elapsed > 4)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+                }
+
+                
+               else if (Right)
                 {
                     mvmnt += new Vector2(0.5f, 0);
                     if (elapsed > 4)
@@ -63,7 +98,7 @@ namespace THE_GAME
 
                     if (StartPos.X - position.X < -100 || NextToWall(Hitbox) == "right") Right = false;
                 }
-                else
+                else if (!Right)
                 {
                     mvmnt += new Vector2(-0.5f, 0);
                     if (elapsed > 4)
@@ -76,11 +111,19 @@ namespace THE_GAME
                     if (StartPos.X - position.X > 100 || NextToWall(Hitbox) == "left") Right = true;
                 }
 
-                if (Game1.Karakter.isAttack && Rectanglew.Intersects(Game1.Karakter.Hitbox))
+
+
+                if (hitbox.Intersects(Game1.Karakter.Hitbox))
                 {
-                    isDead = true;
+                    if (Game1.Karakter.isAttack) isDead = true;
+
+                    isAttack = true;
+
                 }
+
             }
+
+
 
             else
             {

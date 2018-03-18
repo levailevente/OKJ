@@ -9,7 +9,7 @@ namespace THE_GAME
         Texture2D[] idle;
         protected  Texture2D[] walk;
         readonly Texture2D[] jump;
-        readonly Texture2D[] attack;
+        protected Texture2D[] attack;
         readonly Texture2D[] jumpA;
         readonly Texture2D crouch;
         protected Texture2D[] death;
@@ -333,7 +333,7 @@ namespace THE_GAME
 
         protected virtual void UpdatePosition(GameTime gametime)
         {
-            position += mvmnt * (float) gametime.ElapsedGameTime.TotalMilliseconds / 15;
+            position += mvmnt * (float) gametime.ElapsedGameTime.TotalMilliseconds / 17;
 
 
             hitbox.X += (int) position.X;
@@ -350,9 +350,9 @@ namespace THE_GAME
 
             if (isAttack)
             {
-                hitbox.Location = Facing==Direction.Right ? new Point((int) position.X + 50, (int) position.Y) : new Point((int)position.X -50, (int)position.Y);
+                hitbox.Location = Facing==Direction.Right ? new Point((int) position.X + 60, (int) position.Y) : new Point((int)position.X -60, (int)position.Y);
             }
-            else if (isCrouching) hitbox.Location = new Point((int)position.X, (int)position.Y + 20);
+            else if (isCrouching) hitbox.Location = new Point((int)position.X, (int)position.Y + 30);
             else
                 hitbox.Location = new Point((int) position.X, (int) position.Y);
             rectanglei.Location = new Point((int) position.X, (int) position.Y);

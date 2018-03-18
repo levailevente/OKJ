@@ -31,13 +31,13 @@ namespace THE_GAME
 
         void UpdatePositions()
         {
-            if (Game1.Karakter.Hitbox.X - Rectangle.X > 1880) Rectangle.X += 1280 * 2;
+            if (Game1.Karakter.RectangleW.X - Rectangle.X > 1880) Rectangle.X += 1280 * 2;
 
-            if (Game1.Karakter.Hitbox.X - rectangle2.X > 1880) rectangle2.X += 1280 * 2;
+            if (Game1.Karakter.RectangleW.X - rectangle2.X > 1880) rectangle2.X += 1280 * 2;
 
-            if (Rectangle.X - Game1.Karakter.Hitbox.X > 690) Rectangle.X -= 1280 * 2;
+            if (Rectangle.X - Game1.Karakter.RectangleW.X > 640) Rectangle.X -= 1280 * 2;
 
-            if (rectangle2.X - Game1.Karakter.Hitbox.X > 890) rectangle2.X -= 1280 * 2;
+            if (rectangle2.X - Game1.Karakter.RectangleW.X > 640) rectangle2.X -= 1280 * 2;
 
 
         }

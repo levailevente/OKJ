@@ -1279,6 +1279,78 @@
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\popup.xnb</Output>
       <Time>2018-03-18T01:09:36.5412389+01:00</Time>
     </Item>
+    <Item>
+      <Source>enemy\attack\Attack (1).png</Source>
+      <Name>enemy\attack\Attack (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (1).xnb</Output>
+      <Time>2018-03-18T22:06:21.5540815+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (2).png</Source>
+      <Name>enemy\attack\Attack (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (2).xnb</Output>
+      <Time>2018-03-18T22:06:21.5725936+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (3).png</Source>
+      <Name>enemy\attack\Attack (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (3).xnb</Output>
+      <Time>2018-03-18T22:06:21.5851018+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (4).png</Source>
+      <Name>enemy\attack\Attack (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (4).xnb</Output>
+      <Time>2018-03-18T22:06:21.5891045+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (5).png</Source>
+      <Name>enemy\attack\Attack (5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (5).xnb</Output>
+      <Time>2018-03-18T22:06:21.5956087+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (6).png</Source>
+      <Name>enemy\attack\Attack (6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (6).xnb</Output>
+      <Time>2018-03-18T22:06:21.6011128+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (7).png</Source>
+      <Name>enemy\attack\Attack (7)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (7).xnb</Output>
+      <Time>2018-03-18T22:06:21.6061156+01:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\attack\Attack (8).png</Source>
+      <Name>enemy\attack\Attack (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (8).xnb</Output>
+      <Time>2018-03-18T22:06:21.61162+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C9AFE202-71F1-4E48-9096-724B4306C116}</ContentProjectGUID>
