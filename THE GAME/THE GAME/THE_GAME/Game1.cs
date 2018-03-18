@@ -159,6 +159,7 @@ namespace THE_GAME
                     bg.Draw(spriteBatch);
                    // spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
 
+
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
                     foreach (Karakter k in Enemies)
