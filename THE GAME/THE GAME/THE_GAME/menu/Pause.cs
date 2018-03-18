@@ -22,7 +22,7 @@ namespace THE_GAME.menu
         {
             MainMenu.Hatter.Draw(sbatch);
             MainMenu.Logo.DrawC(sbatch,Color.Beige);
-            MainMenu.Karakter.DrawC(sbatch, Color.DarkCyan * 0.8f);
+            MainMenu.Karakter.DrawC(sbatch, Color.Cyan);
             MainMenu.Options.Draw(sbatch);
             ExitM.Draw(sbatch);
             Resume.Draw(sbatch);

@@ -40,8 +40,7 @@ namespace THE_GAME
             Options,
             Pause,
             Save,
-            Load,
-            Textbox
+            Load
         };
 
         public static GenerateMap GenerateMap;
@@ -113,10 +112,12 @@ namespace THE_GAME
                 case Gamestates.Playing:
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
                     Karakter.Update(gameTime);
+
                     foreach (Karakter k in Enemies)
                     {
                         k.Update(gameTime);
                     }
+
                     break;
                 case Gamestates.Options:
                     break;
@@ -129,9 +130,7 @@ namespace THE_GAME
                 case Gamestates.Load:
                     menu.Save.Update(newmouse);
                     break;
-                case Gamestates.Textbox:
-                    menu.Save.Update(newmouse);
-                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -158,7 +157,7 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
-                    spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
+                   // spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
 
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
@@ -178,9 +177,7 @@ namespace THE_GAME
                 case Gamestates.Load:
                     menu.Save.Draw(spriteBatch);
                     break;
-                case Gamestates.Textbox:
-                    menu.Save.Draw(spriteBatch);
-                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }

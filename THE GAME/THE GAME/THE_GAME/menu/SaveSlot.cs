@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,24 +11,24 @@ namespace THE_GAME.menu
     {
         DateTime date;
         bool isUsed;
-        public bool nameInput;
+        public bool NameInput;
         readonly Vector2 datePosition;
         readonly Button save, back, textbox;
         readonly Sprite box;
         string name;
         Keys[] letter;
-        Vector2 namePos;
+        readonly Vector2 namePos;
         Regex r= new Regex("^[a-zA-Z0-9]*$");
 
         public SaveSlot(Texture2D t, Rectangle r, string text) : base(t, r, text)
         {
             Texture2D asd = Game1.ContentMgr.Load<Texture2D>("textbox");
-            box = new Sprite(Game1.ContentMgr.Load<Texture2D>("box"), new Rectangle(420, 200, 450, 300));
+            box = new Sprite(Game1.ContentMgr.Load<Texture2D>("popup"), new Rectangle(420, 200, 450, 300));
             isUsed = false;
             datePosition = Position;
             datePosition.Y += 30;
-            save = new Button(MainMenu.Gomb, new Rectangle(485, 400, 145, 63), "Save");
-            back = new Button(MainMenu.Gomb, new Rectangle(675, 400, 145, 63), "Back");
+            save = new Button(MainMenu.Gomb, new Rectangle(490, 400, 145, 63), "Save");
+            back = new Button(MainMenu.Gomb, new Rectangle(670, 400, 145, 63), "Back");
             textbox = new Button(asd, new Rectangle(570, 280, 372 / 2, 110 / 2), "Name: ");
             textbox.Position.X -= 110;
             textbox.Position.Y -= 3;
@@ -37,7 +36,7 @@ namespace THE_GAME.menu
             save.Position.X += 5;
             back.Position.Y -= 3;
             back.Position.X += 5;
-            nameInput = false;
+            NameInput = false;
             name = "";
             namePos = new Vector2(textbox.Position.X, textbox.Position.Y);
             namePos.X += 80;
@@ -47,41 +46,12 @@ namespace THE_GAME.menu
         public override void Update(MouseState mouse)
         {
 
-            switch (Game1.CurrentGameState)
+
+            base.Update(mouse);
+            if (IsClicked)
             {
-                case Game1.Gamestates.Load:
-                    if (IsClicked) Game1.CurrentGameState = Game1.Gamestates.Textbox;
-                    base.Update(mouse);
-                    nameInput = false;
-                    break;
-                case Game1.Gamestates.Save:
-                    if (IsClicked) Game1.CurrentGameState = Game1.Gamestates.Textbox;
-                    base.Update(mouse);
-                    nameInput = false;
-                    break;
-                case Game1.Gamestates.Textbox:
-                    nameInput = true;
-                    save.Update(mouse);
-                    back.Update(mouse);
-                    NameUpdate();
-                    if (save.IsClicked)
-                    {
-                        isUsed = true;
-                        date = DateTime.Now;
-                        Text = "Adott szint";
-                        name = "";
-                        Game1.CurrentGameState = Game1.Gamestates.Save;
-                    }
-
-                    if (back.IsClicked)
-                    {
-                        name = "";
-                        Game1.CurrentGameState = Game1.Gamestates.Save;
-                    }
-
-                    break;
+                NameInput = true;
             }
-
         }
 
         public override void Draw(SpriteBatch sbatch)
@@ -92,28 +62,57 @@ namespace THE_GAME.menu
                 sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
             
 
-            if (Game1.CurrentGameState == Game1.Gamestates.Textbox)
-            {
-                box.DrawC(sbatch, Color.DarkSeaGreen);
-                save.Draw(sbatch);
-                back.Draw(sbatch);
-                textbox.Draw(sbatch);
-                sbatch.DrawString(Font,name,namePos, Color.Black);
-            }
         }
 
         void NameUpdate()
         {
           letter= Game1.Newkey.GetPressedKeys();
-            if (letter.Length > 0 && Game1.Prevkey.GetPressedKeys().Length == 0 && name.Length<10)
+            if (letter.Length > 0 && Game1.Prevkey.GetPressedKeys().Length == 0 && name.Length<12)
             {
                 string value = letter[0].ToString();
                 if (value.Length==1) name += value.ToLower();
-                
+                if (Game1.Newkey.IsKeyDown(Keys.Back))
+                {
+                if (name.Length>0) name=  name.Remove(name.Length-1,1);
+                }
             }
         }
 
-}
+      public  void Textbox(MouseState mouse)
+      {
+                 
+            save.Update(mouse);
+            back.Update(mouse);
+            NameUpdate();
+            if (save.IsClicked)
+            {
+                NameInput = false;
+                isUsed = true;
+                date = DateTime.Now;
+                Text = "Adott szint";
+                name = "";
+
+            }
+
+            if (back.IsClicked)
+            {
+                NameInput = false;
+                name = "";
+              
+            }
+
+        }
+
+        public void DrawTextbox(SpriteBatch sbatch)
+        {
+            box.DrawC(sbatch, Color.White);
+            save.Draw(sbatch);
+            back.Draw(sbatch);
+            textbox.Draw(sbatch);
+            sbatch.DrawString(Font, name, namePos, Color.Black);
+        }
+
+    }
 
 }
 

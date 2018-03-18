@@ -6,35 +6,33 @@ namespace THE_GAME
 {
     class Zombie:Karakter
     {
-        bool right;
-        Vector2 startPos;
+       protected bool Right;
+       protected Vector2 StartPos;
         public Zombie(Vector2 startPos)
         {
 
             walk = new Texture2D[10];
-          
-            attack = new Texture2D[10];
+            death=new Texture2D[12];
 
+             const int o = 5;
 
-            const int o = 4;
+            Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
+            hitbox = new Rectangle(0, 0, 50, 100);
+            rectangleA = new Rectangle(0, 100, 536 / o, 495 / o);
+            RectangleD=new Rectangle(0, 0, 629 / o, 526 / o);
 
-            rectanglew = new Rectangle(0, 0, 363 / o, 458 / o);
-            hitbox = new Rectangle(0, 0, 60, 108);
-
-            rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
-
-            this.startPos=position = startPos;
+            this.StartPos=position = startPos;
 
             elapsed = 0;
 
-            walkI = 1;
+            WalkI = 1;
             
             attackI = 0;
 
 
             isJumping = false;
             isCrouching = false;
-            right = true;
+            Right = true;
 
 
 
@@ -43,48 +41,117 @@ namespace THE_GAME
                 walk[i] = Game1.ContentMgr.Load<Texture2D>("enemy/walk/Walk (" + (i) + ")");
             }
 
-
+            for (int i = 0; i < 12; i++)
+            {
+                death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/death/Dead (" + (i) + ")");
+            }
         }
-
 
         protected override void UpdateMovement()
         {
-            if (right)
+            if (!IsDead)
             {
-                mvmnt += new Vector2(1, 0);
-                if (elapsed > 3)
+                if (Right)
                 {
-                    elapsed = 0;
-                    walkI++;
-                    if (walkI > 8) walkI = 0;
+                    mvmnt += new Vector2(0.5f, 0);
+                    if (elapsed > 4)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+
+                    if (StartPos.X - position.X < -100 || NextToWall(Hitbox) == "right") Right = false;
                 }
-                if (position.X - startPos.X > 100 || NextToWall(Hitbox)=="right" ) right = false;
+                else
+                {
+                    mvmnt += new Vector2(-0.5f, 0);
+                    if (elapsed > 4)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+
+                    if (StartPos.X - position.X > 100 || NextToWall(Hitbox) == "left") Right = true;
+                }
+
+                if (Game1.Karakter.isAttack && Rectanglew.Intersects(Game1.Karakter.Hitbox))
+                {
+                    isDead = true;
+                }
             }
+
             else
             {
-                mvmnt += new Vector2(-1, 0);
-                if (elapsed > 3)
+                if (elapsed > 4 && deadI!=-1)
                 {
                     elapsed = 0;
-                    walkI++;
-                    if (walkI > 8) walkI = 0;
+                    deadI++;
+                    if (deadI > 11) deadI = -1;
                 }
-                if (position.X - startPos.X < 100 || NextToWall(Hitbox) == "left") right = true;
+
+              //  if (deadI==-1) if (Game1.Enemies.Count>1) Game1.Enemies.Remove(this);
             }
+
         }
         public override void  Draw(SpriteBatch sbatch)
         {
-            if (right)
-                sbatch.Draw(walk[walkI], rectanglew, Color.White);
 
-            else
+            if (isDead)
             {
-                rectanglew.X -= 35;
-                sbatch.Draw(walk[walkI], rectanglew, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                if (Facing == Direction.Right)
+                {
+                    if (deadI != -1) sbatch.Draw(death[deadI], RectangleD, Color.White);
+                }
+                else if (Facing == Direction.Left)
+                {
+                    if (deadI!=-1 )sbatch.Draw(death[deadI], RectangleD, null, Color.White, 0, new Vector2(0, 0),
+                        SpriteEffects.FlipHorizontally, 0);
+                }
+
+                else if (deadI == -1)
+                {
+
+                }
             }
+
+          else  if (Right)
+                sbatch.Draw(walk[WalkI], Rectanglew, Color.White);
+
+           else if (!Right)
+            {
+                Rectanglew.X -= 35;
+                sbatch.Draw(walk[WalkI], Rectanglew, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+            }
+
+          
+        }
+
+        protected override void UpdatePosition(GameTime gametime)
+        {
+            position += mvmnt * (float)gametime.ElapsedGameTime.TotalMilliseconds / 15;
+
+            hitbox.X += (int)position.X;
+            hitbox.Y += (int)position.Y;
+
+            position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
+            if (position.X < 0) position.X = 0;
+            if (position.Y > 1500)
+            {
+                isDead = true;
+                position = new Vector2(0, 300);
+            }
+           hitbox.Location = new Point((int)position.X, (int)position.Y);
+
+            Rectanglew.Location = new Point((int)position.X, (int)position.Y);
+            rectangleA.Location = new Point((int)position.X, (int)position.Y);
+            if (isDead) RectangleD.Location = new Point((int)position.X, (int)position.Y+10);
+
         }
 
 
-       
+
+
     }
 }

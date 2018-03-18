@@ -1,19 +1,4 @@
-Content\enemy\idle\Idle (1).xnb
 Content\BG.xnb
-Content\enemy\idle\Idle (10).xnb
-Content\enemy\idle\Idle (11).xnb
-Content\enemy\idle\Idle (12).xnb
-Content\enemy\idle\Idle (13).xnb
-Content\enemy\idle\Idle (14).xnb
-Content\enemy\idle\Idle (15).xnb
-Content\enemy\idle\Idle (2).xnb
-Content\enemy\idle\Idle (3).xnb
-Content\enemy\idle\Idle (4).xnb
-Content\enemy\idle\Idle (5).xnb
-Content\enemy\idle\Idle (6).xnb
-Content\enemy\idle\Idle (7).xnb
-Content\enemy\idle\Idle (8).xnb
-Content\enemy\idle\Idle (9).xnb
 Content\enemy\walk\Walk (0).xnb
 Content\enemy\walk\Walk (9).xnb
 Content\enemy\walk\Walk (1).xnb
@@ -120,3 +105,38 @@ Content\bob\jumpAttack\Jump_Attack__009.xnb
 Content\textbox.xnb
 Content\box.xnb
 Content\font.xnb
+Content\enemy\death\Dead (0).xnb
+Content\enemy\death\Dead (9).xnb
+Content\enemy\death\Dead (10).xnb
+Content\enemy\death\Dead (11).xnb
+Content\enemy\death\Dead (1).xnb
+Content\enemy\death\Dead (2).xnb
+Content\enemy\death\Dead (3).xnb
+Content\enemy\death\Dead (4).xnb
+Content\enemy\death\Dead (5).xnb
+Content\enemy\death\Dead (6).xnb
+Content\enemy\death\Dead (7).xnb
+Content\enemy\death\Dead (8).xnb
+Content\enemy\girl\walk\Walk (0).xnb
+Content\enemy\girl\walk\Walk (1).xnb
+Content\enemy\girl\walk\Walk (2).xnb
+Content\enemy\girl\walk\Walk (3).xnb
+Content\enemy\girl\walk\Walk (4).xnb
+Content\enemy\girl\walk\Walk (5).xnb
+Content\enemy\girl\walk\Walk (6).xnb
+Content\enemy\girl\walk\Walk (7).xnb
+Content\enemy\girl\walk\Walk (8).xnb
+Content\enemy\girl\walk\Walk (9).xnb
+Content\enemy\girl\death\Dead (1).xnb
+Content\enemy\girl\death\Dead (10).xnb
+Content\enemy\girl\death\Dead (11).xnb
+Content\enemy\girl\death\Dead (12).xnb
+Content\enemy\girl\death\Dead (2).xnb
+Content\enemy\girl\death\Dead (3).xnb
+Content\enemy\girl\death\Dead (4).xnb
+Content\enemy\girl\death\Dead (5).xnb
+Content\enemy\girl\death\Dead (6).xnb
+Content\enemy\girl\death\Dead (7).xnb
+Content\enemy\girl\death\Dead (8).xnb
+Content\enemy\girl\death\Dead (9).xnb
+Content\popup.xnb

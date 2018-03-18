@@ -37,7 +37,7 @@ namespace THE_GAME
 
             if (Rectangle.X - Game1.Karakter.Hitbox.X > 690) Rectangle.X -= 1280 * 2;
 
-            if (rectangle2.X - Game1.Karakter.Hitbox.X > 690) rectangle2.X -= 1280 * 2;
+            if (rectangle2.X - Game1.Karakter.Hitbox.X > 890) rectangle2.X -= 1280 * 2;
 
 
         }

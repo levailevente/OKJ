@@ -36,7 +36,7 @@ namespace THE_GAME.menu
             Hatter.Draw(sbatch);
             Newgame.Draw(sbatch);
             LoadGame.Draw(sbatch);
-            Karakter.DrawC(sbatch,Color.DarkCyan * 0.8f);
+            Karakter.DrawC(sbatch,Color.Cyan);
             Options.Draw(sbatch);
             Exit.Draw(sbatch);
             Logo.DrawC(sbatch,Color.Beige);
@@ -50,8 +50,9 @@ namespace THE_GAME.menu
             Options.Update(mouse);
             if (Newgame.IsClicked)
             {
-                Game1.GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, Game1.TileSize);
                 Game1.Karakter = new Karakter();
+                Game1.Enemies.Clear();
+                Game1.GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, Game1.TileSize);
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
 

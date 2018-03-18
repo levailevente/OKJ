@@ -69,7 +69,9 @@ namespace THE_GAME
                         }
 
 
-                    if (i == 8 && j == 6) Game1.Enemies.Add(new Zombie(new Vector2(i*size, j*size)));
+                    if (j == 8 && i == 6) Game1.Enemies.Add(new Zombie(new Vector2(j*size, i*size)));
+                    if (j == 8 && i == 3) Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size)));
+                    if (j == 14 && i == 3) Game1.Enemies.Add(new ZombieGirl(new Vector2( j* size, i * size)));
                     width = (i + 1) * size;
                     height = (j + 1) * size;
                 }
@@ -83,12 +85,12 @@ namespace THE_GAME
         {
             int ystart = (karakter.Hitbox.X-Game1.Swidth)/Game1.TileSize;
             if (ystart < 0) ystart = 0;
-            int yend = (karakter.Hitbox.X + Game1.Swidth ) / Game1.TileSize;
+            int yend = (karakter.Hitbox.X + Game1.Swidth ) / Game1.TileSize+10;
             if (yend > y) yend = y;
 
             int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
             if (xstart < 0) xstart = 0;
-            int xend = (karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize;
+            int xend = ((karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
             if (xend > x) xend = x;
 
             for (int i = xstart; i <xend; i++)
@@ -118,7 +120,6 @@ namespace THE_GAME
             int yend = movingRectangle.X  / Game1.TileSize+6;
             if (yend > y) yend = y;
 
-            if (Game1.Karakter.IsCrouching) movingRectangle.Offset(0,30);
             for (int i =xstart; i < xend; i++)
             {
                 

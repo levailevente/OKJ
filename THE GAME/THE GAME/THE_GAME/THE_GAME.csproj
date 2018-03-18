@@ -84,6 +84,7 @@
     <Compile Include="Button.cs" />
     <Compile Include="camera.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="HealthBar.cs" />
     <Compile Include="menu\LoadGame.cs" />
     <Compile Include="menu\MainMenu.cs" />
     <Compile Include="karakter.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Sprite.cs" />
     <Compile Include="tiles.cs" />
     <Compile Include="zombie.cs" />
+    <Compile Include="ZombieGirl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
