@@ -354,7 +354,7 @@ namespace THE_GAME
                 isDead = true;
                 position = new Vector2(0, 30);
             }
-
+            
 
             if (isAttack)
             {
