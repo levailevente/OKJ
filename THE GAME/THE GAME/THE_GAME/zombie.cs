@@ -8,6 +8,7 @@ namespace THE_GAME
     {
        protected bool Right;
        protected Vector2 StartPos;
+
         public Zombie(Vector2 startPos)
         {
 
@@ -24,7 +25,7 @@ namespace THE_GAME
             this.StartPos=position = startPos;
 
             elapsed = 0;
-
+            
             WalkI = 1;
             
             attackI = 0;
@@ -33,6 +34,7 @@ namespace THE_GAME
             isCrouching = false;
             Right = true;
 
+            
 
             for (int i = 0; i < 10; i++)
             {
@@ -57,12 +59,18 @@ namespace THE_GAME
 
                 if (hitbox.Intersects(Game1.Karakter.HitboxA))
                 {
-                   if (Game1.Karakter.isAttack) isDead = true;
+                    if (Game1.Karakter.isAttack)
+                    {
+                        IsDead = true;
+                        return;
+                    }
 
-
-                    Game1.Karakter.health -= 1;
-                    Game1.Karakter.invulnerable = true;
-                    if (elapsed>100) Game1.Karakter.invulnerable = false;
+                    if (!Game1.Karakter.invulnerable)
+                    {
+                        Game1.Karakter.health -= 1;
+                        Game1.Karakter.invulnerable = true;
+                        Game1.Karakter.damaged = true;
+                    }
 
 
                     isAttack = true;
@@ -146,7 +154,7 @@ namespace THE_GAME
         public override void  Draw(SpriteBatch sbatch)
         {
 
-            if (isDead)
+            if (IsDead)
             {
                 if (Right)
                 {
@@ -156,7 +164,7 @@ namespace THE_GAME
                 {
                     if (deadI != -1)
                     {
-                        RectangleD.X -= 30;
+                        RectangleD.X -= 25;
                         sbatch.Draw(death[deadI], RectangleD, null, Color.White, 0, new Vector2(0, 0),
           SpriteEffects.FlipHorizontally, 0);
                     }
@@ -204,14 +212,14 @@ namespace THE_GAME
             if (position.X < 0) position.X = 0;
             if (position.Y > 1500)
             {
-                isDead = true;
+                IsDead = true;
                 position = new Vector2(0, 300);
             }
             hitbox.Location = new Point((int)position.X, (int)position.Y);
              hitbox.Location = new Point((int)position.X, (int)position.Y);
             Rectanglew.Location = new Point((int)position.X, (int)position.Y);
             rectangleA.Location = new Point((int)position.X, (int)position.Y);
-            if (isDead) RectangleD.Location = new Point((int)position.X, (int)position.Y+10);
+            if (IsDead) RectangleD.Location = new Point((int)position.X, (int)position.Y+10);
 
         }
 

@@ -1351,6 +1351,33 @@
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\enemy\attack\Attack (8).xnb</Output>
       <Time>2018-03-18T22:06:21.61162+01:00</Time>
     </Item>
+    <Item>
+      <Source>heart\emptyheart.PNG</Source>
+      <Name>heart\emptyheart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\emptyheart.xnb</Output>
+      <Time>2018-03-19T17:57:44.9847337+01:00</Time>
+    </Item>
+    <Item>
+      <Source>heart\fullheart.PNG</Source>
+      <Name>heart\fullheart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\fullheart.xnb</Output>
+      <Time>2018-03-19T17:57:44.9987426+01:00</Time>
+    </Item>
+    <Item>
+      <Source>heart\halfheart.PNG</Source>
+      <Name>heart\halfheart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\halfheart.xnb</Output>
+      <Time>2018-03-19T17:57:45.0037478+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C9AFE202-71F1-4E48-9096-724B4306C116}</ContentProjectGUID>

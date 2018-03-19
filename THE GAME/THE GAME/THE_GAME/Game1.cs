@@ -20,7 +20,7 @@ namespace THE_GAME
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter Karakter;
-         Camera kamera;
+        public static Camera kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
@@ -31,6 +31,7 @@ namespace THE_GAME
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
         public static List<Karakter> Enemies=new List<Karakter>();
+
 
         Texture2D szin;
         public enum Gamestates
@@ -138,7 +139,11 @@ namespace THE_GAME
 
             kamera.Update(Karakter);
 
-          
+            if (Karakter.IsDead)
+            {
+                Karakter = new Karakter();
+                kamera = new Camera(graphics.GraphicsDevice.Viewport);
+            }
             Prevkey = Newkey;
             prevmouse = newmouse;
             base.Update(gameTime);
@@ -157,7 +162,7 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
-                   spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
+                    // spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
 
 
                     GenerateMap.Draw(spriteBatch, Karakter);
@@ -166,6 +171,8 @@ namespace THE_GAME
                     {
                         k.Draw(spriteBatch);
                     }
+
+                    HealthBar.Draw(spriteBatch,Karakter.health);
                     break;
                 case Gamestates.Options:
                     break;

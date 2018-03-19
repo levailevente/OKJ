@@ -110,14 +110,14 @@ namespace THE_GAME
 
         public bool Collision (Rectangle movingRectangle)
         {
-            int xstart = movingRectangle.Y  / Game1.TileSize-3;
+            int xstart = movingRectangle.Y  / Game1.TileSize-2;
             if (xstart < 0) xstart = 0;
-            int xend = movingRectangle.Y  / Game1.TileSize+6;
+            int xend = movingRectangle.Y  / Game1.TileSize+4;
             if (xend > x) xend = x;
 
-            int ystart = movingRectangle.X  / Game1.TileSize-3;
+            int ystart = movingRectangle.X  / Game1.TileSize-2;
             if (ystart < 0) ystart = 0;
-            int yend = movingRectangle.X  / Game1.TileSize+6;
+            int yend = movingRectangle.X  / Game1.TileSize+4;
             if (yend > y) yend = y;
 
             for (int i =xstart; i < xend; i++)

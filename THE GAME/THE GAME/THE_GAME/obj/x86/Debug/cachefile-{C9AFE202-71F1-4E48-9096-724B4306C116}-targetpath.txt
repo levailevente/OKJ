@@ -148,3 +148,6 @@ Content\enemy\attack\Attack (5).xnb
 Content\enemy\attack\Attack (6).xnb
 Content\enemy\attack\Attack (7).xnb
 Content\enemy\attack\Attack (8).xnb
+Content\heart\emptyheart.xnb
+Content\heart\fullheart.xnb
+Content\heart\halfheart.xnb
