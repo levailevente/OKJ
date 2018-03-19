@@ -14,11 +14,12 @@ namespace THE_GAME
         readonly Texture2D crouch;
         protected Texture2D[] death;
         Rectangle rectanglei;
-        protected Rectangle Rectanglew, hitbox;
+        protected Rectangle Rectanglew, hitbox, hitboxA;
         Rectangle rectanglejump;
         protected Rectangle rectangleA, RectanglejumpA, RectangleD;
-
+        public int health;
         public Rectangle Hitbox => hitbox;
+        public Rectangle HitboxA => hitboxA;
         public Rectangle RectangleW => Rectanglew;
         protected double elapsed;
         int idleI;
@@ -43,6 +44,7 @@ namespace THE_GAME
         protected bool isCrouching;
         public   bool isAttack;
         protected  bool   isDead;
+        public bool invulnerable;
 
         public Karakter()
         {
@@ -55,7 +57,8 @@ namespace THE_GAME
             const int o = 4;
             rectanglei = new Rectangle(0, 0, 232/o, 439/o);
             Rectanglew = new Rectangle(0, 0,363/o , 458/o);
-            hitbox = new Rectangle(0, 0, 60, 108);            
+            hitbox = new Rectangle(0, 0, 60, 108);
+            hitboxA = new Rectangle(0, 0, 60, 108);
             rectanglejump = new Rectangle(0, 0, 362/o, 483/o);
             rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
             RectanglejumpA = new Rectangle(0, 0, 504 / o, 522 / o);
@@ -71,7 +74,9 @@ namespace THE_GAME
 
             isJumping = false;
             isCrouching = false;
+            invulnerable = false;
 
+            health = 6;
 
             for (int i = 0; i < 10; i++)
             {
@@ -141,7 +146,7 @@ namespace THE_GAME
             if (isAttack)
             {
                 elapsed++;
-                if (elapsed > 3 && attackI < 9) attackI++;
+                if (elapsed > 4 && attackI < 9) attackI++;
 
                 rectangleA.Y -= 2;
                 if (Facing == Direction.Left)
@@ -300,7 +305,6 @@ namespace THE_GAME
             }
 
 
-
             if (Game1.Newkey.IsKeyDown(Keys.Space) && Game1.Prevkey.IsKeyUp(Keys.Space) &&
                 Game1.Newkey.IsKeyUp(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right))
             {
@@ -321,6 +325,8 @@ namespace THE_GAME
                 isCrouching = false;
             }
 
+            if (health == 0) isDead = true;
+
             else
             {
                 if (!(elapsed > 6)) return;
@@ -329,6 +335,8 @@ namespace THE_GAME
                 if (idleI > 9) idleI = 0;
 
             }
+
+    
         }
 
         protected virtual void UpdatePosition(GameTime gametime)
@@ -344,17 +352,17 @@ namespace THE_GAME
             if (position.Y > 1500)
             {
                 isDead = true;
-                position = new Vector2(0, 300);
+                position = new Vector2(0, 30);
             }
 
 
             if (isAttack)
             {
-                hitbox.Location = Facing==Direction.Right ? new Point((int) position.X + 60, (int) position.Y) : new Point((int)position.X -60, (int)position.Y);
+                hitboxA.Location = Facing==Direction.Right ? new Point((int) position.X + 60, (int) position.Y) : new Point((int)position.X -60, (int)position.Y);
             }
-            else if (isCrouching) hitbox.Location = new Point((int)position.X, (int)position.Y + 30);
-            else
-                hitbox.Location = new Point((int) position.X, (int) position.Y);
+            else hitboxA.Location = new Point((int)position.X, (int)position.Y);
+            if (isCrouching) hitbox.Location = new Point((int)position.X, (int)position.Y + 30);           
+            else hitbox.Location = new Point((int) position.X, (int) position.Y);
             rectanglei.Location = new Point((int) position.X, (int) position.Y);
             Rectanglew.Location = new Point((int) position.X, (int) position.Y);
             rectanglejump.Location = new Point((int) position.X, (int) position.Y);

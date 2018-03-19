@@ -157,7 +157,7 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
-                   // spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
+                   spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
 
 
                     GenerateMap.Draw(spriteBatch, Karakter);
