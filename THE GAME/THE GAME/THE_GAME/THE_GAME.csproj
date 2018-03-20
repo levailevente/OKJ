@@ -85,11 +85,11 @@
     <Compile Include="camera.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="HealthBar.cs" />
-    <Compile Include="menu\LoadGame.cs" />
     <Compile Include="menu\MainMenu.cs" />
     <Compile Include="karakter.cs" />
     <Compile Include="GenerateMap.cs" />
     <Compile Include="mapok.cs" />
+    <Compile Include="menu\Options.cs" />
     <Compile Include="menu\Pause.cs" />
     <Compile Include="menu\Save.cs" />
     <Compile Include="menu\SaveSlot.cs" />

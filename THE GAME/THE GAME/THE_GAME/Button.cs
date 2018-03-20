@@ -9,7 +9,7 @@ namespace THE_GAME
         public bool IsClicked;
         protected string Text;
         Rectangle mouseRectangle;
-        protected readonly SpriteFont Font;
+        public static SpriteFont Font;
         public Vector2 Position;
         static int elapsed;
         protected Color Hover;
@@ -49,6 +49,11 @@ namespace THE_GAME
         {
             sbatch.Draw(Texture, Rectangle, Hover);
             sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
+        }
+        public void Draw2(SpriteBatch sbatch,float f)
+        {
+            sbatch.Draw(Texture, Rectangle, Hover*f);
+            sbatch.DrawString(Font, Text, Position,Color.White);
         }
     }
     

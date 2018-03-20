@@ -69,7 +69,12 @@ namespace THE_GAME.menu
             {
                Game1.CurrentGameState = Game1.Gamestates.Load;
             }
-           
+            if (Options.IsClicked)
+            {
+                Game1.CurrentGameState = Game1.Gamestates.Options;
+            }
+
+
         }
     }
     

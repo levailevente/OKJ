@@ -9,10 +9,11 @@ namespace THE_GAME.menu
         static readonly SaveSlot[] Saves;
 
         static readonly Button Back;
+        public static Texture2D gomb;
 
         static Save()
         {
-            Texture2D gomb = Game1.ContentMgr.Load<Texture2D>("button");
+            gomb = Game1.ContentMgr.Load<Texture2D>("button");
             Saves = new SaveSlot[4];
 
             Saves[0] = new SaveSlot(gomb, new Rectangle(400, 50, 500, 100), "Empty slot");

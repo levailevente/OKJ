@@ -31,7 +31,7 @@ namespace THE_GAME
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
         public static List<Karakter> Enemies=new List<Karakter>();
-
+        public static bool fullscreen;
 
         Texture2D szin;
         public enum Gamestates
@@ -39,6 +39,7 @@ namespace THE_GAME
             Mainmenu,
             Playing,
             Options,
+            OptionsIG,
             Pause,
             Save,
             Load
@@ -53,10 +54,14 @@ namespace THE_GAME
             IsMouseVisible = true;
             
             graphics = new GraphicsDeviceManager(this)
+
+          
             {
                 PreferredBackBufferWidth = 1280,
                 PreferredBackBufferHeight = 720
             };
+
+            
 
             Content.RootDirectory = "Content";
         }
@@ -75,6 +80,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
+            fullscreen = false;
 
             CurrentGameState = Gamestates.Mainmenu;
 
@@ -120,7 +126,11 @@ namespace THE_GAME
                     }
 
                     break;
-                case Gamestates.Options:
+                case Gamestates.Options:Options.Update(newmouse);
+                    graphics.IsFullScreen = fullscreen;
+                    break;
+                case Gamestates.OptionsIG:
+                    Options.Update(newmouse);
                     break;
                 case Gamestates.Pause:
                     Pause.Update(newmouse);
@@ -174,7 +184,10 @@ namespace THE_GAME
 
                     HealthBar.Draw(spriteBatch,Karakter.health);
                     break;
-                case Gamestates.Options:
+                case Gamestates.Options: Options.Draw(spriteBatch);
+                    break;
+                case Gamestates.OptionsIG:
+                    Options.Draw(spriteBatch);
                     break;
                 case Gamestates.Pause:
                     Pause.Draw(spriteBatch);

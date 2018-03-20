@@ -40,12 +40,10 @@ namespace THE_GAME.menu
             name = "";
             namePos = new Vector2(textbox.Position.X, textbox.Position.Y);
             namePos.X += 80;
-
         }
 
         public override void Update(MouseState mouse)
         {
-
 
             base.Update(mouse);
             if (IsClicked)
@@ -66,21 +64,20 @@ namespace THE_GAME.menu
 
         void NameUpdate()
         {
-          letter= Game1.Newkey.GetPressedKeys();
-            if (letter.Length > 0 && Game1.Prevkey.GetPressedKeys().Length == 0 && name.Length<12)
+            letter= Game1.Newkey.GetPressedKeys();
+            if (letter.Length > 0 && Game1.Prevkey.GetPressedKeys().Length == 0 && name.Length<15 || Game1.Newkey.IsKeyDown(Keys.Back) && Game1.Prevkey.GetPressedKeys().Length == 0)
             {
                 string value = letter[0].ToString();
                 if (value.Length==1) name += value.ToLower();
                 if (Game1.Newkey.IsKeyDown(Keys.Back))
                 {
-                if (name.Length>0) name=  name.Remove(name.Length-1,1);
+                if (name.Length>0) name=name.Remove(name.Length-1,1);
                 }
             }
         }
 
       public  void Textbox(MouseState mouse)
       {
-                 
             save.Update(mouse);
             back.Update(mouse);
             NameUpdate();
@@ -90,19 +87,15 @@ namespace THE_GAME.menu
                 isUsed = true;
                 date = DateTime.Now;
                 Text = "Adott szint";
-                name = "";
-
+                
             }
 
             if (back.IsClicked)
             {
                 NameInput = false;
-                name = "";
-              
+                name = "";              
             }
-
         }
-
         public void DrawTextbox(SpriteBatch sbatch)
         {
             box.DrawC(sbatch, Color.White);

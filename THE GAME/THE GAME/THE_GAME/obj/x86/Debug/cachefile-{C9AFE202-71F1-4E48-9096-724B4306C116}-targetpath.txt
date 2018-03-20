@@ -104,7 +104,6 @@ Content\bob\jumpAttack\Jump_Attack__008.xnb
 Content\bob\jumpAttack\Jump_Attack__009.xnb
 Content\textbox.xnb
 Content\box.xnb
-Content\font.xnb
 Content\enemy\death\Dead (0).xnb
 Content\enemy\death\Dead (9).xnb
 Content\enemy\death\Dead (10).xnb
@@ -151,3 +150,5 @@ Content\enemy\attack\Attack (8).xnb
 Content\heart\emptyheart.xnb
 Content\heart\fullheart.xnb
 Content\heart\halfheart.xnb
+Content\font.xnb
+Content\font2.xnb
