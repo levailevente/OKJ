@@ -93,10 +93,11 @@
     <Compile Include="menu\Pause.cs" />
     <Compile Include="menu\Save.cs" />
     <Compile Include="menu\SaveSlot.cs" />
+    <Compile Include="MovingTile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Save.cs" />
+    <Compile Include="Spike.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="tiles.cs" />
     <Compile Include="zombie.cs" />

@@ -31,7 +31,8 @@ namespace THE_GAME
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
         public static List<Karakter> Enemies=new List<Karakter>();
-        public static bool fullscreen;
+        public static List<Spike> Spikes = new List<Spike>();
+        public static bool Fullscreen;
 
         Texture2D szin;
         public enum Gamestates
@@ -42,7 +43,8 @@ namespace THE_GAME
             OptionsIG,
             Pause,
             Save,
-            Load
+            Load,
+            GameOver
         };
 
         public static GenerateMap GenerateMap;
@@ -80,7 +82,7 @@ namespace THE_GAME
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
 
-            fullscreen = false;
+            Fullscreen = false;
 
             CurrentGameState = Gamestates.Mainmenu;
 
@@ -125,9 +127,16 @@ namespace THE_GAME
                         k.Update(gameTime);
                     }
 
+
+
                     break;
                 case Gamestates.Options:Options.Update(newmouse);
-                    graphics.IsFullScreen = fullscreen;
+                    
+                    if (Options.apply.IsClicked&& Fullscreen!=graphics.IsFullScreen)
+                    {
+                      graphics.ToggleFullScreen();
+                    }
+                    
                     break;
                 case Gamestates.OptionsIG:
                     Options.Update(newmouse);

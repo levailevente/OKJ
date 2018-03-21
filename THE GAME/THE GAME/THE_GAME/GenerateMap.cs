@@ -13,7 +13,7 @@ namespace THE_GAME
     {
 
         Tiles[,] Tiles2 { get; }
-        Tiles[,] Objects2 { get; }
+       public Tiles[,] Objects2 { get; }
         int width, height;
         readonly int x;
         readonly int y;
@@ -32,46 +32,56 @@ namespace THE_GAME
                     int n = map[i, j];
                     int m = objects[i, j];
 
-                    if (n > 0)
-                        Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), true, false);
-                    else if (n < 0) Tiles2[i, j] = new Tiles(n*-1, new Rectangle(j * size, i * size, size, size), false, false);
+                    bool blocked = n < 0;
+                    if (blocked) n *= -1;
 
-                    bool blocked = m < 0;
-                    if (blocked) m *= -1;
+                   if (n>0)
+                       
+                        Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
+                   
+                    bool blockedO = m < 0;
+                    if (blockedO) m *= -1;
                     if (m > 0)
 
                         switch (m)
                         {
                             case 6:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size-20, i * size+15, (int)(182/1.5), (int)(90/1.5)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size-20, i * size+15, (int)(182/1.5), (int)(90/1.5)), blockedO,
                                     true); break;
                             case 7:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 32, (int)(100 / 1.5), (int)(64 / 1.5)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 32, (int)(100 / 1.5), (int)(64 / 1.5)), blockedO,
                                     true); break;
                             case 9:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size+20, (int)(132 /1.4), (int)(74 / 1.4)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size+20, (int)(132 /1.4), (int)(74 / 1.4)), blockedO,
                                     true); break;
                             case 10:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 100, i * size - 97, (int)(286/1.4 ), (int)(239 / 1.4)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 100, i * size - 97, (int)(286/1.4 ), (int)(239 / 1.4)), blockedO,
                                     true); break;
                             case 11:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blockedO,
                                     true); break;
                             case 13:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)), blockedO,
                                     true); break;
                             case 14:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 45, i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blocked,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 45, i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blockedO,
                                     true); break;
+                            case 15:
+                                Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size)));
+                                break;
+                            case 16:
+                                Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size)));
+                                break;
+                            case 17:
+                                Tiles2[i, j] = new MovingTile(14,new Rectangle(j*size,i*size,size,size),true,true,false,true);
 
+                                break;
 
-                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blocked, true);  break;
+                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO, true);  break;
                         }
 
+             
 
-                    if (j == 8 && i == 6) Game1.Enemies.Add(new Zombie(new Vector2(j*size, i*size)));
-                    if (j == 8 && i == 3) Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size)));
-                    if (j == 14 && i == 3) Game1.Enemies.Add(new ZombieGirl(new Vector2( j* size, i * size)));
                     width = (i + 1) * size;
                     height = (j + 1) * size;
                 }
@@ -101,7 +111,9 @@ namespace THE_GAME
                     Tiles2[i, j].Draw(spritebatch);
 
                     if (Objects2[i, j] != null)
+                    {
                         Objects2[i, j].Draw(spritebatch);
+                    }
                 }
             }
 

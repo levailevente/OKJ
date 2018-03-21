@@ -350,6 +350,8 @@ namespace THE_GAME
             hitbox.Y += (int)position.Y;
             
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
+
+
             if (position.X < 0) position.X = 0; 
 
             if (position.Y > 1200) IsDead = true;
@@ -381,6 +383,7 @@ namespace THE_GAME
 
         }
 
+      
         protected string NextToWall(Rectangle movingRectangle)
         {
             Rectangle wall = movingRectangle;

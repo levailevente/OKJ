@@ -6,9 +6,9 @@ namespace THE_GAME.menu
 {
     static class Save
     {
-        static readonly SaveSlot[] Saves;
+        public static readonly SaveSlot[] Saves;
 
-        static readonly Button Back;
+        public static readonly Button Back;
         public static Texture2D gomb;
 
         static Save()
@@ -22,8 +22,8 @@ namespace THE_GAME.menu
             Saves[3] = new SaveSlot(gomb, new Rectangle(400, 500, 500, 100), "Empty slot");
 
             Back = new Button(MainMenu.Gomb, new Rectangle(575, 625, 150, 60), "Back");
-            Back.Position.Y -= 4;
-            Back.Position.X += 13;
+            Back.Position.Y -= 2;
+            Back.Position.X += 15;
         }
 
         public static void Draw(SpriteBatch sbatch)

@@ -13,7 +13,7 @@ namespace THE_GAME.menu
         bool isUsed;
         public bool NameInput;
         readonly Vector2 datePosition;
-        readonly Button save, back, textbox;
+        public readonly Button save, back, textbox;
         readonly Sprite box;
         string name;
         Keys[] letter;
@@ -27,15 +27,15 @@ namespace THE_GAME.menu
             isUsed = false;
             datePosition = Position;
             datePosition.Y += 30;
-            save = new Button(MainMenu.Gomb, new Rectangle(490, 400, 145, 63), "Save");
-            back = new Button(MainMenu.Gomb, new Rectangle(670, 400, 145, 63), "Back");
+            save = new Button(MainMenu.Gomb, new Rectangle(490, 400, 145, 60), "Save");
+            back = new Button(MainMenu.Gomb, new Rectangle(670, 400, 145, 60), "Back");
             textbox = new Button(asd, new Rectangle(570, 280, 372 / 2, 110 / 2), "Name: ");
             textbox.Position.X -= 110;
             textbox.Position.Y -= 3;
             save.Position.Y -= 3;
             save.Position.X += 5;
             back.Position.Y -= 3;
-            back.Position.X += 5;
+            back.Position.X += 8;
             NameInput = false;
             name = "";
             namePos = new Vector2(textbox.Position.X, textbox.Position.Y);

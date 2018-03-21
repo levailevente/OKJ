@@ -11,7 +11,7 @@ namespace THE_GAME
     public class Sprite
     {
         protected readonly Texture2D Texture;
-        protected Rectangle Rectangle;
+        public Rectangle Rectangle;
 
         public Sprite(Texture2D t, Rectangle r)
         {

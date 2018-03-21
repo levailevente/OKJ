@@ -152,3 +152,12 @@ Content\heart\fullheart.xnb
 Content\heart\halfheart.xnb
 Content\font.xnb
 Content\font2.xnb
+Content\enemy\girl\attack\Attack (1).xnb
+Content\enemy\girl\attack\Attack (2).xnb
+Content\enemy\girl\attack\Attack (3).xnb
+Content\enemy\girl\attack\Attack (4).xnb
+Content\enemy\girl\attack\Attack (5).xnb
+Content\enemy\girl\attack\Attack (6).xnb
+Content\enemy\girl\attack\Attack (7).xnb
+Content\enemy\girl\attack\Attack (8).xnb
+Content\tiles\Tile (17).xnb

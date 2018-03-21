@@ -7,7 +7,7 @@ namespace THE_GAME
     internal class Button : Sprite
     {
         public bool IsClicked;
-        protected string Text;
+        public string Text;
         Rectangle mouseRectangle;
         public static SpriteFont Font;
         public Vector2 Position;

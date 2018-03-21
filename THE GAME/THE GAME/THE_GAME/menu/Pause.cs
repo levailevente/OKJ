@@ -6,16 +6,16 @@ namespace THE_GAME.menu
 {
      static class Pause
      {
-        static readonly Button Resume, Save, ExitM;
+        public static readonly Button Resume, Save, ExitM;
       static  Pause()
         {
-            Resume = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 70), "Resume");
-            Save = new Button(MainMenu.Gomb, new Rectangle(560, 350, 170, 70), "Save");
-            ExitM = new Button(MainMenu.Gomb, new Rectangle(560, 550, 170, 70), "Exit to menu");
+            Resume = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 65), "Resume");
+            Save = new Button(MainMenu.Gomb, new Rectangle(560, 350, 170, 65), "Save");
+            ExitM = new Button(MainMenu.Gomb, new Rectangle(560, 550, 170, 65), "Exit to menu");
 
             Resume.Position.X += 8;
             Save.Position.X += 20;
-            ExitM.Position.X -=15;
+            ExitM.Position.X -=10;
         }
 
         public static void Draw(SpriteBatch sbatch)
@@ -47,6 +47,10 @@ namespace THE_GAME.menu
             if (Save.IsClicked)
             {
                 Game1.CurrentGameState = Game1.Gamestates.Save;
+            }
+            if (MainMenu.Options.IsClicked)
+            {
+                Game1.CurrentGameState = Game1.Gamestates.OptionsIG;
             }
         }
     }

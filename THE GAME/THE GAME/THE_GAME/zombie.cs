@@ -19,7 +19,7 @@ namespace THE_GAME
 
             Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
             hitbox = new Rectangle(0, 0, 50, 100);
-            rectangleA = new Rectangle(0, 100, 430 / o, 519 / o);
+            rectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
             RectangleD=new Rectangle(0, 0, 629 / o, 526 / o);
 
             this.StartPos=position = startPos;
@@ -86,7 +86,7 @@ namespace THE_GAME
                 {
                     isAttack = false;
                     Right = true;
-                    mvmnt += new Vector2(0.5f, 0);
+                    mvmnt += new Vector2(0.7f, 0);
                     if (elapsed > 4)
                     {
                         elapsed = 0;
@@ -99,7 +99,7 @@ namespace THE_GAME
                 {
                     isAttack = false;
                     Right = false;
-                    mvmnt += new Vector2(-0.5f, 0);
+                    mvmnt += new Vector2(-0.7f, 0);
                     if (elapsed > 4)
                     {
                         elapsed = 0;
@@ -111,8 +111,8 @@ namespace THE_GAME
                 else if (Right)
                 {
                     isAttack = false;
-                    mvmnt += new Vector2(0.5f, 0);
-                    if (elapsed > 4)
+                    mvmnt += new Vector2(0.2f, 0);
+                    if (elapsed > 6)
                     {
                         elapsed = 0;
                         WalkI++;
@@ -124,8 +124,8 @@ namespace THE_GAME
                 else if (!Right)
                 {
                     isAttack = false;
-                    mvmnt += new Vector2(-0.5f, 0);
-                    if (elapsed > 4)
+                    mvmnt += new Vector2(-0.2f, 0);
+                    if (elapsed > 6)
                     {
                         elapsed = 0;
                         WalkI++;
@@ -218,7 +218,7 @@ namespace THE_GAME
             hitbox.Location = new Point((int)position.X, (int)position.Y);
              hitbox.Location = new Point((int)position.X, (int)position.Y);
             Rectanglew.Location = new Point((int)position.X, (int)position.Y);
-            rectangleA.Location = new Point((int)position.X, (int)position.Y);
+            rectangleA.Location = new Point((int)position.X-10, (int)position.Y);
             if (IsDead) RectangleD.Location = new Point((int)position.X, (int)position.Y+10);
 
         }

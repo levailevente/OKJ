@@ -23,7 +23,10 @@ namespace THE_GAME
             Blocked = blocked;
             
         }
-        public void Draw(SpriteBatch sbatch)
+
+  
+
+        public virtual void Draw(SpriteBatch sbatch)
         {
             sbatch.Draw(tiles, Rectangle, Color.White);         
         }
