@@ -27,7 +27,7 @@ namespace THE_GAME
         int jumpI;
         protected int attackI, deadI;
         int jumpint;
-        int elapsedD;
+        int elapsedD, elapsedA;
         public Color color;
         Rectangle wall, wallLeft;
 
@@ -52,8 +52,8 @@ namespace THE_GAME
         protected bool isJumping;
         protected bool isCrouching;
         public   bool isAttack;
-        protected  bool   isDead;
-        public bool invulnerable, damaged;
+        protected bool isDead, dying;
+        public bool invulnerable;
 
         public Karakter()
         {
@@ -62,6 +62,7 @@ namespace THE_GAME
             jump = new Texture2D[6];
             attack = new Texture2D[10];
             jumpA=new Texture2D[10];
+            death= new Texture2D[9];
 
             const int o = 4;
             rectanglei = new Rectangle(0, 0, 232/o, 439/o);
@@ -71,14 +72,17 @@ namespace THE_GAME
             rectanglejump = new Rectangle(0, 0, 362/o, 483/o);
             rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
             RectanglejumpA = new Rectangle(0, 0, 504 / o, 522 / o);
+            RectangleD= new Rectangle(0, 0, 482 / o, 498 / o);
             position =new Vector2(0,300);
 
-            elapsed = 0; idleI = 0; WalkI = 0;jumpI = 0; jumpint = 0;  attackI = 0;  deadI = 0;  elapsedD = 0;
+            elapsed = 0; idleI = 0; WalkI = 0;jumpI = 0; jumpint = 0;  attackI = 0;  deadI = 0;
+            elapsedD = 0;
+            elapsedA = 0;
 
             isJumping = false;
             isCrouching = false;
             invulnerable = false;
-            damaged = false;
+
             x = false;
 
             health = 6;
@@ -108,6 +112,10 @@ namespace THE_GAME
             for (int i = 0; i < 10; i++)
             {
                 jumpA[i] = Game1.ContentMgr.Load<Texture2D>("bob/jumpAttack/Jump_Attack__00" + i);
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                death[i] = Game1.ContentMgr.Load<Texture2D>("bob/death/Dead__00" + (i+1));
             }
 
             crouch = Game1.ContentMgr.Load<Texture2D>("bob/crouch");
@@ -140,42 +148,62 @@ namespace THE_GAME
         {
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) &&
-                NextToWall(Hitbox) != "right" && !isAttack)
+            if (Game1.Newkey.IsKeyDown(Keys.Space) && Game1.Prevkey.IsKeyUp(Keys.Space) &&
+                !invulnerable)
+            {
+                isAttack = true;
+            }
+
+            if (isAttack)
+            {
+                elapsedA++;
+                if (elapsedA > 1 && attackI < 9)
+                {
+                    elapsedA = 0;
+                    attackI++;
+                }
+
+                if (attackI == 9)
+                {
+                    attackI = 0;
+                    isAttack = false;
+                }
+            }
+
+
+            if (Game1.Newkey.IsKeyDown(Keys.D) &&
+                NextToWall(Hitbox) != "right")
             {
 
-                    mvmnt += new Vector2(2, 0);
-                    if (elapsed > 3)
-                    {
-                        elapsed = 0;
-                        WalkI++;
-                        if (WalkI > 9) WalkI = 0;
-                    }
-                
+                mvmnt += new Vector2(2, 0);
+                if (elapsed > 3)
+                {
+                    elapsed = 0;
+                    WalkI++;
+                    if (WalkI > 9) WalkI = 0;
+                }
+
 
                 Facing = Direction.Right;
 
             }
 
-           else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && NextToWall(Hitbox) != "left" &&
-                !isAttack && !isCrouching)
+            else if (Game1.Newkey.IsKeyDown(Keys.A) && NextToWall(Hitbox) != "left" && !isCrouching)
             {
-
-                    mvmnt += new Vector2(-2, 0);
-                    if (elapsed > 3)
-                    {
-                        elapsed = 0;
-                        WalkI++;
-                        if (WalkI > 9) WalkI = 0;
-                    }
-
+                mvmnt += new Vector2(-2, 0);
+                if (elapsed > 3)
+                {
+                    elapsed = 0;
+                    WalkI++;
+                    if (WalkI > 9) WalkI = 0;
+                }
 
                 Facing = Direction.Left;
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Up) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() &&
-                Game1.Prevkey.IsKeyUp((Keys.Up)))
+            if (Game1.Newkey.IsKeyDown(Keys.W) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) &&
+                Game1.Prevkey.IsKeyUp((Keys.W)))
             {
                 isJumping = true;
                 jumpint = 0;
@@ -184,38 +212,44 @@ namespace THE_GAME
             }
 
 
-            if (Game1.Newkey.IsKeyDown(Keys.Space) && Game1.Prevkey.IsKeyUp(Keys.Space) &&
-                 !invulnerable)
-            {
-                isAttack = true;
-                
-            }
-
-
-         else  if (Game1.Newkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Up) &&
-                Game1.Prevkey.IsKeyUp(Keys.Down) && OnGround() && !isCrouching)
+            else if (Game1.Newkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.W) &&
+                     Game1.Prevkey.IsKeyUp(Keys.S) && OnGround(hitbox) && !isCrouching)
             {
                 isCrouching = true;
 
             }
 
-          else  if (Game1.Prevkey.IsKeyDown(Keys.Down) && Game1.Newkey.IsKeyUp(Keys.Down) && OnGround() && isCrouching )
-            {            
+            else if (Game1.Prevkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) && isCrouching)
+            {
                 isCrouching = false;
             }
 
-            if (health == 0) IsDead = true;
-
-            else
+            if (health == 0)
             {
-                if (!(elapsed > 6)) return;
-                elapsed = 0;
-                idleI++;
-                if (idleI > 9) idleI = 0;
+                if (elapsed > 3)
+                {
+                    elapsed = 0;
+                    deadI++;
+                    if (deadI > 8)
+                    {
+                        Game1.CurrentGameState = Game1.Gamestates.GameOver;
+                        deadI = 0;
+                        health++;
+                    }
+
+                }
+
+                else
+                {
+                    if (!(elapsed > 6)) return;
+                    elapsed = 0;
+                    idleI++;
+                    if (idleI > 9) idleI = 0;
+
+                }
+
 
             }
-
-    
         }
 
         public virtual void Draw(SpriteBatch sbatch)
@@ -237,8 +271,7 @@ namespace THE_GAME
 
             if (isAttack)
             {
-                elapsed++;
-                if (elapsed > 4 && attackI < 9) attackI++;
+                
 
                 rectangleA.Y -= 2;
                 if (Facing == Direction.Left)
@@ -252,11 +285,23 @@ namespace THE_GAME
                     sbatch.Draw(attack[attackI], rectangleA, color);
                 }
 
-                if (attackI == 9)
-                {
-                    attackI = 0;
-                    isAttack = false;
-                }
+
+
+            }
+
+            else if (Game1.Newkey.IsKeyDown(Keys.D) && OnGround(hitbox) && NextToWall(Hitbox) != "right")
+            {
+
+                sbatch.Draw(walk[WalkI], Rectanglew, color);
+
+            }
+
+            else if (Game1.Newkey.IsKeyDown(Keys.A) && OnGround(hitbox) &&
+                     NextToWall(Hitbox) != "left" && !isCrouching)
+            {
+                Rectanglew.X -= 35;
+                sbatch.Draw(walk[WalkI], Rectanglew, null, color, 0, new Vector2(0, 0),
+                    SpriteEffects.FlipHorizontally, 0);
 
             }
 
@@ -281,21 +326,7 @@ namespace THE_GAME
             }
 
 
-            else if (Game1.Newkey.IsKeyDown(Keys.Right) && Game1.Newkey.IsKeyUp(Keys.Left) && OnGround() && NextToWall(Hitbox) != "right")
-            {
-              
-                sbatch.Draw(walk[WalkI], Rectanglew, color);
-
-            }
-
-            else if (Game1.Newkey.IsKeyDown(Keys.Left) && Game1.Newkey.IsKeyUp(Keys.Right) && OnGround() &&
-                     NextToWall(Hitbox) != "left" && !isCrouching)
-            {
-                Rectanglew.X -= 35;
-                sbatch.Draw(walk[WalkI], Rectanglew, null, color, 0, new Vector2(0, 0),
-                    SpriteEffects.FlipHorizontally, 0);
-
-            }
+           
 
             else if (IsCrouching)
             {
@@ -327,6 +358,21 @@ namespace THE_GAME
 
             }
 
+            else if (health == 0)
+            {
+                RectangleD.Y -= 10;
+                if (Facing == Direction.Left)
+                {
+                    RectangleD.X -= 30;
+                    sbatch.Draw(death[deadI], RectangleD, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                }
+
+                else
+                {
+                    sbatch.Draw(death[deadI], RectangleD, color);
+                }
+
+            }
             else
             {
                 if (Facing == Direction.Left)
@@ -353,13 +399,18 @@ namespace THE_GAME
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
 
 
-            if (position.X < 0) position.X = 0; 
+            if (position.X < 0) position.X = 0;
 
-            if (position.Y > 1200) IsDead = true;
+            if (position.Y > 1000)
+            {
+                health -= 1;
+                invulnerable = true;
+                position =new Vector2(0,300);
+            }
 
             if (isAttack)
             {
-                hitboxA.Location = Facing==Direction.Right ? new Point((int) position.X + 60, (int) position.Y) : new Point((int)position.X -60, (int)position.Y);
+                hitboxA.Location = Facing==Direction.Right ? new Point((int) position.X + 50, (int) position.Y) : new Point((int)position.X -50, (int)position.Y);
             }
             else hitboxA.Location = new Point((int)position.X, (int)position.Y);
 
@@ -367,19 +418,20 @@ namespace THE_GAME
 
             
 
-             rectanglei.Location = new Point((int)position.X, (int)position.Y);
+            rectanglei.Location = new Point((int)position.X, (int)position.Y);
             Rectanglew.Location = new Point((int) position.X, (int) position.Y);
             rectanglejump.Location = new Point((int) position.X, (int) position.Y);
             rectangleA.Location = new Point((int) position.X, (int) position.Y);
             RectanglejumpA.Location = new Point((int) position.X, (int) position.Y);
+            RectangleD.Location = new Point((int)position.X, (int)position.Y);
 
 
 
         }
 
-        bool OnGround()
+       protected bool OnGround(Rectangle movingRectangle)
         {
-            Rectangle ground = hitbox;
+            Rectangle ground = movingRectangle;
             ground.Offset(0,1);
             return Game1.GenerateMap.Collision(ground);
 
@@ -398,7 +450,7 @@ namespace THE_GAME
 
         void Gravity()
         {
-            if (!OnGround()) mvmnt += Vector2.UnitY * 2.5f;
+            if (!OnGround(hitbox)) mvmnt += Vector2.UnitY * 2.5f;
 
             mvmnt.X *= 0.8f;
             mvmnt.Y *= 0.9f;
@@ -431,7 +483,7 @@ namespace THE_GAME
                 else color.A -= 80;
             }
 
-            if (elapsedD == 100)
+            if (elapsedD == 60)
             {
                 Game1.Karakter.invulnerable = false;
                 Game1.Karakter.color = Color.White;

@@ -15,7 +15,7 @@ namespace THE_GAME
         {
             rectangle = new Rectangle((int)position.X, (int)position.Y + 72, 72, 72);
                 spike =new Sprite(Game1.ContentMgr.Load<Texture2D>("tiles/Tile (17)"),rectangle);
-            hitbox = new Rectangle(rectangle.X+7, rectangle.Y+30, 65, 42);
+            hitbox = new Rectangle(rectangle.X+7, rectangle.Y+40, 65, 32);
             this.position = position;
             up = false;
         }
@@ -28,7 +28,6 @@ namespace THE_GAME
                 {
                     Game1.Karakter.health -= 1;
                     Game1.Karakter.invulnerable = true;
-                    Game1.Karakter.damaged = true;
                     Game1.Karakter.position.Y -= 50;
                 }
                 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -27,8 +24,6 @@ namespace THE_GAME
             
             if (player.RectangleW.X>Game1.Swidth/2)
                 centre.X = player.RectangleW.X  - Game1.Swidth / 2;
-
-
 
                 Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
             }

@@ -158,7 +158,9 @@ namespace THE_GAME
                 case Gamestates.Load:
                     menu.Save.Update(newmouse);
                     break;
-
+                case Gamestates.GameOver:
+                    menu.Gameover.Update(newmouse);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -166,11 +168,12 @@ namespace THE_GAME
 
             kamera.Update(Karakter);
 
-            if (Karakter.IsDead)
+         /*   if (Karakter.IsDead)
             {
                 Karakter = new Karakter();
                 kamera = new Camera(graphics.GraphicsDevice.Viewport);
-            }
+            }*/
+
             Prevkey = Newkey;
             prevmouse = newmouse;
             base.Update(gameTime);
@@ -218,6 +221,10 @@ namespace THE_GAME
                 case Gamestates.Load:
                     menu.Save.Draw(spriteBatch);
                     break;
+                case Gamestates.GameOver:
+                    menu.Gameover.Draw(spriteBatch);
+                    break;
+
 
                 default:
                     throw new ArgumentOutOfRangeException();

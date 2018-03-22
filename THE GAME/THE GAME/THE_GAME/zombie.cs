@@ -70,7 +70,6 @@ namespace THE_GAME
                     {
                         Game1.Karakter.health -= 1;
                         Game1.Karakter.invulnerable = true;
-                        Game1.Karakter.damaged = true;
                     }
 
 
@@ -99,6 +98,12 @@ namespace THE_GAME
                         mvmnt -= new Vector2(0, 5);
                     }
 
+                    if (NextToCliff(hitbox) == "right")
+                    {
+                        mvmnt -= new Vector2(0, 5);
+                    }
+
+
                 }
 
                 else if (hitbox.X - Game1.Karakter.RectangleW.X < 250 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -250)
@@ -112,6 +117,17 @@ namespace THE_GAME
                         WalkI++;
                         if (WalkI > 9) WalkI = 0;
                     }
+
+                    if (NextToWall(hitbox) == "left")
+                    {
+                        mvmnt -= new Vector2(0, 5);
+                    }
+
+                    if (NextToCliff(hitbox) == "left")
+                    {
+                        mvmnt -= new Vector2(0, 5);
+                    }
+
                 }
 
                 else if (Right)
@@ -125,7 +141,12 @@ namespace THE_GAME
                         if (WalkI > 9) WalkI = 0;
                     }
 
-                    if (StartPos.X - position.X < -100 || NextToWall(Hitbox) == "right") Right = false;
+                    if (StartPos.X - position.X < -100)
+                    { 
+                        Right = false;
+                    }
+
+                    if (NextToWall(Hitbox) == "right") mvmnt -= new Vector2(0, 5);
                 }
                 else if (!Right)
                 {
@@ -138,7 +159,9 @@ namespace THE_GAME
                         if (WalkI > 9) WalkI = 0;
                     }
 
-                    if (StartPos.X - position.X > 100 || NextToWall(Hitbox) == "left") Right = true;
+                    if (StartPos.X - position.X > 100) Right = true;
+
+                    if (NextToWall(Hitbox) == "left") mvmnt -= new Vector2(0, 5);
                 }
 
               
@@ -201,10 +224,7 @@ namespace THE_GAME
                 Rectanglew.X -= 35;
                 sbatch.Draw(walk[WalkI], Rectanglew, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
             }
-
-
-
-          
+      
         }
 
         protected override void UpdatePosition(GameTime gametime)
@@ -219,7 +239,6 @@ namespace THE_GAME
             if (position.Y > 1500)
             {
                 IsDead = true;
-                position = new Vector2(0, 300);
             }
             hitbox.Location = new Point((int)position.X, (int)position.Y);
              hitbox.Location = new Point((int)position.X, (int)position.Y);
@@ -231,12 +250,17 @@ namespace THE_GAME
 
         protected string NextToCliff(Rectangle movingRectangle)
         {
-            cliff = cliffLeft=hitbox;
-            cliff.Offset(1, 1);
-            cliff.Offset(-1, 1);
-            if (!Game1.GenerateMap.Collision(cliff)) return "right";
-            return !Game1.GenerateMap.Collision(cliffLeft) ? "left" : "no";
+            if (OnGround(movingRectangle))
+            {
+                cliff = cliffLeft = movingRectangle;
+                cliff.Offset(2, 2);
+                cliffLeft.Offset(-2, 1);
+                if (!Game1.GenerateMap.Collision(cliff)) return "right";
+                return !Game1.GenerateMap.Collision(cliffLeft) ? "left" : "no";
+            }
 
+                return "inair";
+            
         }
 
 
