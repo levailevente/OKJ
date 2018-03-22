@@ -8,6 +8,7 @@ namespace THE_GAME
     {
        protected bool Right;
        protected Vector2 StartPos;
+        protected Rectangle cliff, cliffLeft;
 
         public Zombie(Vector2 startPos)
         {
@@ -82,7 +83,7 @@ namespace THE_GAME
                     }
                 }
 
-               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 150 && Game1.Karakter.RectangleW.Y - hitbox.Y < 72 && Game1.Karakter.RectangleW.Y - hitbox.Y > -72)
+               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -250)
                 {
                     isAttack = false;
                     Right = true;
@@ -93,9 +94,14 @@ namespace THE_GAME
                         WalkI++;
                         if (WalkI > 9) WalkI = 0;
                     }
+                    if (NextToWall(hitbox) == "right")
+                    {
+                        mvmnt -= new Vector2(0, 5);
+                    }
+
                 }
 
-                else if (hitbox.X - Game1.Karakter.RectangleW.X < 150 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 72 && Game1.Karakter.RectangleW.Y - hitbox.Y > -72)
+                else if (hitbox.X - Game1.Karakter.RectangleW.X < 250 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -250)
                 {
                     isAttack = false;
                     Right = false;
@@ -223,7 +229,15 @@ namespace THE_GAME
 
         }
 
+        protected string NextToCliff(Rectangle movingRectangle)
+        {
+            cliff = cliffLeft=hitbox;
+            cliff.Offset(1, 1);
+            cliff.Offset(-1, 1);
+            if (!Game1.GenerateMap.Collision(cliff)) return "right";
+            return !Game1.GenerateMap.Collision(cliffLeft) ? "left" : "no";
 
+        }
 
 
     }

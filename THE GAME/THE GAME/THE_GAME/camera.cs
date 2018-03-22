@@ -29,9 +29,6 @@ namespace THE_GAME
                 centre.X = player.RectangleW.X  - Game1.Swidth / 2;
 
 
-            if (player.RectangleW.Y > 580)
-                centre.Y = player.RectangleW.Y - Game1.Sheight / 2 ;
-
 
                 Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
             }

@@ -29,11 +29,13 @@ namespace THE_GAME
         int jumpint;
         int elapsedD;
         public Color color;
+        Rectangle wall, wallLeft;
 
         protected enum Direction { Left,Right,Forward,Back};
 
         protected Direction Facing=Direction.Right;
-        protected Vector2 mvmnt,prevPosition,position;
+        protected Vector2 mvmnt, prevPosition;
+           public Vector2 position;
         Vector2 velocity;
         Vector2 lastMovement;
         public Vector2 Position => position;
@@ -344,11 +346,10 @@ namespace THE_GAME
         protected virtual void UpdatePosition(GameTime gametime)
         {
             position += mvmnt * (float) gametime.ElapsedGameTime.TotalMilliseconds / 17;
+    
 
-
-            hitbox.X += (int) position.X;
-            hitbox.Y += (int)position.Y;
-            
+            hitbox.Location=new Point ( (int) position.X,(int)position.Y);
+                   
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
 
 
@@ -365,6 +366,7 @@ namespace THE_GAME
             hitbox.Location = isCrouching ? new Point((int)position.X, (int)position.Y + 30) : new Point((int) position.X, (int) position.Y);
 
             
+
              rectanglei.Location = new Point((int)position.X, (int)position.Y);
             Rectanglew.Location = new Point((int) position.X, (int) position.Y);
             rectanglejump.Location = new Point((int) position.X, (int) position.Y);
@@ -386,8 +388,8 @@ namespace THE_GAME
       
         protected string NextToWall(Rectangle movingRectangle)
         {
-            Rectangle wall = movingRectangle;
-            Rectangle wallLeft = movingRectangle;
+            wall = movingRectangle;
+            wallLeft = movingRectangle;
             wall.Offset(1,0);
             wallLeft.Offset(-1,0);
             if (Game1.GenerateMap.Collision(wall)) return "right";

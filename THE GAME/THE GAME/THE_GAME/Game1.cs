@@ -94,7 +94,7 @@ namespace THE_GAME
         {
                szin = Content.Load<Texture2D>("grey");
          
-                GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, tileSize);
+              // GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, tileSize);
                 
                 bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
@@ -120,18 +120,19 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
-                    Karakter.Update(gameTime);
-
-                    foreach (Karakter k in Enemies)
-                    {
-                        k.Update(gameTime);
-                    }
 
                     foreach (Spike k in Spikes)
                     {
                         k.Update();
                     }
 
+                    Karakter.Update(gameTime);
+                    foreach (Karakter k in Enemies)
+                    {
+                        k.Update(gameTime);
+                    }
+
+                    
                     break;
                 case Gamestates.Options:Options.Update(newmouse);
                     
@@ -143,6 +144,10 @@ namespace THE_GAME
                     break;
                 case Gamestates.OptionsIG:
                     Options.Update(newmouse);
+                    if (Options.apply.IsClicked && Fullscreen != graphics.IsFullScreen)
+                    {
+                        graphics.ToggleFullScreen();
+                    }
                     break;
                 case Gamestates.Pause:
                     Pause.Update(newmouse);
@@ -186,17 +191,17 @@ namespace THE_GAME
                     bg.Draw(spriteBatch);
                     // spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
 
-
+                    foreach (Spike k in Spikes)
+                    {
+                        k.Draw(spriteBatch);
+                    }
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
                     foreach (Karakter k in Enemies)
                     {
                         k.Draw(spriteBatch);
                     }
-                    foreach (Spike k in Spikes)
-                    {
-                        k.Draw(spriteBatch);
-                    }
+                   
                     HealthBar.Draw(spriteBatch,Karakter.health);
                     break;
                 case Gamestates.Options: Options.Draw(spriteBatch);

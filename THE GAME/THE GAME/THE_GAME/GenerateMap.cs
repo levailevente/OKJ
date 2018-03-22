@@ -74,7 +74,9 @@ namespace THE_GAME
                                 break;
                             case 17:
                                 Tiles2[i, j] = new MovingTile(14,new Rectangle(j*size,i*size,size,size),true,true,false,true);
-
+                                break;
+                            case 18:
+                                Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
                                 break;
 
                             default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO, true);  break;
@@ -98,12 +100,12 @@ namespace THE_GAME
             int yend = (karakter.Hitbox.X + Game1.Swidth ) / Game1.TileSize+10;
             if (yend > y) yend = y;
 
-            int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
+            /*int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
             if (xstart < 0) xstart = 0;
             int xend = ((karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
-            if (xend > x) xend = x;
+            if (xend > x) xend = x; */
 
-            for (int i = xstart; i <xend; i++)
+            for (int i = 0; i <x; i++)
             {
                 for (int j = ystart; j < yend; j++)
                 {
