@@ -127,7 +127,10 @@ namespace THE_GAME
                         k.Update(gameTime);
                     }
 
-
+                    foreach (Spike k in Spikes)
+                    {
+                        k.Update();
+                    }
 
                     break;
                 case Gamestates.Options:Options.Update(newmouse);
@@ -190,7 +193,10 @@ namespace THE_GAME
                     {
                         k.Draw(spriteBatch);
                     }
-
+                    foreach (Spike k in Spikes)
+                    {
+                        k.Draw(spriteBatch);
+                    }
                     HealthBar.Draw(spriteBatch,Karakter.health);
                     break;
                 case Gamestates.Options: Options.Draw(spriteBatch);
