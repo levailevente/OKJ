@@ -60,7 +60,7 @@ namespace THE_GAME
 
                 if (hitbox.Intersects(Game1.Karakter.HitboxA))
                 {
-                    if (Game1.Karakter.isAttack && Game1.Karakter.attackI>3)
+                    if (Game1.Karakter.isAttack && Game1.Karakter.attackI>1)
                     {
                         IsDead = true;
                         return;

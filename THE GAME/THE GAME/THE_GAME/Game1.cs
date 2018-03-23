@@ -32,6 +32,7 @@ namespace THE_GAME
         public static Gamestates CurrentGameState { get; set; }
         public static List<Karakter> Enemies=new List<Karakter>();
         public static List<Spike> Spikes = new List<Spike>();
+        public static List<Items> Items = new List<Items>();
         public static bool Fullscreen;
 
         Texture2D szin;
@@ -130,7 +131,11 @@ namespace THE_GAME
                     {
                         k.Update(gameTime);
                     }
-                   
+                    foreach (Items k in Items)
+                    {
+                        k.Update();
+                    }
+
                     break;
                 case Gamestates.Options:Options.Update(newmouse);
                     
@@ -198,11 +203,18 @@ namespace THE_GAME
                     }
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
+
+                    foreach (Items k in Items)
+                    {
+                        k.Draw(spriteBatch);
+                    }
+
                     foreach (Karakter k in Enemies)
                     {
                         k.Draw(spriteBatch);
                     }
-                   
+
+
                     HealthBar.Draw(spriteBatch,Karakter.health);
                     break;
                 case Gamestates.Options: Options.Draw(spriteBatch);

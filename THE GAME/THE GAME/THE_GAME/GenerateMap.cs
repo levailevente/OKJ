@@ -32,14 +32,15 @@ namespace THE_GAME
                     int n = map[i, j];
                     int m = objects[i, j];
 
-                    bool blocked = n < 0;
+
+                    bool blocked = n < -1;
                     if (blocked) n *= -1;
 
                    if (n>0)
                        
                         Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
                    
-                    bool blockedO = m < 0;
+                    bool blockedO = m < -1;
                     if (blockedO) m *= -1;
                     if (m > 0)
 
@@ -71,12 +72,21 @@ namespace THE_GAME
                                 break;
                             case 16:
                                 Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size)));
-                                break;
+                                break;                          
                             case 17:
-                                Tiles2[i, j] = new MovingTile(14,new Rectangle(j*size,i*size,size,size),true,true,false,true);
+                                Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
                                 break;
                             case 18:
-                                Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
+                                Game1.Items.Add(new Items("heart", new Vector2(j * size, i * size+30)));
+                                break;
+                            case 19:
+                                Game1.Items.Add(new Items("boots", new Vector2(j * size, i * size)));
+                                break;
+                            case 20:
+                                Game1.Items.Add(new Items("jump", new Vector2(j * size, i * size)));
+                                break;
+                            case 21:
+                                Tiles2[i, j] = new MovingTile(14, new Rectangle(j * size, i * size, size, size), true, true, false, true);
                                 break;
 
                             default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO, true);  break;

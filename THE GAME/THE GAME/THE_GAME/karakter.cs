@@ -30,6 +30,7 @@ namespace THE_GAME
         int elapsedD, elapsedA;
         public Color color;
         Rectangle wall, wallLeft;
+        public float speed, jumpHeight;
 
         protected enum Direction { Left,Right,Forward,Back};
 
@@ -73,7 +74,7 @@ namespace THE_GAME
             rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
             RectanglejumpA = new Rectangle(0, 0, 504 / o, 522 / o);
             RectangleD= new Rectangle(0, 0, 482 / o, 498 / o);
-            position =new Vector2(0,300);
+            position =new Vector2(0,2020);
 
             elapsed = 0; idleI = 0; WalkI = 0;jumpI = 0; jumpint = 0;  attackI = 0;  deadI = 0;
             elapsedD = 0;
@@ -82,6 +83,9 @@ namespace THE_GAME
             isJumping = false;
             isCrouching = false;
             invulnerable = false;
+
+            speed = 1.9f;
+            jumpHeight = 12;
 
             x = false;
 
@@ -175,7 +179,7 @@ namespace THE_GAME
                 NextToWall(Hitbox) != "right")
             {
 
-                mvmnt += new Vector2(2, 0);
+                mvmnt += new Vector2(speed, 0);
                 if (elapsed > 3)
                 {
                     elapsed = 0;
@@ -190,7 +194,7 @@ namespace THE_GAME
 
             else if (Game1.Newkey.IsKeyDown(Keys.A) && NextToWall(Hitbox) != "left" && !isCrouching)
             {
-                mvmnt += new Vector2(-2, 0);
+                mvmnt += new Vector2(-speed, 0);
                 if (elapsed > 3)
                 {
                     elapsed = 0;
@@ -266,14 +270,13 @@ namespace THE_GAME
                 }
 
                 jumpint++;
-                if (jumpint > 11)
+                if (jumpint > jumpHeight)
                     velocity.Y = 0;
             }
 
             if (isAttack)
             {
                 
-
                 rectangleA.Y -= 2;
                 if (Facing == Direction.Left)
                 {
@@ -285,8 +288,6 @@ namespace THE_GAME
                 {
                     sbatch.Draw(attack[attackI], rectangleA, color);
                 }
-
-
 
             }
 
