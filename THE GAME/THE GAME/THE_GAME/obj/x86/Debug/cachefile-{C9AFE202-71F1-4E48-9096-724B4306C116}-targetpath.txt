@@ -70,17 +70,6 @@ Content\bob\crouch.xnb
 Content\gomb.xnb
 Content\menubg.xnb
 Content\logo.xnb
-Content\bob\slide\Slide__000.xnb
-Content\bob\climb\Climb_000.xnb
-Content\bob\climb\Climb_001.xnb
-Content\bob\climb\Climb_002.xnb
-Content\bob\climb\Climb_003.xnb
-Content\bob\climb\Climb_004.xnb
-Content\bob\climb\Climb_005.xnb
-Content\bob\climb\Climb_006.xnb
-Content\bob\climb\Climb_007.xnb
-Content\bob\climb\Climb_008.xnb
-Content\bob\climb\Climb_009.xnb
 Content\button.xnb
 Content\bob\attack\Attack__000.xnb
 Content\bob\attack\Attack__001.xnb
@@ -159,8 +148,6 @@ Content\enemy\girl\attack\Attack (5).xnb
 Content\enemy\girl\attack\Attack (6).xnb
 Content\enemy\girl\attack\Attack (7).xnb
 Content\enemy\girl\attack\Attack (8).xnb
-Content\font.xnb
-Content\font2.xnb
 Content\Game_Over.xnb
 Content\bob\death\Dead__001.xnb
 Content\bob\death\Dead__002.xnb
@@ -171,3 +158,6 @@ Content\bob\death\Dead__006.xnb
 Content\bob\death\Dead__007.xnb
 Content\bob\death\Dead__008.xnb
 Content\bob\death\Dead__009.xnb
+Content\font.xnb
+Content\font2.xnb
+Content\bob\slide\Slide__000.xnb

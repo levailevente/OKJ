@@ -25,8 +25,12 @@ namespace THE_GAME
             if (player.RectangleW.X>Game1.Swidth/2)
                 centre.X = player.RectangleW.X  - Game1.Swidth / 2;
 
+                if (player.position.X==0)
+                    centre.X = 0;
+
                 Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centre.X, -centre.Y, 0));
             }
+
 
             else
             {

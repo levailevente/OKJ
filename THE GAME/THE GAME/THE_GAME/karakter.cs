@@ -25,7 +25,7 @@ namespace THE_GAME
         int idleI;
         protected int WalkI;
         int jumpI;
-        protected int attackI, deadI;
+        public int attackI, deadI;
         int jumpint;
         int elapsedD, elapsedA;
         public Color color;
@@ -36,8 +36,8 @@ namespace THE_GAME
         protected Direction Facing=Direction.Right;
         protected Vector2 mvmnt, prevPosition;
            public Vector2 position;
-        Vector2 velocity;
-        Vector2 lastMovement;
+         Vector2 velocity;
+       protected Vector2 lastMovement;
         public Vector2 Position => position;
 
         public bool IsCrouching => isCrouching;
@@ -224,6 +224,7 @@ namespace THE_GAME
                 isCrouching = false;
             }
 
+
             if (health == 0)
             {
                 if (elapsed > 3)
@@ -373,6 +374,8 @@ namespace THE_GAME
                 }
 
             }
+
+
             else
             {
                 if (Facing == Direction.Left)
@@ -448,7 +451,7 @@ namespace THE_GAME
             return Game1.GenerateMap.Collision(wallLeft) ? "left" : "no";
         }
 
-        void Gravity()
+             void Gravity()
         {
             if (!OnGround(hitbox)) mvmnt += Vector2.UnitY * 2.5f;
 

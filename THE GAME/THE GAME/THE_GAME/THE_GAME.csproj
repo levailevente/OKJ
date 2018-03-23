@@ -85,6 +85,7 @@
     <Compile Include="camera.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="HealthBar.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="menu\gameover.cs" />
     <Compile Include="menu\MainMenu.cs" />
     <Compile Include="karakter.cs" />

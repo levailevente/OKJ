@@ -10,9 +10,12 @@ namespace THE_GAME.menu
         static Button restart;
         static Gameover()
         {
-                gameover=new Sprite(Game1.ContentMgr.Load<Texture2D>("Game_Over"),new Rectangle(400,300,3508/10,2480/10));
-            restart = MainMenu.Newgame;
-            restart.Text = "Restart";
+                gameover=new Sprite(Game1.ContentMgr.Load<Texture2D>("Game_Over"),new Rectangle(390,100,3508/7,2480/7));
+            restart = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 65), "Restart");
+
+            restart.Position.X += 12;
+            restart.Position.Y += 180;
+            restart.Rectangle.Y += 180;
         }
 
         public static void Update(MouseState mouse)
@@ -20,6 +23,18 @@ namespace THE_GAME.menu
             Pause.ExitM.Update(mouse);
             restart.Update(mouse);
 
+            if (restart.IsClicked)
+            {
+                Game1.Karakter = new Karakter();
+                Game1.Enemies.Clear();
+                Game1.GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, Game1.TileSize);
+                Game1.CurrentGameState = Game1.Gamestates.Playing;
+            }
+
+            if (Pause.ExitM.IsClicked) {
+
+                Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
+            }
 
         }
 

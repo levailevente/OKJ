@@ -94,7 +94,6 @@ namespace THE_GAME
         {
                szin = Content.Load<Texture2D>("grey");
          
-              // GenerateMap = new GenerateMap(Mapok.Palya, Mapok.Objects, tileSize);
                 
                 bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
 
@@ -131,8 +130,7 @@ namespace THE_GAME
                     {
                         k.Update(gameTime);
                     }
-
-                    
+                   
                     break;
                 case Gamestates.Options:Options.Update(newmouse);
                     

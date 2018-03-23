@@ -8,7 +8,7 @@ namespace THE_GAME
     {
        protected bool Right;
        protected Vector2 StartPos;
-        protected Rectangle cliff, cliffLeft;
+     
 
         public Zombie(Vector2 startPos)
         {
@@ -60,7 +60,7 @@ namespace THE_GAME
 
                 if (hitbox.Intersects(Game1.Karakter.HitboxA))
                 {
-                    if (Game1.Karakter.isAttack)
+                    if (Game1.Karakter.isAttack && Game1.Karakter.attackI>3)
                     {
                         IsDead = true;
                         return;
@@ -98,11 +98,6 @@ namespace THE_GAME
                         mvmnt -= new Vector2(0, 5);
                     }
 
-                    if (NextToCliff(hitbox) == "right")
-                    {
-                        mvmnt -= new Vector2(0, 5);
-                    }
-
 
                 }
 
@@ -123,10 +118,6 @@ namespace THE_GAME
                         mvmnt -= new Vector2(0, 5);
                     }
 
-                    if (NextToCliff(hitbox) == "left")
-                    {
-                        mvmnt -= new Vector2(0, 5);
-                    }
 
                 }
 
@@ -250,6 +241,7 @@ namespace THE_GAME
 
         protected string NextToCliff(Rectangle movingRectangle)
         {
+            Rectangle cliff, cliffLeft;
             if (OnGround(movingRectangle))
             {
                 cliff = cliffLeft = movingRectangle;
@@ -262,6 +254,7 @@ namespace THE_GAME
                 return "inair";
             
         }
+   
 
 
     }
