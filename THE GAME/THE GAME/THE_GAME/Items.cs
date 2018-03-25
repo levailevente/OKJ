@@ -26,6 +26,9 @@ namespace THE_GAME
                 case "jump":
                     texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("heart/rocket"), new Rectangle((int)position.X, (int)position.Y, 260 / 4, 240 / 4));
                     break;
+                case "end":
+                    texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("objects/Object (12)"), new Rectangle((int)position.X, (int)position.Y, 260 / 4, 240 / 4));
+                    break;
             }
 
         }
@@ -62,7 +65,12 @@ namespace THE_GAME
                             on = true;
                             visible = false;
                         }
-
+                        break;
+                    case "end":
+                        if (Game1.Karakter.Hitbox.Intersects(new Rectangle(texture.Rectangle.X, texture.Rectangle.Y, texture.Rectangle.Width, texture.Rectangle.Height)))
+                        {
+                           
+                        }
                         break;
                 }
             }

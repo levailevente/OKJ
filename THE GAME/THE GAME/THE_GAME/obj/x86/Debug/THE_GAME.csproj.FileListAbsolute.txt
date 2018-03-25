@@ -397,7 +397,6 @@ C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Microsoft
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.pdb
-C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Suli\source\Repos\OKJ\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
@@ -844,3 +843,4 @@ C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\boots.xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\rocket.xnb
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\boots.xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.csprojResolveAssemblyReference.cache
