@@ -18,7 +18,7 @@ namespace THE_GAME
             rectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
             RectangleD = new Rectangle(0, 0, 629 / o, 526 / o);
 
-            this.StartPos = position = startPos;
+            this.StartPos = position = new Vector2(startPos.X, startPos.Y - 50);
 
             elapsed = 0;
 

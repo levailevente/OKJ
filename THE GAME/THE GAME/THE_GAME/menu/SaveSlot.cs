@@ -9,14 +9,17 @@ namespace THE_GAME.menu
 {
     internal class SaveSlot : Button
     {
-        DateTime date;
-        bool isUsed;
+       public string date;
+        public bool isUsed;
         public bool NameInput;
         readonly Vector2 datePosition;
         public readonly Button save, back, textbox;
         readonly Sprite box;
-        string name;
+        public string name;
         Keys[] letter;
+        public int hp;
+        public int lvl;
+        public string position;
         readonly Vector2 namePos;
         Regex r= new Regex("^[a-zA-Z0-9]*$");
 
@@ -57,7 +60,7 @@ namespace THE_GAME.menu
         {
 
                 sbatch.Draw(Texture, Rectangle, Hover * 0.5f);
-     if (isUsed)sbatch.DrawString(Font, date.ToString(CultureInfo.CurrentCulture), datePosition, Color.GhostWhite);
+     if (isUsed)sbatch.DrawString(Font, date, datePosition, Color.GhostWhite);
                 sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
             
 
@@ -89,8 +92,8 @@ namespace THE_GAME.menu
             {
                 NameInput = false;
                 isUsed = true;
-                date = DateTime.Now;
-                Text = "Adott szint";
+                date = DateTime.Now.ToString();
+                Text = name+"  "+Game1.lvl+". lvl";              
                 
             }
 

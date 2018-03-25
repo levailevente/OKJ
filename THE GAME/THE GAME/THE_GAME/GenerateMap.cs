@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
@@ -17,9 +18,16 @@ namespace THE_GAME
         int width, height;
         readonly int x;
         readonly int y;
-
-        public GenerateMap(int[,] map, int[,] objects,int size)
+        int id;
+        public GenerateMap(int id, int size)
         {
+            string tilestring = Game1.db.GetTiles(id);
+            string objectstring = Game1.db.GetObjects(id);
+
+
+            int[,] map = GetMatrix(tilestring);
+            int[,] objects = GetMatrix(objectstring);
+
             x = map.GetLength(0);
             y = map.GetLength(1);
             Tiles2 = new Tiles[x, y];
@@ -215,6 +223,31 @@ namespace THE_GAME
                 }
             }
             return furthestLocation;
+        }
+
+
+        int[,] GetMatrix(string m)
+        {
+            string map = m;
+
+            int[,] matrix=new int[20,100];
+
+            for (int i = 0; i < 20; i++)
+            {
+                    
+            }
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                string[] sorok = map.Split('\n');
+                string[] help = sorok[i].Split(',');
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = int.Parse(help[j]);
+                }
+            }
+
+            return matrix;
         }
 
     }

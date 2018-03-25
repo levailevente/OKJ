@@ -68,6 +68,51 @@ namespace THE_GAME.menu
                 {
                     if (s.NameInput) s.Textbox(mouse);
                 }
+
+                for (int i = 0; i < 4; i++)
+                {
+                    if (Saves[i].save.IsClicked)
+                    {
+                        Game1.db.Save(i+1,Saves[i].name,Saves[i].date,Game1.lvl,Game1.Karakter.Position,Game1.Karakter.Health);
+                    }
+                }
+            }
+
+            if (MainMenu.LoadGame.IsClicked || Pause.Save.IsClicked)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    string[] save = Game1.db.Load(i + 1);
+                    Saves[i].name = save[0];
+                    Saves[i].date = save[1];
+                    Saves[i].lvl = int.Parse(save[2]);
+                    if (Saves[i].lvl > 0)
+                    {
+                        Saves[i].position = save[3];
+                        Saves[i].hp = int.Parse(save[4]);
+                        Saves[i].isUsed = true;
+                        Saves[i].Text = Saves[i].name + "  " + Saves[i].lvl + ". lvl";
+                    }
+
+
+                }
+            }
+
+            if (Game1.CurrentGameState == Game1.Gamestates.Load)
+            {
+                foreach (SaveSlot s in Saves)
+                {
+                    if (s.isUsed && s.IsClicked)
+                    {
+                        Game1.GenerateMap=new GenerateMap(s.lvl,72);
+                        Game1.Karakter.Health = s.hp;
+                        string[] positions = s.position.Split(',');
+                        int x = int.Parse(positions[0]);
+                        int y = int.Parse(positions[1]);
+                        Game1.Karakter.position = new Vector2(x, y);
+                        Game1.CurrentGameState = Game1.Gamestates.Playing;
+                    }
+                }
             }
         }
     }

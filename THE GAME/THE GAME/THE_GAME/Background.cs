@@ -15,7 +15,7 @@ namespace THE_GAME
         public Background(Texture2D t, Rectangle r) : base(t, r)
         {
 
-            rectangle2 = new Rectangle(r.X + 1280, 0, 1280, 720);
+            rectangle2 = new Rectangle(r.X + 1280, 720, 1280, 720);
 
         }
 
@@ -31,9 +31,9 @@ namespace THE_GAME
 
         void UpdatePositions()
         {
-            if (Game1.Karakter.RectangleW.X - Rectangle.X > 1880) Rectangle.X += 1280 * 2;
+            if (Game1.Karakter.RectangleW.X - Rectangle.X > 1880 && Game1.Karakter.RectangleW.X<5920) Rectangle.X += 1280 * 2;
 
-            if (Game1.Karakter.RectangleW.X - rectangle2.X > 1880) rectangle2.X += 1280 * 2;
+            if (Game1.Karakter.RectangleW.X - rectangle2.X > 1880 && Game1.Karakter.RectangleW.X < 5920) rectangle2.X += 1280 * 2;
 
             if (Rectangle.X - Game1.Karakter.RectangleW.X > 640) Rectangle.X -= 1280 * 2;
 

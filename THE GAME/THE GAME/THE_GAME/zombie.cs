@@ -19,11 +19,11 @@ namespace THE_GAME
             const int o = 5;
 
             Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
-            hitbox = new Rectangle(0, 0, 50, 100);
+            hitbox = new Rectangle(0, 0, 30, 100);
             rectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
             RectangleD=new Rectangle(0, 0, 629 / o, 526 / o);
 
-            this.StartPos=position = startPos;
+            this.StartPos = position = new Vector2(startPos.X, startPos.Y - 50);
 
             elapsed = 0;
             
@@ -60,15 +60,19 @@ namespace THE_GAME
 
                 if (hitbox.Intersects(Game1.Karakter.HitboxA))
                 {
-                    if (Game1.Karakter.isAttack && Game1.Karakter.attackI>1)
+                    if (Game1.Karakter.isAttack && Game1.Karakter.attackI>2 && Game1.Karakter.attackI<5)
                     {
                         IsDead = true;
                         return;
                     }
 
+                   
+
+                if (hitbox.Intersects(Game1.Karakter.Hitbox))
+                {
                     if (!Game1.Karakter.invulnerable)
                     {
-                        Game1.Karakter.health -= 1;
+                        Game1.Karakter.Health -= 1;
                         Game1.Karakter.invulnerable = true;
                     }
 
@@ -81,8 +85,9 @@ namespace THE_GAME
                         if (attackI > 7) attackI = 0;
                     }
                 }
+                }
 
-               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -250)
+               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -150)
                 {
                     isAttack = false;
                     Right = true;
@@ -93,7 +98,7 @@ namespace THE_GAME
                         WalkI++;
                         if (WalkI > 9) WalkI = 0;
                     }
-                    if (NextToWall(hitbox) == "right")
+                    if (NextToWall(hitbox) == "right" || NextToCliff(hitbox)=="right" && Game1.Karakter.Hitbox.Y>hitbox.Y)
                     {
                         mvmnt -= new Vector2(0, 5);
                     }
@@ -101,7 +106,7 @@ namespace THE_GAME
 
                 }
 
-                else if (hitbox.X - Game1.Karakter.RectangleW.X < 250 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -250)
+                else if (hitbox.X - Game1.Karakter.RectangleW.X < 250 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -150)
                 {
                     isAttack = false;
                     Right = false;
@@ -113,7 +118,7 @@ namespace THE_GAME
                         if (WalkI > 9) WalkI = 0;
                     }
 
-                    if (NextToWall(hitbox) == "left")
+                    if (NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left")
                     {
                         mvmnt -= new Vector2(0, 5);
                     }
@@ -137,7 +142,14 @@ namespace THE_GAME
                         Right = false;
                     }
 
-                    if (NextToWall(Hitbox) == "right") mvmnt -= new Vector2(0, 5);
+                    if (NextToWall(Hitbox) == "right" || NextToCliff(Hitbox) == "right")
+                    {
+                        if (StartPos.X - position.X > 100)
+                        {
+                            mvmnt -= new Vector2(0, 5);
+                        }
+                       else  Right = false;
+                    }
                 }
                 else if (!Right)
                 {
@@ -152,7 +164,11 @@ namespace THE_GAME
 
                     if (StartPos.X - position.X > 100) Right = true;
 
-                    if (NextToWall(Hitbox) == "left") mvmnt -= new Vector2(0, 5);
+                    if (NextToWall(Hitbox) == "left" || NextToCliff(Hitbox) == "left")
+                    {
+                        if (StartPos.X - position.X < -100) mvmnt -= new Vector2(0, 5);
+                        else Right = true;
+                    }
                 }
 
               
@@ -227,7 +243,7 @@ namespace THE_GAME
 
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
             if (position.X < 0) position.X = 0;
-            if (position.Y > 1500)
+            if (position.Y > 2000)
             {
                 IsDead = true;
             }
@@ -241,18 +257,17 @@ namespace THE_GAME
 
         protected string NextToCliff(Rectangle movingRectangle)
         {
-            Rectangle cliff, cliffLeft;
             if (OnGround(movingRectangle))
             {
-                cliff = cliffLeft = movingRectangle;
-                cliff.Offset(2, 2);
-                cliffLeft.Offset(-2, 1);
+                Rectangle cliffLeft;
+                Rectangle cliff = cliffLeft = movingRectangle;
+                cliff.Offset(30, 2);
+                cliffLeft.Offset(-30, 2);
                 if (!Game1.GenerateMap.Collision(cliff)) return "right";
                 return !Game1.GenerateMap.Collision(cliffLeft) ? "left" : "no";
             }
 
-                return "inair";
-            
+                return "inair";         
         }
    
 

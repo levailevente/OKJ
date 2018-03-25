@@ -34,8 +34,9 @@ namespace THE_GAME
         public static List<Spike> Spikes = new List<Spike>();
         public static List<Items> Items = new List<Items>();
         public static bool Fullscreen;
-
+        public static Database db;
         Texture2D szin;
+        public static int lvl;
         public enum Gamestates
         {
             Mainmenu,
@@ -85,6 +86,10 @@ namespace THE_GAME
 
             Fullscreen = false;
 
+            db=new Database();
+
+            lvl = 1;
+
             CurrentGameState = Gamestates.Mainmenu;
 
             base.Initialize();
@@ -96,7 +101,7 @@ namespace THE_GAME
                szin = Content.Load<Texture2D>("grey");
          
                 
-                bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 0, 1280, 720));
+                bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 720, 1280, 720));
 
         }
 
@@ -185,7 +190,7 @@ namespace THE_GAME
        
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(13,21,22));
+            GraphicsDevice.Clear(new Color(26,29,30));
 
             spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
             switch (CurrentGameState)
@@ -215,7 +220,7 @@ namespace THE_GAME
                     }
 
 
-                    HealthBar.Draw(spriteBatch,Karakter.health);
+                    HealthBar.Draw(spriteBatch,Karakter.Health);
                     break;
                 case Gamestates.Options: Options.Draw(spriteBatch);
                     break;

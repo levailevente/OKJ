@@ -40,7 +40,7 @@ namespace THE_GAME
                     case "heart":
                         if (Game1.Karakter.Hitbox.Intersects(new Rectangle(texture.Rectangle.X,texture.Rectangle.Y,texture.Rectangle.Width,texture.Rectangle.Height)))
                         {
-                            Game1.Karakter.health++;
+                            Game1.Karakter.Health++;
                             visible = false;
                         }
 
@@ -58,7 +58,7 @@ namespace THE_GAME
 
                         if (Game1.Karakter.Hitbox.Intersects(new Rectangle(texture.Rectangle.X, texture.Rectangle.Y, texture.Rectangle.Width, texture.Rectangle.Height)))
                         {
-                            Game1.Karakter.jumpHeight = 20;
+                            Game1.Karakter.jumpHeight = 22;
                             on = true;
                             visible = false;
                         }
@@ -70,18 +70,20 @@ namespace THE_GAME
             if (on)
             {
                 elapsed++;
-                if (type == "boots" && elapsed > 300)
+                if (type == "boots" && elapsed > 250)
                 {
-                    Game1.Karakter.speed = 4;
+                    Game1.Karakter.speed = 1.9f;
                     on = false;
                 }
 
-                if (type == "jump" && elapsed > 300)
+                if (type == "jump" && elapsed > 250)
                 {
-                    Game1.Karakter.jumpHeight = 11;
+                    Game1.Karakter.jumpHeight = 12;
                     on = false;
                 }
             }
+
+
 
         }
 

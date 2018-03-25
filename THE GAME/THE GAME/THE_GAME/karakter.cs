@@ -17,7 +17,7 @@ namespace THE_GAME
         protected Rectangle Rectanglew, hitbox, hitboxA;
         Rectangle rectanglejump;
         protected Rectangle rectangleA, RectanglejumpA, RectangleD;
-        public int health;
+        int health;
         public Rectangle Hitbox => hitbox;
         public Rectangle HitboxA => hitboxA;
         public Rectangle RectangleW => Rectanglew;
@@ -39,7 +39,16 @@ namespace THE_GAME
            public Vector2 position;
          Vector2 velocity;
        protected Vector2 lastMovement;
-        public Vector2 Position => position;
+
+        public string Position
+        {
+            get
+            {
+                Point point=new Point((int)position.X, (int)position.Y);
+                string help = point.X + "," + point.Y;
+                return help;
+            }
+        } 
 
         public bool IsCrouching => isCrouching;
         bool x;
@@ -50,10 +59,16 @@ namespace THE_GAME
             set { isDead = value; }
         }
 
+        public int Health
+        {
+            get { return health; }
+            set { if (value>-1&& value<7 )health = value; }
+        }
+
         protected bool isJumping;
         protected bool isCrouching;
         public   bool isAttack;
-        protected bool isDead, dying;
+        protected bool isDead;
         public bool invulnerable;
 
         public Karakter()
@@ -74,7 +89,7 @@ namespace THE_GAME
             rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
             RectanglejumpA = new Rectangle(0, 0, 504 / o, 522 / o);
             RectangleD= new Rectangle(0, 0, 482 / o, 498 / o);
-            position =new Vector2(0,2020);
+            position =new Vector2(0,1000);
 
             elapsed = 0; idleI = 0; WalkI = 0;jumpI = 0; jumpint = 0;  attackI = 0;  deadI = 0;
             elapsedD = 0;
@@ -89,7 +104,7 @@ namespace THE_GAME
 
             x = false;
 
-            health = 6;
+            Health = 6;
 
             color=Color.White;
 
@@ -151,97 +166,83 @@ namespace THE_GAME
         protected virtual void UpdateMovement()
         {
 
-
-            if (Game1.Newkey.IsKeyDown(Keys.Space) && Game1.Prevkey.IsKeyUp(Keys.Space) &&
-                !invulnerable)
+            if (health > 0)
             {
-                isAttack = true;
-            }
-
-            if (isAttack)
-            {
-                elapsedA++;
-                if (elapsedA > 1 && attackI < 9)
+                if (Game1.Newkey.IsKeyDown(Keys.Space) && Game1.Prevkey.IsKeyUp(Keys.Space) &&
+                    !invulnerable)
                 {
-                    elapsedA = 0;
-                    attackI++;
+                    isAttack = true;
                 }
 
-                if (attackI == 9)
+                if (isAttack)
                 {
-                    attackI = 0;
-                    isAttack = false;
-                }
-            }
-
-
-            if (Game1.Newkey.IsKeyDown(Keys.D) &&
-                NextToWall(Hitbox) != "right")
-            {
-
-                mvmnt += new Vector2(speed, 0);
-                if (elapsed > 3)
-                {
-                    elapsed = 0;
-                    WalkI++;
-                    if (WalkI > 9) WalkI = 0;
-                }
-
-
-                Facing = Direction.Right;
-
-            }
-
-            else if (Game1.Newkey.IsKeyDown(Keys.A) && NextToWall(Hitbox) != "left" && !isCrouching)
-            {
-                mvmnt += new Vector2(-speed, 0);
-                if (elapsed > 3)
-                {
-                    elapsed = 0;
-                    WalkI++;
-                    if (WalkI > 9) WalkI = 0;
-                }
-
-                Facing = Direction.Left;
-            }
-
-
-            if (Game1.Newkey.IsKeyDown(Keys.W) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) &&
-                Game1.Prevkey.IsKeyUp((Keys.W)))
-            {
-                isJumping = true;
-                jumpint = 0;
-                velocity.Y = -5;
-
-            }
-
-
-            else if (Game1.Newkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.W) &&
-                     Game1.Prevkey.IsKeyUp(Keys.S) && OnGround(hitbox) && !isCrouching)
-            {
-                isCrouching = true;
-
-            }
-
-            else if (Game1.Prevkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) && isCrouching)
-            {
-                isCrouching = false;
-            }
-
-
-            if (health == 0)
-            {
-                if (elapsed > 3)
-                {
-                    elapsed = 0;
-                    deadI++;
-                    if (deadI > 8)
+                    elapsedA++;
+                    if (elapsedA > 1 && attackI < 9)
                     {
-                        Game1.CurrentGameState = Game1.Gamestates.GameOver;
-                        deadI = 0;
-                        health++;
+                        elapsedA = 0;
+                        attackI++;
                     }
 
+                    if (attackI == 9)
+                    {
+                        attackI = 0;
+                        isAttack = false;
+                    }
+                }
+
+
+                if (Game1.Newkey.IsKeyDown(Keys.D) &&
+                    NextToWall(Hitbox) != "right")
+                {
+
+                    mvmnt += new Vector2(speed, 0);
+                    if (elapsed > 3)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+
+
+                    Facing = Direction.Right;
+
+                }
+
+                else if (Game1.Newkey.IsKeyDown(Keys.A) && NextToWall(Hitbox) != "left" && !isCrouching)
+                {
+                    mvmnt += new Vector2(-speed, 0);
+                    if (elapsed > 3)
+                    {
+                        elapsed = 0;
+                        WalkI++;
+                        if (WalkI > 9) WalkI = 0;
+                    }
+
+                    Facing = Direction.Left;
+                }
+
+
+                if (Game1.Newkey.IsKeyDown(Keys.W) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) &&
+                    Game1.Prevkey.IsKeyUp((Keys.W)))
+                {
+                    isJumping = true;
+                    jumpint = 0;
+                    velocity.Y = -5;
+
+                }
+
+
+                else if (Game1.Newkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.W) &&
+                         Game1.Prevkey.IsKeyUp(Keys.S) && OnGround(hitbox) && !isCrouching)
+                {
+                    isCrouching = true;
+
+                }
+
+                else if (Game1.Prevkey.IsKeyDown(Keys.S) && Game1.Newkey.IsKeyUp(Keys.S) && OnGround(hitbox) &&
+                         isCrouching)
+                {
+                    isCrouching = false;
                 }
 
                 else
@@ -253,6 +254,21 @@ namespace THE_GAME
 
                 }
 
+            }
+            else
+            {
+                if (elapsed > 3)
+                {
+                    elapsed = 0;
+                    deadI++;
+                    if (deadI > 8)
+                    {
+                        Game1.CurrentGameState = Game1.Gamestates.GameOver;
+                        deadI = 0;
+                        Health++;
+                    }
+
+                }
 
             }
         }
@@ -260,136 +276,142 @@ namespace THE_GAME
         public virtual void Draw(SpriteBatch sbatch)
         {
 
-            if (isJumping)
+            if (health > 0)
             {
-                if (lastMovement.Y == 0)
+                if (isJumping)
                 {
-                    velocity.Y = 0;
-                    jumpI = 0;
-                    isJumping = false;
+                    if (lastMovement.Y == 0)
+                    {
+                        velocity.Y = 0;
+                        jumpI = 0;
+                        isJumping = false;
+                    }
+
+                    jumpint++;
+                    if (jumpint > jumpHeight)
+                        velocity.Y = 0;
                 }
 
-                jumpint++;
-                if (jumpint > jumpHeight)
-                    velocity.Y = 0;
-            }
-
-            if (isAttack)
-            {
-                
-                rectangleA.Y -= 2;
-                if (Facing == Direction.Left)
+                if (isAttack)
                 {
-                    rectangleA.X -= 70;
-                    sbatch.Draw(attack[attackI], rectangleA, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+
+                    rectangleA.Y -= 2;
+                    if (Facing == Direction.Left)
+                    {
+                        rectangleA.X -= 70;
+                        sbatch.Draw(attack[attackI], rectangleA, null, color, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+                    }
+
+                    else
+                    {
+                        sbatch.Draw(attack[attackI], rectangleA, color);
+                    }
+
+                }
+
+                else if (Game1.Newkey.IsKeyDown(Keys.D) && OnGround(hitbox) && NextToWall(Hitbox) != "right")
+                {
+
+                    sbatch.Draw(walk[WalkI], Rectanglew, color);
+
+                }
+
+                else if (Game1.Newkey.IsKeyDown(Keys.A) && OnGround(hitbox) &&
+                         NextToWall(Hitbox) != "left" && !isCrouching)
+                {
+                    Rectanglew.X -= 35;
+                    sbatch.Draw(walk[WalkI], Rectanglew, null, color, 0, new Vector2(0, 0),
+                        SpriteEffects.FlipHorizontally, 0);
+
+                }
+
+                else if (isJumping)
+                {
+                    if (jumpI < 5) jumpI++;
+
+
+                    if (Facing == Direction.Left)
+                    {
+                        rectanglejump.X -= 15;
+                        sbatch.Draw(jump[jumpI], rectanglejump, null, color, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+
+                    }
+                    else
+                    {
+                        rectanglejump.X -= 15;
+                        sbatch.Draw(jump[jumpI], rectanglejump, color);
+                    }
+
+
+                }
+
+
+
+
+                else if (IsCrouching)
+                {
+                    if (Facing == Direction.Left)
+                    {
+
+                        sbatch.Draw(crouch, rectanglei, null, color, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+                    }
+
+                    else
+                    {
+                        sbatch.Draw(crouch, rectanglei, color);
+                    }
+
+                }
+
+                else if (lastMovement.Y > 0)
+                {
+                    if (Facing == Direction.Left)
+                    {
+                        rectanglejump.X -= 30;
+                        sbatch.Draw(jump[5], rectanglejump, null, color, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+                    }
+
+                    else
+                    {
+                        sbatch.Draw(jump[5], rectanglejump, color);
+                    }
+
                 }
 
                 else
                 {
-                    sbatch.Draw(attack[attackI], rectangleA, color);
-                }
+                    if (Facing == Direction.Left)
+                    {
 
+                        sbatch.Draw(idle[idleI], rectanglei, null, color, 0, new Vector2(0, 0),
+                            SpriteEffects.FlipHorizontally, 0);
+                    }
+
+                    else
+                    {
+                        sbatch.Draw(idle[idleI], rectanglei, color);
+                    }
+
+                }
             }
-
-            else if (Game1.Newkey.IsKeyDown(Keys.D) && OnGround(hitbox) && NextToWall(Hitbox) != "right")
-            {
-
-                sbatch.Draw(walk[WalkI], Rectanglew, color);
-
-            }
-
-            else if (Game1.Newkey.IsKeyDown(Keys.A) && OnGround(hitbox) &&
-                     NextToWall(Hitbox) != "left" && !isCrouching)
-            {
-                Rectanglew.X -= 35;
-                sbatch.Draw(walk[WalkI], Rectanglew, null, color, 0, new Vector2(0, 0),
-                    SpriteEffects.FlipHorizontally, 0);
-
-            }
-
-            else if (isJumping)
-            {
-                if (jumpI < 5) jumpI++;
-
-
-                if (Facing == Direction.Left)
-                {
-                    rectanglejump.X -= 15;
-                    sbatch.Draw(jump[jumpI], rectanglejump, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
-
-                }
-                else
-                {
-                    rectanglejump.X -= 15;
-                    sbatch.Draw(jump[jumpI], rectanglejump, color);
-                }
-
-
-            }
-
-
-           
-
-            else if (IsCrouching)
-            {
-                if (Facing == Direction.Left)
-                {
-
-                    sbatch.Draw(crouch, rectanglei, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
-                }
-
-                else
-                {
-                    sbatch.Draw(crouch, rectanglei, color);
-                }
-
-            }
-
-            else if (lastMovement.Y > 0)
-            {
-                if (Facing == Direction.Left)
-                {
-                    rectanglejump.X -= 30;
-                    sbatch.Draw(jump[5], rectanglejump, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
-                }
-
-                else
-                {
-                    sbatch.Draw(jump[5], rectanglejump, color);
-                }
-
-            }
-
-            else if (health == 0)
+            else
             {
                 RectangleD.Y -= 10;
                 if (Facing == Direction.Left)
                 {
                     RectangleD.X -= 30;
-                    sbatch.Draw(death[deadI], RectangleD, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                    sbatch.Draw(death[deadI], RectangleD, null, color, 0, new Vector2(0, 0),
+                        SpriteEffects.FlipHorizontally, 0);
                 }
 
                 else
                 {
                     sbatch.Draw(death[deadI], RectangleD, color);
                 }
-
-            }
-
-
-            else
-            {
-                if (Facing == Direction.Left)
-                {
-
-                    sbatch.Draw(idle[idleI], rectanglei, null, color, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
-                }
-
-                else
-                {
-                    sbatch.Draw(idle[idleI], rectanglei, color);
-                }
-
             }
         }
 
@@ -405,11 +427,11 @@ namespace THE_GAME
 
             if (position.X < 0) position.X = 0;
 
-            if (position.Y > 1000)
+            if (position.Y > 1500)
             {
-                health -= 1;
+                Health -= 1;
                 invulnerable = true;
-                position =new Vector2(0,300);
+                position =new Vector2(0,1000);
             }
 
             if (isAttack)
