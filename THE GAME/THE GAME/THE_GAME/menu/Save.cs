@@ -9,17 +9,17 @@ namespace THE_GAME.menu
         public static readonly SaveSlot[] Saves;
 
         public static readonly Button Back;
-        public static Texture2D gomb;
+        public static Texture2D Gomb;
 
         static Save()
         {
-            gomb = Game1.ContentMgr.Load<Texture2D>("button");
+            Gomb = Game1.ContentMgr.Load<Texture2D>("button");
             Saves = new SaveSlot[4];
 
-            Saves[0] = new SaveSlot(gomb, new Rectangle(400, 50, 500, 100), "Empty slot");
-            Saves[1] = new SaveSlot(gomb, new Rectangle(400, 200, 500, 100), "Empty slot");
-            Saves[2] = new SaveSlot(gomb, new Rectangle(400, 350, 500, 100), "Empty slot");
-            Saves[3] = new SaveSlot(gomb, new Rectangle(400, 500, 500, 100), "Empty slot");
+            Saves[0] = new SaveSlot(Gomb, new Rectangle(400, 50, 500, 100), "Empty slot");
+            Saves[1] = new SaveSlot(Gomb, new Rectangle(400, 200, 500, 100), "Empty slot");
+            Saves[2] = new SaveSlot(Gomb, new Rectangle(400, 350, 500, 100), "Empty slot");
+            Saves[3] = new SaveSlot(Gomb, new Rectangle(400, 500, 500, 100), "Empty slot");
 
             Back = new Button(MainMenu.Gomb, new Rectangle(575, 625, 150, 60), "Back");
             Back.Position.Y -= 2;
@@ -55,9 +55,17 @@ namespace THE_GAME.menu
                     s.Update(mouse);
                     Back.Update(mouse);
                     if (Back.IsClicked)
-                        Game1.CurrentGameState = Game1.CurrentGameState == Game1.Gamestates.Load
-                            ? Game1.Gamestates.Mainmenu
-                            : Game1.Gamestates.Pause;
+                    {
+                        if (Game1.CurrentGameState == Game1.Gamestates.EndSave)
+                            Game1.CurrentGameState = Game1.Gamestates.EndScreen;
+
+                        if (Game1.CurrentGameState == Game1.Gamestates.Load)
+                            Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
+
+                        if (Game1.CurrentGameState == Game1.Gamestates.Save)
+                            Game1.CurrentGameState = Game1.Gamestates.Pause;
+                    }
+                    
                 }
 
             }
@@ -73,12 +81,12 @@ namespace THE_GAME.menu
                 {
                     if (Saves[i].save.IsClicked)
                     {
-                        Game1.db.Save(i+1,Saves[i].name,Saves[i].date,Game1.lvl,Game1.Karakter.Position,Game1.Karakter.Health);
+                        Game1.db.Save(i+1,Saves[i].name,Saves[i].date,Game1.Lvl,Game1.Karakter.Position,Game1.Karakter.Health);
                     }
                 }
             }
 
-            if (MainMenu.LoadGame.IsClicked || Pause.Save.IsClicked)
+            if (MainMenu.LoadGame.IsClicked || Pause.Save.IsClicked || Endscreen.save.IsClicked)
             {
                 for (int i = 0; i < 4; i++)
                 {

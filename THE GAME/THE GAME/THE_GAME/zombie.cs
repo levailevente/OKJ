@@ -87,7 +87,7 @@ namespace THE_GAME
                 }
                 }
 
-               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -150)
+               else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y > -300)
                 {
                     isAttack = false;
                     Right = true;
@@ -98,7 +98,7 @@ namespace THE_GAME
                         WalkI++;
                         if (WalkI > 9) WalkI = 0;
                     }
-                    if (NextToWall(hitbox) == "right" || NextToCliff(hitbox)=="right" && Game1.Karakter.Hitbox.Y>hitbox.Y)
+                    if ((NextToWall(hitbox) == "right" || NextToCliff(hitbox)=="right") && Game1.Karakter.Hitbox.Y+100>hitbox.Y)
                     {
                         mvmnt -= new Vector2(0, 5);
                     }
@@ -106,7 +106,7 @@ namespace THE_GAME
 
                 }
 
-                else if (hitbox.X - Game1.Karakter.RectangleW.X < 250 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 250 && Game1.Karakter.RectangleW.Y - hitbox.Y > -150)
+                else if (hitbox.X - Game1.Karakter.RectangleW.X < 300 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y > -300)
                 {
                     isAttack = false;
                     Right = false;
@@ -118,7 +118,7 @@ namespace THE_GAME
                         if (WalkI > 9) WalkI = 0;
                     }
 
-                    if (NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left")
+                    if ((NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left" )&& Game1.Karakter.Hitbox.Y+100 > hitbox.Y)
                     {
                         mvmnt -= new Vector2(0, 5);
                     }

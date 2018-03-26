@@ -24,8 +24,8 @@ namespace THE_GAME.menu
             apply = new Button(MainMenu.Gomb, new Rectangle(470,620,150,55), "Apply");
             back = new Button(MainMenu.Gomb, new Rectangle(670, 620, 150, 55), "Back");
 
-            fullsc = new Button(Save.gomb, new Rectangle(675, 195, 170, 45), "Off");
-            lang = new Button(Save.gomb, new Rectangle(675, 295, 170, 45), "English");
+            fullsc = new Button(Save.Gomb, new Rectangle(675, 195, 170, 45), "Off");
+            lang = new Button(Save.Gomb, new Rectangle(675, 295, 170, 45), "English");
 
             fullsc.Position.X += 30;
             fullsc.Position.Y -= 8;

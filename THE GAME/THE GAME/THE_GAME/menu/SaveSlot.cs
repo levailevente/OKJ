@@ -93,7 +93,7 @@ namespace THE_GAME.menu
                 NameInput = false;
                 isUsed = true;
                 date = DateTime.Now.ToString();
-                Text = name+"  "+Game1.lvl+". lvl";              
+                Text = name+"  "+Game1.Lvl+". lvl";              
                 
             }
 

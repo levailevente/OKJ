@@ -67,19 +67,21 @@ namespace THE_GAME
                                 Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 100, i * size - 97, (int)(286/1.4 ), (int)(239 / 1.4)), blockedO,
                                     true); break;
                             case 11:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blockedO,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size , i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blockedO,
                                     true); break;
+                            case 12:
+                                Game1.Items.Add(new Items("end", new Vector2(j * size, i * size))); break;
                             case 13:
                                 Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)), blockedO,
                                     true); break;
                             case 14:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 45, i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blockedO,
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size , i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blockedO,
                                     true); break;
                             case 15:
-                                Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size)));
+                                Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size-50)));
                                 break;
                             case 16:
-                                Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size)));
+                                Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size-50)));
                                 break;                          
                             case 17:
                                 Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
@@ -232,10 +234,6 @@ namespace THE_GAME
 
             int[,] matrix=new int[20,100];
 
-            for (int i = 0; i < 20; i++)
-            {
-                    
-            }
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {

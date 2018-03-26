@@ -163,3 +163,5 @@ Content\heart\rocket.xnb
 Content\heart\boots.xnb
 Content\font.xnb
 Content\font2.xnb
+Content\gj.xnb
+Content\fon3.xnb

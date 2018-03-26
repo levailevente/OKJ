@@ -100,7 +100,7 @@ namespace THE_GAME
             invulnerable = false;
 
             speed = 1.9f;
-            jumpHeight = 12;
+            jumpHeight = 12.5f;
 
             x = false;
 

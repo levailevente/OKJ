@@ -52,7 +52,7 @@ namespace THE_GAME.menu
             {
                 Game1.Karakter = new Karakter();
                 Game1.Enemies.Clear();
-                Game1.GenerateMap = new GenerateMap(Game1.lvl, Game1.TileSize);
+                Game1.GenerateMap = new GenerateMap(Game1.Lvl, Game1.TileSize);
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
 

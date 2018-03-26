@@ -30,13 +30,24 @@ namespace THE_GAME
         public static int TileSize => tileSize;
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
+
+        public static int Lvl
+        {
+            get
+            {
+                if (lvl > 1) return -1;
+                return lvl;
+            }
+            set { lvl = value; }
+        }
+
         public static List<Karakter> Enemies=new List<Karakter>();
         public static List<Spike> Spikes = new List<Spike>();
         public static List<Items> Items = new List<Items>();
         public static bool Fullscreen;
         public static Database db;
         Texture2D szin;
-        public static int lvl;
+        static int lvl;
         public enum Gamestates
         {
             Mainmenu,
@@ -46,7 +57,9 @@ namespace THE_GAME
             Pause,
             Save,
             Load,
-            GameOver
+            GameOver,
+            EndScreen,
+            EndSave
         };
 
         public static GenerateMap GenerateMap;
@@ -88,7 +101,7 @@ namespace THE_GAME
 
             db=new Database();
 
-            lvl = 1;
+            Lvl = 1;
 
             CurrentGameState = Gamestates.Mainmenu;
 
@@ -169,6 +182,12 @@ namespace THE_GAME
                 case Gamestates.GameOver:
                     menu.Gameover.Update(newmouse);
                     break;
+                case Gamestates.EndScreen:
+                    menu.Endscreen.Update(newmouse);
+                    break;
+                case Gamestates.EndSave:
+                    menu.Save.Update(newmouse);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -239,7 +258,12 @@ namespace THE_GAME
                 case Gamestates.GameOver:
                     menu.Gameover.Draw(spriteBatch);
                     break;
-
+                case Gamestates.EndScreen:
+                    menu.Endscreen.Draw(spriteBatch);
+                    break;
+                case Gamestates.EndSave:
+                    menu.Save.Draw(spriteBatch);
+                    break;
 
                 default:
                     throw new ArgumentOutOfRangeException();
