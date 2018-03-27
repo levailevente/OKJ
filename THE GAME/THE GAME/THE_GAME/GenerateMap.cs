@@ -198,7 +198,6 @@ namespace THE_GAME
             Vector2 oneStep = movement / breaks;
 
             
-
             for (int i = 1 ; i <= breaks; i++)
             {
                 Vector2 newPosition = ogPosition + oneStep * i;
@@ -219,14 +218,12 @@ namespace THE_GAME
                         Vector2 verticalPosition = furthestLocation + verticalM;
                         furthestLocation = CollisionV2(furthestLocation, verticalPosition, hitbox);
 
-
                     }
                     break;
                 }
             }
             return furthestLocation;
         }
-
 
         int[,] GetMatrix(string m)
         {

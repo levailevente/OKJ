@@ -216,18 +216,19 @@ namespace THE_GAME
             {
                 case Gamestates.Mainmenu:
                     MainMenu.Draw(spriteBatch);
+                    IsMouseVisible = true;
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
                     // spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
-
+                    IsMouseVisible = false;
                     foreach (Spike k in Spikes)
                     {
                         k.Draw(spriteBatch);
                     }
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
-
+                    spriteBatch.DrawString(Endscreen.font,"Level "+lvl, new Vector2(620, 750), Color.White*0.5f);
                     foreach (Items k in Items)
                     {
                         k.Draw(spriteBatch);
@@ -247,6 +248,7 @@ namespace THE_GAME
                     Options.Draw(spriteBatch);
                     break;
                 case Gamestates.Pause:
+                    IsMouseVisible = true;
                     Pause.Draw(spriteBatch);
                     break;
                 case Gamestates.Save:
@@ -259,6 +261,7 @@ namespace THE_GAME
                     menu.Gameover.Draw(spriteBatch);
                     break;
                 case Gamestates.EndScreen:
+                    IsMouseVisible = true;
                     menu.Endscreen.Draw(spriteBatch);
                     break;
                 case Gamestates.EndSave:
@@ -268,7 +271,6 @@ namespace THE_GAME
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
 
             spriteBatch.End();
 
