@@ -40,8 +40,6 @@ namespace THE_GAME.menu
               if (s.NameInput)  s.DrawTextbox(sbatch);
             }
 
-
-
             Back.Draw(sbatch);
         }
 
@@ -101,9 +99,11 @@ namespace THE_GAME.menu
                         Saves[i].isUsed = true;
                         Saves[i].Text = Saves[i].name + "  " + Saves[i].lvl + ". lvl";
                     }
-
-
                 }
+
+                MainMenu.LoadGame.IsClicked = false;
+                Pause.Save.IsClicked = false;
+                Endscreen.save.IsClicked = false;
             }
 
             if (Game1.CurrentGameState == Game1.Gamestates.Load)
