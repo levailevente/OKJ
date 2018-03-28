@@ -81,7 +81,7 @@ namespace THE_GAME.menu
                 {
                     if (Saves[i].save.IsClicked)
                     {
-                        Game1.db.Save(i+1,Saves[i].name,Saves[i].date,Game1.Lvl,Game1.Karakter.Position,Game1.Karakter.Health);
+                        Game1.Db.Save(i+1,Saves[i].name,Saves[i].date,Game1.Lvl,Game1.Karakter.Position,Game1.Karakter.Health);
                     }
                 }
             }
@@ -90,7 +90,7 @@ namespace THE_GAME.menu
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    string[] save = Game1.db.Load(i + 1);
+                    string[] save = Game1.Db.Load(i + 1);
                     Saves[i].name = save[0];
                     Saves[i].date = save[1];
                     Saves[i].lvl = int.Parse(save[2]);

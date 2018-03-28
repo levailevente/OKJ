@@ -6,7 +6,7 @@ namespace THE_GAME
 {
   public  class Karakter
     {
-        Texture2D[] idle;
+        protected Texture2D[] idle;
         protected  Texture2D[] walk;
         readonly Texture2D[] jump;
         protected Texture2D[] attack;
@@ -22,7 +22,7 @@ namespace THE_GAME
         public Rectangle HitboxA => hitboxA;
         public Rectangle RectangleW => Rectanglew;
         protected int elapsed;
-        int idleI;
+        protected int idleI;
         protected int WalkI;
         int jumpI;
         public int attackI, deadI;
@@ -32,7 +32,7 @@ namespace THE_GAME
         Rectangle wall, wallLeft;
         public float speed, jumpHeight;
 
-        protected enum Direction { Left,Right,Forward,Back};
+        protected enum Direction { Left,Right}
 
         protected Direction Facing=Direction.Right;
         protected Vector2 mvmnt, prevPosition;
@@ -83,7 +83,7 @@ namespace THE_GAME
             const int o = 4;
             rectanglei = new Rectangle(0, 0, 232/o, 439/o);
             Rectanglew = new Rectangle(0, 0,363/o , 458/o);
-            hitbox = new Rectangle(0, 0, 60, 108);
+            hitbox = new Rectangle(0, 0, 50, 108);
             hitboxA = new Rectangle(0, 0, 60, 108);
             rectanglejump = new Rectangle(0, 0, 362/o, 483/o);
             rectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
@@ -305,6 +305,7 @@ namespace THE_GAME
 
                     else
                     {
+                        rectangleA.X -= 5;
                         sbatch.Draw(attack[attackI], rectangleA, color);
                     }
 
@@ -312,7 +313,7 @@ namespace THE_GAME
 
                 else if (Game1.Newkey.IsKeyDown(Keys.D) && OnGround(hitbox) && NextToWall(Hitbox) != "right")
                 {
-
+                    Rectanglew.X -= 5;
                     sbatch.Draw(walk[WalkI], Rectanglew, color);
 
                 }
@@ -361,6 +362,7 @@ namespace THE_GAME
 
                     else
                     {
+                        rectanglei.X -= 5;
                         sbatch.Draw(crouch, rectanglei, color);
                     }
 
@@ -377,6 +379,7 @@ namespace THE_GAME
 
                     else
                     {
+                        rectanglejump.X -= 5;
                         sbatch.Draw(jump[5], rectanglejump, color);
                     }
 
@@ -393,6 +396,7 @@ namespace THE_GAME
 
                     else
                     {
+                        rectanglei.X -= 5;
                         sbatch.Draw(idle[idleI], rectanglei, color);
                     }
 
@@ -410,6 +414,7 @@ namespace THE_GAME
 
                 else
                 {
+                    RectangleD.X -= 5;
                     sbatch.Draw(death[deadI], RectangleD, color);
                 }
             }
@@ -418,10 +423,10 @@ namespace THE_GAME
         protected virtual void UpdatePosition(GameTime gametime)
         {
             position += mvmnt * (float) gametime.ElapsedGameTime.TotalMilliseconds / 17;
-    
 
-            hitbox.Location=new Point ( (int) position.X,(int)position.Y);
-                   
+
+            hitbox.Location = new Point((int)position.X, (int)position.Y);
+
             position = Game1.GenerateMap.CollisionV2(prevPosition, position, hitbox);
 
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
@@ -8,7 +7,7 @@ namespace THE_GAME
     {
        protected bool Right;
        protected Vector2 StartPos;
-     
+       protected bool Idle;
 
         public Zombie(Vector2 startPos)
         {
@@ -16,10 +15,13 @@ namespace THE_GAME
             walk = new Texture2D[10];
             death=new Texture2D[12];
             attack = new Texture2D[8];
+            idle=new Texture2D[15];
             const int o = 5;
 
+            Idle = false;
+
             Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
-            hitbox = new Rectangle(0, 0, 30, 100);
+            hitbox = new Rectangle(0, 0, 45, 100);
             rectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
             RectangleD=new Rectangle(0, 0, 629 / o, 526 / o);
 
@@ -50,6 +52,10 @@ namespace THE_GAME
             for (int i = 0; i < 8; i++)
             {
                 attack[i] = Game1.ContentMgr.Load<Texture2D>("enemy/attack/Attack (" + (i+1) + ")");
+            }
+            for (int i = 0; i < 15; i++)
+            {
+                idle[i] = Game1.ContentMgr.Load<Texture2D>("enemy/idle/Idle (" + (i + 1) + ")");
             }
         }
 
@@ -87,51 +93,79 @@ namespace THE_GAME
 
                 else if (Game1.Karakter.RectangleW.X - hitbox.X >= 0 && Game1.Karakter.RectangleW.X - hitbox.X < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y > -400)
                 {
-                    isAttack = false;
-                    Right = true;
-                    mvmnt += new Vector2(0.7f, 0);
-                    if (elapsed > 4)
+                    if ((NextToCliff(hitbox) == "right" && Game1.Karakter.Hitbox.Y < hitbox.Y) ||
+                        (hitbox.X - Game1.Karakter.Hitbox.X < 10 && Game1.Karakter.Hitbox.X - hitbox.X < 10))
                     {
-                        elapsed = 0;
-                        WalkI++;
-                        if (WalkI > 9) WalkI = 0;
+                        Idle = true;
+                        if (elapsed > 4)
+                        {
+                            elapsed = 0;
+                            idleI++;
+                            if (idleI > 14) idleI = 0;
+                        }
                     }
-                    if ((NextToWall(hitbox) == "right" || NextToCliff(hitbox) == "right") && Game1.Karakter.Hitbox.Y + 100 > hitbox.Y)
+                    else
                     {
-                        mvmnt -= new Vector2(0, 5);
-                    }
-                    else if ((NextToCliff(hitbox) == "right") && Game1.Karakter.Hitbox.Y < hitbox.Y)
-                    {
-                        mvmnt += new Vector2(-0.7f, 0);
+                        Idle = false;
+
+                        isAttack = false;
+                        Right = true;
+                        mvmnt += new Vector2(0.7f, 0);
+                        if (elapsed > 4)
+                        {
+                            elapsed = 0;
+                            WalkI++;
+                            if (WalkI > 9) WalkI = 0;
+                        }
+
+                        if ((NextToWall(hitbox) == "right" || NextToCliff(hitbox) == "right") &&
+                            Game1.Karakter.Hitbox.Y - 100 < hitbox.Y)
+                        {
+                            mvmnt -= new Vector2(0, 10);
+                        }
                     }
 
                 }
 
                 else if (hitbox.X - Game1.Karakter.RectangleW.X < 300 && hitbox.X - Game1.Karakter.RectangleW.X >= 0 && Game1.Karakter.RectangleW.Y - hitbox.Y < 300 && Game1.Karakter.RectangleW.Y - hitbox.Y > -400)
                 {
-                    isAttack = false;
-                    Right = false;
-                    mvmnt += new Vector2(-0.7f, 0);
-                    if (elapsed > 4)
+                    if ((NextToCliff(hitbox) == "left" && Game1.Karakter.Hitbox.Y < hitbox.Y) ||
+                        (hitbox.X - Game1.Karakter.Hitbox.X < 10 && Game1.Karakter.Hitbox.X - hitbox.X < 10))
                     {
-                        elapsed = 0;
-                        WalkI++;
-                        if (WalkI > 9) WalkI = 0;
+                        Idle = true;
+                        if (elapsed > 4)
+                        {
+                            elapsed = 0;
+                            idleI++;
+                            if (idleI > 14) idleI = 0;
+                        }
                     }
+                    else
+                    {
+                        Idle = false;
 
-                    if ((NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left") && Game1.Karakter.Hitbox.Y + 100 > hitbox.Y)
-                    {
-                        mvmnt -= new Vector2(0, 5);
-                    }
-                    else if ((NextToCliff(hitbox) == "left") && Game1.Karakter.Hitbox.Y < hitbox.Y)
-                    {
-                        mvmnt += new Vector2(0.7f, 0);
+                        isAttack = false;
+                        Right = false;
+                        mvmnt += new Vector2(-0.7f, 0);
+                        if (elapsed > 4)
+                        {
+                            elapsed = 0;
+                            WalkI++;
+                            if (WalkI > 9) WalkI = 0;
+                        }
+
+                        if ((NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left") &&
+                            Game1.Karakter.Hitbox.Y - 100 < hitbox.Y)
+                        {
+                            mvmnt -= new Vector2(0, 10);
+                        }
                     }
 
                 }
 
                 else if (Right)
                 {
+                    Idle = false;
                     isAttack = false;
                     mvmnt += new Vector2(0.2f, 0);
                     if (elapsed > 6)
@@ -157,6 +191,7 @@ namespace THE_GAME
                 }
                 else if (!Right)
                 {
+                    Idle = false;
                     isAttack = false;
                     mvmnt += new Vector2(-0.2f, 0);
                     if (elapsed > 6)
@@ -193,7 +228,7 @@ namespace THE_GAME
         }
         public override void  Draw(SpriteBatch sbatch)
         {
-
+           sbatch.Draw(Game1.szin,hitbox,Color.White);
             if (IsDead)
             {
                 if (Right)
@@ -220,19 +255,44 @@ namespace THE_GAME
             {
                 if (!Right)
                 {
-                    Rectanglew.X -= 35;
+                    rectangleA.X -= 20;
                     sbatch.Draw(attack[attackI], rectangleA, null, Color.White, 0, new Vector2(0, 0),
                SpriteEffects.FlipHorizontally, 0);
                 }
-                else sbatch.Draw(attack[attackI], rectangleA, Color.White);
+                else
+                {
+                    rectangleA.X -= 20;
+                    sbatch.Draw(attack[attackI], rectangleA, Color.White);
+                }
             }
 
-          else  if (Right)
+            else if (Idle)
+            {
+                if (!Right)
+                {
+                    Rectanglew.X -= 20;
+                    sbatch.Draw(idle[idleI], RectangleW, null, Color.White, 0, new Vector2(0, 0),
+                        SpriteEffects.FlipHorizontally, 0);
+                }
+                else
+                {
+                    {
+                        Rectanglew.X -= 20;
+                        sbatch.Draw(idle[idleI], RectangleW, Color.White);
+                    }
+                }
+            }
+
+          else if (Right)
+            {
+
+                Rectanglew.X -= 20;
                 sbatch.Draw(walk[WalkI], Rectanglew, Color.White);
+            }
 
            else if (!Right)
             {
-                Rectanglew.X -= 35;
+                Rectanglew.X -= 20;
                 sbatch.Draw(walk[WalkI], Rectanglew, null, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
             }
       

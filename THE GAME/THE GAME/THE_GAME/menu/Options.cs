@@ -8,7 +8,7 @@ namespace THE_GAME.menu
     {
         public  static Button back, fullsc, lang;
         public static Button apply;
-        static SpriteFont Font;
+       public static SpriteFont Font;
         static string fullscreen, language;
         enum Languages
         {

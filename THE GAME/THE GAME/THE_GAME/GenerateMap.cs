@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 
 namespace THE_GAME
 {
-    public  class GenerateMap
+    public class GenerateMap
     {
 
         Tiles[,] Tiles2 { get; }
-       public Tiles[,] Objects2 { get; }
+        Tiles[,] Objects2 { get; }
         int width, height;
         readonly int x;
         readonly int y;
-        int id;
+
         public GenerateMap(int id, int size)
         {
-            string tilestring = Game1.db.GetTiles(id);
-            string objectstring = Game1.db.GetObjects(id);
+            string tilestring = Game1.Db.GetTiles(id);
+            string objectstring = Game1.Db.GetObjects(id);
 
 
             int[,] map = GetMatrix(tilestring);
@@ -44,10 +38,10 @@ namespace THE_GAME
                     bool blocked = n < -1;
                     if (blocked) n *= -1;
 
-                   if (n>0)
-                       
-                        Tiles2[i,j]=new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
-                   
+                    if (n > 0)
+
+                        Tiles2[i, j] = new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
+
                     bool blockedO = m < -1;
                     if (blockedO) m *= -1;
                     if (m > 0)
@@ -55,39 +49,61 @@ namespace THE_GAME
                         switch (m)
                         {
                             case 6:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size-20, i * size+15, (int)(182/1.5), (int)(90/1.5)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size - 20, i * size + 15, (int) (182 / 1.5), (int) (90 / 1.5)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 7:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size + 32, (int)(100 / 1.5), (int)(64 / 1.5)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size - 20, i * size + 32, (int) (100 / 1.5), (int) (64 / 1.5)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 9:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 20, i * size+20, (int)(132 /1.4), (int)(74 / 1.4)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size - 20, i * size + 20, (int) (132 / 1.4), (int) (74 / 1.4)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 10:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size - 100, i * size - 97, (int)(286/1.4 ), (int)(239 / 1.4)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size - 100, i * size - 97, (int) (286 / 1.4), (int) (239 / 1.4)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 11:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size , i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size, i * size + 40, (int) (102 / 1.5), (int) (50 / 1.5)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 12:
-                                Game1.Items.Add(new Items("end", new Vector2(j * size, i * size))); break;
+                                Game1.Items.Add(new Items("end", new Vector2(j * size, i * size)));
+                                break;
                             case 13:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size + 15, i * size + 36, (int) (54 / 1.5), (int) (55 / 1.5)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 14:
-                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size , i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)), blockedO,
-                                    true); break;
+                                Objects2[i, j] = new Tiles(m,
+                                    new Rectangle(j * size, i * size + 22, (int) (53 / 1.5), (int) (76 / 1.5)),
+                                    blockedO,
+                                    true);
+                                break;
                             case 15:
-                                Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size-50)));
+                                Game1.Enemies.Add(new Zombie(new Vector2(j * size, i * size - 50)));
                                 break;
                             case 16:
-                                Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size-50)));
-                                break;                          
+                                Game1.Enemies.Add(new ZombieGirl(new Vector2(j * size, i * size - 50)));
+                                break;
                             case 17:
                                 Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
                                 break;
                             case 18:
-                                Game1.Items.Add(new Items("heart", new Vector2(j * size, i * size+30)));
+                                Game1.Items.Add(new Items("heart", new Vector2(j * size, i * size + 30)));
                                 break;
                             case 19:
                                 Game1.Items.Add(new Items("boots", new Vector2(j * size, i * size)));
@@ -95,14 +111,14 @@ namespace THE_GAME
                             case 20:
                                 Game1.Items.Add(new Items("jump", new Vector2(j * size, i * size)));
                                 break;
-                            case 21:
-                                Tiles2[i, j] = new MovingTile(14, new Rectangle(j * size, i * size, size, size), true, true, false, true);
-                                break;
 
-                            default:Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO, true);  break;
+                            default:
+                                Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO,
+                                    true);
+                                break;
                         }
 
-             
+
 
                     width = (i + 1) * size;
                     height = (j + 1) * size;
@@ -115,9 +131,9 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch spritebatch, Karakter karakter)
         {
-            int ystart = (karakter.Hitbox.X-Game1.Swidth)/Game1.TileSize;
+            int ystart = (karakter.Hitbox.X - Game1.Swidth) / Game1.TileSize;
             if (ystart < 0) ystart = 0;
-            int yend = (karakter.Hitbox.X + Game1.Swidth ) / Game1.TileSize+10;
+            int yend = (karakter.Hitbox.X + Game1.Swidth) / Game1.TileSize + 10;
             if (yend > y) yend = y;
 
             /*int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
@@ -125,12 +141,12 @@ namespace THE_GAME
             int xend = ((karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
             if (xend > x) xend = x; */
 
-            for (int i = 0; i <x; i++)
+            for (int i = 0; i < x; i++)
             {
                 for (int j = ystart; j < yend; j++)
                 {
-                  if (Tiles2[i,j]!=null)
-                    Tiles2[i, j].Draw(spritebatch);
+                    if (Tiles2[i, j] != null)
+                        Tiles2[i, j].Draw(spritebatch);
 
                     if (Objects2[i, j] != null)
                     {
@@ -142,67 +158,75 @@ namespace THE_GAME
         }
 
 
-        public bool Collision (Rectangle movingRectangle)
+        public bool Collision(Rectangle movingRectangle)
         {
-            int xstart = movingRectangle.Y  / Game1.TileSize-2;
+            int xstart = movingRectangle.Y / Game1.TileSize - 2;
             if (xstart < 0) xstart = 0;
-            int xend = movingRectangle.Y  / Game1.TileSize+4;
+            int xend = movingRectangle.Y / Game1.TileSize + 4;
             if (xend > x) xend = x;
 
-            int ystart = movingRectangle.X  / Game1.TileSize-2;
+            int ystart = movingRectangle.X / Game1.TileSize - 2;
             if (ystart < 0) ystart = 0;
-            int yend = movingRectangle.X  / Game1.TileSize+4;
+            int yend = movingRectangle.X / Game1.TileSize + 4;
             if (yend > y) yend = y;
 
-            for (int i =xstart; i < xend; i++)
+            for (int i = xstart; i < xend; i++)
             {
-                
-                for (int j = ystart; j <yend ; j++)
+
+                for (int j = ystart; j < yend; j++)
                 {
-                   
-                    if (Tiles2[i, j] != null && (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
+
+                    if (Tiles2[i, j] != null &&
+                        (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
                     {
-                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y+30, movingRectangle.Width,movingRectangle.Height-30);
-                       
+                        Rectangle hitbox = new Rectangle(movingRectangle.X, movingRectangle.Y + 30,
+                            movingRectangle.Width, movingRectangle.Height - 30);
+
                         if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(hitbox))
                         {
                             return true;
                         }
-                       
+
                     }
-                   else if (Tiles2[i, j] != null && Tiles2[i, j].Blocked && Tiles2[i, j].Rectangle.Intersects(movingRectangle))
+                    else if (Tiles2[i, j] != null && Tiles2[i, j].Blocked &&
+                             Tiles2[i, j].Rectangle.Intersects(movingRectangle))
                     {
                         return true;
                     }
 
-                    if (Objects2[i, j] != null && Objects2[i, j].Blocked && Objects2[i, j].Rectangle.Intersects(movingRectangle))
+                    if (Objects2[i, j] != null && Objects2[i, j].Blocked &&
+                        Objects2[i, j].Rectangle.Intersects(movingRectangle))
                     {
                         return true;
                     }
                 }
             }
-   
+
             return false;
 
         }
 
-        public Vector2 CollisionV2 (Vector2 ogPosition, Vector2 destination, Rectangle hitbox)
+        public Vector2 CollisionV2(Vector2 ogPosition, Vector2 destination, Rectangle hitbox)
         {
 
             Vector2 movement = destination - ogPosition;
 
             Vector2 furthestLocation = ogPosition;
 
-            int breaks = (int)(movement.Length() * 2) + 1;
+            int breaks = (int) (movement.Length() * 2) + 1;
 
             Vector2 oneStep = movement / breaks;
 
-            
-            for (int i = 1 ; i <= breaks; i++)
+
+            for (int i = 1; i <= breaks; i++)
             {
                 Vector2 newPosition = ogPosition + oneStep * i;
-                Rectangle newHitbox = new Rectangle((int)newPosition.X, (int)newPosition.Y, hitbox.Width, hitbox.Height);
-                if(!Collision(newHitbox)) { furthestLocation = newPosition; }
+                Rectangle newHitbox =
+                    new Rectangle((int) newPosition.X, (int) newPosition.Y, hitbox.Width, hitbox.Height);
+                if (!Collision(newHitbox))
+                {
+                    furthestLocation = newPosition;
+                }
                 else
                 {
                     bool isDiagonalMove = movement.X != 0 && movement.Y != 0;
@@ -219,9 +243,11 @@ namespace THE_GAME
                         furthestLocation = CollisionV2(furthestLocation, verticalPosition, hitbox);
 
                     }
+
                     break;
                 }
             }
+
             return furthestLocation;
         }
 
@@ -229,7 +255,7 @@ namespace THE_GAME
         {
             string map = m;
 
-            int[,] matrix=new int[20,100];
+            int[,] matrix = new int[20, 100];
 
 
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -247,5 +273,5 @@ namespace THE_GAME
 
     }
 
-   
+
 }

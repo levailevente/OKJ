@@ -37,7 +37,7 @@ namespace THE_GAME
             else
             {
                 Hover = Color.Gold;
-                if (mouse.LeftButton != ButtonState.Pressed || Game1.prevmouse.LeftButton != ButtonState.Released ||
+                if (mouse.LeftButton != ButtonState.Pressed || Game1.Prevmouse.LeftButton != ButtonState.Released ||
                     elapsed <= 60) return;
                 IsClicked = true;
                 elapsed = 0;

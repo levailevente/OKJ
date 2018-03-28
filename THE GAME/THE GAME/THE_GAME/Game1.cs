@@ -1,35 +1,30 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using THE_GAME.menu;
 
 namespace THE_GAME
 {
     
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Game1 : Game
     {
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static  ContentManager ContentMgr;
         public static Karakter Karakter;
-        public static Camera kamera;
+        public static Camera Kamera;
         public static  int Swidth, Sheight;
         public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
-        public static Gamestates PrevGameState;
         Background bg;
         static int tileSize;
         public static int TileSize => tileSize;
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
+        public static Texture2D szin;
 
         public static int Lvl
         {
@@ -45,8 +40,7 @@ namespace THE_GAME
         public static List<Spike> Spikes = new List<Spike>();
         public static List<Items> Items = new List<Items>();
         public static bool Fullscreen;
-        public static Database db;
-        Texture2D szin;
+        public static Database Db;
         static int lvl;
         public enum Gamestates
         {
@@ -64,7 +58,7 @@ namespace THE_GAME
 
         public static GenerateMap GenerateMap;
 
-        public static  MouseState newmouse, prevmouse;
+        public static  MouseState Newmouse, Prevmouse;
 
         public Game1()
         {
@@ -90,7 +84,7 @@ namespace THE_GAME
             
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            kamera = new Camera(graphics.GraphicsDevice.Viewport);
+            Kamera = new Camera();
 
             Karakter = new Karakter();
 
@@ -99,7 +93,7 @@ namespace THE_GAME
 
             Fullscreen = false;
 
-            db=new Database();
+            Db=new Database();
 
             Lvl = 1;
 
@@ -111,7 +105,7 @@ namespace THE_GAME
       
         protected override void LoadContent()
         {
-               szin = Content.Load<Texture2D>("grey");
+               szin=Content.Load<Texture2D>("grey");
          
                 
                 bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 720, 1280, 720));
@@ -129,12 +123,12 @@ namespace THE_GAME
         {
              if (exit) Exit();
             Newkey=Keyboard.GetState();
-            newmouse = Mouse.GetState();
+            Newmouse = Mouse.GetState();
 
             switch (CurrentGameState)
             {
                 case Gamestates.Mainmenu:
-                    MainMenu.Update(newmouse);
+                    MainMenu.Update(Newmouse);
                     break;
                 case Gamestates.Playing:
                     if (Newkey.IsKeyDown(Keys.Escape)) CurrentGameState = Gamestates.Pause;
@@ -155,7 +149,7 @@ namespace THE_GAME
                     }
 
                     break;
-                case Gamestates.Options:Options.Update(newmouse);
+                case Gamestates.Options:Options.Update(Newmouse);
                     
                     if (Options.apply.IsClicked&& Fullscreen!=graphics.IsFullScreen)
                     {
@@ -164,45 +158,40 @@ namespace THE_GAME
                     
                     break;
                 case Gamestates.OptionsIG:
-                    Options.Update(newmouse);
+                    Options.Update(Newmouse);
                     if (Options.apply.IsClicked && Fullscreen != graphics.IsFullScreen)
                     {
                         graphics.ToggleFullScreen();
                     }
                     break;
                 case Gamestates.Pause:
-                    Pause.Update(newmouse);
+                    Pause.Update(Newmouse);
                     break;
                 case Gamestates.Save:
-                    menu.Save.Update(newmouse);
+                    menu.Save.Update(Newmouse);
                     break;
                 case Gamestates.Load:
-                    menu.Save.Update(newmouse);
+                    menu.Save.Update(Newmouse);
                     break;
                 case Gamestates.GameOver:
-                    menu.Gameover.Update(newmouse);
+                    menu.Gameover.Update(Newmouse);
                     break;
                 case Gamestates.EndScreen:
-                    menu.Endscreen.Update(newmouse);
+                    menu.Endscreen.Update(Newmouse);
                     break;
                 case Gamestates.EndSave:
-                    menu.Save.Update(newmouse);
+                    menu.Save.Update(Newmouse);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
 
-            kamera.Update(Karakter);
+            Kamera.Update(Karakter);
 
-         /*   if (Karakter.IsDead)
-            {
-                Karakter = new Karakter();
-                kamera = new Camera(graphics.GraphicsDevice.Viewport);
-            }*/
 
             Prevkey = Newkey;
-            prevmouse = newmouse;
+            Prevmouse = Newmouse;
             base.Update(gameTime);
         }
 
@@ -211,7 +200,7 @@ namespace THE_GAME
         {
             GraphicsDevice.Clear(new Color(26,29,30));
 
-            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,kamera.Transform);
+            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,Kamera.Transform);
             switch (CurrentGameState)
             {
                 case Gamestates.Mainmenu:
@@ -220,7 +209,8 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
-                    // spriteBatch.Draw(szin, Karakter.HitboxA, Color.White);
+                    
+                    spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
                     IsMouseVisible = false;
                     foreach (Spike k in Spikes)
                     {
@@ -228,7 +218,7 @@ namespace THE_GAME
                     }
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
-                    spriteBatch.DrawString(Endscreen.font,"Level "+lvl, new Vector2(620, 750), Color.White*0.5f);
+                    spriteBatch.DrawString(Options.Font,"Level "+lvl, new Vector2(Kamera.Centre.X+1150, Kamera.Centre.Y+10), Color.White*0.5f);
                     foreach (Items k in Items)
                     {
                         k.Draw(spriteBatch);
@@ -258,6 +248,7 @@ namespace THE_GAME
                     menu.Save.Draw(spriteBatch);
                     break;
                 case Gamestates.GameOver:
+                    IsMouseVisible = true;
                     menu.Gameover.Draw(spriteBatch);
                     break;
                 case Gamestates.EndScreen:

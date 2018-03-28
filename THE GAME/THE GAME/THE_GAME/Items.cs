@@ -1,13 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
   public class Items
     {
-        Sprite texture;
-        string type;
+        readonly Sprite texture;
+        readonly string type;
         bool visible, on;
         int elapsed;
         public Items(string type,Vector2 position)
@@ -65,13 +64,18 @@ namespace THE_GAME
                             Game1.Karakter.jumpHeight = 22;
                             on = true;
                             visible = false;
-                            Game1.Karakter.color = Color.Green;
+                            Game1.Karakter.color = Color.LightGreen;
                         }
                         break;
                     case "end":
                         if (Game1.Karakter.Hitbox.Intersects(new Rectangle(texture.Rectangle.X, texture.Rectangle.Y, texture.Rectangle.Width, texture.Rectangle.Height)))
                         {
-                            Game1.CurrentGameState = Game1.Gamestates.EndScreen;
+                            int i = 0;
+                            while (i<Game1.Enemies.Count && Game1.Enemies[i].IsDead)
+                            {
+                                i++;
+                            }
+                           if (i!=Game1.Enemies.Count) Game1.CurrentGameState = Game1.Gamestates.EndScreen;
                         }
                         break;
                 }

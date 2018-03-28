@@ -12,7 +12,7 @@ namespace THE_GAME.menu
    {
      public  static Button nextlvl, save;
         static Sprite gj;
-        static SpriteFont font;
+       public static SpriteFont font;
        static bool end;
         static Endscreen()
         {
