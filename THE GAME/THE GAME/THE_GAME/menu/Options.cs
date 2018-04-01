@@ -4,40 +4,41 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME.menu
 {
-  static class Options
+    static class Options
     {
-        public  static Button back, fullsc, lang;
-        public static Button apply;
-       public static SpriteFont Font;
+        static readonly Button Back, Fullsc, Lang;
+        public static readonly Button Apply;
+        public static readonly SpriteFont Font;
         static string fullscreen, language;
+
         enum Languages
         {
             Hu,
-            En,
-            De
+            En
         }
 
         static Languages langauges;
+
         static Options()
         {
-            Font= Game1.ContentMgr.Load<SpriteFont>("font2");
-            apply = new Button(MainMenu.Gomb, new Rectangle(470,620,150,55), "Apply");
-            back = new Button(MainMenu.Gomb, new Rectangle(670, 620, 150, 55), "Back");
+            Font = Game1.ContentMgr.Load<SpriteFont>("font2");
+            Apply = new Button(MainMenu.Gomb, new Rectangle(470, 620, 150, 55), "Apply");
+            Back = new Button(MainMenu.Gomb, new Rectangle(670, 620, 150, 55), "Back");
 
-            fullsc = new Button(Save.Gomb, new Rectangle(675, 195, 170, 45), "Off");
-            lang = new Button(Save.Gomb, new Rectangle(675, 295, 170, 45), "English");
+            Fullsc = new Button(Save.Gomb, new Rectangle(675, 195, 170, 45), "Off");
+            Lang = new Button(Save.Gomb, new Rectangle(675, 295, 170, 45), "English");
 
-            fullsc.Position.X += 30;
-            fullsc.Position.Y -= 8;
+            Fullsc.Position.X += 30;
+            Fullsc.Position.Y -= 8;
 
-            lang.Position.X += 10;
-            lang.Position.Y -= 8;
+            Lang.Position.X += 10;
+            Lang.Position.Y -= 8;
 
-            apply.Position.X += 10;
-            apply.Position.Y -= 5;
+            Apply.Position.X += 10;
+            Apply.Position.Y -= 5;
 
-            back.Position.X += 15;
-            back.Position.Y -= 5;
+            Back.Position.X += 15;
+            Back.Position.Y -= 5;
 
             langauges = Languages.En;
 
@@ -47,51 +48,51 @@ namespace THE_GAME.menu
 
         public static void Update(MouseState mouse)
         {
-            apply.Update(mouse);
-            back.Update(mouse);
-            fullsc.Update(mouse);
-            lang.Update(mouse);
+            Apply.Update(mouse);
+            Back.Update(mouse);
+            Fullsc.Update(mouse);
+            Lang.Update(mouse);
 
-            if (back.IsClicked)
+            if (Back.IsClicked)
                 Game1.CurrentGameState = Game1.CurrentGameState == Game1.Gamestates.Options
                     ? Game1.Gamestates.Mainmenu
                     : Game1.Gamestates.Pause;
 
 
-            if (fullsc.IsClicked)
+            if (Fullsc.IsClicked)
             {
                 if (Game1.Fullscreen)
                 {
                     Game1.Fullscreen = false;
-                    if (langauges==Languages.En) fullsc.Text = "Off";
-                    if (langauges == Languages.Hu) fullsc.Text = "Ki";
+                    if (langauges == Languages.En) Fullsc.Text = "Off";
+                    if (langauges == Languages.Hu) Fullsc.Text = "Ki";
                 }
                 else
                 {
                     Game1.Fullscreen = true;
-                    if (langauges == Languages.En) fullsc.Text = "On";
-                    if (langauges == Languages.Hu) fullsc.Text = "Be";
+                    if (langauges == Languages.En) Fullsc.Text = "On";
+                    if (langauges == Languages.Hu) Fullsc.Text = "Be";
                 }
             }
 
-            if (lang.IsClicked)
+            if (Lang.IsClicked)
             {
                 if (langauges == Languages.Hu)
                 {
                     langauges = Languages.En;
-                    lang.Text = "English";
+                    Lang.Text = "English";
                 }
-               else if (langauges == Languages.En)
+                else if (langauges == Languages.En)
                 {
                     langauges = Languages.Hu;
-                    lang.Text = "Magyar";
+                    Lang.Text = "Magyar";
                 }
 
             }
 
-            if (apply.IsClicked)
+            if (Apply.IsClicked)
             {
-                if (langauges==Languages.Hu && MainMenu.Exit.Text!="Kilépés") ChangetoHungarian();
+                if (langauges == Languages.Hu && MainMenu.Exit.Text != "Kilépés") ChangetoHungarian();
                 if (langauges == Languages.En && MainMenu.Exit.Text != "Exit") ChangetoEnglish();
             }
         }
@@ -100,12 +101,12 @@ namespace THE_GAME.menu
         public static void Draw(SpriteBatch sbatch)
         {
             MainMenu.Hatter.Draw(sbatch);
-            apply.Draw(sbatch);
-            back.Draw(sbatch);
-            sbatch.DrawString(Font, fullscreen, new Vector2(450,200), Color.White);
+            Apply.Draw(sbatch);
+            Back.Draw(sbatch);
+            sbatch.DrawString(Font, fullscreen, new Vector2(450, 200), Color.White);
             sbatch.DrawString(Font, language, new Vector2(450, 300), Color.White);
-            fullsc.Draw2(sbatch,0.5f);
-            lang.Draw2(sbatch, 0.5f);
+            Fullsc.Draw2(sbatch, 0.5f);
+            Lang.Draw2(sbatch, 0.5f);
         }
 
         static void ChangetoHungarian()
@@ -125,17 +126,17 @@ namespace THE_GAME.menu
             fullscreen = "Teljes képernyő:";
             language = "Nyelv:";
 
-            back.Text = "Vissza";
-            back.Position.X -= 10;
-            apply.Text = "Alkalmaz";
-            apply.Position.X -= 20;
-            if (Game1.Fullscreen) fullsc.Text = "Be";
-            else fullsc.Text = "Ki";
+            Back.Text = "Vissza";
+            Back.Position.X -= 10;
+            Apply.Text = "Alkalmaz";
+            Apply.Position.X -= 20;
+            if (Game1.Fullscreen) Fullsc.Text = "Be";
+            else Fullsc.Text = "Ki";
             Save.Back.Text = "Vissza";
             Save.Back.Position.X -= 10;
 
             Pause.Save.Text = "Mentés";
-            Pause.ExitM.Text="Kilépés a menübe";
+            Pause.ExitM.Text = "Kilépés a menübe";
             Pause.Resume.Text = "Folytatás";
 
             Pause.ExitM.Position.X -= 20;
@@ -144,11 +145,11 @@ namespace THE_GAME.menu
 
             foreach (SaveSlot s in Save.Saves)
             {
-                s.back.Text = "Vissza";
-                s.back.Position.X -= 7;
-                s.save.Text = "Mentés";
-                s.save.Position.X -= 10;
-                s.textbox.Text = "Név:";
+                s.Back.Text = "Vissza";
+                s.Back.Position.X -= 7;
+                s.Save.Text = "Mentés";
+                s.Save.Position.X -= 10;
+                s.Textbox.Text = "Név:";
                 s.Text = "Üres mentés";
             }
         }
@@ -170,15 +171,15 @@ namespace THE_GAME.menu
 
             fullscreen = "Fullscreen:";
             language = "Language:";
-            back.Text = "Back";
-            apply.Text = "Apply";
+            Back.Text = "Back";
+            Apply.Text = "Apply";
 
-            apply.Position.X += 20;
+            Apply.Position.X += 20;
 
-            back.Position.X += 10;
+            Back.Position.X += 10;
 
-            if (Game1.Fullscreen) fullsc.Text = "On";
-            else fullsc.Text = "Off";
+            if (Game1.Fullscreen) Fullsc.Text = "On";
+            else Fullsc.Text = "Off";
 
             Save.Back.Text = "Back";
             Save.Back.Position.X += 10;
@@ -192,11 +193,11 @@ namespace THE_GAME.menu
 
             foreach (SaveSlot s in Save.Saves)
             {
-                s.back.Text = "Back";
-                s.back.Position.X += 7;
-                s.save.Text = "Save";
-                s.save.Position.X += 10;
-                s.textbox.Text = "Name:";
+                s.Back.Text = "Back";
+                s.Back.Position.X += 7;
+                s.Save.Text = "Save";
+                s.Save.Position.X += 10;
+                s.Textbox.Text = "Name:";
                 s.Text = "Empty Slot";
             }
         }

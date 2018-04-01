@@ -14,18 +14,16 @@ namespace THE_GAME
             Rectangle = r;
         }
 
-   
 
-        public virtual void Draw(SpriteBatch sbatch )
+
+        public virtual void Draw(SpriteBatch sbatch)
         {
             sbatch.Draw(Texture, Rectangle, Color.White);
         }
 
-        public virtual void DrawC(SpriteBatch sbatch,Color color)
+        public virtual void DrawC(SpriteBatch sbatch, Color color)
         {
             sbatch.Draw(Texture, Rectangle, color);
         }
     }
-
-
 }

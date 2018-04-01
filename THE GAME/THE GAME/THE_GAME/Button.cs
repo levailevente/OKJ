@@ -9,10 +9,11 @@ namespace THE_GAME
         public bool IsClicked;
         public string Text;
         Rectangle mouseRectangle;
-        public static SpriteFont Font;
+        protected static SpriteFont Font;
         public Vector2 Position;
         static int elapsed;
         protected Color Hover;
+
         public Button(Texture2D t, Rectangle r, string text) : base(t, r)
         {
             elapsed = 0;
@@ -50,11 +51,12 @@ namespace THE_GAME
             sbatch.Draw(Texture, Rectangle, Hover);
             sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
         }
-        public void Draw2(SpriteBatch sbatch,float f)
+
+        public void Draw2(SpriteBatch sbatch, float f)
         {
-            sbatch.Draw(Texture, Rectangle, Hover*f);
-            sbatch.DrawString(Font, Text, Position,Color.White);
+            sbatch.Draw(Texture, Rectangle, Hover * f);
+            sbatch.DrawString(Font, Text, Position, Color.White);
         }
     }
-    
+
 }

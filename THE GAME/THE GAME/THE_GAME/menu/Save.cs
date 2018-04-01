@@ -9,7 +9,7 @@ namespace THE_GAME.menu
         public static readonly SaveSlot[] Saves;
 
         public static readonly Button Back;
-        public static Texture2D Gomb;
+        public static readonly Texture2D Gomb;
 
         static Save()
         {
@@ -37,7 +37,7 @@ namespace THE_GAME.menu
 
             foreach (SaveSlot s in Saves)
             {
-              if (s.NameInput)  s.DrawTextbox(sbatch);
+                if (s.NameInput) s.DrawTextbox(sbatch);
             }
 
             Back.Draw(sbatch);
@@ -46,7 +46,7 @@ namespace THE_GAME.menu
         public static void Update(MouseState mouse)
         {
 
-            if (!Saves[0].NameInput&& !Saves[1].NameInput && !Saves[2].NameInput && !Saves[3].NameInput)
+            if (!Saves[0].NameInput && !Saves[1].NameInput && !Saves[2].NameInput && !Saves[3].NameInput)
             {
                 foreach (SaveSlot s in Saves)
                 {
@@ -63,7 +63,7 @@ namespace THE_GAME.menu
                         if (Game1.CurrentGameState == Game1.Gamestates.Save)
                             Game1.CurrentGameState = Game1.Gamestates.Pause;
                     }
-                    
+
                 }
 
             }
@@ -72,52 +72,53 @@ namespace THE_GAME.menu
             {
                 foreach (SaveSlot s in Saves)
                 {
-                    if (s.NameInput) s.Textbox(mouse);
+                    if (s.NameInput) s.TextboxUpdate(mouse);
                 }
 
                 for (int i = 0; i < 4; i++)
                 {
-                    if (Saves[i].save.IsClicked)
+                    if (Saves[i].Save.IsClicked)
                     {
-                        Game1.Db.Save(i+1,Saves[i].name,Saves[i].date,Game1.Lvl,Game1.Karakter.Position,Game1.Karakter.Health);
+                        Database.Save(i + 1, Saves[i].Name, Saves[i].Date, Game1.Lvl, Game1.Karakter.PositionPoint,
+                            Game1.Karakter.Health);
                     }
                 }
             }
 
-            if (MainMenu.LoadGame.IsClicked || Pause.Save.IsClicked || Endscreen.save.IsClicked)
+            if (MainMenu.LoadGame.IsClicked || Pause.Save.IsClicked || EndScreen.Save.IsClicked)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    string[] save = Game1.Db.Load(i + 1);
-                    Saves[i].name = save[0];
-                    Saves[i].date = save[1];
-                    Saves[i].lvl = int.Parse(save[2]);
-                    if (Saves[i].lvl > 0)
+                    string[] save = Database.Load(i + 1);
+                    Saves[i].Name = save[0];
+                    Saves[i].Date = save[1];
+                    Saves[i].Lvl = int.Parse(save[2]);
+                    if (Saves[i].Lvl > 0)
                     {
-                        Saves[i].position = save[3];
-                        Saves[i].hp = int.Parse(save[4]);
-                        Saves[i].isUsed = true;
-                        Saves[i].Text = Saves[i].name + "  " + Saves[i].lvl + ". lvl";
+                        Saves[i].PositionString = save[3];
+                        Saves[i].Hp = int.Parse(save[4]);
+                        Saves[i].IsUsed = true;
+                        Saves[i].Text = Saves[i].Name + "  " + Saves[i].Lvl + ". lvl";
                     }
                 }
 
                 MainMenu.LoadGame.IsClicked = false;
                 Pause.Save.IsClicked = false;
-                Endscreen.save.IsClicked = false;
+                EndScreen.Save.IsClicked = false;
             }
 
             if (Game1.CurrentGameState == Game1.Gamestates.Load)
             {
                 foreach (SaveSlot s in Saves)
                 {
-                    if (s.isUsed && s.IsClicked)
+                    if (s.IsUsed && s.IsClicked)
                     {
-                        Game1.GenerateMap=new GenerateMap(s.lvl,72);
-                        Game1.Karakter.Health = s.hp;
-                        string[] positions = s.position.Split(',');
+                        Game1.GenerateMap = new GenerateMap(s.Lvl, 72);
+                        Game1.Karakter.Health = s.Hp;
+                        string[] positions = s.PositionString.Split(',');
                         int x = int.Parse(positions[0]);
                         int y = int.Parse(positions[1]);
-                        Game1.Karakter.position = new Vector2(x, y);
+                        Game1.Karakter.Position = new Vector2(x, y);
                         Game1.CurrentGameState = Game1.Gamestates.Playing;
                     }
                 }

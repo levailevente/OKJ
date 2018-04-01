@@ -8,15 +8,15 @@ using THE_GAME.menu;
 
 namespace THE_GAME
 {
-    
+
     public class Game1 : Game
     {
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public static  ContentManager ContentMgr;
+        public static ContentManager ContentMgr;
         public static Karakter Karakter;
         public static Camera Kamera;
-        public static  int Swidth, Sheight;
+        public static int Swidth, Sheight;
         public static KeyboardState Newkey;
         public static KeyboardState Prevkey;
         Background bg;
@@ -25,6 +25,7 @@ namespace THE_GAME
         public static bool exit;
         public static Gamestates CurrentGameState { get; set; }
         public static Texture2D szin;
+        public static bool Godmode;
 
         public static int Lvl
         {
@@ -36,18 +37,18 @@ namespace THE_GAME
             set { lvl = value; }
         }
 
-        public static List<Karakter> Enemies=new List<Karakter>();
-        public static List<Spike> Spikes = new List<Spike>();
-        public static List<Items> Items = new List<Items>();
+        public static readonly List<Karakter> Enemies = new List<Karakter>();
+        public static readonly List<Spike> Spikes = new List<Spike>();
+        public static readonly List<Items> Items = new List<Items>();
         public static bool Fullscreen;
-        public static Database Db;
         static int lvl;
+
         public enum Gamestates
         {
             Mainmenu,
             Playing,
             Options,
-            OptionsIG,
+            OptionsIg,
             Pause,
             Save,
             Load,
@@ -58,21 +59,21 @@ namespace THE_GAME
 
         public static GenerateMap GenerateMap;
 
-        public static  MouseState Newmouse, Prevmouse;
+        public static MouseState Newmouse, Prevmouse;
 
         public Game1()
         {
             IsMouseVisible = true;
-            
+
             graphics = new GraphicsDeviceManager(this)
 
-          
+
             {
                 PreferredBackBufferWidth = 1280,
                 PreferredBackBufferHeight = 720
             };
 
-            
+
 
             Content.RootDirectory = "Content";
         }
@@ -81,7 +82,7 @@ namespace THE_GAME
         protected override void Initialize()
         {
             tileSize = 72;
-            
+
             ContentMgr = Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Kamera = new Camera();
@@ -93,37 +94,41 @@ namespace THE_GAME
 
             Fullscreen = false;
 
-            Db=new Database();
-
             Lvl = 1;
+
+            Godmode = false;
 
             CurrentGameState = Gamestates.Mainmenu;
 
             base.Initialize();
         }
 
-      
+
         protected override void LoadContent()
         {
-               szin=Content.Load<Texture2D>("grey");
-         
-                
-                bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 720, 1280, 720));
+            szin = Content.Load<Texture2D>("grey");
+
+            bg = new Background(Content.Load<Texture2D>("BG"), new Rectangle(0, 720, 1280, 720));
 
         }
 
-       
+
         protected override void UnloadContent()
         {
-        
+
         }
 
-        
+
         protected override void Update(GameTime gameTime)
         {
-             if (exit) Exit();
-            Newkey=Keyboard.GetState();
+            if (exit) Exit();
+            Newkey = Keyboard.GetState();
             Newmouse = Mouse.GetState();
+
+            if (Newkey.IsKeyDown(Keys.F1) && Prevkey.IsKeyUp(Keys.F1))
+            {
+                Godmode = !Godmode;
+            } 
 
             switch (CurrentGameState)
             {
@@ -143,26 +148,29 @@ namespace THE_GAME
                     {
                         k.Update(gameTime);
                     }
+
                     foreach (Items k in Items)
                     {
                         k.Update();
                     }
 
                     break;
-                case Gamestates.Options:Options.Update(Newmouse);
-                    
-                    if (Options.apply.IsClicked&& Fullscreen!=graphics.IsFullScreen)
-                    {
-                      graphics.ToggleFullScreen();
-                    }
-                    
-                    break;
-                case Gamestates.OptionsIG:
+                case Gamestates.Options:
                     Options.Update(Newmouse);
-                    if (Options.apply.IsClicked && Fullscreen != graphics.IsFullScreen)
+
+                    if (Options.Apply.IsClicked && Fullscreen != graphics.IsFullScreen)
                     {
                         graphics.ToggleFullScreen();
                     }
+
+                    break;
+                case Gamestates.OptionsIg:
+                    Options.Update(Newmouse);
+                    if (Options.Apply.IsClicked && Fullscreen != graphics.IsFullScreen)
+                    {
+                        graphics.ToggleFullScreen();
+                    }
+
                     break;
                 case Gamestates.Pause:
                     Pause.Update(Newmouse);
@@ -177,7 +185,7 @@ namespace THE_GAME
                     menu.Gameover.Update(Newmouse);
                     break;
                 case Gamestates.EndScreen:
-                    menu.Endscreen.Update(Newmouse);
+                    menu.EndScreen.Update(Newmouse);
                     break;
                 case Gamestates.EndSave:
                     menu.Save.Update(Newmouse);
@@ -195,12 +203,12 @@ namespace THE_GAME
             base.Update(gameTime);
         }
 
-       
+
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(26,29,30));
+            GraphicsDevice.Clear(new Color(26, 29, 30));
 
-            spriteBatch.Begin(SpriteSortMode.Deferred,null,null,null,null,null,Kamera.Transform);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Kamera.Transform);
             switch (CurrentGameState)
             {
                 case Gamestates.Mainmenu:
@@ -209,16 +217,18 @@ namespace THE_GAME
                     break;
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
-                    
-                    spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
+
+                   // spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
                     IsMouseVisible = false;
                     foreach (Spike k in Spikes)
                     {
                         k.Draw(spriteBatch);
                     }
+
                     GenerateMap.Draw(spriteBatch, Karakter);
                     Karakter.Draw(spriteBatch);
-                    spriteBatch.DrawString(Options.Font,"Level "+lvl, new Vector2(Kamera.Centre.X+1150, Kamera.Centre.Y+10), Color.White*0.5f);
+                    spriteBatch.DrawString(Options.Font, "Level " + lvl,
+                        new Vector2(Kamera.Centre.X + 1150, Kamera.Centre.Y + 10), Color.White * 0.5f);
                     foreach (Items k in Items)
                     {
                         k.Draw(spriteBatch);
@@ -229,12 +239,12 @@ namespace THE_GAME
                         k.Draw(spriteBatch);
                     }
 
-
-                    HealthBar.Draw(spriteBatch,Karakter.Health);
+                    HealthBar.Draw(spriteBatch, Karakter.Health);
                     break;
-                case Gamestates.Options: Options.Draw(spriteBatch);
+                case Gamestates.Options:
+                    Options.Draw(spriteBatch);
                     break;
-                case Gamestates.OptionsIG:
+                case Gamestates.OptionsIg:
                     Options.Draw(spriteBatch);
                     break;
                 case Gamestates.Pause:
@@ -253,7 +263,7 @@ namespace THE_GAME
                     break;
                 case Gamestates.EndScreen:
                     IsMouseVisible = true;
-                    menu.Endscreen.Draw(spriteBatch);
+                    menu.EndScreen.Draw(spriteBatch);
                     break;
                 case Gamestates.EndSave:
                     menu.Save.Draw(spriteBatch);
@@ -265,7 +275,7 @@ namespace THE_GAME
 
             spriteBatch.End();
 
-           
+
         }
     }
 }

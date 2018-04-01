@@ -8,9 +8,11 @@ namespace THE_GAME.menu
     {
         static Sprite gameover;
         static Button restart;
+
         static Gameover()
         {
-                gameover=new Sprite(Game1.ContentMgr.Load<Texture2D>("Game_Over"),new Rectangle(390,100,3508/7,2480/7));
+            gameover = new Sprite(Game1.ContentMgr.Load<Texture2D>("Game_Over"),
+                new Rectangle(390, 100, 3508 / 7, 2480 / 7));
             restart = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 65), "Restart");
 
             restart.Position.X += 12;
@@ -31,7 +33,8 @@ namespace THE_GAME.menu
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
 
-            if (Pause.ExitM.IsClicked) {
+            if (Pause.ExitM.IsClicked)
+            {
 
                 Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
             }

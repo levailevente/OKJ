@@ -3,39 +3,39 @@ using System.Data.SQLite;
 
 namespace THE_GAME
 {
-    public class Database
+    static class Database
     {
-        SQLiteConnection dbConnection;
-        SQLiteCommand command;
-        SQLiteDataReader reader;
-        string sql = "";
+        static SQLiteConnection dbConnection;
+        static SQLiteCommand command;
+        static SQLiteDataReader reader;
+        static string sql = "";
 
-        public Database()
+        static Database()
         {
             ConnectToDatabase();
         }
 
-        private void ConnectToDatabase()
+        static void ConnectToDatabase()
         {
             dbConnection = new SQLiteConnection("Data Source=database.db3;Version=3;");
             dbConnection.Open();
         }
 
 
-        public string GetTiles(int id)
+        public static string GetTiles(int id)
         {
             ConnectToDatabase();
             sql = "SELECT Tiles FROM Maps WHERE ID = " + id;
             command = new SQLiteCommand(sql, dbConnection);
             reader = command.ExecuteReader();
             reader.Read();
-            string map= Convert.ToString(reader["Tiles"]);
+            string map = Convert.ToString(reader["Tiles"]);
             reader.Close();
             dbConnection.Close();
             return map;
         }
 
-        public string GetObjects(int id)
+        public static string GetObjects(int id)
         {
             ConnectToDatabase();
             sql = "SELECT Objects from Maps WHERE ID = " + id;
@@ -48,22 +48,24 @@ namespace THE_GAME
             return map;
         }
 
-        public void Save(int id, string name, string date, int mapid, string position,int hp)
+        public static void Save(int id, string name, string date, int mapid, string position, int hp)
         {
             ConnectToDatabase();
-            sql = "UPDATE Saves SET Name = @name, DateTime = @date, MapID = @mapid, Position=@position, HP=@hp WHERE ID = "+id;
+            sql =
+                "UPDATE Saves SET Name = @name, DateTime = @date, MapID = @mapid, Position=@PositionString, HP=@hp WHERE ID = " +
+                id;
             command = new SQLiteCommand(sql, dbConnection);
             command.Parameters.AddWithValue("name", name);
             command.Parameters.AddWithValue("date", date);
             command.Parameters.AddWithValue("mapid", mapid);
-            command.Parameters.AddWithValue("position", position);
+            command.Parameters.AddWithValue("PositionString", position);
             command.Parameters.AddWithValue("hp", hp);
             command.ExecuteNonQuery();
 
             dbConnection.Close();
         }
 
-        public string[] Load(int id)
+        public static string[] Load(int id)
         {
             ConnectToDatabase();
             string[] result = new string[5];

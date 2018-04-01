@@ -3,50 +3,55 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace THE_GAME
 {
-    class ZombieGirl:Zombie
+    class ZombieGirl : Zombie
     {
         public ZombieGirl(Vector2 startPos) : base(startPos)
         {
-            walk = new Texture2D[10];
-            death = new Texture2D[12];
-            attack = new Texture2D[8];
-            idle=new Texture2D[15];
+            Walk = new Texture2D[10];
+            Death = new Texture2D[12];
+            Attack = new Texture2D[8];
+            idle = new Texture2D[15];
 
             const int o = 5;
 
             Rectanglew = new Rectangle(0, 0, 430 / o, 519 / o);
             hitbox = new Rectangle(0, 0, 45, 100);
-            rectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
+            RectangleA = new Rectangle(0, 0, 430 / o, 519 / o);
             RectangleD = new Rectangle(0, 0, 609 / o, 546 / o);
 
-            this.StartPos = position = new Vector2(startPos.X, startPos.Y - 50);
+            StartPos = Position = new Vector2(startPos.X, startPos.Y - 50);
 
-            elapsed = 0;
+            Elapsed = 0;
 
-            WalkI = 1;
+            WalkI = 0;
 
-            attackI = 0;
+            AttackI = 0;
 
+            DeadI = 0;
 
-            isJumping = false;
-            isCrouching = false;
+            IdleI = 0;
+
+            IsJumping = false;
+            IsCrouching = false;
             Right = true;
 
             Idle = false;
 
             for (int i = 0; i < 10; i++)
             {
-                walk[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/walk/Walk (" + (i) + ")");
+                Walk[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/walk/Walk (" + (i) + ")");
             }
 
             for (int i = 0; i < 12; i++)
             {
-                death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/death/Dead (" + (i+1) + ")");
+                Death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/death/Dead (" + (i + 1) + ")");
             }
+
             for (int i = 0; i < 8; i++)
             {
-                attack[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/attack/Attack (" + (i + 1) + ")");
+                Attack[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/attack/Attack (" + (i + 1) + ")");
             }
+
             for (int i = 0; i < 15; i++)
             {
                 idle[i] = Game1.ContentMgr.Load<Texture2D>("enemy/girl/idle/Idle (" + (i + 1) + ")");

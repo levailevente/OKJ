@@ -15,8 +15,8 @@ namespace THE_GAME
 
         public GenerateMap(int id, int size)
         {
-            string tilestring = Game1.Db.GetTiles(id);
-            string objectstring = Game1.Db.GetObjects(id);
+            string tilestring = Database.GetTiles(id);
+            string objectstring = Database.GetObjects(id);
 
 
             int[,] map = GetMatrix(tilestring);
@@ -176,6 +176,9 @@ namespace THE_GAME
                 for (int j = ystart; j < yend; j++)
                 {
 
+
+
+
                     if (Tiles2[i, j] != null &&
                         (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
                     {
@@ -196,7 +199,7 @@ namespace THE_GAME
 
                     if (Objects2[i, j] != null && Objects2[i, j].Blocked &&
                         Objects2[i, j].Rectangle.Intersects(movingRectangle))
-                    {
+                    {      
                         return true;
                     }
                 }
@@ -272,6 +275,5 @@ namespace THE_GAME
         }
 
     }
-
 
 }

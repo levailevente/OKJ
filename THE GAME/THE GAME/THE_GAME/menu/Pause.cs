@@ -4,10 +4,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME.menu
 {
-     static class Pause
-     {
+    static class Pause
+    {
         public static readonly Button Resume, Save, ExitM;
-      static  Pause()
+
+        static Pause()
         {
             Resume = new Button(MainMenu.Gomb, new Rectangle(560, 250, 170, 65), "Resume");
             Save = new Button(MainMenu.Gomb, new Rectangle(560, 350, 170, 65), "Save");
@@ -15,13 +16,13 @@ namespace THE_GAME.menu
 
             Resume.Position.X += 8;
             Save.Position.X += 20;
-            ExitM.Position.X -=10;
+            ExitM.Position.X -= 10;
         }
 
         public static void Draw(SpriteBatch sbatch)
         {
             MainMenu.Hatter.Draw(sbatch);
-            MainMenu.Logo.DrawC(sbatch,Color.Beige);
+            MainMenu.Logo.DrawC(sbatch, Color.Beige);
             MainMenu.Karakter.DrawC(sbatch, Color.Cyan);
             MainMenu.Options.Draw(sbatch);
             ExitM.Draw(sbatch);
@@ -35,22 +36,25 @@ namespace THE_GAME.menu
             Save.Update(mouse);
             MainMenu.Options.Update(mouse);
             ExitM.Update(mouse);
-          
+
             if (Resume.IsClicked)
             {
                 Game1.CurrentGameState = Game1.Gamestates.Playing;
             }
-            if (ExitM.IsClicked )
+
+            if (ExitM.IsClicked)
             {
                 Game1.CurrentGameState = Game1.Gamestates.Mainmenu;
             }
+
             if (Save.IsClicked)
             {
                 Game1.CurrentGameState = Game1.Gamestates.Save;
             }
+
             if (MainMenu.Options.IsClicked)
             {
-                Game1.CurrentGameState = Game1.Gamestates.OptionsIG;
+                Game1.CurrentGameState = Game1.Gamestates.OptionsIg;
             }
         }
     }

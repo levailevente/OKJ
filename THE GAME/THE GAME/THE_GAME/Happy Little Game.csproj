@@ -102,8 +102,9 @@
     <Compile Include="Database.cs" />
     <Compile Include="HealthBar.cs" />
     <Compile Include="Items.cs" />
-    <Compile Include="menu\Endscreen.cs" />
-    <Compile Include="menu\gameover.cs" />
+    <Compile Include="Jack.cs" />
+    <Compile Include="menu\EndScreen.cs" />
+    <Compile Include="menu\GameOver.cs" />
     <Compile Include="menu\MainMenu.cs" />
     <Compile Include="karakter.cs" />
     <Compile Include="GenerateMap.cs" />

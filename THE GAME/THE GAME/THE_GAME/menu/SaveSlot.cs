@@ -9,48 +9,48 @@ namespace THE_GAME.menu
 {
     internal class SaveSlot : Button
     {
-       public string date;
-        public bool isUsed;
+        public string Date;
+        public bool IsUsed;
         public bool NameInput;
         readonly Vector2 datePosition;
-        public readonly Button save, back, textbox;
+        public readonly Button Save, Back, Textbox;
         readonly Sprite box;
-        public string name;
+        public string Name;
         Keys[] letter;
-        public int hp;
-        public int lvl;
-        public string position;
+        public int Hp;
+        public int Lvl;
+        public string PositionString;
         readonly Vector2 namePos;
-        Regex r= new Regex("^[a-zA-Z0-9]*$");
+        Regex r = new Regex("^[a-zA-Z0-9]*$");
 
         public SaveSlot(Texture2D t, Rectangle r, string text) : base(t, r, text)
         {
             Texture2D asd = Game1.ContentMgr.Load<Texture2D>("textbox");
             box = new Sprite(Game1.ContentMgr.Load<Texture2D>("popup"), new Rectangle(420, 200, 450, 300));
-            isUsed = false;
+            IsUsed = false;
             datePosition = Position;
             datePosition.Y += 30;
-            save = new Button(MainMenu.Gomb, new Rectangle(490, 400, 145, 60), "Save");
-            back = new Button(MainMenu.Gomb, new Rectangle(670, 400, 145, 60), "Back");
-            textbox = new Button(asd, new Rectangle(570, 280, 372 / 2, 110 / 2), "Name: ");
-            textbox.Position.X -= 110;
-            textbox.Position.Y -= 3;
-            save.Position.Y -= 3;
-            save.Position.X += 5;
-            back.Position.Y -= 3;
-            back.Position.X += 8;
+            Save = new Button(MainMenu.Gomb, new Rectangle(490, 400, 145, 60), "Save");
+            Back = new Button(MainMenu.Gomb, new Rectangle(670, 400, 145, 60), "Back");
+            Textbox = new Button(asd, new Rectangle(570, 280, 372 / 2, 110 / 2), "Name: ");
+            Textbox.Position.X -= 110;
+            Textbox.Position.Y -= 3;
+            Save.Position.Y -= 3;
+            Save.Position.X += 5;
+            Back.Position.Y -= 3;
+            Back.Position.X += 8;
             NameInput = false;
-            name = "";
-            namePos = new Vector2(textbox.Position.X, textbox.Position.Y);
+            Name = "";
+            namePos = new Vector2(Textbox.Position.X, Textbox.Position.Y);
             namePos.X += 80;
-            
+
         }
 
         public override void Update(MouseState mouse)
         {
 
             base.Update(mouse);
-            if (IsClicked && Game1.CurrentGameState==Game1.Gamestates.Save)
+            if (IsClicked && Game1.CurrentGameState == Game1.Gamestates.Save)
             {
                 NameInput = true;
             }
@@ -59,57 +59,60 @@ namespace THE_GAME.menu
         public override void Draw(SpriteBatch sbatch)
         {
 
-                sbatch.Draw(Texture, Rectangle, Hover * 0.5f);
-     if (isUsed)sbatch.DrawString(Font, date, datePosition, Color.GhostWhite);
-                sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
-            
+            sbatch.Draw(Texture, Rectangle, Hover * 0.5f);
+            if (IsUsed) sbatch.DrawString(Font, Date, datePosition, Color.GhostWhite);
+            sbatch.DrawString(Font, Text, Position, Color.GhostWhite);
+
 
         }
 
         void NameUpdate()
         {
-            letter= Game1.Newkey.GetPressedKeys();
-            if (letter.Length > 0  && name.Length<15 && Game1.Prevkey.GetPressedKeys().Length == 0 || Game1.Newkey.IsKeyDown(Keys.Back) && Game1.Prevkey.GetPressedKeys().Length == 0)
+            letter = Game1.Newkey.GetPressedKeys();
+
+
+        if (letter.Length > 1 && Name.Length < 15 && Game1.Prevkey.GetPressedKeys().Length == 1 || Game1.Newkey.IsKeyDown(Keys.Back) && Game1.Prevkey.GetPressedKeys().Length == 1)
             {
-                                   
-                       
-                        string value = letter[0].ToString();
-                        if (value.Length == 1) name += value.ToLower();
-                        if (Game1.Newkey.IsKeyDown(Keys.Back))
-                        {
-                            if (name.Length > 0) name = name.Remove(name.Length - 1, 1);
-                        }
-                               
+
+                string value = letter[1].ToString();
+                if (value.Length == 1) Name += value.ToLower();
+                if (Game1.Newkey.IsKeyDown(Keys.Back))
+                {
+                    if (Name.Length > 0) Name = Name.Remove(Name.Length - 1, 1);
+                }
+
             }
+
         }
 
-      public  void Textbox(MouseState mouse)
-      {
-            save.Update(mouse);
-            back.Update(mouse);
+        public void TextboxUpdate(MouseState mouse)
+        {
+            Save.Update(mouse);
+            Back.Update(mouse);
             NameUpdate();
-            if (save.IsClicked)
+            if (Save.IsClicked)
             {
                 NameInput = false;
-                isUsed = true;
-                date = DateTime.Now.ToString();
-                Text = name+"  "+Game1.Lvl+". lvl";              
-                
+                IsUsed = true;
+                Date = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+                Text = Name + "  " + Game1.Lvl + ". lvl";
+
             }
 
-            if (back.IsClicked)
+            if (Back.IsClicked)
             {
                 NameInput = false;
-                name = "";              
+                Name = "";
             }
         }
+
         public void DrawTextbox(SpriteBatch sbatch)
         {
             box.DrawC(sbatch, Color.White);
-            save.Draw(sbatch);
-            back.Draw(sbatch);
-            textbox.Draw(sbatch);
-            sbatch.DrawString(Font, name, namePos, Color.Black);
+            Save.Draw(sbatch);
+            Back.Draw(sbatch);
+            Textbox.Draw(sbatch);
+            sbatch.DrawString(Font, Name, namePos, Color.Black);
         }
 
     }

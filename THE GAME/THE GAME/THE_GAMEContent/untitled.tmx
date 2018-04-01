@@ -1,105 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="right-down" width="100" height="30" tilewidth="128" tileheight="128" infinite="0" nextobjectid="1">
- <tileset firstgid="1" name="map" tilewidth="128" tileheight="128" tilecount="16" columns="0">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="128" tileheight="128" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="256" tileheight="256" tilecount="18" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (1).png"/>
+   <image width="171" height="157" source="heart/emptyheart.PNG"/>
   </tile>
   <tile id="1">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (2).png"/>
+   <image width="128" height="128" source="tiles/Tile (1).png"/>
   </tile>
   <tile id="2">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (3).png"/>
+   <image width="128" height="128" source="tiles/Tile (2).png"/>
   </tile>
   <tile id="3">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (4).png"/>
+   <image width="128" height="128" source="tiles/Tile (3).png"/>
   </tile>
   <tile id="4">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (5).png"/>
+   <image width="128" height="128" source="tiles/Tile (4).png"/>
   </tile>
   <tile id="5">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (6).png"/>
+   <image width="128" height="128" source="tiles/Tile (5).png"/>
   </tile>
   <tile id="6">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (7).png"/>
+   <image width="128" height="128" source="tiles/Tile (6).png"/>
   </tile>
   <tile id="7">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (8).png"/>
+   <image width="128" height="128" source="tiles/Tile (7).png"/>
   </tile>
   <tile id="8">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (9).png"/>
+   <image width="128" height="128" source="tiles/Tile (8).png"/>
   </tile>
   <tile id="9">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (10).png"/>
+   <image width="128" height="128" source="tiles/Tile (9).png"/>
   </tile>
   <tile id="10">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (11).png"/>
+   <image width="128" height="128" source="tiles/Tile (10).png"/>
   </tile>
   <tile id="11">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (12).png"/>
+   <image width="128" height="128" source="tiles/Tile (11).png"/>
   </tile>
   <tile id="12">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (13).png"/>
+   <image width="128" height="128" source="tiles/Tile (12).png"/>
   </tile>
   <tile id="13">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (14).png"/>
+   <image width="128" height="128" source="tiles/Tile (13).png"/>
   </tile>
   <tile id="14">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (15).png"/>
+   <image width="128" height="128" source="tiles/Tile (14).png"/>
   </tile>
   <tile id="15">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Tile (16).png"/>
+   <image width="128" height="128" source="tiles/Tile (15).png"/>
+  </tile>
+  <tile id="16">
+   <image width="128" height="128" source="tiles/Tile (16).png"/>
+  </tile>
+  <tile id="17">
+   <image width="256" height="256" source="tiles/Tile (17).png"/>
   </tile>
  </tileset>
- <tileset firstgid="17" name="objects" tilewidth="286" tileheight="256" tilecount="15" columns="0">
+ <tileset firstgid="19" name="objects" tilewidth="286" tileheight="239" tilecount="15" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Bone (1).png"/>
+   <image width="171" height="157" source="heart/emptyheart.PNG"/>
   </tile>
   <tile id="1">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Bone (2).png"/>
+   <image width="86" height="87" source="objects/Object (1).png"/>
   </tile>
   <tile id="2">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Bone (3).png"/>
+   <image width="128" height="128" source="objects/Object (2).png"/>
   </tile>
   <tile id="3">
-   <image width="128" height="128" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Tiles/Bone (4).png"/>
+   <image width="128" height="128" source="objects/Object (3).png"/>
   </tile>
   <tile id="4">
-   <image width="86" height="87" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/ArrowSign.png"/>
+   <image width="128" height="128" source="objects/Object (4).png"/>
   </tile>
   <tile id="5">
-   <image width="182" height="90" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Bush (1).png"/>
+   <image width="128" height="128" source="objects/Object (5).png"/>
   </tile>
   <tile id="6">
-   <image width="100" height="64" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Bush (2).png"/>
+   <image width="182" height="90" source="objects/Object (6).png"/>
   </tile>
   <tile id="7">
-   <image width="106" height="106" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Crate.png"/>
+   <image width="100" height="64" source="objects/Object (7).png"/>
   </tile>
   <tile id="8">
-   <image width="132" height="74" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/DeadBush.png"/>
+   <image width="106" height="106" source="objects/Object (8).png"/>
   </tile>
   <tile id="9">
-   <image width="91" height="93" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Sign.png"/>
+   <image width="132" height="74" source="objects/Object (9).png"/>
   </tile>
   <tile id="10">
-   <image width="102" height="50" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Skeleton.png"/>
+   <image width="286" height="239" source="objects/Object (10).png"/>
   </tile>
   <tile id="11">
-   <image width="54" height="55" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/TombStone (1).png"/>
+   <image width="102" height="50" source="objects/Object (11).png"/>
   </tile>
   <tile id="12">
-   <image width="53" height="76" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/TombStone (2).png"/>
+   <image width="91" height="93" source="objects/Object (12).png"/>
   </tile>
   <tile id="13">
-   <image width="286" height="239" source="C:/Users/én/Source/Repos/OKJ/textures/graveyardtilesetnew/png/Objects/Tree.png"/>
+   <image width="54" height="55" source="objects/Object (13).png"/>
   </tile>
   <tile id="14">
-   <image width="256" height="256" source="C:/Users/én/Downloads/freescifiplatform/png/Tiles/Spike.png"/>
+   <image width="53" height="76" source="objects/Object (14).png"/>
   </tile>
  </tileset>
- <layer name="Tile Layer 1" width="100" height="30">
+ <layer name="Tile Layer 1" width="100" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -111,20 +117,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-9,9,9,9,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-15,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,14,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-2,2,2,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,0,0,0,0,0,0,1,2,2,2,2,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,0,0,0,0,0,0,4,5,5,5,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,0,0,0,0,0,0,4,5,5,5,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,1,2,2,2,2,7,8,5,5,5,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,4,5,5,5,5,5,5,5,5,5,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-5,5,5,5,6,0,4,5,5,5,5,5,5,5,5,5,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -133,7 +129,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="object layer" width="100" height="30">
+ <layer name="object layer" width="100" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -147,16 +143,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-24,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,21,28,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,19,0,0,0,0,0,0,0,0,0,0,22,0,0,26,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,20,0,0,0,23,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-17,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

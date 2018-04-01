@@ -15,32 +15,35 @@ namespace THE_GAME
 
         static HealthBar()
         {
-            FullH = Game1.ContentMgr.Load<Texture2D>("heart/fullheart");    
-            HalfH = Game1.ContentMgr.Load<Texture2D>("heart/halfheart");   
-            EmptyH = Game1.ContentMgr.Load<Texture2D>("heart/emptyheart");  
+            FullH = Game1.ContentMgr.Load<Texture2D>("heart/fullheart");
+            HalfH = Game1.ContentMgr.Load<Texture2D>("heart/halfheart");
+            EmptyH = Game1.ContentMgr.Load<Texture2D>("heart/emptyheart");
 
-           
+
         }
 
 
-      public static void Draw(SpriteBatch sbatch,int hp)
+        public static void Draw(SpriteBatch sbatch, int hp)
         {
-            rectangle1 = new Rectangle((int)Game1.Kamera.Centre.X+20, (int)Game1.Kamera.Centre.Y+20, 170 / 3, 150 / 3);
-            rectangle2 = new Rectangle((int)Game1.Kamera.Centre.X + 70, (int)Game1.Kamera.Centre.Y + 20, 170 / 3, 150 / 3);
-            rectangle3 = new Rectangle((int)Game1.Kamera.Centre.X + 120, (int)Game1.Kamera.Centre.Y + 20, 170 / 3, 150 / 3);
+            rectangle1 = new Rectangle((int) Game1.Kamera.Centre.X + 20, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+                150 / 3);
+            rectangle2 = new Rectangle((int) Game1.Kamera.Centre.X + 70, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+                150 / 3);
+            rectangle3 = new Rectangle((int) Game1.Kamera.Centre.X + 120, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+                150 / 3);
 
             switch (hp)
             {
                 case 0:
-                    sbatch.Draw(EmptyH,rectangle1,Color.White);
+                    sbatch.Draw(EmptyH, rectangle1, Color.White);
                     sbatch.Draw(EmptyH, rectangle2, Color.White);
                     sbatch.Draw(EmptyH, rectangle3, Color.White);
-                    break; 
+                    break;
                 case 1:
                     sbatch.Draw(HalfH, rectangle1, Color.White);
                     sbatch.Draw(EmptyH, rectangle2, Color.White);
                     sbatch.Draw(EmptyH, rectangle3, Color.White);
-                    break; 
+                    break;
                 case 2:
                     sbatch.Draw(FullH, rectangle1, Color.White);
                     sbatch.Draw(EmptyH, rectangle2, Color.White);
