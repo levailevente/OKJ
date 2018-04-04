@@ -33,7 +33,6 @@ namespace THE_GAME
             if (!mouseRectangle.Intersects(Rectangle))
             {
                 Hover = Color.White;
-
             }
             else
             {
@@ -43,7 +42,6 @@ namespace THE_GAME
                 IsClicked = true;
                 elapsed = 0;
             }
-
         }
 
         public override void Draw(SpriteBatch sbatch)

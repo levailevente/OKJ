@@ -25,13 +25,21 @@ namespace THE_GAME
 
         public void Update()
         {
-            if (hitbox.Intersects(Game1.Karakter.Hitbox))
+            if (hitbox.Intersects(Game1.Character.Hitbox))
             {
-                if (!Game1.Karakter.Invulnerable)
+                if (!Game1.Character.Invulnerable)
                 {
-                    Game1.Karakter.Health -= 1;
-                    Game1.Karakter.Invulnerable = true;
-                    Game1.Karakter.Position.Y -= 30;
+                    Game1.Character.Health -= 1;
+                    Game1.Character.Invulnerable = true;
+                    Game1.Character.Position.Y -= 30;
+                }
+            }
+
+            foreach (Zombie z in Game1.Enemies)
+            {
+                if (hitbox.Intersects(z.Hitbox))
+                {
+                    z.IsDead = true;
                 }
             }
 
@@ -45,7 +53,7 @@ namespace THE_GAME
                     hitbox.Y -= 10;
                 }
 
-                if ((Game1.Karakter.Hitbox.X - rectangle.X > 150 || rectangle.X - Game1.Karakter.Hitbox.X > 150))
+                if ((Game1.Character.Hitbox.X - rectangle.X > 150 || rectangle.X - Game1.Character.Hitbox.X > 150))
                 {
                     up = false;
                 }
@@ -61,8 +69,8 @@ namespace THE_GAME
                 }
                 else visible = false;
 
-                if ((rectangle.X - Game1.Karakter.Hitbox.X < 150 && Game1.Karakter.Hitbox.X - rectangle.X < 150) &&
-                    Game1.Karakter.RectangleW.Y - hitbox.Y < 1 && Game1.Karakter.RectangleW.Y - hitbox.Y > -200)
+                if ((rectangle.X - Game1.Character.Hitbox.X < 150 && Game1.Character.Hitbox.X - rectangle.X < 150) &&
+                    Game1.Character.RectangleW.Y - hitbox.Y < 1 && Game1.Character.RectangleW.Y - hitbox.Y > -200)
                 {
                     up = true;
                 }

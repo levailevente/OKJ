@@ -27,7 +27,7 @@ namespace THE_GAME.menu
 
             if (restart.IsClicked)
             {
-                Game1.Karakter = new Karakter();
+                Game1.Character = new Character();
                 Game1.Enemies.Clear();
                 Game1.GenerateMap = new GenerateMap(Game1.Lvl, Game1.TileSize);
                 Game1.CurrentGameState = Game1.Gamestates.Playing;

@@ -8,7 +8,7 @@ namespace THE_GAME
         public Matrix Transform;
         public Vector2 Centre;
 
-        public void Update(Karakter player)
+        public void Update(Character player)
         {
             if (Game1.CurrentGameState == Game1.Gamestates.Playing)
             {

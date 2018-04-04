@@ -111,7 +111,9 @@ namespace THE_GAME
                             case 20:
                                 Game1.Items.Add(new Items("jump", new Vector2(j * size, i * size)));
                                 break;
-
+                            case 21:
+                                Game1.Enemies.Add(new Jack(new Vector2(j * size, i * size - 100)));
+                                break;
                             default:
                                 Objects2[i, j] = new Tiles(m, new Rectangle(j * size, i * size, size, size), blockedO,
                                     true);
@@ -129,16 +131,16 @@ namespace THE_GAME
 
         }
 
-        public void Draw(SpriteBatch spritebatch, Karakter karakter)
+        public void Draw(SpriteBatch spritebatch, Character character)
         {
-            int ystart = (karakter.Hitbox.X - Game1.Swidth) / Game1.TileSize;
+            int ystart = (character.Hitbox.X - Game1.Swidth) / Game1.TileSize;
             if (ystart < 0) ystart = 0;
-            int yend = (karakter.Hitbox.X + Game1.Swidth) / Game1.TileSize + 10;
+            int yend = (character.Hitbox.X + Game1.Swidth) / Game1.TileSize + 10;
             if (yend > y) yend = y;
 
-            /*int xstart = (karakter.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
+            /*int xstart = (character.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
             if (xstart < 0) xstart = 0;
-            int xend = ((karakter.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
+            int xend = ((character.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
             if (xend > x) xend = x; */
 
             for (int i = 0; i < x; i++)
@@ -254,12 +256,11 @@ namespace THE_GAME
             return furthestLocation;
         }
 
-        int[,] GetMatrix(string m)
+        static int[,] GetMatrix(string m)
         {
             string map = m;
 
             int[,] matrix = new int[20, 100];
-
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {

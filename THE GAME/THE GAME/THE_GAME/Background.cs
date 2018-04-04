@@ -27,15 +27,15 @@ namespace THE_GAME
 
         void UpdatePositions()
         {
-            if (Game1.Karakter.RectangleW.X - Rectangle.X > 1880 && Game1.Karakter.RectangleW.X < 5920)
+            if (Game1.Character.RectangleW.X - Rectangle.X > 1880 && Game1.Character.RectangleW.X < 5920)
                 Rectangle.X += 1280 * 2;
 
-            if (Game1.Karakter.RectangleW.X - rectangle2.X > 1880 && Game1.Karakter.RectangleW.X < 5920)
+            if (Game1.Character.RectangleW.X - rectangle2.X > 1880 && Game1.Character.RectangleW.X < 5920)
                 rectangle2.X += 1280 * 2;
 
-            if (Rectangle.X - Game1.Karakter.RectangleW.X > 640) Rectangle.X -= 1280 * 2;
+            if (Rectangle.X - Game1.Character.RectangleW.X > 640) Rectangle.X -= 1280 * 2;
 
-            if (rectangle2.X - Game1.Karakter.RectangleW.X > 640) rectangle2.X -= 1280 * 2;
+            if (rectangle2.X - Game1.Character.RectangleW.X > 640) rectangle2.X -= 1280 * 2;
 
 
         }

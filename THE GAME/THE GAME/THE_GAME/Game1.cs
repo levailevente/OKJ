@@ -14,7 +14,7 @@ namespace THE_GAME
         readonly GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static ContentManager ContentMgr;
-        public static Karakter Karakter;
+        public static Character Character;
         public static Camera Kamera;
         public static int Swidth, Sheight;
         public static KeyboardState Newkey;
@@ -37,7 +37,7 @@ namespace THE_GAME
             set { lvl = value; }
         }
 
-        public static readonly List<Karakter> Enemies = new List<Karakter>();
+        public static readonly List<Character> Enemies = new List<Character>();
         public static readonly List<Spike> Spikes = new List<Spike>();
         public static readonly List<Items> Items = new List<Items>();
         public static bool Fullscreen;
@@ -87,7 +87,7 @@ namespace THE_GAME
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Kamera = new Camera();
 
-            Karakter = new Karakter();
+            Character = new Character();
 
             Swidth = GraphicsDevice.Viewport.Width;
             Sheight = GraphicsDevice.Viewport.Height;
@@ -143,8 +143,8 @@ namespace THE_GAME
                         k.Update();
                     }
 
-                    Karakter.Update(gameTime);
-                    foreach (Karakter k in Enemies)
+                    Character.Update(gameTime);
+                    foreach (Character k in Enemies)
                     {
                         k.Update(gameTime);
                     }
@@ -195,7 +195,7 @@ namespace THE_GAME
             }
 
 
-            Kamera.Update(Karakter);
+            Kamera.Update(Character);
 
 
             Prevkey = Newkey;
@@ -218,15 +218,15 @@ namespace THE_GAME
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
 
-                   // spriteBatch.Draw(szin, Karakter.Hitbox, Color.White);
+                   // spriteBatch.Draw(szin, Character.Hitbox, Color.White);
                     IsMouseVisible = false;
                     foreach (Spike k in Spikes)
                     {
                         k.Draw(spriteBatch);
                     }
 
-                    GenerateMap.Draw(spriteBatch, Karakter);
-                    Karakter.Draw(spriteBatch);
+                    GenerateMap.Draw(spriteBatch, Character);
+                    Character.Draw(spriteBatch);
                     spriteBatch.DrawString(Options.Font, "Level " + lvl,
                         new Vector2(Kamera.Centre.X + 1150, Kamera.Centre.Y + 10), Color.White * 0.5f);
                     foreach (Items k in Items)
@@ -234,12 +234,12 @@ namespace THE_GAME
                         k.Draw(spriteBatch);
                     }
 
-                    foreach (Karakter k in Enemies)
+                    foreach (Character k in Enemies)
                     {
                         k.Draw(spriteBatch);
                     }
 
-                    HealthBar.Draw(spriteBatch, Karakter.Health);
+                    HealthBar.Draw(spriteBatch, Character.Health);
                     break;
                 case Gamestates.Options:
                     Options.Draw(spriteBatch);

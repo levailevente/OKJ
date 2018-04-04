@@ -1249,48 +1249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enemy\jack\run\Run %281%29.png">
-      <Name>Run %281%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %282%29.png">
-      <Name>Run %282%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %283%29.png">
-      <Name>Run %283%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %284%29.png">
-      <Name>Run %284%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %285%29.png">
-      <Name>Run %285%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %286%29.png">
-      <Name>Run %286%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %287%29.png">
-      <Name>Run %287%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="enemy\jack\run\Run %288%29.png">
-      <Name>Run %288%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="enemy\jack\walk\Walk %281%29.png">
       <Name>Walk %281%29</Name>
       <Importer>TextureImporter</Importer>
@@ -1338,6 +1296,20 @@
     </Compile>
     <Compile Include="enemy\jack\walk\Walk %289%29.png">
       <Name>Walk %289%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="heart\Object %288%29.png">
+      <Name>Object %288%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="tiles\Tile %2818%29.png">
+      <Name>Tile %2818%29</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

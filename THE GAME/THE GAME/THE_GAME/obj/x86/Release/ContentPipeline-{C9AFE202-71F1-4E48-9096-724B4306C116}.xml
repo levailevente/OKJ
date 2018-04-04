@@ -1774,6 +1774,384 @@
       <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\fon3.xnb</Output>
       <Time>2018-03-26T19:32:31.0486654+02:00</Time>
     </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (1).png</Source>
+      <Name>enemy\jack\death\Dead (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (1).xnb</Output>
+      <Time>2018-03-31T19:54:33.1709952+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (10).png</Source>
+      <Name>enemy\jack\death\Dead (10)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (10).xnb</Output>
+      <Time>2018-03-31T19:54:33.1669945+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (2).png</Source>
+      <Name>enemy\jack\death\Dead (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (2).xnb</Output>
+      <Time>2018-03-31T19:54:33.1749955+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (3).png</Source>
+      <Name>enemy\jack\death\Dead (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (3).xnb</Output>
+      <Time>2018-03-31T19:54:33.1769948+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (4).png</Source>
+      <Name>enemy\jack\death\Dead (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (4).xnb</Output>
+      <Time>2018-03-31T19:54:33.1789972+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (5).png</Source>
+      <Name>enemy\jack\death\Dead (5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (5).xnb</Output>
+      <Time>2018-03-31T19:54:33.1834593+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (6).png</Source>
+      <Name>enemy\jack\death\Dead (6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (6).xnb</Output>
+      <Time>2018-03-31T19:54:33.1854607+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (7).png</Source>
+      <Name>enemy\jack\death\Dead (7)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (7).xnb</Output>
+      <Time>2018-03-31T19:54:33.1879785+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (8).png</Source>
+      <Name>enemy\jack\death\Dead (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (8).xnb</Output>
+      <Time>2018-03-31T19:54:33.1909793+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\death\Dead (9).png</Source>
+      <Name>enemy\jack\death\Dead (9)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\death\Dead (9).xnb</Output>
+      <Time>2018-03-31T19:54:33.1939811+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (1).png</Source>
+      <Name>enemy\jack\idle\Idle (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (1).xnb</Output>
+      <Time>2018-03-31T19:54:57.0429262+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (10).png</Source>
+      <Name>enemy\jack\idle\Idle (10)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (10).xnb</Output>
+      <Time>2018-03-31T19:54:57.0389255+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (2).png</Source>
+      <Name>enemy\jack\idle\Idle (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (2).xnb</Output>
+      <Time>2018-03-31T19:54:57.0449265+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (3).png</Source>
+      <Name>enemy\jack\idle\Idle (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (3).xnb</Output>
+      <Time>2018-03-31T19:54:57.0489275+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (4).png</Source>
+      <Name>enemy\jack\idle\Idle (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (4).xnb</Output>
+      <Time>2018-03-31T19:54:57.0509265+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (5).png</Source>
+      <Name>enemy\jack\idle\Idle (5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (5).xnb</Output>
+      <Time>2018-03-31T19:54:57.0529262+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (6).png</Source>
+      <Name>enemy\jack\idle\Idle (6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (6).xnb</Output>
+      <Time>2018-03-31T19:54:57.0569265+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (7).png</Source>
+      <Name>enemy\jack\idle\Idle (7)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (7).xnb</Output>
+      <Time>2018-03-31T19:54:57.0589265+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (8).png</Source>
+      <Name>enemy\jack\idle\Idle (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (8).xnb</Output>
+      <Time>2018-03-31T19:54:57.0629262+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\idle\Idle (9).png</Source>
+      <Name>enemy\jack\idle\Idle (9)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\idle\Idle (9).xnb</Output>
+      <Time>2018-03-31T19:54:57.0649269+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (1).png</Source>
+      <Name>enemy\jack\jump\Jump (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (1).xnb</Output>
+      <Time>2018-03-31T19:55:08.3307394+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (10).png</Source>
+      <Name>enemy\jack\jump\Jump (10)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (10).xnb</Output>
+      <Time>2018-03-31T19:55:08.3267384+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (2).png</Source>
+      <Name>enemy\jack\jump\Jump (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (2).xnb</Output>
+      <Time>2018-03-31T19:55:08.3327391+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (3).png</Source>
+      <Name>enemy\jack\jump\Jump (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (3).xnb</Output>
+      <Time>2018-03-31T19:55:08.3367388+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (4).png</Source>
+      <Name>enemy\jack\jump\Jump (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (4).xnb</Output>
+      <Time>2018-03-31T19:55:08.3387388+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (5).png</Source>
+      <Name>enemy\jack\jump\Jump (5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (5).xnb</Output>
+      <Time>2018-03-31T19:55:08.3427391+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (6).png</Source>
+      <Name>enemy\jack\jump\Jump (6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (6).xnb</Output>
+      <Time>2018-03-31T19:55:08.3447384+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (7).png</Source>
+      <Name>enemy\jack\jump\Jump (7)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (7).xnb</Output>
+      <Time>2018-03-31T19:55:08.3487398+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (8).png</Source>
+      <Name>enemy\jack\jump\Jump (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (8).xnb</Output>
+      <Time>2018-03-31T19:55:08.3507394+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\jump\Jump (9).png</Source>
+      <Name>enemy\jack\jump\Jump (9)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\jump\Jump (9).xnb</Output>
+      <Time>2018-03-31T19:55:08.3527388+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (1).png</Source>
+      <Name>enemy\jack\walk\Walk (1)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (1).xnb</Output>
+      <Time>2018-03-31T19:55:26.5426254+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (10).png</Source>
+      <Name>enemy\jack\walk\Walk (10)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (10).xnb</Output>
+      <Time>2018-03-31T19:55:26.5406264+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (2).png</Source>
+      <Name>enemy\jack\walk\Walk (2)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (2).xnb</Output>
+      <Time>2018-03-31T19:55:26.5446257+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (3).png</Source>
+      <Name>enemy\jack\walk\Walk (3)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (3).xnb</Output>
+      <Time>2018-03-31T19:55:26.5486261+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (4).png</Source>
+      <Name>enemy\jack\walk\Walk (4)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (4).xnb</Output>
+      <Time>2018-03-31T19:55:26.5526261+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (5).png</Source>
+      <Name>enemy\jack\walk\Walk (5)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (5).xnb</Output>
+      <Time>2018-03-31T19:55:26.5546257+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (6).png</Source>
+      <Name>enemy\jack\walk\Walk (6)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (6).xnb</Output>
+      <Time>2018-03-31T19:55:26.5566257+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (7).png</Source>
+      <Name>enemy\jack\walk\Walk (7)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (7).xnb</Output>
+      <Time>2018-03-31T19:55:26.5606258+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (8).png</Source>
+      <Name>enemy\jack\walk\Walk (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (8).xnb</Output>
+      <Time>2018-03-31T19:55:26.5626258+02:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy\jack\walk\Walk (9).png</Source>
+      <Name>enemy\jack\walk\Walk (9)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\enemy\jack\walk\Walk (9).xnb</Output>
+      <Time>2018-03-31T19:55:26.5666258+02:00</Time>
+    </Item>
+    <Item>
+      <Source>heart\Object (8).png</Source>
+      <Name>heart\Object (8)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\heart\Object (8).xnb</Output>
+      <Time>2018-04-04T16:40:01.6044659+02:00</Time>
+    </Item>
+    <Item>
+      <Source>tiles\Tile (18).png</Source>
+      <Name>tiles\Tile (18)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Release\Content\tiles\Tile (18).xnb</Output>
+      <Time>2018-04-04T16:40:16.3409718+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C9AFE202-71F1-4E48-9096-724B4306C116}</ContentProjectGUID>

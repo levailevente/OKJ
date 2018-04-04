@@ -79,8 +79,8 @@ namespace THE_GAME.menu
                 {
                     if (Saves[i].Save.IsClicked)
                     {
-                        Database.Save(i + 1, Saves[i].Name, Saves[i].Date, Game1.Lvl, Game1.Karakter.PositionPoint,
-                            Game1.Karakter.Health);
+                        Database.Save(i + 1, Saves[i].Name, Saves[i].Date, Game1.Lvl, Game1.Character.PositionPoint,
+                            Game1.Character.Health);
                     }
                 }
             }
@@ -114,11 +114,11 @@ namespace THE_GAME.menu
                     if (s.IsUsed && s.IsClicked)
                     {
                         Game1.GenerateMap = new GenerateMap(s.Lvl, 72);
-                        Game1.Karakter.Health = s.Hp;
+                        Game1.Character.Health = s.Hp;
                         string[] positions = s.PositionString.Split(',');
                         int x = int.Parse(positions[0]);
                         int y = int.Parse(positions[1]);
-                        Game1.Karakter.Position = new Vector2(x, y);
+                        Game1.Character.Position = new Vector2(x, y);
                         Game1.CurrentGameState = Game1.Gamestates.Playing;
                     }
                 }

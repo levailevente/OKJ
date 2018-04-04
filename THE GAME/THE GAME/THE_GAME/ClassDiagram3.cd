@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="THE_GAME.menu.EndScreen">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAIACAAAAAgAAACAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>menu\EndScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.Gameover">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>menu\GameOver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.MainMenu">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQACQAAAAAAAgAAAAAAAAAAAAAAAAQAIAAAAABABAE=</HashCode>
+      <FileName>menu\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.Options">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="THE_GAME.menu.Options.Languages" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>menu\Options.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAABAAAggAAAAAQAAAAAAAAIAABAADEAACAAA=</HashCode>
+      <FileName>menu\Options.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.Pause">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>menu\Pause.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.Save">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAAgAAAAAABAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>menu\Save.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.menu.SaveSlot" Collapsed="true">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQQAAIAEAIAAAwAAgAAAAgQAAIAAAEABAAARAQAAQAA=</HashCode>
+      <FileName>menu\SaveSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Background" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Background.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Button" Collapsed="true">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAACAAAAgAgAAQAAAAAAAAAAAAAAQAACAACAAA=</HashCode>
+      <FileName>Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Camera">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Database">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAgIAAAAAAAAAAAAAAAEAAAAQAACAAAAAAAAAQAAA=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Game1">
+    <Position X="13" Y="4" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="THE_GAME.Game1.Gamestates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Game1.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QAQBWkAgAQIICwMgAAQAAAAAIAEAAAoAAAAAIaAACAU=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.GenerateMap">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAgQAQAAACAAAIAAAAAIAAABgAAAEAAA=</HashCode>
+      <FileName>GenerateMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.HealthBar">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAgACAAIAAAAAAAAAAAAAAAcAAAAAAAA=</HashCode>
+      <FileName>HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Items">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAgAAAAQAAAAAAAABAgAAAAAACAAAAAA=</HashCode>
+      <FileName>Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Jack">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAiAAAAAAAAAEAAAAAAAAAABAAAQAAAA=</HashCode>
+      <FileName>Jack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Karakter">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="THE_GAME.Karakter.Direction">
+        <TypeIdentifier>
+          <NewMemberFileName>karakter.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IBQEjDQQAgIcZ2IgAAIENEgHAIgIIQChAAVMgBEAAAg=</HashCode>
+      <FileName>karakter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Program">
+    <Position X="16.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Spike">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAAAIgAAAAAAICAAAAAAAAAAAAAACgAAAAA=</HashCode>
+      <FileName>Spike.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Sprite">
+    <Position X="7" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAEAAIAAAAAAAA=</HashCode>
+      <FileName>Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Tiles">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAABAAAAAAgAgAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>tiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.Zombie" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgBAAAAAAiAAAAABAAAEAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>zombie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="THE_GAME.ZombieGirl">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZombieGirl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
