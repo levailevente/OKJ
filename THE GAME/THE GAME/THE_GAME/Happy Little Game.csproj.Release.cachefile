@@ -192,9 +192,6 @@ Content\enemy\girl\idle\Idle (6).xnb
 Content\enemy\girl\idle\Idle (7).xnb
 Content\enemy\girl\idle\Idle (8).xnb
 Content\enemy\girl\idle\Idle (9).xnb
-Content\font.xnb
-Content\font2.xnb
-Content\fon3.xnb
 Content\enemy\jack\death\Dead (1).xnb
 Content\enemy\jack\death\Dead (10).xnb
 Content\enemy\jack\death\Dead (2).xnb
@@ -237,3 +234,6 @@ Content\enemy\jack\walk\Walk (8).xnb
 Content\enemy\jack\walk\Walk (9).xnb
 Content\heart\Object (8).xnb
 Content\tiles\Tile (18).xnb
+Content\font.xnb
+Content\font2.xnb
+Content\fon3.xnb

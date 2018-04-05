@@ -1,1 +1,2 @@
 C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Release\THE_GAMEContent.contentprojResolveAssemblyReference.cache
+C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAMEContent\obj\x86\Release\THE_GAMEContent.contentprojResolveAssemblyReference.cache

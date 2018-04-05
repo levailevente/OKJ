@@ -132,7 +132,7 @@ namespace THE_GAME
             Invulnerable = false;
 
             Speed = 1.9f;
-            JumpHeight = 12.5f;
+            JumpHeight = 16f;
 
             x = false;
 
@@ -258,7 +258,7 @@ namespace THE_GAME
                 {
                     IsJumping = true;
                     jumpint = 0;
-                    velocity.Y = -5;
+                    velocity.Y = -4;
 
                 }
 
@@ -282,7 +282,6 @@ namespace THE_GAME
                     Elapsed = 0;
                     IdleI++;
                     if (IdleI > 9) IdleI = 0;
-
                 }
 
             }
@@ -516,7 +515,7 @@ namespace THE_GAME
 
         void Gravity()
         {
-            if (!OnGround(hitbox)) Mvmnt += Vector2.UnitY * 2.5f;
+            if (!OnGround(hitbox)) Mvmnt += Vector2.UnitY * 2f;
 
             Mvmnt.X *= 0.8f;
             Mvmnt.Y *= 0.9f;

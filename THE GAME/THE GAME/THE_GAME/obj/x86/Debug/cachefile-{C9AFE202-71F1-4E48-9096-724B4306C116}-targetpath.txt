@@ -161,10 +161,7 @@ Content\bob\death\Dead__009.xnb
 Content\bob\slide\Slide__000.xnb
 Content\heart\rocket.xnb
 Content\heart\boots.xnb
-Content\font.xnb
-Content\font2.xnb
 Content\gj.xnb
-Content\fon3.xnb
 Content\enemy\idle\Idle (1).xnb
 Content\enemy\idle\Idle (10).xnb
 Content\enemy\idle\Idle (11).xnb
@@ -235,3 +232,8 @@ Content\enemy\jack\walk\Walk (6).xnb
 Content\enemy\jack\walk\Walk (7).xnb
 Content\enemy\jack\walk\Walk (8).xnb
 Content\enemy\jack\walk\Walk (9).xnb
+Content\heart\Object (8).xnb
+Content\tiles\Tile (18).xnb
+Content\font.xnb
+Content\font2.xnb
+Content\fon3.xnb
