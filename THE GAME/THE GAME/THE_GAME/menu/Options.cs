@@ -40,7 +40,7 @@ namespace THE_GAME.menu
             Back.Position.X += 15;
             Back.Position.Y -= 5;
 
-            langauges = Languages.En;
+            langauges = Languages.Hu;
 
             language = "Language:";
             fullscreen = "Fullscreen:";
@@ -152,6 +152,13 @@ namespace THE_GAME.menu
                 s.Textbox.Text = "Név:";
                 s.Text = "Üres mentés";
             }
+
+            EndScreen.Save.Text = "Mentés";
+            EndScreen.Save.Position.X -= 10;
+            EndScreen.nextlvl.Text = "Köveketkező szint";
+
+            Gameover.restart.Text = "Újrakezdés";
+            Gameover.restart.Position.X -= 12;
         }
 
         static void ChangetoEnglish()
@@ -200,6 +207,13 @@ namespace THE_GAME.menu
                 s.Textbox.Text = "Name:";
                 s.Text = "Empty Slot";
             }
+
+            EndScreen.Save.Text = "Save";
+            EndScreen.Save.Position.X += 10;
+            EndScreen.nextlvl.Text = "Next Level";
+
+            Gameover.restart.Text = "Restart";
+            Gameover.restart.Position.X += 12;
         }
     }
 }

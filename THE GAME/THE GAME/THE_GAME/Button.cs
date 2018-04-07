@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace THE_GAME
 {
-    internal class Button : Sprite
+    public class Button : Sprite
     {
         public bool IsClicked;
         public string Text;

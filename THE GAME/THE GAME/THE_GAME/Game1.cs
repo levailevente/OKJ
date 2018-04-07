@@ -31,7 +31,7 @@ namespace THE_GAME
         {
             get
             {
-                if (lvl > 1) return -1;
+                if (lvl > 2) return -1;
                 return lvl;
             }
             set { lvl = value; }
@@ -224,15 +224,15 @@ namespace THE_GAME
                     {
                         k.Draw(spriteBatch);
                     }
-
-                    GenerateMap.Draw(spriteBatch, Character);
-                    Character.Draw(spriteBatch);
-                    spriteBatch.DrawString(Options.Font, "Level " + lvl,
-                        new Vector2(Kamera.Centre.X + 1150, Kamera.Centre.Y + 10), Color.White * 0.5f);
                     foreach (Items k in Items)
                     {
                         k.Draw(spriteBatch);
                     }
+                    GenerateMap.Draw(spriteBatch, Character);
+                    Character.Draw(spriteBatch);
+                    spriteBatch.DrawString(Options.Font, "Level " + lvl,
+                        new Vector2(Kamera.Centre.X + 1150, Kamera.Centre.Y + 10), Color.White * 0.5f);
+
 
                     foreach (Character k in Enemies)
                     {

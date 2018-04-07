@@ -22,7 +22,7 @@ namespace THE_GAME
             hitbox = new Rectangle(0, 0, 70, 180);
             RectangleD = new Rectangle(0, 0, 986 / o, 796 / o);
 
-            StartPos = Position = new Vector2(startPos.X, startPos.Y - 50);
+            StartPos = Position = new Vector2(startPos.X, startPos.Y - 30);
 
             Elapsed = 0;
 

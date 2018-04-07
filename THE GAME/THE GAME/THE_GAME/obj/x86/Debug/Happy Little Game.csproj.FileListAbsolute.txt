@@ -524,3 +524,5 @@ C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Happy Li
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.exe
 C:\Users\Suli\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\obj\x86\Debug\THE_GAME.pdb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\heart\Object (8).xnb
+C:\Users\én\Source\Repos\OKJ\THE GAME\THE GAME\THE_GAME\bin\x86\Debug\Content\tiles\Tile (18).xnb

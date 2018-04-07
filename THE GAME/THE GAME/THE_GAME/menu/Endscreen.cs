@@ -6,7 +6,7 @@ namespace THE_GAME.menu
 {
     static class EndScreen
     {
-        static readonly Button nextlvl;
+        public static readonly Button nextlvl;
         public static readonly Button Save;
         static readonly Sprite gj;
         static readonly SpriteFont font;
@@ -42,7 +42,12 @@ namespace THE_GAME.menu
             if (nextlvl.IsClicked)
             {
                 Game1.Lvl++;
-                if (Game1.Lvl != -1) Game1.GenerateMap = new GenerateMap(Game1.Lvl, 72);
+                if (Game1.Lvl != -1)
+                {
+                    Game1.GenerateMap = new GenerateMap(Game1.Lvl, 72);
+                    Game1.Character=new Character();
+                    Game1.CurrentGameState = Game1.Gamestates.Playing;
+                }
 
                 else
                 {

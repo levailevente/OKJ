@@ -97,8 +97,8 @@ namespace THE_GAME
                     }
                 }
 
-                else if (Game1.Character.RectangleW.X - hitbox.X >= 0 && Game1.Character.RectangleW.X - hitbox.X < 300 &&
-                         Game1.Character.RectangleW.Y - hitbox.Y < 300 && Game1.Character.RectangleW.Y - hitbox.Y > -400)
+                else if (Game1.Character.RectangleW.X - hitbox.X >= 0 && Game1.Character.RectangleW.X - hitbox.X < 500 &&
+                         Game1.Character.RectangleW.Y - hitbox.Y < 600 && Game1.Character.RectangleW.Y - hitbox.Y > -50)
                 {
                     if ((NextToCliff(hitbox) == "right" && Game1.Character.Hitbox.Y < hitbox.Y) ||
                         (hitbox.X - Game1.Character.Hitbox.X < 10 && Game1.Character.Hitbox.X - hitbox.X < 10))
@@ -128,14 +128,14 @@ namespace THE_GAME
                         if ((NextToWall(hitbox) == "right" || NextToCliff(hitbox) == "right") &&
                             Game1.Character.Hitbox.Y - 100 < hitbox.Y)
                         {
-                            Mvmnt -= new Vector2(0, 10);
+                            Mvmnt -= new Vector2(0, 8);
                         }
                     }
 
                 }
 
-                else if (hitbox.X - Game1.Character.RectangleW.X < 300 && hitbox.X - Game1.Character.RectangleW.X >= 0 &&
-                         Game1.Character.RectangleW.Y - hitbox.Y < 300 && Game1.Character.RectangleW.Y - hitbox.Y > -400)
+                else if (hitbox.X - Game1.Character.RectangleW.X < 500 && hitbox.X - Game1.Character.RectangleW.X >= 0 &&
+                         Game1.Character.RectangleW.Y - hitbox.Y < 600 && Game1.Character.RectangleW.Y - hitbox.Y > -50)
                 {
                     if ((NextToCliff(hitbox) == "left" && Game1.Character.Hitbox.Y < hitbox.Y) ||
                         (hitbox.X - Game1.Character.Hitbox.X < 10 && Game1.Character.Hitbox.X - hitbox.X < 10))
@@ -165,7 +165,7 @@ namespace THE_GAME
                         if ((NextToWall(hitbox) == "left" || NextToCliff(hitbox) == "left") &&
                             Game1.Character.Hitbox.Y - 100 < hitbox.Y)
                         {
-                            Mvmnt -= new Vector2(0, 10);
+                            Mvmnt -= new Vector2(0, 8);
                         }
                     }
 
@@ -230,7 +230,6 @@ namespace THE_GAME
                     if (DeadI > 11) DeadI = -1;
                 }
 
-                //  if (deadI==-1) if (Game1.Enemies.Count>1) Game1.Enemies.Remove(this);
             }
 
         }
@@ -254,10 +253,7 @@ namespace THE_GAME
                     }
                 }
 
-                else if (DeadI == -1)
-                {
 
-                }
             }
 
             else if (IsAttack)

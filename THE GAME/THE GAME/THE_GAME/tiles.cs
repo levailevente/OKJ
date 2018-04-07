@@ -23,6 +23,12 @@ namespace THE_GAME
 
         public void Draw(SpriteBatch sbatch)
         {
+            if (Tile == 8 && Rectangle.Intersects(Game1.Character.HitboxA) && Game1.Character.IsAttack &&
+                Game1.Character.AttackI > 2 && Game1.Character.AttackI < 5)
+            {
+                Rectangle=new Rectangle(0,0,0,0);
+            }
+
             sbatch.Draw(tiles, Rectangle, Color.White);
         }
 

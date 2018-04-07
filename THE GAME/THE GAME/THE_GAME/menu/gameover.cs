@@ -7,7 +7,7 @@ namespace THE_GAME.menu
     public static class Gameover
     {
         static Sprite gameover;
-        static Button restart;
+        public static Button restart;
 
         static Gameover()
         {

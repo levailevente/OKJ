@@ -87,7 +87,7 @@ namespace THE_GAME
         {
             get
             {
-                return Game1.Godmode ? 20f : jumpHeight;
+                return Game1.Godmode ? 30f : jumpHeight;
             }
             set { jumpHeight = value; }
         }
@@ -115,8 +115,17 @@ namespace THE_GAME
             RectangleA = new Rectangle(0, 0, 536 / o, 495 / o);
             rectanglejumpA = new Rectangle(0, 0, 504 / o, 522 / o);
             RectangleD = new Rectangle(0, 0, 482 / o, 498 / o);
-            Position = new Vector2(0, 1000);
 
+            switch (Game1.Lvl)
+            {
+                case 1: Position = new Vector2(0, 1000);
+                    break;
+                case 2:
+                    Position = new Vector2(100, 300);
+                    break;
+            }
+
+            
             Elapsed = 0;
             IdleI = 0;
             WalkI = 0;
@@ -131,8 +140,8 @@ namespace THE_GAME
             IsCrouching = false;
             Invulnerable = false;
 
-            Speed = 1.9f;
-            JumpHeight = 16f;
+            Speed = 2f;
+            JumpHeight = 15f;
 
             x = false;
 
@@ -378,9 +387,6 @@ namespace THE_GAME
 
                 }
 
-
-
-
                 else if (IsCrouching)
                 {
                     if (facing == Direction.Left)
@@ -461,12 +467,22 @@ namespace THE_GAME
 
 
             if (Position.X < 0) Position.X = 0;
+            if (Position.X > 7200) Position.X = 7200;
 
-            if (Position.Y > 1500)
+            if (Position.Y > 1600)
             {
                 Health -= 1;
                 Invulnerable = true;
-                Position = new Vector2(0, 1000);
+                switch (Game1.Lvl)
+                {
+                    case 1:
+                        Position = new Vector2(0, 1000);
+                        break;
+                    case 2:
+                        Position = new Vector2(100, 300);
+                        break;
+                }
+
             }
 
             if (IsAttack)
@@ -494,7 +510,7 @@ namespace THE_GAME
 
         }
 
-        protected bool OnGround(Rectangle movingRectangle)
+        protected static bool OnGround(Rectangle movingRectangle)
         {
             Rectangle ground = movingRectangle;
             ground.Offset(0, 1);
@@ -502,7 +518,7 @@ namespace THE_GAME
 
         }
 
-
+        // checks if the player is next to a wall
         protected string NextToWall(Rectangle movingRectangle)
         {
             wall = movingRectangle;
@@ -513,6 +529,7 @@ namespace THE_GAME
             return Game1.GenerateMap.Collision(wallLeft) ? "left" : "no";
         }
 
+        //applies gravity
         void Gravity()
         {
             if (!OnGround(hitbox)) Mvmnt += Vector2.UnitY * 2f;
@@ -523,6 +540,7 @@ namespace THE_GAME
             Mvmnt += velocity;
         }
 
+        //stops the character
         void StopMoving()
         {
             if (lastMovement.X == 0) Mvmnt *= Vector2.UnitY;
@@ -530,15 +548,16 @@ namespace THE_GAME
 
         }
 
+        //visualisation of getting hit
         void Damaged()
         {
             Color = Color.Red;
             Color.A = 0;
             elapsedD++;
 
-            if (elapsedD % 10 == 0)
+            if (elapsedD % 5 == 0)
             {
-                if (elapsedD % 30 == 0)
+                if (elapsedD % 10 == 0)
                 {
                     if (!x) x = true;
                     if (x) x = false;
@@ -548,7 +567,7 @@ namespace THE_GAME
                 else Color.A -= 80;
             }
 
-            if (elapsedD == 50)
+            if (elapsedD == 30)
             {
                 Game1.Character.Invulnerable = false;
                 Game1.Character.Color = Color.White;

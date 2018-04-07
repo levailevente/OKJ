@@ -39,8 +39,12 @@ namespace THE_GAME
                     if (blocked) n *= -1;
 
                     if (n > 0)
+                    {
+                      if (n!=17) Tiles2[i, j] = new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
+                        else Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
+                    }
 
-                        Tiles2[i, j] = new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
+                        
 
                     bool blockedO = m < -1;
                     if (blockedO) m *= -1;
@@ -50,19 +54,24 @@ namespace THE_GAME
                         {
                             case 6:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size - 20, i * size + 15, (int) (182 / 1.5), (int) (90 / 1.5)),
+                                    new Rectangle(j * size, i * size + 15, (int) (182 / 1.5), (int) (90 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
                             case 7:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size - 20, i * size + 32, (int) (100 / 1.5), (int) (64 / 1.5)),
+                                    new Rectangle(j * size , i * size + 32, (int) (100 / 1.5), (int) (64 / 1.5)),
                                     blockedO,
+                                    true);
+                                break;
+                            case 8:
+
+                                Objects2[i, j] = new Tiles(8, new Rectangle(j * size, i * size, size, size), true,
                                     true);
                                 break;
                             case 9:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size - 20, i * size + 20, (int) (132 / 1.4), (int) (74 / 1.4)),
+                                    new Rectangle(j * size , i * size + 20, (int) (132 / 1.4), (int) (74 / 1.4)),
                                     blockedO,
                                     true);
                                 break;
@@ -103,13 +112,19 @@ namespace THE_GAME
                                 Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
                                 break;
                             case 18:
-                                Game1.Items.Add(new Items("heart", new Vector2(j * size, i * size + 30)));
+                                Game1.Items.Add(new Items("heart", new Vector2(j * size, i * size)));
+                                Objects2[i, j] = new Tiles(8, new Rectangle(j * size, i * size, size, size), true,
+                                    true);
                                 break;
                             case 19:
                                 Game1.Items.Add(new Items("boots", new Vector2(j * size, i * size)));
+                                Objects2[i, j] = new Tiles(8, new Rectangle(j * size, i * size, size, size), true,
+                                    true);
                                 break;
                             case 20:
                                 Game1.Items.Add(new Items("jump", new Vector2(j * size, i * size)));
+                                Objects2[i, j] = new Tiles(8, new Rectangle(j * size, i * size, size, size), true,
+                                    true);
                                 break;
                             case 21:
                                 Game1.Enemies.Add(new Jack(new Vector2(j * size, i * size - 100)));
@@ -138,10 +153,6 @@ namespace THE_GAME
             int yend = (character.Hitbox.X + Game1.Swidth) / Game1.TileSize + 10;
             if (yend > y) yend = y;
 
-            /*int xstart = (character.Hitbox.Y - Game1.Sheight) / Game1.TileSize;
-            if (xstart < 0) xstart = 0;
-            int xend = ((character.Hitbox.Y + Game1.Sheight) / Game1.TileSize);
-            if (xend > x) xend = x; */
 
             for (int i = 0; i < x; i++)
             {
@@ -179,8 +190,6 @@ namespace THE_GAME
                 {
 
 
-
-
                     if (Tiles2[i, j] != null &&
                         (Tiles2[i, j].Tile == 14 || Tiles2[i, j].Tile == 15 || Tiles2[i, j].Tile == 16))
                     {
@@ -201,7 +210,7 @@ namespace THE_GAME
 
                     if (Objects2[i, j] != null && Objects2[i, j].Blocked &&
                         Objects2[i, j].Rectangle.Intersects(movingRectangle))
-                    {      
+                    {
                         return true;
                     }
                 }

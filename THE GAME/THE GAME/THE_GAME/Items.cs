@@ -5,9 +5,9 @@ namespace THE_GAME
 {
     public class Items
     {
-        readonly Sprite texture;
+        Sprite texture;
         readonly string type;
-        bool visible, on, open;
+        bool visible, on, respawn;
         int elapsed;
         Rectangle hitbox;
         public Items(string type, Vector2 position)
@@ -15,17 +15,15 @@ namespace THE_GAME
             visible = true;
             elapsed = 0;
             on = false;
-            open = false;
+            respawn = false;
             this.type = type;
+
+            
             switch (type)
             {
-                case "box":
-                    hitbox= new Rectangle((int)position.X, (int)position.Y, 72, 72);
-                    texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("heart/Object (8)"), hitbox);
-                    visible = false;
-                    break;
+
                 case "heart":
-                    hitbox = new Rectangle((int)position.X, (int)position.Y, 170 / 4, 150 / 4);
+                    hitbox = new Rectangle((int)position.X, (int)position.Y+20, 170 / 4, 150 / 4);
                     texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("heart/fullheart"), hitbox);
                     break;
                 case "boots":
@@ -35,103 +33,116 @@ namespace THE_GAME
                 case "jump":
                     hitbox = new Rectangle((int)position.X, (int)position.Y, 260 / 4, 240 / 4);
                     texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("heart/rocket"), hitbox);
-                    break;
+                    break; 
+
                 case "end":
                     hitbox = new Rectangle((int)position.X, (int)position.Y, 72, 72);
                     texture = new Sprite(Game1.ContentMgr.Load<Texture2D>("objects/Object (12)"), hitbox);
                     break;
+
             }
 
         }
-
 
         public void Update()
         {
             if (visible)
             {
-                switch (type)
-                {
+        
+                    switch (type)
+                    {
 
-                    case "box":
-                        if (hitbox.Intersects(Game1.Character.HitboxA) && Game1.Character.IsAttack && Game1.Character.AttackI > 2 && Game1.Character.AttackI < 5)
-                        {
-                            
-                        }
 
-                        break;
-
-                    case "heart":
-                        if (Game1.Character.Hitbox.Intersects(hitbox))
-                        {
-                            Game1.Character.Health++;
-                            visible = false;
-                        }
-
-                        break;
-                    case "boots":
-                        if (Game1.Character.Hitbox.Intersects(hitbox))
-                        {
-                            Game1.Character.Speed = 3;
-                            on = true;
-                            visible = false;
-                            Game1.Character.Color = Color.Cyan;
-                        }
-
-                        break;
-                    case "jump":
-
-                        if (Game1.Character.Hitbox.Intersects(hitbox))
-                        {
-                            Game1.Character.JumpHeight = 22;
-                            on = true;
-                            visible = false;
-                            Game1.Character.Color = Color.LightGreen;
-                        }
-
-                        break;
-                    case "end":
-                        if (Game1.Character.Hitbox.Intersects(hitbox))
-                        {
-                            int i = 0;
-                            while (i < Game1.Enemies.Count && Game1.Enemies[i].IsDead)
+                        case "heart":
+                           
+                            if (Game1.Character.Hitbox.Intersects(hitbox))
                             {
-                                i++;
+                                Game1.Character.Health++;
+                                visible = false;
+                                on = true;
                             }
 
-                            if (i != Game1.Enemies.Count) Game1.CurrentGameState = Game1.Gamestates.EndScreen;
-                        }
+                            break;
+                        case "boots":
+                      
+                            if (Game1.Character.Hitbox.Intersects(hitbox))
+                            {
+                                Game1.Character.Speed = 3.5f;
+                                on = true;
+                                visible = false;
+                                Game1.Character.Color = Color.Cyan;
+                            }
 
-                        break;
-                }
+                            break;
+                        case "jump":
+                         
+                            if (Game1.Character.Hitbox.Intersects(hitbox))
+                            {
+                                Game1.Character.JumpHeight = 30f;
+                                on = true;
+                                visible = false;
+                                Game1.Character.Color = Color.LightGreen;
+                            }
+
+                            break;
+                        case "end":
+
+                            if (Game1.Character.Hitbox.Intersects(hitbox))
+                            {
+                                int i = 0;
+                                while (i < Game1.Enemies.Count && Game1.Enemies[i].IsDead)
+                                {
+                                    i++;
+                                }
+
+                                if (i == Game1.Enemies.Count) Game1.CurrentGameState = Game1.Gamestates.EndScreen;
+                            }
+
+                            break;
+                    }
+                
             }
 
             if (on)
             {
                 elapsed++;
-                if (type == "boots" && elapsed > 250)
+                if (type == "boots" && elapsed > 250 &&!respawn)
                 {
-                    Game1.Character.Speed = 1.9f;
-                    on = false;
+                    Game1.Character.Speed = 2;
                     Game1.Character.Color = Color.White;
+                    respawn = true;
                 }
 
-                if (type == "jump" && elapsed > 250)
+                if (type == "jump" && elapsed > 250 && !respawn)
                 {
-                    Game1.Character.JumpHeight = 12.5f;
-                    on = false;
+                    Game1.Character.JumpHeight = 15f;
                     Game1.Character.Color = Color.White;
+                    respawn = true;
+
+                }
+
+                if (type == "heart" && !respawn)
+                {
+                    respawn = true;
+                }
+
+                if (respawn && elapsed > 1500)
+                {
+                    visible = true;
+                    elapsed = 0;
+                    on = false;
                 }
             }
-
-            if (elapsed > 1000) visible = true;
-
 
 
         }
 
         public void Draw(SpriteBatch sbatch)
         {
-            if (visible) texture.Draw(sbatch);
+            if (!visible) return;
+                      
+                texture.Draw(sbatch);
+            
         }
     }
 }

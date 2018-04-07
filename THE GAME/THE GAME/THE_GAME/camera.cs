@@ -18,12 +18,14 @@ namespace THE_GAME
                 if (player.RectangleW.X > Game1.Swidth / 2 && player.RectangleW.X < 6560)
                     Centre.X = player.RectangleW.X - Game1.Swidth / 2;
 
-                if (player.RectangleW.Y < Game1.Sheight / 4 + 720)
-                    Centre.Y = (player.RectangleW.Y - Game1.Sheight / 4);
+                if (player.RectangleW.Y < Game1.Sheight / 3 + 720 && player.RectangleW.Y>250)
+                    Centre.Y = (player.RectangleW.Y - Game1.Sheight / 3);
 
-                if (player.RectangleW.Y > 1450)
-                    Centre.X = 0;
+              if (player.RectangleW.Y > 1550)
+                   Centre.X = 0;
 
+                if (player.RectangleW.Y < 250)
+                    Centre.Y = 0;
 
 
                 Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) *
