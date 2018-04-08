@@ -14,7 +14,7 @@ namespace THE_GAME
         public Spike(Vector2 position)
         {
 
-            rectangle = new Rectangle((int) position.X, (int) position.Y + 55, 62, 55);
+            rectangle = new Rectangle((int)position.X, (int)position.Y + 55, 62, 55);
             this.position = rectangle.Location;
             spike = new Sprite(Game1.ContentMgr.Load<Texture2D>("tiles/Tile (17)"), rectangle);
             hitbox = new Rectangle(rectangle.X + 8, rectangle.Y + 30, 45, 22);

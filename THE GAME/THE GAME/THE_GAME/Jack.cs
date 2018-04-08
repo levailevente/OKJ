@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace THE_GAME
 {
-    class Jack:Zombie
+    class Jack : Zombie
     {
 
         int hp, elapsedX;
@@ -12,7 +12,7 @@ namespace THE_GAME
             Walk = new Texture2D[10];
             Death = new Texture2D[10];
             idle = new Texture2D[10];
-            Jump= new Texture2D[10];
+            Jump = new Texture2D[10];
 
             const int o = 4;
 
@@ -41,12 +41,12 @@ namespace THE_GAME
 
             for (int i = 0; i < 10; i++)
             {
-                Walk[i] = Game1.ContentMgr.Load<Texture2D>("enemy/jack/walk/Walk (" + (i+1) + ")");
+                Walk[i] = Game1.ContentMgr.Load<Texture2D>("enemy/jack/walk/Walk (" + (i + 1) + ")");
             }
 
             for (int i = 0; i < 10; i++)
             {
-                Death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/jack/death/Dead (" + (i+1) + ")");
+                Death[i] = Game1.ContentMgr.Load<Texture2D>("enemy/jack/death/Dead (" + (i + 1) + ")");
             }
 
             for (int i = 0; i < 10; i++)
@@ -68,12 +68,12 @@ namespace THE_GAME
                 if (Invulnerable)
                 {
                     elapsedX++;
-                    Color=Color.Red;
+                    Color = Color.Red;
                     if (elapsedX > 30)
                     {
                         elapsedX = 0;
                         Invulnerable = false;
-                        Color=Color.White;
+                        Color = Color.White;
                     }
 
                 }
@@ -91,11 +91,11 @@ namespace THE_GAME
                         Invulnerable = true;
 
                         if (hp == 0)
-                        {                        
+                        {
                             IsDead = true;
                             return;
                         }
-                        
+
                     }
 
                 }
@@ -241,7 +241,7 @@ namespace THE_GAME
                 {
                     Elapsed = 0;
                     DeadI++;
-                    if (DeadI >9) DeadI = -1;
+                    if (DeadI > 9) DeadI = -1;
                 }
 
                 //  if (deadI==-1) if (Game1.Enemies.Count>1) Game1.Enemies.Remove(this);

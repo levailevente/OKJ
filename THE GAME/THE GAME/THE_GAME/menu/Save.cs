@@ -93,7 +93,7 @@ namespace THE_GAME.menu
                     Saves[i].Name = save[0];
                     Saves[i].Date = save[1];
                     Saves[i].Lvl = int.Parse(save[2]);
-                    if (Saves[i].Lvl > 0)
+                    if (Saves[i].Date.Length>1)
                     {
                         Saves[i].PositionString = save[3];
                         Saves[i].Hp = int.Parse(save[4]);

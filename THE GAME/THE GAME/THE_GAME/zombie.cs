@@ -77,7 +77,7 @@ namespace THE_GAME
                     }
 
 
-                 
+
                 }
 
                 if (hitbox.Intersects(Game1.Character.Hitbox))
@@ -306,10 +306,10 @@ namespace THE_GAME
 
         protected override void UpdatePosition(GameTime gametime)
         {
-            Position += Mvmnt * (float) gametime.ElapsedGameTime.TotalMilliseconds / 15;
+            Position += Mvmnt * (float)gametime.ElapsedGameTime.TotalMilliseconds / 15;
 
-            hitbox.X += (int) Position.X;
-            hitbox.Y += (int) Position.Y;
+            hitbox.X += (int)Position.X;
+            hitbox.Y += (int)Position.Y;
 
 
             Position = Game1.GenerateMap.CollisionV2(PrevPosition, Position, hitbox);
@@ -319,10 +319,10 @@ namespace THE_GAME
                 IsDead = true;
             }
 
-            hitbox.Location = new Point((int) Position.X, (int) Position.Y);
-            Rectanglew.Location = new Point((int) Position.X, (int) Position.Y);
-            RectangleA.Location = new Point((int) Position.X - 10, (int) Position.Y);
-            if (IsDead) RectangleD.Location = new Point((int) Position.X, (int) Position.Y + 10);
+            hitbox.Location = new Point((int)Position.X, (int)Position.Y);
+            Rectanglew.Location = new Point((int)Position.X, (int)Position.Y);
+            RectangleA.Location = new Point((int)Position.X - 10, (int)Position.Y);
+            if (IsDead) RectangleD.Location = new Point((int)Position.X, (int)Position.Y + 10);
 
         }
 

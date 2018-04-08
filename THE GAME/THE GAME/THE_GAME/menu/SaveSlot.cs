@@ -71,10 +71,10 @@ namespace THE_GAME.menu
             letter = Game1.Newkey.GetPressedKeys();
 
 
-        if (letter.Length > 0 && Name.Length < 15 && Game1.Prevkey.GetPressedKeys().Length == 0 || Game1.Newkey.IsKeyDown(Keys.Back) && Game1.Prevkey.GetPressedKeys().Length == 0)
+            if (letter.Length > 0 && Name.Length < 15 && Game1.Prevkey.GetPressedKeys().Length == 0 || Game1.Newkey.IsKeyDown(Keys.Back) && Game1.Prevkey.GetPressedKeys().Length == 0)
             {
 
-              string value = letter[0].ToString();
+                string value = letter[0].ToString();
                 if (value.Length == 1) Name += value.ToLower();
                 if (Game1.Newkey.IsKeyDown(Keys.Back))
                 {

@@ -128,7 +128,7 @@ namespace THE_GAME
             if (Newkey.IsKeyDown(Keys.F1) && Prevkey.IsKeyUp(Keys.F1))
             {
                 Godmode = !Godmode;
-            } 
+            }
 
             switch (CurrentGameState)
             {
@@ -218,7 +218,7 @@ namespace THE_GAME
                 case Gamestates.Playing:
                     bg.Draw(spriteBatch);
 
-                   // spriteBatch.Draw(szin, Character.Hitbox, Color.White);
+                    // spriteBatch.Draw(szin, Character.Hitbox, Color.White);
                     IsMouseVisible = false;
                     foreach (Spike k in Spikes)
                     {

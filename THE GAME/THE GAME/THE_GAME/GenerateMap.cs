@@ -40,11 +40,11 @@ namespace THE_GAME
 
                     if (n > 0)
                     {
-                      if (n!=17) Tiles2[i, j] = new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
+                        if (n != 17) Tiles2[i, j] = new Tiles(n, new Rectangle(j * size, i * size, size, size), !blocked, false);
                         else Game1.Spikes.Add(new Spike(new Vector2(j * size, i * size)));
                     }
 
-                        
+
 
                     bool blockedO = m < -1;
                     if (blockedO) m *= -1;
@@ -54,13 +54,13 @@ namespace THE_GAME
                         {
                             case 6:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size, i * size + 15, (int) (182 / 1.5), (int) (90 / 1.5)),
+                                    new Rectangle(j * size, i * size + 15, (int)(182 / 1.5), (int)(90 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
                             case 7:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size , i * size + 32, (int) (100 / 1.5), (int) (64 / 1.5)),
+                                    new Rectangle(j * size, i * size + 32, (int)(100 / 1.5), (int)(64 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
@@ -71,19 +71,19 @@ namespace THE_GAME
                                 break;
                             case 9:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size , i * size + 20, (int) (132 / 1.4), (int) (74 / 1.4)),
+                                    new Rectangle(j * size, i * size + 20, (int)(132 / 1.4), (int)(74 / 1.4)),
                                     blockedO,
                                     true);
                                 break;
                             case 10:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size - 100, i * size - 97, (int) (286 / 1.4), (int) (239 / 1.4)),
+                                    new Rectangle(j * size - 100, i * size - 97, (int)(286 / 1.4), (int)(239 / 1.4)),
                                     blockedO,
                                     true);
                                 break;
                             case 11:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size, i * size + 40, (int) (102 / 1.5), (int) (50 / 1.5)),
+                                    new Rectangle(j * size, i * size + 40, (int)(102 / 1.5), (int)(50 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
@@ -92,13 +92,13 @@ namespace THE_GAME
                                 break;
                             case 13:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size + 15, i * size + 36, (int) (54 / 1.5), (int) (55 / 1.5)),
+                                    new Rectangle(j * size + 15, i * size + 36, (int)(54 / 1.5), (int)(55 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
                             case 14:
                                 Objects2[i, j] = new Tiles(m,
-                                    new Rectangle(j * size, i * size + 22, (int) (53 / 1.5), (int) (76 / 1.5)),
+                                    new Rectangle(j * size, i * size + 22, (int)(53 / 1.5), (int)(76 / 1.5)),
                                     blockedO,
                                     true);
                                 break;
@@ -227,7 +227,7 @@ namespace THE_GAME
 
             Vector2 furthestLocation = ogPosition;
 
-            int breaks = (int) (movement.Length() * 2) + 1;
+            int breaks = (int)(movement.Length() * 2) + 1;
 
             Vector2 oneStep = movement / breaks;
 
@@ -236,7 +236,7 @@ namespace THE_GAME
             {
                 Vector2 newPosition = ogPosition + oneStep * i;
                 Rectangle newHitbox =
-                    new Rectangle((int) newPosition.X, (int) newPosition.Y, hitbox.Width, hitbox.Height);
+                    new Rectangle((int)newPosition.X, (int)newPosition.Y, hitbox.Width, hitbox.Height);
                 if (!Collision(newHitbox))
                 {
                     furthestLocation = newPosition;

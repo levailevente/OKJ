@@ -62,7 +62,7 @@ namespace THE_GAME
 
         bool x;
 
-        public bool IsDead { get;  set; }
+        public bool IsDead { get; set; }
 
         public int Health
         {
@@ -118,14 +118,15 @@ namespace THE_GAME
 
             switch (Game1.Lvl)
             {
-                case 1: Position = new Vector2(0, 1000);
+                case 1:
+                    Position = new Vector2(0, 1000);
                     break;
                 case 2:
                     Position = new Vector2(100, 300);
                     break;
             }
 
-            
+
             Elapsed = 0;
             IdleI = 0;
             WalkI = 0;

@@ -25,11 +25,11 @@ namespace THE_GAME
 
         public static void Draw(SpriteBatch sbatch, int hp)
         {
-            rectangle1 = new Rectangle((int) Game1.Kamera.Centre.X + 20, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+            rectangle1 = new Rectangle((int)Game1.Kamera.Centre.X + 20, (int)Game1.Kamera.Centre.Y + 20, 170 / 3,
                 150 / 3);
-            rectangle2 = new Rectangle((int) Game1.Kamera.Centre.X + 70, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+            rectangle2 = new Rectangle((int)Game1.Kamera.Centre.X + 70, (int)Game1.Kamera.Centre.Y + 20, 170 / 3,
                 150 / 3);
-            rectangle3 = new Rectangle((int) Game1.Kamera.Centre.X + 120, (int) Game1.Kamera.Centre.Y + 20, 170 / 3,
+            rectangle3 = new Rectangle((int)Game1.Kamera.Centre.X + 120, (int)Game1.Kamera.Centre.Y + 20, 170 / 3,
                 150 / 3);
 
             switch (hp)
